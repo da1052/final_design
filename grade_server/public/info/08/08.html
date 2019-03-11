@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://www.oschina.net/news/99140/mini-program-gitee -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="08/osd.js.下载"></script>
+
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="referrer" content="always">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>微信小程序如何使用 Git 实现版本管理和协作开发 - 开源中国</title>
+    <meta name="keywords" content="Gitee,微信小程序如何使用 Git 实现版本管理和协作开发">
+    <meta name="description"
+          content="前言 在微信小程序开发的过程中，代码版本管理往往需要使用第三方工具进行管理。虽然微信Web开发工具提供了对Git文件版本状态的提示，但实际的使用体验依然不尽人意。 随着微信Web开发工具的更新，最新的内测版本...">
+    <link rel="stylesheet" type="text/css" href="../info_public/semantic.min.css">
+    <link type="text/css" rel="stylesheet" href="../info_public/web.6535a0fd.css">
+    <script src="../info_public/hm.js.下载"></script>
+    <script src="../info_public/push.js.下载"></script>
+    <script src="../info_public/ca-pub-7090564139599510.js.下载"></script>
+    <script src="../info_public/jquery.min.js.下载"></script>
+    <!--<link rel="shortcut icon" type="image/x-icon" href="https://www.oschina.net/new-osc/img/favicon.ico">-->
+    <!--<link rel="alternate" type="application/rss+xml" title="最新开源项目" href="https://www.oschina.net/project/rss">-->
+    <!--<link rel="alternate" type="application/rss+xml" title="最新开源资讯" href="https://www.oschina.net/news/rss">-->
+    <!--<link rel="alternate" type="application/rss+xml" title="最新问题列表" href="https://www.oschina.net/question/rss">-->
+    <!--<link rel="alternate" type="application/rss+xml" title="最新翻译列表" href="https://www.oschina.net/translate/rss">-->
+    <!--<link rel="alternate" type="application/rss+xml" title="最新博客列表" href="https://www.oschina.net/blog/rss">-->
+    <!--<link rel="alternate" type="application/rss+xml" title="推荐博客列表" href="https://www.oschina.net/blog/rss?show=more">-->
+    <!--<link rel="alternate" type="application/rss+xml" title="推荐软件列表"-->
+          <!--href="https://www.oschina.net/project/rss?show=recomms">-->
+    <!--<link rel="alternate" type="application/rss+xml" title="最新代码分享列表" href="https://www.oschina.net/code/rss">-->
+    <!--<link rel="alternate" type="application/rss+xml" title="开源中国 - 源码列表" href="https://www.oschina.net/code/source_rss">-->
+    <link rel="preload" href="../info_public/integrator.js.下载" as="script">
+    <script type="text/javascript" src="../info_public/integrator.js.下载"></script>
+    <link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/r20181107/r20180604/show_ads_impl.js"
+          as="script">
+    <script src="../info_public/share.js.下载"></script>
+    <script type="text/javascript"
+            src="../info_public/jquery.serialize-object.min.js.下载"></script>
+    <script type="text/javascript"
+            src="../info_public/jquery.serialize-object.min.js.下载"></script>
+    <script type="text/javascript"
+            src="../info_public/jquery.serialize-object.min.js.下载"></script>
+    <script type="text/javascript" src="../info_public/vue.min.js.下载"></script>
+    <link rel="stylesheet" type="text/css" href="../info_public/viewer.min.css">
+    <script type="text/javascript" src="../info_public/viewer.min.js.下载"></script>
+    <script type="text/javascript" src="../info_public/vue.min.js.下载"></script>
+    <script type="text/javascript" src="../info_public/osc-message.js.下载"></script>
+    <script type="text/javascript" src="../info_public/osc-message.js.下载"></script>
+    <script type="text/javascript" src="../info_public/osc-message.js.下载"></script>
+    <script type="text/javascript" src="../info_public/jquery-viewer.min.js.下载"></script>
+    <script type="text/javascript" src="../info_public/jquery.caret.min.js.下载"></script>
+    <script type="text/javascript" src="../info_public/jquery.atwho.min.js.下载"></script>
+</head>
+<body class="pushable dimmable">
+<val data-name="space_user_url" data-value=""></val>
+<val data-name="g_user_url" data-value=""></val>
+<val data-name="api_prefix" data-value=""></val>
+<val data-name="g_user_code" data-value=""></val>
+<val data-name="g_user_id" data-value=""></val>
+<val data-name="g_user" data-value=""></val>
+<val data-name="login_page"
+     data-value="https://www.oschina.net/home/login?goto_page=https%3A%2F%2Fwww.oschina.net%2Fnews%2F99140%2Fmini-program-gitee"></val>
+
+<val data-name="weixinAppId" data-value="wx880def15e694b905"></val>
+<val data-name="weixinTimestamp" data-value="1542612247578"></val>
+<val data-name="weixinNonceStr" data-value="7f0256c5-81eb-4d76-bde6-63f1483c2f15"></val>
+<val data-name="weixinSignature" data-value="e9b21957c2c3abaae1277f92f6c8cd296adc5453"></val>
+<val data-name="weixinShareUrl" data-value="https://www.oschina.net/news/99140/mini-program-gitee"></val>
+<val data-name="is_detail_page" data-value="true"></val>
+
+
+<div class="ui left inverted sidebar vertical menu" id="mobileNavSidebar">
+    <a href="https://www.oschina.net/project" class="item project">开源软件</a>
+    <a href="https://www.oschina.net/question" class="item question" "="">问答</a>
+    <a href="https://www.oschina.net/tweets" class="item tweet">动弹</a>
+    <a href="https://www.oschina.net/blog" class="item blog">博客</a>
+    <a href="https://www.oschina.net/translate" class="item translate">翻译</a>
+    <a href="https://www.oschina.net/news" class="item news active">资讯</a>
+    <a href="https://gitee.com/?from=osc-index" class="item gitee" target="_blank">码云</a>
+    <a href="https://zb.oschina.net/" class="item" target="_blank">众包</a>
+    <a href="https://www.oschina.net/event/ych" class="item meetup">源创会</a>
+    <a href="https://www.oschina.net/event" class="item">活动</a>
+    <a href="https://job.oschina.net/" class="item" target="_blank">求职/招聘</a>
+    <a href="https://www.oschina.net/question/topic/masteronline" class="item">高手问答</a>
+    <a href="https://www.oschina.net/question/topic/osc-interview" class="item">开源访谈</a>
+    <a href="https://my.oschina.net/editorial-story" class="item">周刊</a>
+    <a href="https://www.oschina.net/company" class="item">公司开源导航页</a>
+</div>
+<div class="ui right inverted sidebar vertical menu" id="mobileUserSidebar">
+    <a class="item"
+       href="https://www.oschina.net/home/login?goto_page=https%3A%2F%2Fwww.oschina.net%2Fnews%2F99140%2Fmini-program-gitee">登录</a>
+    <a class="item"
+       href="https://www.oschina.net/home/reg?goto_page=https%3A%2F%2Fwww.oschina.net%2Fnews%2F99140%2Fmini-program-gitee">注册</a>
+</div>
+
+<div class="pusher  mobile-disabled-fixed-menu  ">
+    <div class="ui secondary inverted fixed menu" id="headerNavMenu">
+        <a class="item logo" href="https://www.oschina.net/" title="开源中国"><img
+                src="08/logo.svg" alt="开源中国"></a>
+        <form action="https://www.oschina.net/search" class="item search-item" target="_blank">
+            <div class="ui icon input">
+                <input type="hidden" name="scope" value="news">
+                <input placeholder="大家都在搜...." id="keyword" name="q" size="24" value="" type="text">
+                <i class="search link icon"></i>
+            </div>
+            <div class="results"></div>
+        </form>
+        <div class="item download-item">
+            <a class="ui primary button" id="btnDownloadApp" href="https://www.oschina.net/app"
+               target="_blank">下载APP</a>
+        </div>
+        <div class="ui popup top left transition hidden" id="btnDownloadAppContent">
+            <h3 class="header">开源中国 App —— <br>关注技术领域的头条文章</h3>
+            <p>聚合全网技术文章，根据你的阅读喜好进行个性推荐</p>
+            <img width="200" src="08/osc_app_download_qrcode.png" alt="下载APP">
+        </div>
+        <div class="ui secondary text menu" id="menuList">
+            <a href="https://www.oschina.net/project" class="item project">开源软件</a>
+            <a href="https://www.oschina.net/question" class="item question">问答</a>
+            <a href="https://www.oschina.net/tweets" class="item tweet">动弹</a>
+            <a href="https://www.oschina.net/blog" class="item blog">博客</a>
+            <a href="https://www.oschina.net/translate" class="item translate">翻译</a>
+            <a href="https://www.oschina.net/news" class="item news active">资讯</a>
+            <a href="https://gitee.com/?from=osc-index" class="item gitee" target="_blank">码云<span
+                    class="floating ui red label giteetip">代码托管</span></a>
+            <a href="https://zb.oschina.net/" class="item" target="_blank">众包</a>
+            <a href="https://www.oschina.net/event" class="item event">活动</a>
+        </div>
+        <div class="ui dropdown item" id="moreMenu" tabindex="0">
+            更多 <i class="dropdown icon" tabindex="0">
+            <div class="menu" tabindex="-1"></div>
+        </i>
+            <div class="menu" tabindex="-1">
+                <a href="https://www.oschina.net/event/ych" class="item meetup"><i class="world icon"></i>源创会</a>
+                <a href="https://job.oschina.net/" class="item" target="_blank"><i
+                        class="address card outline icon"></i>求职/招聘</a>
+                <a href="https://www.oschina.net/question/topic/masteronline" class="item"><i class="spy icon"></i>高手问答</a>
+                <a href="https://www.oschina.net/question/topic/osc-interview" class="item"><i class="coffee icon"></i>开源访谈</a>
+                <a href="https://my.oschina.net/editorial-story" class="item"><i
+                        class="calendar outline icon"></i>周刊</a>
+                <a href="https://www.oschina.net/company" class="item"><i class="building outline icon"></i>公司开源导航页</a>
+            </div>
+        </div>
+        <div class="right menu">
+            <a class="item"
+               href="https://www.oschina.net/home/login?goto_page=https%3A%2F%2Fwww.oschina.net%2Fnews%2F99140%2Fmini-program-gitee">登录</a>
+            <a class="item"
+               href="https://www.oschina.net/home/reg?goto_page=https%3A%2F%2Fwww.oschina.net%2Fnews%2F99140%2Fmini-program-gitee">注册</a>
+        </div>
+    </div>
+    <div class="ui secondary inverted fixed menu" id="mobileHeaderNavMenu">
+        <a class="icon item toggle-mobile-nav-sidebar">
+            <i class="large content icon"></i>
+        </a>
+        <div class="logo back-to-top-toggle"><img src="08/logo.svg" alt="开源中国">
+        </div>
+        <a class="icon item toggle-mobile-user-sidebar">
+            <i class="large user outline icon"></i>
+        </a>
+    </div>
+    <div class="ui basic segment" id="mainScreen">
+        <div class="ui container">
+
+
+            <x-foo-define data-define="web-news-detail"></x-foo-define>
+            <val data-name="objId" data-value="99140"></val>
+            <val data-name="fetchCommentsUrl" data-value="?type=comments"></val>
+            <val data-name="publishCommentUrl" data-value="/news/comment"></val>
+            <val data-name="replyCommentUrl" data-value="/news/comment"></val>
+            <val data-name="deleteCommentUrl" data-value="/news/delete_comments"></val>
+            <val data-name="weixinShareTitle" data-value="微信小程序如何使用 Git 实现版本管理和协作开发"></val>
+            <val data-name="weixinShareImgUrl"
+                 data-value="https://oscimg.oschina.net/oscnet/d8cb3e00e83fcebf5fc1095324d02b35dbf.jpg!/both/300x300"></val>
+            <div class="ui internally centered grid news-detail">
+                <div class="row">
+                    <div class="twelve wide widescreen screen twelve wide large screen twelve wide computer sixteen wide tablet sixteen wide mobile column">
+                        <div class="float-menu-content">
+                            <div class="ui large breadcrumb">
+                                <a class="section" href="https://www.oschina.net/news">资讯</a>
+                                <i class="right chevron icon divider"></i>
+                                <a class="section" href="https://www.oschina.net/p/gitosc">Gitee</a>
+                                <i class="right chevron icon divider"></i>
+                                <div class="active section">正文</div>
+                            </div>
+                            <div class="article-detail">
+                                <h1 class="header">微信小程序如何使用 Git 实现版本管理和协作开发</h1>
+                                <div class="extra ui horizontal list meta-wrap">
+                                    <div class="item">
+                                        <a href="https://my.oschina.net/gitosc" class="__user" target="_blank">
+                                            <div class="osc-avatar small-portrait _35x35 avatar" title="码云Gitee"
+                                                 data-user-id="2267325">
+                                                <img src="08/50x50" alt="码云Gitee"
+                                                     title="码云Gitee">
+                                            </div>
+                                            &nbsp;<span>码云Gitee</span></a>
+                                        发布于 2018年08月20日
+                                    </div>
+                                    <div class="item collect-btn " data-id="99140" data-user-id="2267325"
+                                         data-obj-type="4" data-max="99" data-tag-required="" data-current-user-id=""
+                                         data-recommend-tags="">收藏 <span data-collect-count="" data-id="99140"
+                                                                         data-obj-type="4">33</span></div>
+                                    <div class="item comment-count"><a
+                                            href="https://www.oschina.net/news/99140/mini-program-gitee#comments"
+                                            class="normal"><i class="comment outline icon"></i> 评论 <span
+                                            data-article-reply-count="">5</span></a></div>
+                                </div>
+                                <div class="ad-wrap" style="margin: 10px auto">
+                                    <div data-tracepid="news_detai_above" data-traceid="news_detai_above_1">
+                                        <a href="http://clickc.admaster.com.cn/c/a116493,b2949389,c3159,i0,m101,8a1,8b2,h;"
+                                           target="_blank"> <img
+                                                src="08/122036_AkDe_2663968.jpg">
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="content" id="articleContent">
+                                    <div class="ad-wrap">
+                                    </div>
+                                    <h3><strong>前言</strong></h3>
+                                    <p>在微信小程序开发的过程中，代码版本管理往往需要使用第三方工具进行管理。虽然<code>微信Web开发工具</code>提供了对<code>Git</code>文件版本状态的提示，但实际的使用体验依然不尽人意。
+                                    </p>
+                                    <p>
+                                        随着<code>微信Web开发工具</code>的更新，最新的内测版本已经支持<code>Git</code>的直接管理，本文将就在<code>微信Web开发工具</code>中使用<code>Git</code>做版本管理做详细介绍。
+                                    </p>
+                                    <h3><strong>环境准备</strong></h3>
+                                    <ul class=" list-paddingleft-2">
+                                        <li><p>开发环境：Mac/Windows/Linux均可</p></li>
+                                        <li><p>开发工具：微信Web开发者工具Beta版本、Git</p></li>
+                                        <li><p>Git托管服务：<a data-cke-saved-href="https://gitee.com/"
+                                                          href="https://gitee.com/" target="_blank">码云</a></p></li>
+                                    </ul>
+                                    <p>使用<code>Git</code>服务需要在系统上先安装好<code>Git</code>，相关<code>Git</code>环境的安装，详见<a
+                                            data-cke-saved-href="https://gitee.com/help/category/20"
+                                            href="https://gitee.com/help/category/20" target="_blank">Git入门</a>和<a
+                                            data-cke-saved-href="https://gitee.com/help/article/4106"
+                                            href="https://gitee.com/help/article/4106" target="_blank">Git的安装</a>。</p>
+                                    <p>由于目前<code>Git</code>管理功能的支持尚在公测阶段，故本文将使用<code>微信Web开发者工具 Beta版本</code>作为示例。</p>
+                                    <p>访问&nbsp;<a
+                                            data-cke-saved-href="https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html"
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html"
+                                            target="_blank">https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html</a>&nbsp;即可下载&nbsp;<code>微信Web开发者工具Beta版本</code>（下文以<code>微信Web开发者工具</code>简称代替）
+                                    </p>
+                                    <h3><strong>创建小程序项目</strong></h3>
+                                    <p>使用<code>Git</code>版本管理，首先需要有个git的仓库。打开<code>微信Web开发者工具</code>，新建/打开小程序的项目。此处以新建项目为例，假设项目名为<code>HelloGitee</code>，填写好相应路径和<code>appid</code>，选择<code>建立普通快速启动模板</code>，确认并新建项目。
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346810382433.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346810382433.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346810382433.jpg"
+                                                src="08/20084828_2Zwx.jpg" alt=""></a>
+                                    </p>
+                                    <p>创建完成后，得到了初始化后的项目。</p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346813000993.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346813000993.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346813000993.jpg"
+                                                src="08/20084828_NN90.jpg" alt=""></a>
+                                    </p>
+                                    <h3><strong>创建远程仓库</strong></h3>
+                                    <p>在&nbsp;<a data-cke-saved-href="https://gitee.com/" href="https://gitee.com/"
+                                                 target="_blank">https://gitee.com</a>&nbsp;上登录自己的码云账号，在右上角新建按钮选择<strong>「新建项目」</strong>。填写相应的项目仓库信息。
+                                    </p>
+                                    <p>此处我们选择使用公开的仓库，命名路径为「HelloGitee」，开发语言选择「JavaScript」。确认后点击「创建」按钮初始化远程仓库。</p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346817972319.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346817972319.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346817972319.jpg"
+                                                src="08/20084828_E13H.jpg" alt=""></a>
+                                    </p>
+                                    <p>创建并初始化完远程仓库后，我们得到了一个空白仓库如下图。项目的仓库地址是：<code>https://gitee.com/normalcoder/HelloGitee.git</code>&nbsp;接下去我们将初始化本地的<code>Git</code>仓库。
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346819340476.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346819340476.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346819340476.jpg"
+                                                src="08/20084828_RIwz.jpg" alt=""></a>
+                                    </p>
+                                    <h3><strong>初始化本地仓库</strong></h3>
+                                    <p>在<code>微信Web开发者工具</code>中点击面板上的「版本管理」按钮，将弹出开发者工具中的版本管理面板。</p>
+                                    <p>由于是新建项目，并没有初始化过<code>Git</code>仓库，所以项目会提示初始化<code>Git</code>仓库，点击「<strong>初始化 Git
+                                        仓库</strong>」，点击「确认」，完成本地仓库的初始化。</p>
+                                    <p><strong>这一步骤相当于执行「git init」命令。</strong></p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346822736932.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346822736932.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346822736932.jpg"
+                                                src="08/20084828_11eC.jpg" alt=""></a>
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346827485051.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346827485051.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346827485051.jpg"
+                                                src="08/20084828_9g2X.jpg" alt=""></a>
+                                    </p>
+                                    <p>初始化完成后，我们可以看到本地的仓库和当前的Git状态。下图为<code>微信Web开发者工具</code>初始化后的版本控制面板。</p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346831910870.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346831910870.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346831910870.jpg"
+                                                src="08/20084828_lWdQ.jpg" alt=""></a>
+                                    </p>
+                                    <h3><strong>配置仓库信息</strong></h3>
+                                    <p>初始化完成后，依次点击「工作空间」-&gt;「设置」-&gt;「通用」-&gt;「编辑」，编辑在<code>Git</code>中使用的用户名和邮箱。这一步相当于<code>git
+                                        config</code>命令中的配置操作。</p>
+                                    <pre data-cke-widget-data="%7B%22code%22%3A%22%24%20git%20config%20--global%20user.name%20%5C%22%E7%94%A8%E6%88%B7%E5%90%8D%5C%22%5Cn%24%20git%20config%20--global%20user.email%20%5C%22%E9%82%AE%E7%AE%B1%5C%22%5Cn%22%2C%22classes%22%3Anull%7D"
+                                         data-cke-widget-upcasted="1" data-cke-widget-keep-attr="0"
+                                         data-widget="codeSnippet" class="cke_widget_element">$&nbsp;git&nbsp;config&nbsp;--global&nbsp;user.name&nbsp;"用户名"
+$&nbsp;git&nbsp;config&nbsp;--global&nbsp;user.email&nbsp;"邮箱"</pre>
+                                    <p><span class="cke_reset cke_widget_drag_handler_container"
+                                             style="background:rgba(220,220,220,0.5);background-image:url(https://my.oschina.net/new-osc/js/utils/plugins/ckeditor/plugins/widget/images/handle.png)"></span>
+                                    </p>
+                                    <p><strong>需要注意的是：此处配置的邮箱名需要和&nbsp;<a data-cke-saved-href="https://gitee.com/"
+                                                                          href="https://gitee.com/" target="_blank">码云
+                                        https://gitee.com</a>&nbsp;上的邮箱保持一致，才能保证提交后能统计到Git的提交贡献信息。</strong></p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346833423007.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346833423007.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346833423007.jpg"
+                                                src="08/20084828_v3tj.jpg" alt=""></a>
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346836186575.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346836186575.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346836186575.jpg"
+                                                src="08/20084828_BXYm.jpg" alt=""></a>
+                                    </p>
+                                    <p>切换到仓库设置的「远程」选项卡，这时候会发现提示「未找到远程仓库信息」，点击「添加」，将前面创建的远程仓库地址填进去，仓库名称此处命名为「<strong>master</strong>」，可自行命名。
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346836692763.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346836692763.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346836692763.jpg"
+                                                src="08/20084828_sf2K.jpg" alt=""></a>
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346838356910.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346838356910.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346838356910.jpg"
+                                                src="08/20084828_ncMu.jpg" alt=""></a>
+                                    </p>
+                                    <p>添加完成后即可看到项目中的远程分支信息。</p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346840837602.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346840837602.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346840837602.jpg"
+                                                src="08/20084828_XeeA.jpg" alt=""></a>
+                                    </p>
+                                    <h3><strong>推送代码到远程仓库</strong></h3>
+                                    <p>
+                                        点击操作面板上的「推送按钮」，在弹出窗口选择「推送到新的远程仓库分支」，名称填写「<strong>master</strong>」，表示推送到远程仓库的<code>master</code>分支，然后点击「确定」。
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346840245468.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346840245468.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346840245468.jpg"
+                                                src="08/20084828_YZ5z.jpg" alt=""></a>
+                                    </p>
+                                    <p>推送完成后，我们可以顺利的看到「远程仓库」下出现了分支信息。访问<code>码云</code>上的仓库，也能看到推送过去的信息。此时我们已经完成了代码从本地仓库到远程仓库到推送。
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346849002576.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346849002576.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346849002576.jpg"
+                                                src="08/20084828_cFZw.jpg" alt=""></a>
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346849153525.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346849153525.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346849153525.jpg"
+                                                src="08/20084828_mz9n.jpg" alt=""></a>
+                                    </p>
+                                    <h3><strong>注意事项 和 身份授权设置</strong></h3>
+                                    <p>在推送的时候如果遇到了提示推送失败，需要检查用户授权，表示可能<code>微信Web开发者工具</code>并没有读取到本地用户的ssh授权配置，需要在开发工具中设置用户的授权信息。
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346846113342.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346846113342.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346846113342.jpg"
+                                                src="08/20084828_KkLJ.jpg" alt=""></a>
+                                    </p>
+                                    <p>初始化完成后，依次点击「工作空间」-&gt;「设置」-&gt;「网路与认证」-&gt;「认证方式」，可以选择远程仓库的认证方式，默认为「自动」。</p>
+                                    <p>选择「输入用户名和密码」，在下方输入码云的账号和密码后，再次执行推送操作即可。</p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346850785533.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346850785533.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346850785533.jpg"
+                                                src="08/20084828_HMuk.jpg" alt=""></a>
+                                    </p>
+                                    <h3><strong>修改并提交代码</strong></h3>
+                                    <p>接下来我们来修改我们的项目代码。</p>
+                                    <p>
+                                        点击开发工具面板的「版本管理」按钮，关闭「版本管理」面板，打开「pages/index/index.wxml」，修改其中内容「获取头像昵称」为「我的第一次修改提交」，保存。</p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346853890725.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346853890725.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346853890725.jpg"
+                                                src="08/20084828_Xlwc.jpg" alt=""></a>
+                                    </p>
+                                    <p>再次切换到「版本管理」面板，可以看到当前本地分支有一个文件等待提交，选中并勾选文件，可以查看当前文件内发生的改动。</p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346855980791.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346855980791.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346855980791.jpg"
+                                                src="08/20084828_GFV9.jpg" alt=""></a>
+                                    </p>
+                                    <p>在下方提交框填写提交的备注信息，点击「提交」，<strong>将代码提交到本地仓库主干分支上</strong>。提交后，可以在本地仓库分支上查看提交记录。</p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346857820900.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346857820900.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346857820900.jpg"
+                                                src="08/20084829_lohx.jpg" alt=""></a>
+                                    </p>
+                                    <p>
+                                        接下去我们再次将代码从本地分支推送到远程仓库。点击操作面板上的「推送按钮」，在弹出窗口选择「推送到一下远程仓库分支」，选择一存在的远程<code>master</code>仓库的<code>master</code>分支，然后点击「确定」。
+                                    </p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346858476723.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346858476723.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346858476723.jpg"
+                                                src="08/20084829_Do6n.jpg" alt=""></a>
+                                    </p>
+                                    <p>推送完成后，即可在<a data-cke-saved-href="https://gitee.com/" href="https://gitee.com/"
+                                                   target="_blank">码云</a>对应的仓库主页看到提交的代码变更。</p>
+                                    <p>
+                                        <a data-cke-saved-href="http://mweb.normalcoder.com/2018-08-19-15346860228975.jpg"
+                                           href="http://mweb.normalcoder.com/2018-08-19-15346860228975.jpg"><img
+                                                data-cke-saved-src="http://mweb.normalcoder.com/2018-08-19-15346860228975.jpg"
+                                                src="08/20084829_DroO.jpg" alt=""></a>
+                                    </p>
+                                    <h3><strong>总结</strong></h3>
+                                    <p>在上面的操作中，我们通过<code>微信Web开发者工具</code>的版本管理功能，对小程序的代码进行了版本的管理控制，并提交到了远程的Git仓库中。</p>
+                                    <p>在实际的项目开发中，我们还可以充分利用<code>Git</code>在版本管理和协作上的特性，灵活的和他人进行协作，进而规范代码管理，更高效的进行协作开发。
+                                    </p>
+                                </div>
+
+                                <div class="news-links">
+                                    <h3>相关链接</h3>
+                                    <ul class="link-list">
+                                        <li>Gitee 的详细介绍：<a href="https://www.oschina.net/p/gitosc"
+                                                           target="_blank">点击查看</a></li>
+                                        <li>Gitee 的下载地址：<a
+                                                href="https://www.oschina.net/home/login?goto_page=https://www.oschina.net/news/99140/mini-program-gitee"
+                                                target="_blank">点击下载</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="GithubEmbed"></div>
+
+                                <div class="GithubEmbed">
+                                    <script type="text/javascript" defer="defer">
+                                        var genGitIdent = function (ident) {
+                                            var id = [];
+                                            ident.split('/').forEach(function (item, index) {
+                                                if (index <= 2)
+                                                    id.push(item.replace('.git', '').replace(':', '/'));
+                                            });
+                                            return id.join('/') + "/widget_preview";
+                                        };
+                                        var url = ["https://gitee.com", "", "", "", ""];
+                                        var found = false;
+                                        for (var i in url) {
+                                            var ident = url[+i].split('git.oschina.net');
+                                            if (ident.length == 2 && !found) {
+                                                var prv = genGitIdent(ident[1]);
+                                                if (prv && prv.length > 0) {
+                                                    document.getElementsByClassName("GithubEmbed")[0].innerHTML = "";
+                                                    document.write('<script src="//git.oschina.net' + prv + '" type="text\/javascript"><\/script>');
+                                                    found = true;
+                                                }
+                                            }
+                                        }
+                                        if (!found) {
+                                            for (var i in url) {
+                                                var ident = url[+i].split('gitee.com');
+                                                if (ident.length == 2 && !found) {
+                                                    var prv = genGitIdent(ident[1]);
+                                                    if (prv && prv.length > 0) {
+                                                        document.getElementsByClassName("GithubEmbed")[0].innerHTML = "";
+                                                        document.write('<script src="//gitee.com' + prv + '" type="text\/javascript"><\/script>');
+                                                        found = true;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    </script>
+                                    <script src="08/widget_preview"
+                                            type="text/javascript"></script>
+                                </div>
+
+                                <div class="ad-wrap" style="margin: 10px auto">
+                                    <script async=""
+                                            src="08/adsbygoogle.js.下载"></script>
+                                    <!-- oschina-blog-728x90 -->
+                                    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
+                                         data-ad-client="ca-pub-7090564139599510" data-ad-slot="5590362768"
+                                         data-adsbygoogle-status="done">
+                                        <ins id="aswift_0_expand"
+                                             style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;">
+                                            <ins id="aswift_0_anchor"
+                                                 style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;">
+                                                <iframe width="728" height="90" frameborder="0" marginwidth="0"
+                                                        marginheight="0" vspace="0" hspace="0" allowtransparency="true"
+                                                        scrolling="no" allowfullscreen="true"
+                                                        onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}"
+                                                        id="aswift_0" name="aswift_0"
+                                                        style="left:0;position:absolute;top:0;width:728px;height:90px;"
+                                                        src="08/saved_resource.html"></iframe>
+                                            </ins>
+                                        </ins>
+                                    </ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                </div>
+
+                                <div class="news-info">
+                                    <div>本站文章除注明转载外，均为本站原创或编译。欢迎任何形式的转载，但请务必注明出处，尊重他人劳动共创开源社区。</div>
+                                    <div><span class="gray">转载请注明：</span>文章转载自 开源中国社区 <a href="https://www.oschina.net/"
+                                                                                         class="green">[http://www.oschina.net]</a>
+                                    </div>
+                                    <div><span class="gray">本文标题：</span>微信小程序如何使用 Git 实现版本管理和协作开发</div>
+                                    <div><span class="gray">本文地址：</span><a
+                                            href="https://www.oschina.net/news/99140/mini-program-gitee" class="green">https://www.oschina.net/news/99140/mini-program-gitee</a>
+                                    </div>
+                                </div>
+
+                                <div class="ui basic center aligned segment action">
+                                    <div class="ui huge buttons">
+                                        <a class="ui basic button collect-btn hover" data-id="99140"
+                                           data-user-id="2267325" data-obj-type="4" data-max="99" data-tag-required=""
+                                           data-current-user-id="" data-recommend-tags=""><i
+                                                class="star outline icon"></i>收藏 (<span data-collect-count=""
+                                                                                        data-id="99140"
+                                                                                        data-obj-type="4">33</span>)</a>
+                                        <div class="ui basic dropdown share button bdsharebuttonbox reset dropdown-share bdshare-button-style0-16"
+                                             data-tag="share-blog" tabindex="0" data-bd-bind="1542612249743">
+                                            <i class="share icon"></i> <span>分享</span>
+                                            <div class="menu" tabindex="-1">
+                                                <a class="item" data-cmd="tsina"><i class="weibo icon"></i>微博</a>
+                                                <a class="item" data-cmd="sqq"><i class="qq icon"></i>QQ</a>
+                                                <a class="item" data-cmd="weixin"><i class="weixin icon"></i>微信</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui threaded comments segment" id="commentsContainer">
+                                <div class="ui inverted dimmer comments-loader">
+                                    <div class="ui text loader">加载中</div>
+                                </div>
+
+                                <div class="comments-wrap" id="comments">
+
+
+                                    <h3 class="ui header comments-title">最新评论（<span>5</span>）</h3>
+
+                                    <div class="comment" data-comment-id="296084980" data-comment-user-id="1770257">
+                                        <a class="ui circular image avatar" href="https://my.oschina.net/u/1770257"
+                                           target="_blank">
+                                            <div class="osc-avatar small-portrait _35x35" title="临风笑笑"
+                                                 data-user-id="1770257">
+                                                <span class="text-portrait" style="background: #d35400">临</span>
+                                            </div>
+                                        </a>
+                                        <div class="content">
+                                            <a class="author" href="https://my.oschina.net/u/1770257"
+                                               name="rpl_296084980" target="_blank">临风笑笑</a>
+                                            <div class="metadata">
+                                                <span class="date">2018-08-22 00:42</span>
+                                            </div>
+                                            <div class="text" data-emoji-render="">
+                                                微信开发工具什么时候出个Linux版
+                                            </div>
+                                            <div class="actions">
+                                                <a class="like " data-comment-like-btn="" data-comment-id="296084980">
+                                                    <i class="like outline icon"></i> <span data-comment-like-count=""
+                                                                                            data-comment-id="296084980">0</span>
+                                                    赞
+                                                </a>
+                                                <a class="ban" ban-report="" data-id="296084980" data-obj-type="16"
+                                                   data-url="https://www.oschina.net/news/99140/mini-program-gitee#rpl_296084980">
+                                                    <i class="ban icon"></i> 举报
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="comment" data-comment-id="296084642" data-comment-user-id="878142">
+                                        <a class="ui circular image avatar" href="https://my.oschina.net/cxz001"
+                                           target="_blank">
+                                            <div class="osc-avatar small-portrait _35x35" title="吾爱"
+                                                 data-user-id="878142">
+                                                <img src="08/878142_50.png"
+                                                     alt="吾爱" title="吾爱">
+                                            </div>
+                                        </a>
+                                        <div class="content">
+                                            <a class="author" href="https://my.oschina.net/cxz001" name="rpl_296084642"
+                                               target="_blank">吾爱</a>
+                                            <div class="metadata">
+                                                <span class="date">2018-08-20 14:23</span>
+                                            </div>
+                                            <div class="text" data-emoji-render="">
+                                                开发者工具只用来预览调试，代码还是用vscode写
+                                            </div>
+                                            <div class="actions">
+                                                <a class="like " data-comment-like-btn="" data-comment-id="296084642">
+                                                    <i class="like outline icon"></i> <span data-comment-like-count=""
+                                                                                            data-comment-id="296084642">0</span>
+                                                    赞
+                                                </a>
+                                                <a class="ban" ban-report="" data-id="296084642" data-obj-type="16"
+                                                   data-url="https://www.oschina.net/news/99140/mini-program-gitee#rpl_296084642">
+                                                    <i class="ban icon"></i> 举报
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="comment" data-comment-id="296084638" data-comment-user-id="1043184">
+                                        <a class="ui circular image avatar" href="https://my.oschina.net/blu10phcn"
+                                           target="_blank">
+                                            <div class="osc-avatar small-portrait _35x35" title="blu10ph"
+                                                 data-user-id="1043184">
+                                                <img src="08/1043184_50.jpg"
+                                                     alt="blu10ph" title="blu10ph">
+                                            </div>
+                                        </a>
+                                        <div class="content">
+                                            <a class="author" href="https://my.oschina.net/blu10phcn"
+                                               name="rpl_296084638" target="_blank">blu10ph</a>
+                                            <div class="metadata">
+                                                <span class="date">2018-08-20 14:01</span>
+                                            </div>
+                                            <div class="text" data-emoji-render="">
+                                                编辑器太难用~
+                                            </div>
+                                            <div class="actions">
+                                                <a class="like " data-comment-like-btn="" data-comment-id="296084638">
+                                                    <i class="like outline icon"></i> <span data-comment-like-count=""
+                                                                                            data-comment-id="296084638">0</span>
+                                                    赞
+                                                </a>
+                                                <a class="ban" ban-report="" data-id="296084638" data-obj-type="16"
+                                                   data-url="https://www.oschina.net/news/99140/mini-program-gitee#rpl_296084638">
+                                                    <i class="ban icon"></i> 举报
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="comment" data-comment-id="296084596" data-comment-user-id="2261068">
+                                        <a class="ui circular image avatar" href="https://my.oschina.net/u/2261068"
+                                           target="_blank">
+                                            <div class="osc-avatar small-portrait _35x35" title="雲霏霏"
+                                                 data-user-id="2261068">
+                                                <img src="08/2261068_50.png"
+                                                     alt="雲霏霏" title="雲霏霏">
+                                            </div>
+                                        </a>
+                                        <div class="content">
+                                            <a class="author" href="https://my.oschina.net/u/2261068"
+                                               name="rpl_296084596" target="_blank">雲霏霏</a>
+                                            <div class="metadata">
+                                                <span class="date">2018-08-20 10:26</span>
+                                            </div>
+                                            <div class="text" data-emoji-render="">
+                                                为啥我的一点就提示我没有开通腾讯云？
+                                            </div>
+                                            <div class="actions">
+                                                <a class="like " data-comment-like-btn="" data-comment-id="296084596">
+                                                    <i class="like outline icon"></i> <span data-comment-like-count=""
+                                                                                            data-comment-id="296084596">0</span>
+                                                    赞
+                                                </a>
+                                                <a class="ban" ban-report="" data-id="296084596" data-obj-type="16"
+                                                   data-url="https://www.oschina.net/news/99140/mini-program-gitee#rpl_296084596">
+                                                    <i class="ban icon"></i> 举报
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="comment" data-comment-id="296084547" data-comment-user-id="12">
+                                        <a class="ui circular image avatar" href="https://my.oschina.net/javayou"
+                                           target="_blank">
+                                            <div class="osc-avatar small-portrait _35x35" title="红薯" data-user-id="12">
+                                                <img src="08/12_50.jpg" alt="红薯"
+                                                     title="红薯">
+                                            </div>
+                                        </a>
+                                        <div class="content">
+                                            <a class="author" href="https://my.oschina.net/javayou" name="rpl_296084547"
+                                               target="_blank">红薯</a>
+                                            <div class="metadata">
+                                                <span class="date">2018-08-20 08:53</span>
+                                            </div>
+                                            <div class="text" data-emoji-render="">
+                                                来来来，微信小程序，放码过来
+                                            </div>
+                                            <div class="actions">
+                                                <a class="like " data-comment-like-btn="" data-comment-id="296084547">
+                                                    <i class="like outline icon"></i> <span data-comment-like-count=""
+                                                                                            data-comment-id="296084547">0</span>
+                                                    赞
+                                                </a>
+                                                <a class="ban" ban-report="" data-id="296084547" data-obj-type="16"
+                                                   data-url="https://www.oschina.net/news/99140/mini-program-gitee#rpl_296084547">
+                                                    <i class="ban icon"></i> 举报
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ui basic center aligned segment pagination-wrap">
+                                    </div>
+                                </div>
+
+                                <div id="commentForm">
+                                    <form class="ui reply form comment-form">
+                                        <div class="field"><textarea rows="4" placeholder="在这里发表你对此文的观点"
+                                                                     maxlength="1000"
+                                                                     class="disabled-resize"></textarea></div>
+                                        <div class="field foot-bar">
+                                            <div class="ui horizontal link list toolbox"><a data-popup="toolbox-emoji"
+                                                                                            class="item"><i
+                                                    class="smile icon"></i>插入表情</a>
+                                                <div class="ui popup bottom left transition hidden toolbox-popup toolbox-emoji">
+                                                    <div class="emoji-wrapper">
+                                                        <div class="ui secondary pointing menu"><a class="item active">People</a><a
+                                                                class="item">Nature</a><a class="item">Objects</a><a
+                                                                class="item">Places</a><a class="item">Symbols</a></div>
+                                                        <div class="emoji-list">
+                                                            <div class="ui ten column padded grid">
+                                                                <div class="column">
+                                                                    <div title="bowtie" data-emoji="bowtie"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="smile" data-emoji="smile"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="laughing" data-emoji="laughing"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="blush" data-emoji="blush"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="smiley" data-emoji="smiley"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="relaxed" data-emoji="relaxed"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="smirk" data-emoji="smirk"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="heart_eyes" data-emoji="heart_eyes"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="kissing_heart"
+                                                                         data-emoji="kissing_heart"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="kissing_closed_eyes"
+                                                                         data-emoji="kissing_closed_eyes"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="flushed" data-emoji="flushed"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="relieved" data-emoji="relieved"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="satisfied" data-emoji="satisfied"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="grin" data-emoji="grin"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="wink" data-emoji="wink"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="stuck_out_tongue_winking_eye"
+                                                                         data-emoji="stuck_out_tongue_winking_eye"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="stuck_out_tongue_closed_eyes"
+                                                                         data-emoji="stuck_out_tongue_closed_eyes"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="grinning" data-emoji="grinning"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="kissing" data-emoji="kissing"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="kissing_smiling_eyes"
+                                                                         data-emoji="kissing_smiling_eyes"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="stuck_out_tongue"
+                                                                         data-emoji="stuck_out_tongue"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="sleeping" data-emoji="sleeping"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="worried" data-emoji="worried"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="frowning" data-emoji="frowning"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="anguished" data-emoji="anguished"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="open_mouth" data-emoji="open_mouth"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="grimacing" data-emoji="grimacing"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="confused" data-emoji="confused"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="hushed" data-emoji="hushed"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="expressionless"
+                                                                         data-emoji="expressionless"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="unamused" data-emoji="unamused"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="sweat_smile" data-emoji="sweat_smile"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="sweat" data-emoji="sweat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="disappointed_relieved"
+                                                                         data-emoji="disappointed_relieved"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="weary" data-emoji="weary"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="pensive" data-emoji="pensive"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="disappointed" data-emoji="disappointed"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="confounded" data-emoji="confounded"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="fearful" data-emoji="fearful"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="cold_sweat" data-emoji="cold_sweat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="persevere" data-emoji="persevere"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="cry" data-emoji="cry"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="sob" data-emoji="sob"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="joy" data-emoji="joy"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="astonished" data-emoji="astonished"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="scream" data-emoji="scream"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="neckbeard" data-emoji="neckbeard"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="tired_face" data-emoji="tired_face"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="angry" data-emoji="angry"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="rage" data-emoji="rage"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="triumph" data-emoji="triumph"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="sleepy" data-emoji="sleepy"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="yum" data-emoji="yum"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="mask" data-emoji="mask"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="sunglasses" data-emoji="sunglasses"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="dizzy_face" data-emoji="dizzy_face"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="imp" data-emoji="imp"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="smiling_imp" data-emoji="smiling_imp"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="neutral_face" data-emoji="neutral_face"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="no_mouth" data-emoji="no_mouth"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="innocent" data-emoji="innocent"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="alien" data-emoji="alien"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="yellow_heart" data-emoji="yellow_heart"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="blue_heart" data-emoji="blue_heart"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="purple_heart" data-emoji="purple_heart"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="heart" data-emoji="heart"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="green_heart" data-emoji="green_heart"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="broken_heart" data-emoji="broken_heart"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="heartbeat" data-emoji="heartbeat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="heartpulse" data-emoji="heartpulse"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="two_hearts" data-emoji="two_hearts"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="revolving_hearts"
+                                                                         data-emoji="revolving_hearts"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="cupid" data-emoji="cupid"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="sparkling_heart"
+                                                                         data-emoji="sparkling_heart"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="sparkles" data-emoji="sparkles"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="star" data-emoji="star"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="star2" data-emoji="star2"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="dizzy" data-emoji="dizzy"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="boom" data-emoji="boom"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="collision" data-emoji="collision"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="anger" data-emoji="anger"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="exclamation" data-emoji="exclamation"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="question" data-emoji="question"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="grey_exclamation"
+                                                                         data-emoji="grey_exclamation"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="grey_question"
+                                                                         data-emoji="grey_question"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="zzz" data-emoji="zzz"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="dash" data-emoji="dash"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="sweat_drops" data-emoji="sweat_drops"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="notes" data-emoji="notes"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="musical_note" data-emoji="musical_note"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="fire" data-emoji="fire"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="hankey" data-emoji="hankey"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="poop" data-emoji="poop"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="shit" data-emoji="shit"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="+1" data-emoji="+1"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="thumbsup" data-emoji="thumbsup"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="-1" data-emoji="-1"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="thumbsdown" data-emoji="thumbsdown"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="ok_hand" data-emoji="ok_hand"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="punch" data-emoji="punch"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="facepunch" data-emoji="facepunch"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="fist" data-emoji="fist"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="v" data-emoji="v"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="wave" data-emoji="wave"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="hand" data-emoji="hand"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="raised_hand" data-emoji="raised_hand"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="open_hands" data-emoji="open_hands"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="point_up" data-emoji="point_up"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="point_down" data-emoji="point_down"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="point_left" data-emoji="point_left"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="point_right" data-emoji="point_right"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="raised_hands" data-emoji="raised_hands"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="pray" data-emoji="pray"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="point_up_2" data-emoji="point_up_2"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="clap" data-emoji="clap"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="muscle" data-emoji="muscle"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="metal" data-emoji="metal"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="fu" data-emoji="fu"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="walking" data-emoji="walking"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="runner" data-emoji="runner"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="running" data-emoji="running"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="couple" data-emoji="couple"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="family" data-emoji="family"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="two_men_holding_hands"
+                                                                         data-emoji="two_men_holding_hands"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="two_women_holding_hands"
+                                                                         data-emoji="two_women_holding_hands"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="dancer" data-emoji="dancer"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="dancers" data-emoji="dancers"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="ok_woman" data-emoji="ok_woman"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="no_good" data-emoji="no_good"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="information_desk_person"
+                                                                         data-emoji="information_desk_person"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="raising_hand" data-emoji="raising_hand"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="bride_with_veil"
+                                                                         data-emoji="bride_with_veil"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="person_with_pouting_face"
+                                                                         data-emoji="person_with_pouting_face"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="person_frowning"
+                                                                         data-emoji="person_frowning"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="bow" data-emoji="bow"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="couplekiss" data-emoji="couplekiss"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="couple_with_heart"
+                                                                         data-emoji="couple_with_heart"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="massage" data-emoji="massage"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="haircut" data-emoji="haircut"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="nail_care" data-emoji="nail_care"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="boy" data-emoji="boy"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="girl" data-emoji="girl"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="woman" data-emoji="woman"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="man" data-emoji="man"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="baby" data-emoji="baby"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="older_woman" data-emoji="older_woman"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="older_man" data-emoji="older_man"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="person_with_blond_hair"
+                                                                         data-emoji="person_with_blond_hair"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="man_with_gua_pi_mao"
+                                                                         data-emoji="man_with_gua_pi_mao"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="man_with_turban"
+                                                                         data-emoji="man_with_turban"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="construction_worker"
+                                                                         data-emoji="construction_worker"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="cop" data-emoji="cop"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="angel" data-emoji="angel"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="princess" data-emoji="princess"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="smiley_cat" data-emoji="smiley_cat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="smile_cat" data-emoji="smile_cat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="heart_eyes_cat"
+                                                                         data-emoji="heart_eyes_cat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="kissing_cat" data-emoji="kissing_cat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="smirk_cat" data-emoji="smirk_cat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="scream_cat" data-emoji="scream_cat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="crying_cat_face"
+                                                                         data-emoji="crying_cat_face"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="joy_cat" data-emoji="joy_cat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="pouting_cat" data-emoji="pouting_cat"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="japanese_ogre"
+                                                                         data-emoji="japanese_ogre"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="japanese_goblin"
+                                                                         data-emoji="japanese_goblin"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="see_no_evil" data-emoji="see_no_evil"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="hear_no_evil" data-emoji="hear_no_evil"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="speak_no_evil"
+                                                                         data-emoji="speak_no_evil"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="guardsman" data-emoji="guardsman"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="skull" data-emoji="skull"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="feet" data-emoji="feet"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="lips" data-emoji="lips"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="kiss" data-emoji="kiss"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="droplet" data-emoji="droplet"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="ear" data-emoji="ear"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="eyes" data-emoji="eyes"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="nose" data-emoji="nose"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="tongue" data-emoji="tongue"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="love_letter" data-emoji="love_letter"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="bust_in_silhouette"
+                                                                         data-emoji="bust_in_silhouette"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="busts_in_silhouette"
+                                                                         data-emoji="busts_in_silhouette"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="speech_balloon"
+                                                                         data-emoji="speech_balloon"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="thought_balloon"
+                                                                         data-emoji="thought_balloon"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="feelsgood" data-emoji="feelsgood"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="finnadie" data-emoji="finnadie"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="goberserk" data-emoji="goberserk"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="godmode" data-emoji="godmode"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="hurtrealbad" data-emoji="hurtrealbad"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="rage1" data-emoji="rage1"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="rage2" data-emoji="rage2"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="rage3" data-emoji="rage3"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="rage4" data-emoji="rage4"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="suspect" data-emoji="suspect"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div title="trollface" data-emoji="trollface"
+                                                                         class="emoji-item"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="item"><i class="hashtag icon"></i>插入软件</a></div>
+                                            <div class="count">0/1000</div>
+                                            <div class="ui primary labeled icon button right floated disabled"><i
+                                                    class="icon edit"></i> 发表评论
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="ui mini message hidden" style="display: none;"><i class="icon info"></i>
+                                        <span></span></div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="ui basic segment article-list article-footer-list">
+                            <div class="scroll-tab hidden-scroll">
+                                <div class="ui green pointing secondary massive menu newsDetail-tab">
+                                    <a class="active item" data-tab="relArticleList">相关文章</a>
+                                    <a class="item" data-tab="newArticleList">最新文章</a>
+                                </div>
+                            </div>
+                            <div class="ui basic segment active tab article-list" data-tab="relArticleList"
+                                 id="relArticleList">
+
+                                <div class="ui very relaxed items list-container news-detail-list-container">
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a href="https://my.oschina.net/u/2862224/blog/2051002"
+                                                                  target="_blank" title="微信小程序版本管理使用gitee">微信小程序版本管理使用gitee</a>
+                                            </h3>
+                                            <div class="description">
+                                                <p class="line-clamp">
+                                                    摘要：小程序协助开发挺重要的，但是开发工具到现在开始才支持版本管理，也是良心功能啊。马上试试连上gitee，团体开发更方便。
+                                                    准备：安装git、安装最新的微信小程序开发助手、注册gitee账号...</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">昙花一现</div>
+                                                    <div class="item">09/13</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a href="http://www.jianshu.com/p/2d9c4683eeb6"
+                                                                  target="_blank" title="编程微刊第五期文章汇总（2018.5）">编程微刊第五期文章汇总（2018.5）</a>
+                                            </h3>
+                                            <div class="description">
+                                                <p class="line-clamp">1. 推荐阅读 前端开发工作中如何快速成长和学习？ 初中级前端开发工程师如何提升个人能力？
+                                                    程序员如何利用空闲时间挣零花钱 来自一位00后程序员的成长历程 程序员如何打造个人技术影响力 2....</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">祈澈姑娘</div>
+                                                    <div class="item">05/30</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 0</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="images">
+                                            <a class="ui small image" href="http://www.jianshu.com/p/2d9c4683eeb6"
+                                               target="_blank">
+                                                <img src="08/feea114b736f8e43cdae4977b0a0543322aab089.png"
+                                                     alt="" data-img-render="" style="width: 100%; height: auto;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a href="http://www.jianshu.com/p/8dea8588cedf"
+                                                                  target="_blank" title="码云支持提交代码时切换任务状态，怎么用才更高效？">码云支持提交代码时切换任务状态，怎么用才更高效？</a>
+                                            </h3>
+                                            <div class="description">
+                                                <p class="line-clamp">码云企业版 改进内容主要包括三项： 任务状态自定义操作指令 —— 可在 commit
+                                                    代码时通过指令来切换任务状态。 企业全局 WebHook 管理。 详细直观的仓库访问日志。 一、任务状态自定义操作指...</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">码云Gitee</div>
+                                                    <div class="item">08/30</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 0</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="images">
+                                            <a class="ui small image" href="http://www.jianshu.com/p/8dea8588cedf"
+                                               target="_blank">
+                                                <img src="08/860fbd72459d26e39bc2ba9b04fe8cc141af2541.jpg"
+                                                     alt="" data-img-render="" style="width: auto; height: 100%;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a href="http://www.jianshu.com/p/633e9d0d2411"
+                                                                  target="_blank" title="如何控制 Git 库的膨胀？ GC 一步搞定！">如何控制
+                                                Git 库的膨胀？ GC 一步搞定！</a></h3>
+                                            <div class="description">
+                                                <p class="line-clamp">
+                                                    相信每个公司都有自己的官网。小明公司也不例外，不过小明却发现公司的“猿”哥哥将许多视频放在了代码仓库里，导致原本只有代码的仓库从早期的几十MB，飙升至
+                                                    1G以上，变得无比臃肿(或者是慢...</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">码云Gitee</div>
+                                                    <div class="item">09/13</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 0</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="images">
+                                            <a class="ui small image" href="http://www.jianshu.com/p/633e9d0d2411"
+                                               target="_blank">
+                                                <img src="08/aa2e261c71ef5a3d7ac182e1f44d42c8916a20d2.png"
+                                                     alt="" data-img-render="" style="width: auto; height: 100%;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a href="https://juejin.im/post/5b852837e51d4556f30b66d1"
+                                                                  target="_blank" title="完美体验！在小程序中用Git无缝管理版本开发！">完美体验！在小程序中用Git无缝管理版本开发！</a>
+                                            </h3>
+                                            <div class="description">
+                                                <p class="line-clamp">前言
+                                                    在微信小程序开发的过程中，代码版本管理往往需要使用第三方工具进行管理。虽然提供了对文件版本状态的提示，但实际的使用体验依然不尽人意。
+                                                    随着的更新，最新的内测版本已经支持的直接...</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">诺墨</div>
+                                                    <div class="item">08/29</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 0</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="images">
+                                            <a class="ui small image"
+                                               href="https://juejin.im/post/5b852837e51d4556f30b66d1" target="_blank">
+                                                <img src="08/473991870950bc37ec52100bcbb4c4711f5d3d93"
+                                                     alt="" data-img-render="" style="width: auto; height: 100%;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="page-load-status">
+                                    <p class="infinite-scroll-request">
+                                        <i class="ui active small inline loader" style="display: none;"></i>
+                                    </p>
+                                    <p class="infinite-scroll-last">没有更多内容</p>
+                                    <p class="infinite-scroll-error">加载失败，请刷新页面</p>
+                                </div>
+                                <a class="ui fluid button load-more-button">加载更多</a>
+                                <p class="pagination" style="display: none;">
+                                    <a class="rel-pagination pagination__next" style="display: none"
+                                       href="https://www.oschina.net/news/widgets/_news_detail_list_rel?obj=99140&amp;p=2&amp;type=ajax">下一页</a>
+                                </p>
+                            </div>
+                            <div class="ui basic segment tab article-list" data-tab="newArticleList"
+                                 id="newArticleList">
+
+
+                                <div class="ui very relaxed items list-container news-detail-list-container">
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a
+                                                    href="https://www.oschina.net/news/101933/hi-nginx-1-7-5-released"
+                                                    target="_blank" title="hi-nginx-1.7.5 发布，优化系统缓存机制">hi-nginx-1.7.5
+                                                发布，优化系统缓存机制</a></h3>
+                                            <div class="description">
+                                                <p class="line-clamp">hi-nginx-1.7.5发布。 主要更新： 升级nginx至1.15.6 升级python绑定
+                                                    更新系统缓存机制 仓库：https://github.com/webcpp/hi-nginx
+                                                    文档：https://doc.hi-nginx.com/...</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">所以呢</div>
+                                                    <div class="item">今天 12:10</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 0</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a
+                                                    href="https://www.oschina.net/news/101932/mybatis-plus-3-0-6-released"
+                                                    target="_blank" title="mybatis-plus 3.0.6 发布，Mybatis 增强工具包">mybatis-plus
+                                                3.0.6 发布，Mybatis 增强工具包</a></h3>
+                                            <div class="description">
+                                                <p class="line-clamp">Mybatis-Plus 架构图 GITEE GITHUB 文档地址 点击 MP 投一票 升级日志：
+                                                    修复entity中2个以上条件并且拼接ODER BY 或 GROUP BY 产生的 WHERE X1 =? AND X2
+                                                    refactor(SerializedLambda.java)...</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">青苗</div>
+                                                    <div class="item">今天 11:13</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="images">
+                                            <a class="ui small image"
+                                               href="https://www.oschina.net/news/101932/mybatis-plus-3-0-6-released"
+                                               target="_blank">
+                                                <img src="08/mybatis-plus_fAjtk.png"
+                                                     alt="" data-img-render="" style="width: 100%; height: auto;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a
+                                                    href="https://www.oschina.net/news/101931/v-region-2-0-0-released"
+                                                    target="_blank" title="v-region 2.0.0 发布，行政区划选择器(4 级联动城市选择)">v-region
+                                                2.0.0 发布，行政区划选择器(4 级联动城市选择)</a></h3>
+                                            <div class="description">
+                                                <p class="line-clamp">v-region v2.0.0 版本发布，更新内容： 重构插件 修复地级市（“直筒子市”）的“区
+                                                    /县”级别无数据的问题 为直辖市、地级市（“直筒子市”）增加相应的虚拟级别数据 增加 disabled 参数，允...</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">TerryZ</div>
+                                                    <div class="item">今天 10:21</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 4</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a href="https://www.oschina.net/event/2289319"
+                                                                  target="_blank"
+                                                                  title="Apache CarbonData &amp; Spark Meetup 12月1日深圳见">Apache
+                                                CarbonData &amp; Spark Meetup 12月1日深圳见</a></h3>
+                                            <div class="description">
+                                                <p class="line-clamp">本次 Meetup 集合了来自 Databricks、华为及 Intel
+                                                    的重量级嘉宾，这些嘉宾将以丰富的技术经验与独到的技术见解，为我们带来数据存储与计算效率方面更深入的技术剖析。...</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">王练</div>
+                                                    <div class="item">今天 08:40</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 0</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="images">
+                                            <a class="ui small image" href="https://www.oschina.net/event/2289319"
+                                               target="_blank">
+                                                <img src="08/carbondata_3mxLj.png"
+                                                     alt="" data-img-render="" style="width: 100%; height: auto;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item news-item">
+                                        <div class="content">
+                                            <h3 class="header"><a href="https://my.oschina.net/didispace/blog/2877871"
+                                                                  target="_blank"
+                                                                  title="每日一博 | Logback 中如何自定义灵活的日志过滤规则">每日一博 | Logback
+                                                中如何自定义灵活的日志过滤规则</a></h3>
+                                            <div class="description">
+                                                <p class="line-clamp">
+                                                    当我们需要对日志的打印要做一些范围的控制的时候，通常都是通过为各个Appender设置不同的Filter配置来实现。在Logback中自带了两个过滤器实现：ch.qos.logback.classic.filter.LevelFilter...</p>
+                                            </div>
+                                            <div class="extra">
+                                                <div class="ui horizontal list">
+                                                    <div class="item">王练</div>
+                                                    <div class="item">今天 08:30</div>
+
+                                                    <div class="item"><i class="comment outline icon"></i> 0</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="page-load-status">
+                                    <p class="infinite-scroll-request">
+                                        <i class="ui active small inline loader" style="display: none"></i>
+                                    </p>
+                                    <p class="infinite-scroll-last">没有更多内容</p>
+                                    <p class="infinite-scroll-error">加载失败，请刷新页面</p>
+                                </div>
+                                <a class="ui fluid button load-more-button">加载更多</a>
+                                <p class="pagination">
+                                    <a class="news-pagination pagination__next" style="display: none"
+                                       href="https://www.oschina.net/news/widgets/_news_detail_list_news?p=2&amp;type=ajax">下一页</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="four wide widescreen screen four wide large screen four wide computer sixteen wide tablet sixteen wide mobile column sidebar news-sidebar">
+
+                        <div class="ad-wrap">
+                            <div name="www_news_details_sidebar_1" data-traceid="www_news_details_sidebar_1_ad"
+                                 data-tracepid="www_news_details_sidebar_1">
+                                <script async=""
+                                        src="08/adsbygoogle.js.下载"></script>
+                                <!-- osc_news_details_sidebar_1_ad_250x250 -->
+                                <ins class="adsbygoogle" style="display:inline-block;width:250px;height:250px"
+                                     data-ad-client="ca-pub-7090564139599510" data-ad-slot="9649490513"
+                                <="" ins="" data-adsbygoogle-status="done">
+                                <ins id="aswift_1_expand"
+                                     style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent;">
+                                    <ins id="aswift_1_anchor"
+                                         style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent;">
+                                        <iframe width="250" height="250" frameborder="0" marginwidth="0"
+                                                marginheight="0" vspace="0" hspace="0" allowtransparency="true"
+                                                scrolling="no" allowfullscreen="true"
+                                                onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}"
+                                                id="aswift_1" name="aswift_1"
+                                                style="left:0;position:absolute;top:0;width:250px;height:250px;"
+                                                src="08/saved_resource(1).html"></iframe>
+                                    </ins>
+                                </ins>
+                                </ins></div>
+                        </div>
+
+
+                        <div class="section articles-list">
+                            <div class="ui items">
+                                <h3 class="ui header">热门资讯</h3>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header"
+                                           href="https://www.oschina.net/news/101769/vscode-1-29-released"
+                                           target="_blank">VS Code 1.29 发布，众多新功能有没有你想要的？</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/u/3820517"
+                                                                     target="_blank">h4cd</a></div>
+                                                <div class="item">11/14 07:09</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101769/vscode-1-29-released#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 59 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header"
+                                           href="https://www.oschina.net/news/101826/deepin-15-8-released"
+                                           target="_blank">深度操作系统 15.8 —— 极致体验，美观高效</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/u/3163927"
+                                                                     target="_blank">eva-bling</a></div>
+                                                <div class="item">11/15 14:11</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101826/deepin-15-8-released#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 64 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header" href="https://www.oschina.net/news/101798/amazon-corretto"
+                                           target="_blank">Java 免费！亚马逊开源 Java SE 发行版的直接替代品 Corretto</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/u/3820517"
+                                                                     target="_blank">h4cd</a></div>
+                                                <div class="item">11/15 06:14</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101798/amazon-corretto#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 31 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header"
+                                           href="https://www.oschina.net/news/101928/about-oracle-database-code"
+                                           target="_blank">程序员吐槽：我永远不会再为 Oracle 工作了 ！</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/mrtudou"
+                                                                     target="_blank">王练</a></div>
+                                                <div class="item">今天 08:27</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101928/about-oracle-database-code#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 32 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header" href="https://www.oschina.net/news/101906/vue-3-0-updates"
+                                           target="_blank">Vue 3.0 更新计划：更快，更小，让开发者更轻松</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/mrtudou"
+                                                                     target="_blank">王练</a></div>
+                                                <div class="item">昨天 08:19</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101906/vue-3-0-updates#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 25 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header"
+                                           href="https://www.oschina.net/news/101813/ux-and-ui-changes-in-visual-studio-2019"
+                                           target="_blank">微软再次修改 Visual Studio 图标，并微调用户界面</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/u/2903254"
+                                                                     target="_blank">达尔文</a></div>
+                                                <div class="item">11/15 08:00</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101813/ux-and-ui-changes-in-visual-studio-2019#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 19 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header"
+                                           href="https://www.oschina.net/news/101882/http-over-quic-rename-http3"
+                                           target="_blank">下一代 HTTP/3 协议将弃用 TCP 改用 QUIC</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/mrtudou"
+                                                                     target="_blank">王练</a></div>
+                                                <div class="item">前天 08:21</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101882/http-over-quic-rename-http3#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 16 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header"
+                                           href="https://www.oschina.net/news/101771/notepadpp-7-6-released"
+                                           target="_blank">Notepad++ 7.6 发布，新增插件管理中心</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/u/3820517"
+                                                                     target="_blank">h4cd</a></div>
+                                                <div class="item">11/14 07:37</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101771/notepadpp-7-6-released#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 12 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header"
+                                           href="https://www.oschina.net/news/101747/6g-research-will-officially-launched-this-year"
+                                           target="_blank">工信部再次发声：6G 概念研究今年正式启动</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/u/2903254"
+                                                                     target="_blank">达尔文</a></div>
+                                                <div class="item">11/13 08:09</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101747/6g-research-will-officially-launched-this-year#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 36 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="content">
+                                        <a class="header"
+                                           href="https://www.oschina.net/news/101870/red-hat-enterprise-linux-8-beta-released"
+                                           target="_blank">Red Hat Enterprise Linux 8 Beta 现已发布！</a>
+                                        <div class="extra">
+                                            <div class="ui horizontal mini list">
+                                                <div class="item"><a href="https://my.oschina.net/hardbone"
+                                                                     target="_blank">局长</a></div>
+                                                <div class="item">前天 07:40</div>
+                                                <div class="item"><a
+                                                        href="https://www.oschina.net/news/101870/red-hat-enterprise-linux-8-beta-released#comments"
+                                                        target="_blank"><i class="comment outline icon"></i> 16 评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ad-wrap">
+                            <div name="www_news_sidebar_1" data-traceid="www_news_sidebar_1_ad"
+                                 data-tracepid="www_news_sidebar_1">
+
+
+                            </div>
+                        </div>
+
+                        <div class="ad-wrap">
+                            <a name="www_news_sidebar_2">
+                            </a><a data-traceid="www_news_sidebar_2_ad" data-tracepid="www_news_sidebar_2"
+                                   href="https://blockdao.net/" target="_blank" title="Blockdao">
+                            <img src="08/www_news_sidebar_2_pTVyx.jpg" width="280"
+                                 height="108">
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // 百度分享
+                window._bd_share_config = {
+                    common: {
+                        bdText: '微信小程序如何使用 Git 实现版本管理和协作开发 - 开源中国',
+                        bdDesc: '前言 在微信小程序开发的过程中，代码版本管理往往需要使用第三方工具进行管理。虽然微信Web开发工具提供了对Git文件版本状态的提示，但实际的使用体验依然不尽人意。 随着微信Web开发工具的更新，最新的内测版本...',
+                        bdUrl: 'https://www.oschina.net/news/99140/mini-program-gitee',
+                        bdPic: 'https://static.oschina.net/uploads/logo/gitosc_4BzS5.png'
+                    },
+                    share: [{
+                        bdSize: 16
+                    }]
+                };
+                with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = '/new-osc/js/utils/plugins/bdshare_api/share.js?v=' + ~(-new Date() / 36e5)];
+            </script>
+
+            <script type="text/javascript" src="08/news"></script>
+
+        </div>
+    </div>
+    <div id="footer" class="ui vertical footer segment mb-hide">
+        <div class="ui container">
+            <div class="ui grid">
+                <div class="eight wide mobile four wide tablet four wide computer column">
+                    <h4 class="ui header">开源中国社区</h4>
+                    <div class="ui link list">
+                        <a class="item" href="https://www.oschina.net/home/aboutosc" target="_blank">关于我们</a>
+                        <a class="item" href="https://www.oschina.net/home/aboutosc" target="_blank">联系我们</a>
+                        <a class="item" href="https://www.oschina.net/home/aboutosc#partners#" target="_blank">合作伙伴</a>
+                        <a class="item" href="https://www.oschina.net/openapi" target="_blank">Open API</a>
+                    </div>
+                </div>
+                <div class="eight wide mobile four wide tablet four wide computer column">
+                    <h4 class="ui header">在线工具</h4>
+                    <div class="ui link list">
+                        <a class="item" href="https://gitee.com/" target="_blank">码云 Gitee.com</a>
+                        <a class="item" href="http://tool.oschina.net/" target="_blank">在线工具</a>
+                        <a class="item" href="http://team.oschina.net/" target="_blank">Team@OSC 项目协作平台</a>
+                        <a class="item" href="http://runjs.cn/" target="_blank">RunJS 在线开发</a>
+                    </div>
+                </div>
+                <div class="center aligned eight wide mobile two wide tablet two wide computer column">
+                    <h4 class="ui header">微信公众号</h4>
+                    <img src="08/wechat_qrcode.jpg" alt="微信公众号">
+                </div>
+                <div class="center aligned eight wide mobile six wide tablet six wide computer column">
+                    <h3 class="ui header">开源中国 APP</h3>
+                    <p>聚合全网技术文章，根据你的阅读喜好进行个性推荐</p>
+                    <a href="https://www.oschina.net/app" target="_blank" class="ui large primary button">下载 APP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="ui container">
+            <div class="ui clearing basic segment">
+                <div class="ui left floated horizontal link list">
+                    <div class="item">©开源中国(OSChina.NET)</div>
+                    <div class="item mb-hide">工信部</div>
+                    <a class="item mb-hide" href="http://www.copu.org.cn/" target="_blank" title="开源软件推进联盟">开源软件推进联盟</a>
+                    <div class="item mb-hide">指定官方社区</div>
+                </div>
+                <div class="ui right floated horizontal link list">
+                    <div class="item mb-hide">深圳市奥思网络科技有限公司版权所有</div>
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank" class="item">粤ICP备12009483号-3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="back-to-top back-to-top-toggle">
+    <div class="icon"><img src="08/back-to-top.svg" alt="返回顶部"></div>
+    <div class="text">顶部</div>
+</div>
+
+<script src="08/semantic.min.js.下载"></script>
+<script src="08/jweixin-1.2.0.js.下载"></script>
+<script type="text/javascript" src="08/web.40ef1c61.js.下载"></script>
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?a411c4d1664dd70048ee98afe7b28f0b";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Generated by oschina (init:0[ms],page:125[ms],ip:121.33.74.174) //-->
+<div class="ui dimmer modals page">
+    <div class="ui mini delete-comment modal">
+        <div class="header">删除一条评论</div>
+        <div class="content">
+            <p>评论删除后，数据将无法恢复</p>
+        </div>
+        <div class="actions">
+            <div class="ui positive button">取消</div>
+            <div class="ui negative button">确定</div>
+        </div>
+    </div>
+</div>
+<iframe id="google_osd_static_frame_7795647607291" name="google_osd_static_frame"
+        style="display: none; width: 0px; height: 0px;"
+        src="08/saved_resource(2).html"></iframe>
+</body>
+<iframe id="google_shimpl" style="display: none;"
+        src="08/saved_resource(3).html"></iframe>
+</html>

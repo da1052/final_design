@@ -1,0 +1,1148 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="qc:admins" content="465267610762567726375" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>3.8 Gestures(手势) | 菜鸟教程</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="canonical" href="http://www.runoob.com/w3cnote/android-tutorial-gestures.html" />
+<meta name="keywords" content="3.8 Gestures(手势)">
+<meta name="description" content="本节引言：  周六不休息，刚剪完了个大平头回来，继续码字~ 好的，本节给大家带来点的是第三章的最后一节——Gestures(手势)， 用过魅族手机的朋友相信对手势肯定是不陌生的，在home键两侧像屏幕内滑动， 可以打开后台任务列表等等~在应用中通过手势来操作会大大提升用户体验， 比如Scroll手势在浏览器中个滚屏，Fling在浏览器中的换页等！ 当然，有利也有弊，比如不当的手势操作引起APP Carsh，经常这样可是会引起用户不满的！..">
+<link rel="shortcut icon" href="../../static.runoob.com/images/favicon.ico" tppabs="http://static.runoob.com/images/favicon.ico" mce_href="//static.runoob.com/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../wp-content/themes/runoob/style.css-v=1.147.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/style.css?v=1.147" type="text/css" media="all" />
+<link rel="stylesheet" href="../../cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" tppabs="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<!--[if gte IE 9]><!-->
+  <script src="../../cdn.staticfile.org/jquery/2.0.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+  <!--<![endif]-->
+<!--[if lt IE 9]>
+     <script src="../../cdn.staticfile.org/jquery/1.9.1/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+     <script src="../../cdn.staticfile.org/html5shiv/r29/html5.min.js" tppabs="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+<link rel="apple-touch-icon" href="//static.runoob.com/images/icon/mobile-icon.png"/>
+<meta name="apple-mobile-web-app-title" content="菜鸟教程">
+</head>
+<body>
+<div class="container logo-search">
+<div class="col search row-search-mobile">
+<form action="index.php-s=.htm" tppabs="http://www.runoob.com/w3cnote/index.php?s=">
+<input class="placeholder" placeholder="搜索……" name="s" autocomplete="off">
+</form>
+</div>
+<div class="row">
+<div class="col logo">
+<h1><a href="../index.htm" tppabs="http://www.runoob.com/">菜鸟教程 -- 学的不仅是技术，更是梦想！</a></h1>
+</div>
+<div class="col right-list">
+<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style=""> <i class="fa fa-navicon"></i> </button>
+</div>
+<div class="col search search-desktop last">
+<form action="../-s=.htm" tppabs="http://www.runoob.com/?s=" target="_blank">
+<input class="placeholder" id="s" name="s" placeholder="搜索……" autocomplete="off">
+</form>
+</div>
+</div>
+</div>
+<div class="container navigation">
+<div class="row">
+<div class="col nav">
+<ul class="pc-nav" id="note-nav">
+<li><a href="../index.htm" tppabs="http://www.runoob.com/">首页</a></li>
+<li><a href="../w3cnote.htm" tppabs="http://www.runoob.com/w3cnote">笔记首页</a></li>
+<li><a href="../w3cnote_genre/android.htm" tppabs="http://www.runoob.com/w3cnote_genre/android" title="Android 基础入门教程">Android</a></li>
+<li><a href="../w3cnote_genre/net-2.htm" tppabs="http://www.runoob.com/w3cnote_genre/net-2" title="互联网">互联网</a></li>
+<li><a href="../w3cnote_genre/coderlife.htm" tppabs="http://www.runoob.com/w3cnote_genre/coderlife" title="程序员人生">程序员人生</a></li>
+<li><a href="../w3cnote_genre/joke.htm" tppabs="http://www.runoob.com/w3cnote_genre/joke" title="程序员笑话">程序员笑话</a></li>
+<li><a href="../w3cnote_genre/code.htm" tppabs="http://www.runoob.com/w3cnote_genre/code" title="编程技术">编程技术</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png" tppabs="http://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+</ul>
+<ul class="mobile-nav">
+<li><a href="../w3cnote.htm" tppabs="http://www.runoob.com/w3cnote">首页</a></li>
+<li><a href="../w3cnote_genre/android.htm" tppabs="http://www.runoob.com/w3cnote_genre/android" target="_blank" title="Android 基础入门教程">Android</a></li>
+<li><a href="../w3cnote_genre/coderlife.htm" tppabs="http://www.runoob.com/w3cnote_genre/coderlife" target="_blank" title="程序员人生">鸡汤</a></li>
+<li><a href="../w3cnote_genre/joke.htm" tppabs="http://www.runoob.com/w3cnote_genre/joke" target="_blank" title="程序员笑话">逗乐</a></li>
+<a href="javascript:void(0)" class="search-reveal">Search</a>
+</ul>
+</div>
+</div>
+</div>
+<div class="container main">
+<div class="row">
+<div class="col left-column" style="display:none;">
+<div class="tab">Android 基础入门教程</div>
+<div class="sidebar-box gallery-list">
+<div class="design" id="leftcolumn">
+</div>
+</div>
+</div>
+<div class="col middle-column big-middle-column">
+<div class="article">
+<div class="article-heading">
+<h2>3.8 Gestures(手势)</h2> <h3><em>分类</em> <a href="../w3cnote_genre/android.htm" tppabs="http://www.runoob.com/w3cnote_genre/android" title="Android 基础入门教程">Android 基础入门教程</a> </h3>
+</div>
+<div class="article-body note-body">
+<div class="article-intro">
+<h2>本节引言：</h2>
+<p>周六不休息，刚剪完了个大平头回来，继续码字~</p><p>
+好的，本节给大家带来点的是第三章的最后一节——Gestures(手势)，
+用过魅族手机的朋友相信对手势肯定是不陌生的，在home键两侧像屏幕内滑动，
+可以打开后台任务列表等等~在应用中通过手势来操作会大大提升用户体验，
+比如Scroll手势在浏览器中个滚屏，Fling在浏览器中的换页等！</p><p>
+当然，有利也有弊，比如不当的手势操作引起APP Carsh，经常这样可是会引起用户不满的！
+所以是否要为你的应用增加手势，可要考虑清楚哦！另外手势要和前面学的单指/多指触碰相区分哦！</p><p>
+手势是:连续触碰的行为，比如左右上下滑动屏幕，又或者画一些不规则的几何图形！
+Android对上述两种手势行为都提供了支持：</p>
+<ul>
+<li>Android提供手势检测，并为手势识别提供了相应的监听器！</li>
+<li>Android运行开发者自行添加手势，并且提供了相应的API识别用户手势！</li>
+</ul>
+<p>如果你的手机是Android 4.x的原生Android系统的话，你可能可以在你的手机或者平板上看到谷歌
+提供的一个Gesture Builder的APP，该应用允许用户以类似于涂鸦的方式绘制一个手写符号，使之
+对应一个字符串名称！当然，没有这样的手机也没关系，我们有模拟器嘛，自己开个4.0的系统试试
+就知道了，另外，我们可以到\mmt\sdcard\gestures获取到保存手势的文件！
+好了，唠唠叨叨那么多，开始讲正题吧！</p><p>
+对了，贴下官方API文档先:<a href="javascript:if(confirm('http://androiddoc.qiniudn.com/reference/android/view/pr-font-font.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://androiddoc.qiniudn.com/reference/android/view/pr-font-font.html'" tppabs="http://androiddoc.qiniudn.com/reference/android/view/GestureDetector.html">GestureDetector</a></p>
+<hr />
+<h2>1.Android中手势交互的执行顺序</h2>
+<blockquote><ul>
+<li>1.手指触碰屏幕时，触发MotionEvent事件！</li>
+<li>2.该事件被OnTouchListener监听，可在它的onTouch()方法中获得该MotionEvent对象！</li>
+<li>3.通过GestureDetector转发MotionEvent对象给OnGestureListener</li>
+<li>4.我们可以通过OnGestureListener获得该对象，然后获取相关信息，以及做相关处理！</li>
+</ul>
+</blockquote>
+<p>我们来看下上述的三个类都是干嘛的:
+<strong>MotionEvent</strong>: 这个类用于封装手势、触摸笔、轨迹球等等的动作事件。
+其内部封装了两个重要的属性X和Y，这两个属性分别用于记录横轴和纵轴的坐标。
+<strong>GestureDetector</strong>: 识别各种手势。
+<strong>OnGestureListener</strong>: 这是一个手势交互的监听接口，其中提供了多个抽象方法，
+并根据GestureDetector的手势识别结果调用相对应的方法。</p>
+<p>——上述资料摘自:<a href="javascript:if(confirm('http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2012/1020/css3-pr-font-face-rule.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2012/1020/css3-pr-font-face-rule.html'" tppabs="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2012/1020/448.html">http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2012/1020/448.html</a></p>
+<h2>2.GestureListener详解：</h2>
+<p>从1中我们知道了监听手势的关键是:GestureListener
+他给我们提供了下述的回调方法：</p>
+<blockquote><ul>
+<li>按下（onDown）： 刚刚手指接触到触摸屏的那一刹那，就是触的那一下。</li>
+<li>抛掷（onFling）： 手指在触摸屏上迅速移动，并松开的动作。</li>
+<li>长按（onLongPress）： 手指按在持续一段时间，并且没有松开。</li>
+<li>滚动（onScroll）： 手指在触摸屏上滑动。</li>
+<li>按住（onShowPress）： 手指按在触摸屏上，它的时间范围在按下起效，在长按之前。</li>
+<li>抬起（onSingleTapUp）：手指离开触摸屏的那一刹那。</li>
+</ul>
+</blockquote>
+<p>知道了GestureListener的相关方法后，实现手势检测也很简单，步骤如下：</p>
+<blockquote><ul>
+<li>Step 1: 创建GestureDetector对象，创建时需实现GestureListener传入</li>
+<li>Step 2: 将Activity或者特定组件上的TouchEvent的事件交给GestureDetector处理即可！
+我们写个简单的代码来验证这个流程，即重写对应的方法：</li>
+</ul>
+</blockquote>
+<p>代码如下：</p>
+<pre>
+public class MainActivity extends AppCompatActivity {
+
+    private MyGestureListener mgListener;
+    private GestureDetector mDetector;
+    private final static String TAG = "MyGesture";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //实例化GestureListener与GestureDetector对象
+        mgListener = new MyGestureListener();
+        mDetector = new GestureDetector(this, mgListener);
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return mDetector.onTouchEvent(event);
+    }
+
+    //自定义一个GestureListener,这个是View类下的，别写错哦！！！
+    private class MyGestureListener implements GestureDetector.OnGestureListener {
+
+        @Override
+        public boolean onDown(MotionEvent motionEvent) {
+            Log.d(TAG, "onDown:按下");
+            return false;
+        }
+
+        @Override
+        public void onShowPress(MotionEvent motionEvent) {
+            Log.d(TAG, "onShowPress:手指按下一段时间,不过还没到长按");
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent motionEvent) {
+            Log.d(TAG, "onSingleTapUp:手指离开屏幕的一瞬间");
+            return false;
+        }
+
+        @Override
+        public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+            Log.d(TAG, "onScroll:在触摸屏上滑动");
+            return false;
+        }
+
+        @Override
+        public void onLongPress(MotionEvent motionEvent) {
+            Log.d(TAG, "onLongPress:长按并且没有松开");
+        }
+
+        @Override
+        public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+            Log.d(TAG, "onFling:迅速滑动，并松开");
+            return false;
+        }
+    }
+
+}
+</pre>
+<p>对应操作截图：</p>
+<ul><li>
+1.按下后立即松开:<img src="../wp-content/uploads/2015/07/pr-font-font-family.html" tppabs="http://www.runoob.com/wp-content/uploads/2015/07/80514897.jpg" alt="" /></li><li>
+2.长按后松开：<img src="../wp-content/uploads/2015/07/pr-font-font-size.html" tppabs="http://www.runoob.com/wp-content/uploads/2015/07/22745782.jpg" alt="" /></li><li>
+3.轻轻一滑，同时松开：<img src="../wp-content/uploads/2015/07/css3-pr-font-size-adjust.html" tppabs="http://www.runoob.com/wp-content/uploads/2015/07/36633841.jpg" alt="" /></li><li>
+4.按住后不放持续做滑动操作：<img src="../wp-content/uploads/2015/07/css3-pr-font-stretch.html" tppabs="http://www.runoob.com/wp-content/uploads/2015/07/45064641.jpg" alt="" /></li></ul>
+<p>PS:从上述结果来看，我们发现了一个问题：
+我们实现OnGestureListener需要实现所有的手势，可能我针对的仅仅是滑动，但是你还是要去重载，
+这显得很逗逼，是吧，官方肯定会给出解决方法滴，官方另外给我们提供了一个SimpleOnGestureListener类
+只需把上述的OnGestureListener替换成SimpleOnGestureListener即可！</p>
+<hr />
+<h2>3.简单的例子:下滑关闭Activity，上滑启动新的Activity</h2>
+<p>这里就用上述的SimpleOnGestureListener来实现吧:</p>
+<p><strong>运行效果图：</strong></p>
+<p><img src="../wp-content/uploads/2015/07/pr-font-font-style.html" tppabs="http://www.runoob.com/wp-content/uploads/2015/07/80504226.jpg" alt="" /></p>
+<p><strong>实现代码：</strong>
+</p>
+<pre>
+public class MainActivity extends AppCompatActivity {
+
+    private GestureDetector mDetector;
+    private final static int MIN_MOVE = 200;   //最小距离
+    private MyGestureListener mgListener;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //实例化SimpleOnGestureListener与GestureDetector对象
+        mgListener = new MyGestureListener();
+        mDetector = new GestureDetector(this, mgListener);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return mDetector.onTouchEvent(event);
+    }
+
+    //自定义一个GestureListener,这个是View类下的，别写错哦！！！
+    private class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float v, float v1) {
+            if(e1.getY() - e2.getY() &gt; MIN_MOVE){
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+                Toast.makeText(MainActivity.this, "通过手势启动Activity", Toast.LENGTH_SHORT).show();
+            }else if(e1.getY() - e2.getY()  &lt; MIN_MOVE){
+                finish();
+                Toast.makeText(MainActivity.this,"通过手势关闭Activity",Toast.LENGTH_SHORT).show();
+            }
+            return true;
+        }
+    }
+
+}
+</pre>
+<p><strong>结果分析：</strong>
+从上面的对比就可以知道，相比起SimpleOnGestureListener使用SimpleOnGestureListener
+显得更加的简单，想重写什么方法就重写什么方法，另外例子比较简单，大家可以自己试试
+其他玩法，比如通过手势缩放图片~</p>
+<hr />
+<h2>4.手势添加与识别：</h2>
+<blockquote><p>除了上面讲解的手势检测外，Android还运行我们将手势进行添加，然后提供了相关的识别API；
+Android中使用GestureLibrary来代表手势库，提供了GestureLibraries工具类来创建手势库！</p></blockquote>
+<p><strong>四个加载手势库的静态方法：</strong></p>
+<p><img src="../wp-content/uploads/2015/07/pr-font-font-variant.html" tppabs="http://www.runoob.com/wp-content/uploads/2015/07/51353345.jpg" alt="" /></p>
+<p>获得GestureLibraries对象后，就可以使用该对象提供的下述方法来做相应操作了：</p>
+<p><strong>相关方法：</strong></p>
+<ul>
+<li>public void <strong>addGesture</strong> (String entryName, Gesture gesture)：添加一个名为entryName的手势</li>
+<li>public Set&lt;String&gt; <strong>getGestureEntries</strong> ()：获得手势库中所有手势的名称</li>
+<li>public ArrayList&lt;Gesture&gt; <strong>getGestures</strong> (String entryName)：获得entryName名称对应的全部手势</li>
+<li>public ArrayList&lt;Prediction&gt; <strong>recognize</strong> (Gesture gesture): 从当前手势库中识别与gesture匹配的全部手势</li>
+<li>public void <strong>removeEntry</strong> (String entryName)：删除手势库中entryName名称对应的手势</li>
+<li>public void <strong>removeGesture</strong> (String entryName, Gesture gesture)：删除手势库中entryName和gesture都匹配的手势</li>
+<li>public abstract boolean <strong>save</strong> ()：想手势库中添加手势或从中删除手势后调用该方法保存手势库</li>
+</ul>
+<p><strong>GestureOverlayView手势编辑组件：</strong></p>
+<p>Android为GestureOverlayView提供了三种监听器接口，如下，一般常用的是:<strong>OnGesturePerformedListener</strong>;用于手势完成时提供响应！</p>
+<p><img src="../wp-content/uploads/2015/07/pr-font-weight.html" tppabs="http://www.runoob.com/wp-content/uploads/2015/07/55343440.jpg" alt="" /></p>
+<hr />
+<h2>5.手势添加示例：</h2>
+<p>PS：例子引用的是——李刚《Android疯狂讲义》的代码</p>
+<p><strong>运行效果图：</strong></p>
+<p><img src="../wp-content/uploads/2015/07/css3-pr-grid-columns.html" tppabs="http://www.runoob.com/wp-content/uploads/2015/07/45588649.jpg" alt="" /></p>
+<p>好吧，下面贴下实现代码：</p>
+<p>两个布局文件：activity_main.xml和dialog_save.xml
+</p>
+<p>activity_main.xml</p>
+<pre>
+&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"&gt;
+
+    &lt;TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请在下方屏幕中绘制手势~"
+        android:textSize="20sp"/&gt;
+
+
+    &lt;!-- gestureStrokeType控制手势是否需要一笔完成,multiple表示允许多笔--&gt;
+    &lt;android.gesture.GestureOverlayView
+        android:id="@+id/gesture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gestureStrokeType="multiple" /&gt;
+
+&lt;/LinearLayout&gt;
+</pre>
+<p>dialog_save.xml</p>
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"&gt;
+
+    &lt;LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"&gt;
+        &lt;TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="请填写手势名称："/&gt;
+        &lt;EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_name"/&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;ImageView
+        android:id="@+id/img_show"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="10dp"/&gt;
+
+&lt;/LinearLayout&gt;
+</pre>
+<p><strong>MainActivity.java:</strong></p>
+<pre>
+public class MainActivity extends AppCompatActivity {
+
+    private EditText editText;
+    private GestureOverlayView gesture;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //获取手势编辑组件后，设置相关参数
+        gesture = (GestureOverlayView) findViewById(R.id.gesture);
+        gesture.setGestureColor(Color.GREEN);
+        gesture.setGestureStrokeWidth(5);
+        gesture.addOnGesturePerformedListener(new GestureOverlayView.OnGesturePerformedListener() {
+            @Override
+            public void onGesturePerformed(GestureOverlayView gestureOverlayView, final Gesture gesture) {
+                View saveDialog = getLayoutInflater().inflate(R.layout.dialog_save,null,false);
+                ImageView img_show = (ImageView) saveDialog.findViewById(R.id.img_show);
+                final EditText edit_name = (EditText) saveDialog.findViewById(R.id.edit_name);
+                Bitmap bitmap = gesture.toBitmap(128,128,10,0xffff0000);
+                img_show.setImageBitmap(bitmap);
+                new AlertDialog.Builder(MainActivity.this).setView(saveDialog)
+                        .setPositiveButton("保存",new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //获取文件对应的手势库
+                                GestureLibrary gestureLib = GestureLibraries.fromFile("/mnt/sdcard/mygestures");
+                                gestureLib.addGesture(edit_name.getText().toString(),gesture);
+                                gestureLib.save();
+                            }
+                        }).setNegativeButton("取消", null).show();
+            }
+        });
+    }
+}
+</pre>
+<p>最后还需要在AndroidManifest.xml中添加写入SD卡的权限：
+</p>
+<pre>
+&lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/&gt;
+</pre>
+<hr>
+<h2>6.手势识别示例</h2>
+<p>实现代码：</p>
+<pre>
+public class MainActivity extends AppCompatActivity {
+
+    private GestureOverlayView gesture;
+    private GestureLibrary gestureLibrary;
+    private Context mContext;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mContext = MainActivity.this;
+        gestureLibrary = GestureLibraries.fromFile("mmt/sdcard/mygestures");
+        if (gestureLibrary.load()) {
+            Toast.makeText(mContext, "手势库加载成功", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(mContext, "手势库加载失败", Toast.LENGTH_SHORT).show();
+        }
+
+        //获取手势编辑组件后，设置相关参数
+        gesture = (GestureOverlayView) findViewById(R.id.gesture);
+        gesture.setGestureColor(Color.GREEN);
+        gesture.setGestureStrokeWidth(5);
+        gesture.addOnGesturePerformedListener(new GestureOverlayView.OnGesturePerformedListener() {
+            @Override
+            public void onGesturePerformed(GestureOverlayView gestureOverlayView, final Gesture gesture) {
+                //识别用户刚绘制的手势
+                ArrayList&lt;Prediction&gt; predictions = gestureLibrary.recognize(gesture);
+                ArrayList&lt;String&gt; result = new ArrayList&lt;String&gt;();
+                //遍历所有找到的Prediction对象
+                for (Prediction pred : predictions) {
+                    if (pred.score &gt; 2.0) {
+                        result.add("与手势【" + pred.name + "】相似度为" + pred.score);
+                    }
+                }
+                if (result.size() &gt; 0) {
+                    ArrayAdapter&lt;Object&gt; adapter = new ArrayAdapter&lt;Object&gt;(mContext,
+                            android.R.layout.simple_dropdown_item_1line, result.toArray());
+                    new AlertDialog.Builder(mContext).setAdapter(adapter,null).setPositiveButton("确定",null).show();
+                }else{
+                    Toast.makeText(mContext,"无法找到匹配的手势！",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+}
+</pre>
+<p>另外别忘了在AndroidManifest.xml文件中加入读SD卡的权限：
+</p>
+<pre>
+&lt;uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/&gt;
+</pre>
+<hr />
+<h2>本节小结：</h2>
+<p>好的，本节介绍了Android中的Gesture手势，讲解了手势判断，手势添加，手势识别三个内容
+，大部分例子来自于李刚老师的Android疯狂讲义，有兴趣的可以看看该书~谢谢</p> </div>
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link">← <a href="android-tutorial-togglebutton-switch.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-togglebutton-switch.html" rel="prev"> 2.3.6 开关按钮ToggleButton和开关Switch</a> </div>
+<div class="next-design-link"><a href="android-tutorial-progressbar.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-progressbar.html" rel="next"> 2.3.7 ProgressBar(进度条)</a> →</div>
+</div>
+<div class="article-heading-ad" id="w3cnote-ad728">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;min-width:300px;max-width:970px;width:100%;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="1691338467" data-ad-format="horizontal"></ins>
+<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+</div>
+<style>
+@media screen and (max-width: 768px) {
+	#w3cnote-ad728 {
+		display: none;
+	}
+}
+p.note-author {
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: bold;
+    color: #78a15a;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+}
+</style>
+<script>
+var aid = 12915;
+</script>
+</div>
+</div>
+<div class="listcol last right-column">
+<script type="text/javascript">
+jQuery(document).ready(function ($){
+	var total = $(".membership li").length;
+	var left_list = '';
+	href = window.location.href;
+	
+	$(".membership li").each(function(index, value){
+
+		left_list += $(this).html();
+
+		cur_href = $(this).find("a").attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			if(index==0) {
+				$(".previous-design-link").hide();
+			}
+			if(index==(total-1)) {
+				$(".next-design-link").hide();
+			}
+			prev_href = cur_obj.prev("li").find("a").attr("href");
+			prev_title = cur_obj.prev("li").find("a").attr("title");
+
+			next_href = cur_obj.next("li").find("a").attr("href");
+			next_title = cur_obj.next("li").find("a").attr("title");
+			if(prev_title) {
+				$(".previous-design-link a").attr("href", prev_href);
+				$(".previous-design-link a").attr("title", prev_title);
+				$(".previous-design-link a").text(prev_title);
+			} else {
+				$(".previous-design-link").html("");
+			}
+
+			if(next_title) {
+				$(".next-design-link a").attr("href", next_href);
+				$(".next-design-link a").attr("title", next_title);
+				$(".next-design-link a").text(next_title);
+			} else {
+				$(".next-design-link").html("");
+			}
+		}
+	});
+
+	$("#leftcolumn").html(left_list);
+});
+	</script>
+<div class="sidebar-box cate-list">
+<div class="sidebar-box advertise-here list-link"">
+	<a href="javascript:void(0);">Android 基础入门教程(Q群号：153836263)</a>	</div>
+	
+	<ul class="membership">
+		
+	<li><a target="_top" title="1.0 Android基础入门教程" href="android-tutorial-intro.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-intro.html" >1.0 Android基础入门教程</a></li>
+		
+	<li><a target="_top" title="1.0.1 2015年最新Android基础入门教程目录" href="android-tutorial-contents.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-contents.html" >1.0.1 2015年最新Android基础入门教程目录</a></li>
+		
+	<li><a target="_top" title="1.1 背景相关与系统架构分析" href="android-tutorial-system-architecture-analysis.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-system-architecture-analysis.html" >1.1 背景相关与系统架构分析</a></li>
+		
+	<li><a target="_top" title="1.2 开发环境搭建" href="android-tutorial-development-environment-build.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-development-environment-build.html" >1.2 开发环境搭建</a></li>
+		
+	<li><a target="_top" title="1.2.1 使用Eclipse + ADT + SDK开发Android APP" href="android-tutorial-eclipse-adt-sdk-app.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-eclipse-adt-sdk-app.html" >1.2.1 使用Eclipse + ADT + SDK开发Android APP</a></li>
+		
+	<li><a target="_top" title="1.2.2 使用Android Studio开发Android APP" href="android-tutorial-android-studio.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-android-studio.html" >1.2.2 使用Android Studio开发Android APP</a></li>
+		
+	<li><a target="_top" title="1.3 SDK更新不了问题解决" href="android-tutorial-sdk-problem-solve.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-sdk-problem-solve.html" >1.3 SDK更新不了问题解决</a></li>
+		
+	<li><a target="_top" title="1.4 Genymotion模拟器安装" href="android-tutorial-genymotion-install.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-genymotion-install.html" >1.4 Genymotion模拟器安装</a></li>
+		
+	<li><a target="_top" title="1.5.1 Git使用教程之本地仓库的基本操作" href="android-tutorial-git-repo-operate.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-git-repo-operate.html" >1.5.1 Git使用教程之本地仓库的基本操作</a></li>
+		
+	<li><a target="_top" title="1.5.2 Git之使用GitHub搭建远程仓库" href="android-tutorial-git-repo-create.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-git-repo-create.html" >1.5.2 Git之使用GitHub搭建远程仓库</a></li>
+		
+	<li><a target="_top" title="1.6 .9(九妹)图片怎么玩" href="android-tutorial-9-image.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-9-image.html" >1.6 .9(九妹)图片怎么玩</a></li>
+		
+	<li><a target="_top" title="1.7 界面原型设计" href="android-tutorial-interface-design.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-interface-design.html" >1.7 界面原型设计</a></li>
+		
+	<li><a target="_top" title="1.8 工程相关解析(各种文件，资源访问)" href="android-tutorial-project-src-analysis.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-project-src-analysis.html" >1.8 工程相关解析(各种文件，资源访问)</a></li>
+		
+	<li><a target="_top" title="1.9 Android程序签名打包" href="android-tutorial-sign-package.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-sign-package.html" >1.9 Android程序签名打包</a></li>
+		
+	<li><a target="_top" title="1.11 反编译APK获取代码&资源" href="android-tutorial-decompile-apk-get-code-resources.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-decompile-apk-get-code-resources.html" >1.11 反编译APK获取代码&资源</a></li>
+		
+	<li><a target="_top" title="2.1 View与ViewGroup的概念" href="android-tutorial-view-viewgroup-intro.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-view-viewgroup-intro.html" >2.1 View与ViewGroup的概念</a></li>
+		
+	<li><a target="_top" title="2.2.1 LinearLayout(线性布局)" href="android-tutorial-linearlayout.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-linearlayout.html" >2.2.1 LinearLayout(线性布局)</a></li>
+		
+	<li><a target="_top" title="2.2.2 RelativeLayout(相对布局)" href="android-tutorial-relativelayout.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-relativelayout.html" >2.2.2 RelativeLayout(相对布局)</a></li>
+		
+	<li><a target="_top" title="2.2.3 TableLayout(表格布局)" href="android-tutorial-tablelayout.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-tablelayout.html" >2.2.3 TableLayout(表格布局)</a></li>
+		
+	<li><a target="_top" title="2.2.4 FrameLayout(帧布局)" href="android-tutorial-framelayout.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-framelayout.html" >2.2.4 FrameLayout(帧布局)</a></li>
+		
+	<li><a target="_top" title="2.2.5 GridLayout(网格布局)" href="android-tutorial-gridlayout.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-gridlayout.html" >2.2.5 GridLayout(网格布局)</a></li>
+		
+	<li><a target="_top" title="2.2.6 AbsoluteLayout(绝对布局)" href="android-tutorial-absolutelayout.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-absolutelayout.html" >2.2.6 AbsoluteLayout(绝对布局)</a></li>
+		
+	<li><a target="_top" title="2.3.1 TextView(文本框)详解" href="android-tutorial-textview.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-textview.html" >2.3.1 TextView(文本框)详解</a></li>
+		
+	<li><a target="_top" title="2.3.2 EditText(输入框)详解" href="android-tutorial-edittext.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-edittext.html" >2.3.2 EditText(输入框)详解</a></li>
+		
+	<li><a target="_top" title="2.3.3 Button(按钮)与ImageButton(图像按钮)" href="android-tutorial-button-imagebutton.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-button-imagebutton.html" >2.3.3 Button(按钮)与ImageButton(图像按钮)</a></li>
+		
+	<li><a target="_top" title="2.3.4 ImageView(图像视图)" href="android-tutorial-imageview.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-imageview.html" >2.3.4 ImageView(图像视图)</a></li>
+		
+	<li><a target="_top" title="2.3.5.RadioButton(单选按钮)&Checkbox(复选框)" href="android-tutorial-radiobutton-checkbox.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-radiobutton-checkbox.html" >2.3.5.RadioButton(单选按钮)&Checkbox(复选框)</a></li>
+		
+	<li><a target="_top" title="2.3.6 开关按钮ToggleButton和开关Switch" href="android-tutorial-togglebutton-switch.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-togglebutton-switch.html" >2.3.6 开关按钮ToggleButton和开关Switch</a></li>
+		
+	<li><a target="_top" title="2.3.7 ProgressBar(进度条)" href="android-tutorial-progressbar.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-progressbar.html" >2.3.7 ProgressBar(进度条)</a></li>
+		
+	<li><a target="_top" title="2.3.8 SeekBar(拖动条)" href="android-tutorial-seekbar.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-seekbar.html" >2.3.8 SeekBar(拖动条)</a></li>
+		
+	<li><a target="_top" title="2.3.9 RatingBar(星级评分条)" href="android-tutorial-ratingbar.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-ratingbar.html" >2.3.9 RatingBar(星级评分条)</a></li>
+		
+	<li><a target="_top" title="2.4.1 ScrollView(滚动条)" href="android-tutorial-scrollview.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-scrollview.html" >2.4.1 ScrollView(滚动条)</a></li>
+		
+	<li><a target="_top" title="2.4.2 Date & Time组件(上)" href="android-tutorial-date-time-1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-date-time-1.html" >2.4.2 Date & Time组件(上)</a></li>
+		
+	<li><a target="_top" title="2.4.3 Date & Time组件(下)" href="android-tutorial-date-time-2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-date-time-2.html" >2.4.3 Date & Time组件(下)</a></li>
+		
+	<li><a target="_top" title="2.4.4 Adapter基础讲解" href="android-tutorial-adapter.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-adapter.html" >2.4.4 Adapter基础讲解</a></li>
+		
+	<li><a target="_top" title="2.4.5 ListView简单实用" href="android-tutorial-listview.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-listview.html" >2.4.5 ListView简单实用</a></li>
+		
+	<li><a target="_top" title="2.4.6 BaseAdapter优化" href="android-tutorial-baseadapter.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-baseadapter.html" >2.4.6 BaseAdapter优化</a></li>
+		
+	<li><a target="_top" title="2.4.7ListView的焦点问题" href="android-tutorial-listview-focus.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-listview-focus.html" >2.4.7ListView的焦点问题</a></li>
+		
+	<li><a target="_top" title="2.4.8 ListView之checkbox错位问题解决" href="android-tutorial-listview-checkbox.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-listview-checkbox.html" >2.4.8 ListView之checkbox错位问题解决</a></li>
+		
+	<li><a target="_top" title="2.4.9 ListView的数据更新问题" href="android-tutorial-listview-update.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-listview-update.html" >2.4.9 ListView的数据更新问题</a></li>
+		
+	<li><a target="_top" title="2.5.0 构建一个可复用的自定义BaseAdapter" href="android-tutorial-customer-baseadapter.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-customer-baseadapter.html" >2.5.0 构建一个可复用的自定义BaseAdapter</a></li>
+		
+	<li><a target="_top" title="2.5.1 ListView Item多布局的实现" href="android-tutorial-listview-item.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-listview-item.html" >2.5.1 ListView Item多布局的实现</a></li>
+		
+	<li><a target="_top" title="2.5.2 GridView(网格视图)的基本使用" href="android-tutorial-gridview.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-gridview.html" >2.5.2 GridView(网格视图)的基本使用</a></li>
+		
+	<li><a target="_top" title="2.5.3 Spinner(列表选项框)的基本使用" href="android-tutorial-spinner.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-spinner.html" >2.5.3 Spinner(列表选项框)的基本使用</a></li>
+		
+	<li><a target="_top" title="2.5.4 AutoCompleteTextView(自动完成文本框)的基本使用" href="android-tutorial-autocompletetextview.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-autocompletetextview.html" >2.5.4 AutoCompleteTextView(自动完成文本框)的基本使用</a></li>
+		
+	<li><a target="_top" title="2.5.5 ExpandableListView(可折叠列表)的基本使用" href="android-tutorial-expandablelistview.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-expandablelistview.html" >2.5.5 ExpandableListView(可折叠列表)的基本使用</a></li>
+		
+	<li><a target="_top" title="2.5.6 ViewFlipper(翻转视图)的基本使用" href="android-tutorial-viewflipper.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-viewflipper.html" >2.5.6 ViewFlipper(翻转视图)的基本使用</a></li>
+		
+	<li><a target="_top" title="2.5.7 Toast(吐司)的基本使用" href="android-tutorial-toast.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-toast.html" >2.5.7 Toast(吐司)的基本使用</a></li>
+		
+	<li><a target="_top" title="2.5.8 Notification(状态栏通知)详解" href="android-tutorial-notification.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-notification.html" >2.5.8 Notification(状态栏通知)详解</a></li>
+		
+	<li><a target="_top" title="2.5.9 AlertDialog(对话框)详解" href="android-tutorial-alertdialog.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-alertdialog.html" >2.5.9 AlertDialog(对话框)详解</a></li>
+		
+	<li><a target="_top" title="2.6.0 其他几种常用对话框基本使用" href="android-tutorial-dialog.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-dialog.html" >2.6.0 其他几种常用对话框基本使用</a></li>
+		
+	<li><a target="_top" title="2.6.1 PopupWindow(悬浮框)的基本使用" href="android-tutorial-popupwindow.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-popupwindow.html" >2.6.1 PopupWindow(悬浮框)的基本使用</a></li>
+		
+	<li><a target="_top" title="2.6.2 菜单(Menu)" href="android-tutorial-menu.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-menu.html" >2.6.2 菜单(Menu)</a></li>
+		
+	<li><a target="_top" title="2.6.3 ViewPager的简单使用" href="android-tutorial-viewpager.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-viewpager.html" >2.6.3 ViewPager的简单使用</a></li>
+		
+	<li><a target="_top" title="2.6.4 DrawerLayout(官方侧滑菜单)的简单使用" href="android-tutorial-drawerlayout.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-drawerlayout.html" >2.6.4 DrawerLayout(官方侧滑菜单)的简单使用</a></li>
+		
+	<li><a target="_top" title="3.1.1 基于监听的事件处理机制" href="android-tutorial-listen-event-handle.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-listen-event-handle.html" >3.1.1 基于监听的事件处理机制</a></li>
+		
+	<li><a target="_top" title="3.2 基于回调的事件处理机制" href="android-tutorial-callback-event-handle.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-callback-event-handle.html" >3.2 基于回调的事件处理机制</a></li>
+		
+	<li><a target="_top" title="3.3 Handler消息传递机制浅析" href="android-tutorial-handler-message.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-handler-message.html" >3.3 Handler消息传递机制浅析</a></li>
+		
+	<li><a target="_top" title="3.4 TouchListener PK OnTouchEvent + 多点触碰" href="android-tutorial-touchlistener-ontouchevent.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-touchlistener-ontouchevent.html" >3.4 TouchListener PK OnTouchEvent + 多点触碰</a></li>
+		
+	<li><a target="_top" title="3.5 监听EditText的内容变化" href="android-tutorial-listener-edittext-change.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-listener-edittext-change.html" >3.5 监听EditText的内容变化</a></li>
+		
+	<li><a target="_top" title="3.6 响应系统设置的事件(Configuration类)" href="android-tutorial-configuration.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-configuration.html" >3.6 响应系统设置的事件(Configuration类)</a></li>
+		
+	<li><a target="_top" title="3.7 AnsyncTask异步任务" href="android-tutorial-ansynctask.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-ansynctask.html" >3.7 AnsyncTask异步任务</a></li>
+		<li>
+	3.8 Gestures(手势)	</li>
+	
+		
+	<li><a target="_top" title="4.1.1 Activity初学乍练" href="android-tutorial-activity.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-activity.html" >4.1.1 Activity初学乍练</a></li>
+		
+	<li><a target="_top" title="4.1.2 Activity初窥门径" href="android-tutorial-activity-start.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-activity-start.html" >4.1.2 Activity初窥门径</a></li>
+		
+	<li><a target="_top" title="4.1.3 Activity登堂入室" href="android-tutorial-activity-intro.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-activity-intro.html" >4.1.3 Activity登堂入室</a></li>
+		
+	<li><a target="_top" title="4.2.1 Service初涉" href="android-tutorial-service-1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-service-1.html" >4.2.1 Service初涉</a></li>
+		
+	<li><a target="_top" title="4.2.2 Service进阶" href="android-tutorial-service-2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-service-2.html" >4.2.2 Service进阶</a></li>
+		
+	<li><a target="_top" title="4.2.3 Service精通" href="android-tutorial-service-3.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-service-3.html" >4.2.3 Service精通</a></li>
+		
+	<li><a target="_top" title="4.3.1 BroadcastReceiver牛刀小试" href="android-tutorial-broadcastreceiver.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-broadcastreceiver.html" >4.3.1 BroadcastReceiver牛刀小试</a></li>
+		
+	<li><a target="_top" title="4.3.2 BroadcastReceiver庖丁解牛" href="android-tutorial-broadcastreceiver-2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-broadcastreceiver-2.html" >4.3.2 BroadcastReceiver庖丁解牛</a></li>
+		
+	<li><a target="_top" title="4.4.1 ContentProvider初探" href="android-tutorial-contentprovider.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-contentprovider.html" >4.4.1 ContentProvider初探</a></li>
+		
+	<li><a target="_top" title="4.4.2 ContentProvider再探——Document Provider" href="android-tutorial-contentprovider-2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-contentprovider-2.html" >4.4.2 ContentProvider再探——Document Provider</a></li>
+		
+	<li><a target="_top" title="4.5.1 Intent的基本使用" href="android-tutorial-intent-base.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-intent-base.html" >4.5.1 Intent的基本使用</a></li>
+		
+	<li><a target="_top" title="4.5.2 Intent之复杂数据的传递" href="android-tutorial-intent-pass-data.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-intent-pass-data.html" >4.5.2 Intent之复杂数据的传递</a></li>
+		
+	<li><a target="_top" title="5.1 Fragment基本概述" href="android-tutorial-fragment-base.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-fragment-base.html" >5.1 Fragment基本概述</a></li>
+		
+	<li><a target="_top" title="5.2.1 Fragment实例精讲——底部导航栏的实现(方法1)" href="android-tutorial-fragment-demo1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-fragment-demo1.html" >5.2.1 Fragment实例精讲——底部导航栏的实现(方法1)</a></li>
+		
+	<li><a target="_top" title="5.2.2 Fragment实例精讲——底部导航栏的实现(方法2)" href="android-tutorial-fragment-demo2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-fragment-demo2.html" >5.2.2 Fragment实例精讲——底部导航栏的实现(方法2)</a></li>
+		
+	<li><a target="_top" title="5.2.3 Fragment实例精讲——底部导航栏的实现(方法3)" href="android-tutorial-fragment-demo3.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-fragment-demo3.html" >5.2.3 Fragment实例精讲——底部导航栏的实现(方法3)</a></li>
+		
+	<li><a target="_top" title="5.2.4 Fragment实例精讲——底部导航栏+ViewPager滑动切换页面" href="android-tutorial-fragment-demo4.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-fragment-demo4.html" >5.2.4 Fragment实例精讲——底部导航栏+ViewPager滑动切换页面</a></li>
+		
+	<li><a target="_top" title="5.2.5 Fragment实例精讲——新闻(购物)类App列表Fragment的简单实现" href="android-tutorial-fragment-demo5.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-fragment-demo5.html" >5.2.5 Fragment实例精讲——新闻(购物)类App列表Fragment的简单实现</a></li>
+		
+	<li><a target="_top" title="6.1 数据存储与访问之——文件存储读写" href="android-tutorial-file.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-file.html" >6.1 数据存储与访问之——文件存储读写</a></li>
+		
+	<li><a target="_top" title="6.2 数据存储与访问之——SharedPreferences保存用户偏好参数" href="android-tutorial-sharedpreferences.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-sharedpreferences.html" >6.2 数据存储与访问之——SharedPreferences保存用户偏好参数</a></li>
+		
+	<li><a target="_top" title="6.3.1 数据存储与访问之——初见SQLite数据库" href="android-tutorial-sqlite-intro.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-sqlite-intro.html" >6.3.1 数据存储与访问之——初见SQLite数据库</a></li>
+		
+	<li><a target="_top" title="6.3.2 数据存储与访问之——又见SQLite数据库" href="android-tutorial-sqlite-2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-sqlite-2.html" >6.3.2 数据存储与访问之——又见SQLite数据库</a></li>
+		
+	<li><a target="_top" title="7.1.1 Android网络编程要学的东西与Http协议学习" href="android-tutorial-http.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-http.html" >7.1.1 Android网络编程要学的东西与Http协议学习</a></li>
+		
+	<li><a target="_top" title="7.1.2 Android Http请求头与响应头的学习" href="android-tutorial-http-response-header.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-http-response-header.html" >7.1.2 Android Http请求头与响应头的学习</a></li>
+		
+	<li><a target="_top" title="7.1.3 Android HTTP请求方式:HttpURLConnection" href="android-tutorial-httpurlconnection.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-httpurlconnection.html" >7.1.3 Android HTTP请求方式:HttpURLConnection</a></li>
+		
+	<li><a target="_top" title="7.1.4 Android HTTP请求方式:HttpClient" href="android-tutorial-httpclient.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-httpclient.html" >7.1.4 Android HTTP请求方式:HttpClient</a></li>
+		
+	<li><a target="_top" title="7.2.1 Android XML数据解析" href="android-tutorial-xml.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-xml.html" >7.2.1 Android XML数据解析</a></li>
+		
+	<li><a target="_top" title="7.2.2 Android JSON数据解析" href="android-tutorial-json.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-json.html" >7.2.2 Android JSON数据解析</a></li>
+		
+	<li><a target="_top" title="7.3.1 Android 文件上传" href="android-tutorial-upload-file.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-upload-file.html" >7.3.1 Android 文件上传</a></li>
+		
+	<li><a target="_top" title="7.3.2 Android 文件下载（1）" href="android-tutorial-download1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-download1.html" >7.3.2 Android 文件下载（1）</a></li>
+		
+	<li><a target="_top" title="7.3.3 Android 文件下载（2）" href="android-tutorial-download2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-download2.html" >7.3.3 Android 文件下载（2）</a></li>
+		
+	<li><a target="_top" title="7.4 Android 调用 WebService" href="android-tutorial-webservice.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-webservice.html" >7.4 Android 调用 WebService</a></li>
+		
+	<li><a target="_top" title="7.5.1 WebView(网页视图)基本用法" href="android-tutorial-webview.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-webview.html" >7.5.1 WebView(网页视图)基本用法</a></li>
+		
+	<li><a target="_top" title="7.5.2 WebView和JavaScrip交互基础" href="android-tutorial-webview-javascrip.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-webview-javascrip.html" >7.5.2 WebView和JavaScrip交互基础</a></li>
+		
+	<li><a target="_top" title="7.5.3 Android 4.4后WebView的一些注意事项" href="android-tutorial-webview-attention.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-webview-attention.html" >7.5.3 Android 4.4后WebView的一些注意事项</a></li>
+		
+	<li><a target="_top" title="7.5.4 WebView文件下载" href="android-tutorial-webview-download-file.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-webview-download-file.html" >7.5.4 WebView文件下载</a></li>
+		
+	<li><a target="_top" title="7.5.5 WebView缓存问题" href="android-tutorial-webview-cache.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-webview-cache.html" >7.5.5 WebView缓存问题</a></li>
+		
+	<li><a target="_top" title="7.5.6 WebView处理网页返回的错误码信息" href="android-tutorial-webview-error-code.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-webview-error-code.html" >7.5.6 WebView处理网页返回的错误码信息</a></li>
+		
+	<li><a target="_top" title="7.6.1 Socket学习网络基础准备" href="android-tutorial-socket-intro.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-socket-intro.html" >7.6.1 Socket学习网络基础准备</a></li>
+		
+	<li><a target="_top" title="7.6.2 基于TCP协议的Socket通信(1)" href="android-tutorial-socket1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-socket1.html" >7.6.2 基于TCP协议的Socket通信(1)</a></li>
+		
+	<li><a target="_top" title="7.6.3 基于TCP协议的Socket通信(2)" href="android-tutorial-socket2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-socket2.html" >7.6.3 基于TCP协议的Socket通信(2)</a></li>
+		
+	<li><a target="_top" title="7.6.4 基于UDP协议的Socket通信" href="android-tutorial-udp-socket.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-udp-socket.html" >7.6.4 基于UDP协议的Socket通信</a></li>
+		
+	<li><a target="_top" title="8.1.1 Android中的13种Drawable小结 Part 1" href="android-tutorial-drawable1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-drawable1.html" >8.1.1 Android中的13种Drawable小结 Part 1</a></li>
+		
+	<li><a target="_top" title="8.1.2 Android中的13种Drawable小结 Part 2" href="android-tutorial-drawable2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-drawable2.html" >8.1.2 Android中的13种Drawable小结 Part 2</a></li>
+		
+	<li><a target="_top" title="8.1.3 Android中的13种Drawable小结 Part 3" href="android-tutorial-drawable3.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-drawable3.html" >8.1.3 Android中的13种Drawable小结 Part 3</a></li>
+		
+	<li><a target="_top" title="8.2.1 Bitmap(位图)全解析 Part 1" href="android-tutorial-bitmap1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-bitmap1.html" >8.2.1 Bitmap(位图)全解析 Part 1</a></li>
+		
+	<li><a target="_top" title="8.2.2 Bitmap引起的OOM问题" href="android-tutorial-bitmap2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-bitmap2.html" >8.2.2 Bitmap引起的OOM问题</a></li>
+		
+	<li><a target="_top" title="8.3.1 三个绘图工具类详解" href="android-tutorial-drawable-tool.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-drawable-tool.html" >8.3.1 三个绘图工具类详解</a></li>
+		
+	<li><a target="_top" title="8.3.2 绘图类实战示例" href="android-tutorial-bitmap-demo.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-bitmap-demo.html" >8.3.2 绘图类实战示例</a></li>
+		
+	<li><a target="_top" title="8.3.3 Paint API之—— MaskFilter(面具)" href="android-tutorial-maskfilter.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-maskfilter.html" >8.3.3 Paint API之—— MaskFilter(面具)</a></li>
+		
+	<li><a target="_top" title="8.3.4 Paint API之—— Xfermode与PorterDuff详解(一)" href="android-tutorial-xfermode-porterduff.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-xfermode-porterduff.html" >8.3.4 Paint API之—— Xfermode与PorterDuff详解(一)</a></li>
+		
+	<li><a target="_top" title="8.3.5 Paint API之—— Xfermode与PorterDuff详解(二)" href="android-tutorial-xfermode-porterduff2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-xfermode-porterduff2.html" >8.3.5 Paint API之—— Xfermode与PorterDuff详解(二)</a></li>
+		
+	<li><a target="_top" title="8.3.6 Paint API之—— Xfermode与PorterDuff详解(三)" href="android-tutorial-xfermode-porterduff3.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-xfermode-porterduff3.html" >8.3.6 Paint API之—— Xfermode与PorterDuff详解(三)</a></li>
+		
+	<li><a target="_top" title="8.3.7 Paint API之—— Xfermode与PorterDuff详解(四)" href="android-tutorial-xfermode-porterduff4.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-xfermode-porterduff4.html" >8.3.7 Paint API之—— Xfermode与PorterDuff详解(四)</a></li>
+		
+	<li><a target="_top" title="8.3.8 Paint API之—— Xfermode与PorterDuff详解(五)" href="android-tutorial-xfermode-porterduff5.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-xfermode-porterduff5.html" >8.3.8 Paint API之—— Xfermode与PorterDuff详解(五)</a></li>
+		
+	<li><a target="_top" title="8.3.9 Paint API之—— ColorFilter(颜色过滤器)(1/3)" href="android-tutorial-colorfilter1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-colorfilter1.html" >8.3.9 Paint API之—— ColorFilter(颜色过滤器)(1/3)</a></li>
+		
+	<li><a target="_top" title="8.3.10 Paint API之—— ColorFilter(颜色过滤器)(2-3)" href="android-tutorial-colorfilterl2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-colorfilterl2.html" >8.3.10 Paint API之—— ColorFilter(颜色过滤器)(2-3)</a></li>
+		
+	<li><a target="_top" title="8.3.11 Paint API之—— ColorFilter(颜色过滤器)(3-3)" href="android-tutorial-colorfilter3.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-colorfilter3.html" >8.3.11 Paint API之—— ColorFilter(颜色过滤器)(3-3)</a></li>
+		
+	<li><a target="_top" title="8.3.12 Paint API之—— PathEffect(路径效果)" href="android-tutorial-patheffect.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-patheffect.html" >8.3.12 Paint API之—— PathEffect(路径效果)</a></li>
+		
+	<li><a target="_top" title="8.3.13 Paint API之—— Shader(图像渲染)" href="android-tutorial-shader.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-shader.html" >8.3.13 Paint API之—— Shader(图像渲染)</a></li>
+		
+	<li><a target="_top" title="8.3.14 Paint几个枚举/常量值以及ShadowLayer阴影效果" href="android-tutorial-shadowlayer.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-shadowlayer.html" >8.3.14 Paint几个枚举/常量值以及ShadowLayer阴影效果</a></li>
+		
+	<li><a target="_top" title="8.3.15 Paint API之——Typeface(字型)" href="android-tutorial-typeface.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-typeface.html" >8.3.15 Paint API之——Typeface(字型)</a></li>
+		
+	<li><a target="_top" title="8.3.16 Canvas API详解(Part 1)" href="android-tutorial-canvas-api1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-canvas-api1.html" >8.3.16 Canvas API详解(Part 1)</a></li>
+		
+	<li><a target="_top" title="8.3.17 Canvas API详解(Part 2)剪切方法合集" href="android-tutorial-canvas-api2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-canvas-api2.html" >8.3.17 Canvas API详解(Part 2)剪切方法合集</a></li>
+		
+	<li><a target="_top" title="8.3.18 Canvas API详解(Part 3)Matrix和drawBitmapMesh" href="android-tutorial-canvas-api3.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-canvas-api3.html" >8.3.18 Canvas API详解(Part 3)Matrix和drawBitmapMesh</a></li>
+		
+	<li><a target="_top" title="8.4.1 Android动画合集之帧动画" href="android-tutorial-animation.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-animation.html" >8.4.1 Android动画合集之帧动画</a></li>
+		
+	<li><a target="_top" title="8.4.2 Android动画合集之补间动画" href="android-tutorial-alphaanimation.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-alphaanimation.html" >8.4.2 Android动画合集之补间动画</a></li>
+		
+	<li><a target="_top" title="8.4.3 Android动画合集之属性动画-初见" href="android-tutorial-valueanimator.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-valueanimator.html" >8.4.3 Android动画合集之属性动画-初见</a></li>
+		
+	<li><a target="_top" title="8.4.4 Android动画合集之属性动画-又见" href="android-tutorial-valueanimator2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-valueanimator2.html" >8.4.4 Android动画合集之属性动画-又见</a></li>
+		
+	<li><a target="_top" title="9.1 使用SoundPool播放音效(Duang~)" href="android-tutorial-soundpool.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-soundpool.html" >9.1 使用SoundPool播放音效(Duang~)</a></li>
+		
+	<li><a target="_top" title="9.2 MediaPlayer播放音频与视频" href="android-tutorial-mediaplayer.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-mediaplayer.html" >9.2 MediaPlayer播放音频与视频</a></li>
+		
+	<li><a target="_top" title="9.3 使用Camera拍照" href="android-tutorial-camera.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-camera.html" >9.3 使用Camera拍照</a></li>
+		
+	<li><a target="_top" title="9.4 使用MediaRecord录音" href="android-tutorial-mediarecord.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-mediarecord.html" >9.4 使用MediaRecord录音</a></li>
+		
+	<li><a target="_top" title="10.1 TelephonyManager(电话管理器)" href="android-tutorial-telephonymanager.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-telephonymanager.html" >10.1 TelephonyManager(电话管理器)</a></li>
+		
+	<li><a target="_top" title="10.2 SmsManager(短信管理器)" href="android-tutorial-smsmanager.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-smsmanager.html" >10.2 SmsManager(短信管理器)</a></li>
+		
+	<li><a target="_top" title="10.3 AudioManager(音频管理器)" href="android-tutorial-audiomanager.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-audiomanager.html" >10.3 AudioManager(音频管理器)</a></li>
+		
+	<li><a target="_top" title="10.4 Vibrator(振动器)" href="android-tutorial-vibrator.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-vibrator.html" >10.4 Vibrator(振动器)</a></li>
+		
+	<li><a target="_top" title="10.5 AlarmManager(闹钟服务)" href="android-tutorial-alarmmanager.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-alarmmanager.html" >10.5 AlarmManager(闹钟服务)</a></li>
+		
+	<li><a target="_top" title="10.6 PowerManager(电源服务)" href="android-tutorial-powermanager.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-powermanager.html" >10.6 PowerManager(电源服务)</a></li>
+		
+	<li><a target="_top" title="10.7 WindowManager(窗口管理服务)" href="android-tutorial-windowmanager.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-windowmanager.html" >10.7 WindowManager(窗口管理服务)</a></li>
+		
+	<li><a target="_top" title="10.8 LayoutInflater(布局服务)" href="android-tutorial-layoutinflater.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-layoutinflater.html" >10.8 LayoutInflater(布局服务)</a></li>
+		
+	<li><a target="_top" title="10.9 WallpaperManager(壁纸管理器)" href="android-tutorial-wallpapermanager.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-wallpapermanager.html" >10.9 WallpaperManager(壁纸管理器)</a></li>
+		
+	<li><a target="_top" title="10.10 传感器专题(1)——相关介绍" href="android-tutorial-sensor1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-sensor1.html" >10.10 传感器专题(1)——相关介绍</a></li>
+		
+	<li><a target="_top" title="10.11 传感器专题(2)——方向传感器" href="android-tutorial-sensor2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-sensor2.html" >10.11 传感器专题(2)——方向传感器</a></li>
+		
+	<li><a target="_top" title="10.12 传感器专题(3)——加速度/陀螺仪传感器" href="android-tutorial-sensor3.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-sensor3.html" >10.12 传感器专题(3)——加速度/陀螺仪传感器</a></li>
+		
+	<li><a target="_top" title="10.12 传感器专题(4)——其他传感器了解" href="android-tutorial-sensor4.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-sensor4.html" >10.12 传感器专题(4)——其他传感器了解</a></li>
+		
+	<li><a target="_top" title="10.14 Android GPS初涉" href="android-tutorial-gps.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-gps.html" >10.14 Android GPS初涉</a></li>
+		
+	<li><a target="_top" title="11.0《2015最新Android基础入门教程》完结散花~" href="android-tutorial-end.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-end.html" >11.0《2015最新Android基础入门教程》完结散花~</a></li>
+		
+	<li><a target="_top" title="12.1Android 实战 ：DrySister看妹子应用(第一版) -- 项目搭建与简单实现" href="android-tutorial-exercise-1.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-exercise-1.html" >12.1Android 实战 ：DrySister看妹子应用(第一版) -- 项目搭建与简单实现</a></li>
+		
+	<li><a target="_top" title="12.2 DrySister看妹子应用(第一版)——2.解析后台数据" href="android-tutorial-exercise-2.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-exercise-2.html" >12.2 DrySister看妹子应用(第一版)——2.解析后台数据</a></li>
+		
+	<li><a target="_top" title="12.3 DrySister看妹子应用(第一版)——3.图片加载优化(写个图片缓存小框架)" href="android-tutorial-exercise-3.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-exercise-3.html" >12.3 DrySister看妹子应用(第一版)——3.图片加载优化(写个图片缓存小框架)</a></li>
+		
+	<li><a target="_top" title="12.4 DrySister看妹子应用(第一版)——4.添加数据缓存(加入SQLite)" href="android-tutorial-exercise-4.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-exercise-4.html" >12.4 DrySister看妹子应用(第一版)——4.添加数据缓存(加入SQLite)</a></li>
+		
+	<li><a target="_top" title="12.5 DrySister看妹子应用(第一版)——5.代码回顾，调整与日志类编写" href="android-tutorial-exercise-5.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-exercise-5.html" >12.5 DrySister看妹子应用(第一版)——5.代码回顾，调整与日志类编写</a></li>
+		
+	<li><a target="_top" title="12.6 DrySister看妹子应用(第一版)——6.图标制作，混淆，签名打包，APK瘦身，应用发布" href="android-tutorial-exercise-6-html.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-exercise-6-html.html" >12.6 DrySister看妹子应用(第一版)——6.图标制作，混淆，签名打包，APK瘦身，应用发布</a></li>
+	</ul></div>	</div>
+</div>
+
+
+<!-- 底部 -->
+
+
+<div id="footer" class="mar-t50">
+   <div class="runoob-block">
+    <div class="runoob cf">
+     <dl>
+      <dt>
+       在线实例
+      </dt>
+      <dd>
+       &middot;<a target="_blank" href="../html/html-examples.html" tppabs="http://www.runoob.com/html/html-examples.html">HTML 实例</a>
+      </dd>
+      <dd>
+       &middot;<a target="_blank" href="../css/css-examples.html" tppabs="http://www.runoob.com/css/css-examples.html">CSS 实例</a>
+      </dd>
+      <dd>
+       &middot;<a target="_blank" href="../js/js-examples.html" tppabs="http://www.runoob.com/js/js-examples.html">JavaScript 实例</a>
+      </dd>
+      <dd>
+       &middot;<a target="_blank" href="../ajax/ajax-examples.html" tppabs="http://www.runoob.com/ajx/ajax-examples.html">Ajax 实例</a>
+      </dd>
+       <dd>
+       &middot;<a target="_blank" href="../jquery/jquery-examples.html" tppabs="http://www.runoob.com/jquery/jquery-examples.html">jQuery 实例</a>
+      </dd>
+      <dd>
+       &middot;<a target="_blank" href="../xml/xml-examples.html" tppabs="http://www.runoob.com/xml/xml-examples.html">XML 实例</a>
+      </dd>
+      <dd>
+       &middot;<a target="_blank" href="../java/java-examples.html" tppabs="http://www.runoob.com/java/java-examples.html">Java 实例</a>
+      </dd>
+     
+     </dl>
+     <dl>
+      <dt>
+      字符集&工具
+      </dt>
+      <dd>
+       &middot; <a target="_blank" href="../charsets/html-charsets.html" tppabs="http://www.runoob.com/charsets/html-charsets.html">HTML 字符集设置</a>
+      </dd>
+      <dd>
+       &middot; <a target="_blank" href="../tags/html-ascii.html" tppabs="http://www.runoob.com/tags/html-ascii.html">HTML ASCII 字符集</a>
+      </dd>
+     <dd>
+       &middot; <a target="_blank" href="../tags/ref-entities.html" tppabs="http://www.runoob.com/tags/ref-entities.html">HTML ISO-8859-1</a>
+      </dd> 
+      <dd>
+       &middot; <a target="_blank" href="../tags/html-symbols.html" tppabs="http://www.runoob.com/tags/html-symbols.html">HTML 实体符号</a>
+      </dd>
+      <dd>
+       &middot; <a target="_blank" href="../tags/html-colorpicker.html" tppabs="http://www.runoob.com/tags/html-colorpicker.html">HTML 拾色器</a>
+      </dd>
+      <dd>
+       &middot; <a target="_blank" href="javascript:if(confirm('http://c.runoob.com/front-end/53  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c.runoob.com/front-end/53'" tppabs="http://c.runoob.com/front-end/53">JSON 格式化工具</a>
+      </dd>
+     </dl>
+     <dl>
+      <dt>
+       最新更新
+      </dt>
+                   <dd>
+       &middot;
+      <a href="csharp-init-variable.html" tppabs="http://www.runoob.com/w3cnote/csharp-init-variable.html" title="关于 C# 中的变量的初始化问题浅谈">关于 C# 中的变...</a>
+      </dd>
+              <dd>
+       &middot;
+      <a href="scrapy-detail.html" tppabs="http://www.runoob.com/w3cnote/scrapy-detail.html" title="Scrapy 入门教程">Scrapy 入门教程</a>
+      </dd>
+              <dd>
+       &middot;
+      <a href="c-structures-intro.html" tppabs="http://www.runoob.com/w3cnote/c-structures-intro.html" title="C 结构体">C 结构体</a>
+      </dd>
+              <dd>
+       &middot;
+      <a href="matplotlib-tutorial.html" tppabs="http://www.runoob.com/w3cnote/matplotlib-tutorial.html" title="Matplotlib 教程">Matplotlib 教程</a>
+      </dd>
+              <dd>
+       &middot;
+      <a href="../numpy/numpy-matplotlib.html" tppabs="http://www.runoob.com/numpy/numpy-matplotlib.html" title="NumPy Matplotlib">NumPy  Matplotlib</a>
+      </dd>
+              <dd>
+       &middot;
+      <a href="../numpy/numpy-io.html" tppabs="http://www.runoob.com/numpy/numpy-io.html" title="NumPy IO">NumPy IO</a>
+      </dd>
+              <dd>
+       &middot;
+      <a href="../numpy/numpy-linear-algebra.html" tppabs="http://www.runoob.com/numpy/numpy-linear-algebra.html" title="NumPy 线性代数">NumPy 线性代数</a>
+      </dd>
+             </dl>
+     <dl>
+      <dt>
+       站点信息
+      </dt>
+      <dd>
+       &middot;
+       <a target="_blank" href="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="external nofollow">意见反馈</a>
+      <!--<a class="wxpopup" onclick="popFunction()">合作联系
+       <span class="popuptext" id="myPopup">微信：<strong>centos5</strong></span>
+      </a>-->
+      </dd>
+      <dd>
+       &middot;
+      <a target="_blank" href="../disclaimer.htm" tppabs="http://www.runoob.com/disclaimer">免责声明</a>
+       </dd>
+       <!--
+       <dd style="display: block;">
+       &middot;
+      <a href="javascript:void(0)" onclick="dashangToggle()" style="font-weight:bold;color:#f00;" title="打赏，支持一下">打赏一下</a>
+       </dd>
+      -->
+      <dd>
+       &middot;
+       <a target="_blank" href="../aboutus.htm" tppabs="http://www.runoob.com/aboutus">关于我们</a>
+       </dd>
+      <dd>
+       &middot;
+      <a target="_blank" href="../archives.htm" tppabs="http://www.runoob.com/archives">文章归档</a>
+      </dd>
+      <!--
+      <dd>
+       &middot;
+      <a href="https://www.xiaoyouxi100.com/?from=runoob" onclick="_hmt.push(['_trackEvent', '小游戏', 'click', 'xiaoyouxi100']);" target="_blank" title="小游戏">小游戏</a>
+      </dd>
+      -->
+     </dl>
+    
+     <div class="search-share">
+      <div class="app-download">
+        <div>
+         <strong>关注微信</strong>
+        </div>
+      </div>
+      <div class="share">
+            <img width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode.png" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png" />
+       </div>
+     </div>
+     
+    </div>
+   </div>
+   <div class="w-1000 copyright">
+     Copyright &copy; 2013-2018    <strong><a href="../index.htm" tppabs="http://www.runoob.com/" target="_blank">菜鸟教程</a></strong>&nbsp;
+    <strong><a href="../index.htm" tppabs="http://www.runoob.com/" target="_blank">runoob.com</a></strong> All Rights Reserved. 备案号：闽ICP备15012807号-1
+   </div>
+  </div>
+  <div class="fixed-btn">
+    <a class="go-top" href="javascript:void(0)" title="返回顶部"> <i class="fa fa-angle-up"></i></a>
+    <a class="qrcode"  href="javascript:void(0)" title="关注我们"><i class="fa fa-qrcode"></i></a>
+    <a class="writer" style="display:none" href="javascript:void(0)"   title="标记/收藏"><i class="fa fa-star" aria-hidden="true"></i></a>
+    <!-- qrcode modal -->
+    <div id="bottom-qrcode" class="modal panel-modal hide fade in">
+      <h4>微信关注</h4>
+      <div class="panel-body"><img alt="微信关注" width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode.png" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png"></div> 
+    </div>
+  </div>
+
+  <div class="hide_box"></div>
+    <div class="shang_box">
+      <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="../../static.runoob.com/images/dashang/close.jpg" tppabs="http://static.runoob.com/images/dashang/close.jpg" alt="取消" /></a>
+       
+      <div class="shang_tit">
+        <p>感谢您的支持，我会继续努力的!</p>
+      </div>
+      <div class="shang_payimg">
+        <img src="../../static.runoob.com/images/dashang/weipayimg.png.jpg" tppabs="http://static.runoob.com/images/dashang/weipayimg.png" alt="扫码支持" title="扫一扫" />
+      </div>
+        <div class="pay_explain">扫码打赏，你说多少就多少</div>
+      <div class="shang_payselect">
+        <div class="pay_item checked" data-id="weipay">
+          <span class="radiobox"></span>
+          <span class="pay_logo"><img src="../../static.runoob.com/images/dashang/wechat.jpg" tppabs="http://static.runoob.com/images/dashang/wechat.jpg" alt="微信" /></span>
+        </div>
+        <div class="pay_item" data-id="alipay">
+          <span class="radiobox"></span>
+          <span class="pay_logo"><img src="../../static.runoob.com/images/dashang/alipay.jpg" tppabs="http://static.runoob.com/images/dashang/alipay.jpg" alt="支付宝" /></span>
+        </div>
+        
+      </div>
+      <div class="shang_info">
+        <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+        <p><a href="javascript:if(confirm('http://c.runoob.com/codedemo/5348  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c.runoob.com/codedemo/5348'" tppabs="http://c.runoob.com/codedemo/5348" target="_blank"><span style=" font-size: 14px;color: #000;font-weight: bold;">点我查看本站打赏源码！</span></a></p>
+      </div>
+    </div>
+  <div id="testClick"></div>
+ <div style="display:none;">
+ 
+ <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "../../hm.baidu.com/hm.js-3eec0b7da6548cf07db3bc477ea905ee"/*tpa=https://hm.baidu.com/hm.js?3eec0b7da6548cf07db3bc477ea905ee*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="../../www.googletagmanager.com/gtag/js-id=UA-84264393-2" tppabs="https://www.googletagmanager.com/gtag/js?id=UA-84264393-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-84264393-2');
+</script>
+</div>
+<script>
+window.jsui={
+    www: 'http://wwww.runoob.com/',
+    uri: '//www.runoob.com/wp-content/themes/runoob'
+};
+</script>
+<style>
+ol,ul{list-style:none}.cd-switcher a{text-decoration:none;outline:0}.cd-switcher a:hover{text-decoration:underline}a:focus{outline:0;-moz-outline:0}.main_nav{width:300px;height:60px;margin:60px auto 10px auto}.main_nav li{float:left;width:60px;margin-right:10px;font-size:16px;padding:.6em 1em;border-radius:3em;background:#2f889a;text-align:center}.main_nav li a{color:#fff}.errtip{background-color:#fceaea;color:#db5353;padding:8px 15px;font-size:14px;border:1px solid #fc9797;border-radius:5px}.cd-user-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(52,54,66,0.9);z-index:3;overflow-y:auto;cursor:pointer;visibility:hidden;opacity:0;-webkit-transition:opacity .3s 0,visibility 0 .3s;-moz-transition:opacity .3s 0,visibility 0 .3s;transition:opacity .3s 0,visibility 0 .3s}.cd-user-modal.is-visible{visibility:visible;opacity:1;-webkit-transition:opacity .3s 0,visibility 0 0;-moz-transition:opacity .3s 0,visibility 0 0;transition:opacity .3s 0,visibility 0 0}.cd-user-modal.is-visible .cd-user-modal-container{-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}.cd-user-modal-container{position:relative;width:90%;max-width:500px;background:#FFF;margin:3em auto 4em;cursor:auto;border-radius:.25em;-webkit-transform:translateY(-30px);-moz-transform:translateY(-30px);-ms-transform:translateY(-30px);-o-transform:translateY(-30px);transform:translateY(-30px);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;transition-property:transform;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;transition-duration:.3s}.cd-user-modal-container .cd-switcher:after{content:"";display:table;clear:both}.cd-user-modal-container .cd-switcher li{width:50%;float:left;text-align:center}.cd-user-modal-container .cd-switcher li:first-child a{border-radius:.25em 0 0 0}.cd-user-modal-container .cd-switcher li:last-child a{border-radius:0 .25em 0 0}.cd-user-modal-container .cd-switcher a{font-size:1.2em;font-weight:bold;display:block;width:100%;height:50px;line-height:50px;background:#e8f1e2;color:#96b880}.cd-user-modal-container .cd-switcher a.selected{background:#FFF;color:#505260}@media only screen and (min-width:600px){.cd-user-modal-container{margin:4em auto}.cd-user-modal-container .cd-switcher a{height:70px;line-height:70px}}.cd-form{padding:1.4em}.cd-form .fieldset{position:relative;margin:1.4em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form label{font-size:16px;font-size:.875rem}.cd-form label.image-replace{display:inline-block;position:absolute;left:15px;top:50%;bottom:auto;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);height:20px;width:20px;overflow:hidden;text-indent:100%;white-space:nowrap;color:transparent;text-shadow:none;background-repeat:no-repeat;background-position:50% 0}.cd-form label.cd-username{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-username.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*/}.cd-form label.cd-email{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-email.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*/}.cd-form label.cd-password{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-password.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*/}.cd-form input{margin:0;padding:0;border-radius:.25em}.cd-form input.full-width{width:80%}.cd-form input.full-width2{width:94%}.cd-form input.has-padding{padding:12px 20px 12px 50px}.cd-form input.has-border{border:1px solid #d2d8d8;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}.cd-form input.has-border:focus{border-color:#98b880;box-shadow:0 0 5px rgba(52,54,66,0.1);outline:0}.cd-form input.has-error{border:1px solid #d76666}.cd-form input[type=password]{padding-right:65px}.cd-form input[type=submit]{padding:16px 0;cursor:pointer;background:#96b97d;color:#FFF;font-weight:bold;border:0;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;font-size:1.2em;font-weight:bold}.no-touch .cd-form input[type=submit]:hover,.no-touch .cd-form input[type=submit]:focus{background:#3599ae;outline:0}@media only screen and (min-width:600px){.cd-form{padding:2em}.cd-form .fieldset{margin:2em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form input.has-padding{padding:16px 20px 16px 50px}.cd-form input[type=submit]{padding:16px 0}}.cd-close-form{display:block;position:absolute;width:40px;height:40px;right:0;top:-40px;background:url("../wp-content/themes/runoob/assets/img/cd-icon-close.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*/ no-repeat center center;text-indent:100%;white-space:nowrap;overflow:hidden}@media only screen and (min-width:1170px){}#cd-login,#cd-signup,#cd-reset-password{display:none}#cd-login.is-selected,#cd-signup.is-selected,#cd-reset-password.is-selected{display:block}
+</style>
+<div class="cd-user-modal"> 
+	<div class="cd-user-modal-container">
+		<ul class="cd-switcher">
+			<li><a href="javascript:;">用户登录</a></li>
+			<li><a href="javascript:;">注册新用户</a></li>
+		</ul>
+
+		<div id="cd-login"> <!-- 登录表单 -->
+			<div class="cd-form">
+				<p class="fieldset">
+					<label class="image-replace cd-username" for="signin-username">用户名</label>
+					<input class="full-width has-padding has-border" id="signin-username" name=username type="text" placeholder="输入用户名">
+				</p>
+
+				<p class="fieldset">
+					<label class="image-replace cd-password" for="signin-password">密码</label>
+					<input class="full-width has-padding has-border" id="signin-password" name="password" type="password"  placeholder="输入密码">
+				</p>
+				
+				<p class="fieldset">
+					<input type="checkbox" id="remember-me" checked>
+					<label for="remember-me">记住登录状态</label>
+          <a href="../reset-password.htm" tppabs="http://www.runoob.com/reset-password" style="float: right;padding-right: 20px;" target="_blank">忘记密码？</a>
+				</p>
+ 				<input type="hidden" name="action" value="signin">
+				<p class="fieldset">
+					<input class="full-width2" type="submit" value="登 录">
+				</p>
+        <div class="err-msg"></div>
+			</div>
+		</div>
+
+		<div id="cd-signup"> <!-- 注册表单 -->
+			<div class="cd-form">
+				<p class="fieldset">
+					<label class="image-replace cd-password" for="verifycode">邀请码</label>
+					<input class="full-width has-padding has-border" id="signup-verifycode" name="verifycode" type="text"  placeholder="输入邀请码">
+				</p>
+				<p class="fieldset">
+					<label class="image-replace cd-username" for="signup-username">用户名</label>
+					<input class="full-width has-padding has-border" id="signup-username" name="name" type="text" placeholder="输入用户名">
+				</p>
+
+				<p class="fieldset">
+					<label class="image-replace cd-email" for="signup-email">邮箱</label>
+					<input class="full-width has-padding has-border" name="email" id="signup-email" type="email" placeholder="输入mail">
+				</p>
+
+				<p class="fieldset">
+					<label class="image-replace cd-password" for="signup-password">密码</label>
+					<input class="full-width has-padding has-border" id="signup-password" name="password" type="password"  placeholder="输入密码">
+				</p>
+				<p class="fieldset">
+					<label class="image-replace cd-password" for="signup-password2">重复输入密码</label>
+					<input class="full-width has-padding has-border" id="signup-password2" name="password2" type="password"  placeholder="重复输入密码">
+				</p>
+				
+				<!-- 
+				<p class="fieldset">
+					<input type="checkbox" id="accept-terms">
+					<label for="accept-terms">我已阅读并同意 <a href="javascript:;">用户协议</a></label>
+				</p>
+				 -->
+				 
+				 <input type="hidden" name="action" value="signup">
+				<p class="fieldset">
+					<input class="full-width2" type="submit" value="注册新用户">
+				</p>
+				<p class="fieldset">
+				  <a href="runoob-user-test-intro.html#invite" tppabs="http://www.runoob.com/w3cnote/runoob-user-test-intro.html#invite" target="_blank">如何获取邀请码？</a>
+				  </p>
+				<div class="err-msg"></div>
+			</div>
+
+		</div>
+
+		<a href="javascript:;" class="cd-close-form">关闭</a>
+	</div>
+</div> 
+<script src="../wp-content/themes/runoob/assets/js/main.js-v=1.189" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/js/main.js?v=1.189"></script>
+<script src="../../static.runoob.com/assets/libs/hl/run_prettify.js" tppabs="http://static.runoob.com/assets/libs/hl/run_prettify.js"></script>
+</body>
+</html>

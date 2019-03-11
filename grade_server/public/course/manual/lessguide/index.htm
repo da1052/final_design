@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="LESS æ˜¯åŠ¨æ€çš„æ ·å¼è¡¨è¯­è¨€ï¼Œæ‰©å……äº† CSS è¯­è¨€ï¼Œå¢åŠ äº†è¯¸å¦‚å˜é‡ã€æ··åˆï¼ˆmixinï¼‰ã€å‡½æ•°ç­‰åŠŸèƒ½ã€‚ Less æ—¢å¯ä»¥è¿è¡Œåœ¨æœåŠ¡å™¨ç«¯ï¼ˆNode.js å’Œ Rhino å¹³å°ï¼‰ä¹Ÿå¯ä»¥è¿è¡Œåœ¨å®¢æˆ·ç«¯ï¼ˆæµè§ˆå™¨ï¼‰ã€‚
+">
+<meta name="author" content="w3cschoolèœé¸Ÿæ•™ç¨‹">
+<title>
+Less å…¥é—¨æ–‡æ¡£
+</title>
+<meta name="keywords" content="Less,Lessæ•™ç¨‹,Lessæ–‡æ¡£,Less.js">
+<link href="public/css/css-navbar.html.css" tppabs="http://www.runoob.com/manual/lessguide/public/css/index.css" rel="stylesheet">
+<script type="text/javascript">
+  WebFontConfig = {google: {families: ['PT+Sans:400,700,400italic,700italic', 'PT+Mono&subset=latin,cyrillic'] }};
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://apps.bdimg.com/libs/webfont/1.3.0/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+<!--[if lt IE 9]>
+  <script src="../../../apps.bdimg.com/libs/html5shiv/3.7/cd-icon-password.svg" tppabs="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  <script src="../../../apps.bdimg.com/libs/respond.js/1.4.2/css-dropdowns.html" tppabs="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+<link rel="shortcut icon" href="public/ico/favicon.ico">
+</head>
+<body class="index">
+<header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+<span class="sr-only">åˆ‡æ¢å¯¼èˆª</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href="index.htm#" tppabs="http://www.runoob.com/manual/lessguide/#" class="navbar-brand" alt="Less">
+<img src="public/img/logo.png" tppabs="http://www.runoob.com/manual/lessguide/public/img/logo.png">
+</a>
+</div>
+<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+<ul class="nav navbar-nav">
+<li>
+<a href="features/index.htm" tppabs="http://www.runoob.com/manual/lessguide/features/">è¯­è¨€ç‰¹æ€§</a>
+</li>
+<li>
+<a href="functions/index.htm" tppabs="http://www.runoob.com/manual/lessguide/functions/">å‡½æ•°æ‰‹å†Œ</a>
+</li>
+<li>
+<a href="usage/index.htm" tppabs="http://www.runoob.com/manual/lessguide/usage/">ç”¨æ³•</a>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a href="about/index.htm" tppabs="http://www.runoob.com/manual/lessguide/about/">å…³äº</a>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li> <a href="javascript:if(confirm('https://github.com/less/css-tooltip.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/css-tooltip.html'" tppabs="https://github.com/less/less-docs">æ–‡æ¡£èµ„æº</a> </li>
+<li> <a href="javascript:if(confirm('https://github.com/less/less-docs/css-image-gallery.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less-docs/css-image-gallery.html'" tppabs="https://github.com/less/less-docs/issues?&state=open">æ–‡æ¡£é—®ç­”</a> </li>
+<li class="divider"></li>
+<li> <a href="javascript:if(confirm('https://github.com/less/css-image-transparency.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/css-image-transparency.html'" tppabs="https://github.com/less/less.js.git">Less.js èµ„æº</a> </li>
+<li> <a href="javascript:if(confirm('https://github.com/less/less.js/css-image-sprites.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/css-image-sprites.html'" tppabs="https://github.com/less/less.js/issues">Less.js é—®ç­”</a> </li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="docs-header" id="content">
+<div class="container">
+<h1>å¿«é€Ÿå…¥é—¨</h1>
+<p> Less ç®€ä»‹ï¼Œå¦‚ä½•ä¸‹è½½ä½¿ç”¨ï¼Œåº”ç”¨å®ä¾‹ç­‰ç­‰ã€‚</p>
+</div>
+</div>
+<div class="banner">
+<div class="container">
+less v1.7.3 ç‰ˆæœ¬å·²å‘å¸ƒ
+<strong>
+<a href="javascript:if(confirm('https://github.com/less/less.js/blob/master/css-mediatypes.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/blob/master/css-mediatypes.html'" tppabs="https://github.com/less/less.js/blob/master/CHANGELOG.md">æŸ¥çœ‹æ–°ç‰ˆè¯´æ˜</a>
+</strong>
+</div>
+</div>
+<div class="container docs-container">
+<div class="row">
+<div class="col-md-3">
+<div class="sidebar hidden-print" role="complementary">
+<div id="navigation">
+<ul class="nav sidenav"><li><a href="#getting-started">å¿«é€Ÿå…¥é—¨</a></li>
+<li><a href="#using-less">ä½¿ç”¨ Less</a><ul class="nav"><li><a href="#using-less-installation">å®‰è£…</a></li>
+<li><a href="#using-less-command-line-usage">å‘½ä»¤è¡Œç”¨æ³•</a></li>
+<li><a href="#using-less-usage-in-code">ä»£ç ä¸­ä½¿ç”¨</a></li>
+<li><a href="#using-less-configuration">é…ç½®</a></li>
+<li><a href="#using-less-third-party-tools">ç¬¬ä¸‰æ–¹å·¥å…·</a></li></ul></li>
+<li><a href="#command-line-with-rhino">Rhino å‘½ä»¤è¡Œ</a></li>
+<li><a href="#client-side-usage">å®¢æˆ·ç«¯ç”¨æ³•</a><ul class="nav"><li><a href="#client-side-usage-tips">æç¤º</a></li>
+<li><a href="#client-side-usage-browser-options">æµè§ˆå™¨é€‰é¡¹</a></li></ul></li>
+<li><a href="#download-options">è·å– Less.js</a><ul class="nav"><li><a href="#download-options-browser-downloads">æµè§ˆå™¨ä¸‹è½½</a></li>
+<li><a href="#download-options--less-cdn-cdnjs-cloudflare-com-ajax-libs-less-js-1-7-3-less-min-js-">Less CDN</a></li></ul></li>
+<li><a href="#license-faqs">License FAQs</a></li></ul></div>
+</div>
+</div>
+<div class="col-md-9" role="main">
+<div class="panel docs-content">
+<div class="docs-section">
+<div class="page-header">
+<h1 class="docs-heading">å¿«é€Ÿå…¥é—¨<span class="anchor-target" id="getting-started"></span>
+<a href="#getting-started" name="getting-started" class="anchor glyphicon glyphicon-link"></a></h1>
+</div>
+<p>Less æ˜¯ä¸€é—¨ CSS é¢„å¤„ç†è¯­è¨€ï¼Œå®ƒæ‰©å……äº† CSS è¯­è¨€ï¼Œå¢åŠ äº†è¯¸å¦‚å˜é‡ã€æ··åˆï¼ˆmixinï¼‰ã€å‡½æ•°ç­‰åŠŸèƒ½ï¼Œè®© CSS æ›´æ˜“ç»´æŠ¤ã€æ–¹ä¾¿åˆ¶ä½œä¸»é¢˜ã€æ‰©å……ã€‚</p>
+<p>Less å¯ä»¥è¿è¡Œåœ¨ Nodeã€æµè§ˆå™¨å’Œ Rhino å¹³å°ä¸Šã€‚ç½‘ä¸Šæœ‰å¾ˆå¤šç¬¬ä¸‰æ–¹å·¥å…·å¸®åŠ©ä½ ç¼–è¯‘ Less æºç ã€‚</p>
+<p>å®ä¾‹:</p>
+<pre><code class="lang-less"><span class="hljs-at_rule">@base: <span class="hljs-hexcolor">#f938ab</span>;</span>
+
+<span class="hljs-class">.box-shadow</span>(<span class="hljs-at_rule">@style, @c)<span class="hljs-preprocessor"> when</span> (<span class="hljs-function">iscolor(@c)</span>) {</span>
+  -webkit-<span class="hljs-attribute">box-shadow</span><span class="hljs-value">: @style @c;</span>
+  <span class="hljs-attribute">box-shadow</span><span class="hljs-value">:         @style @c;</span>
+}
+<span class="hljs-class">.box-shadow</span>(<span class="hljs-at_rule">@style, @alpha:<span class="hljs-preprocessor"> 50</span>%)<span class="hljs-preprocessor"> when</span> (<span class="hljs-function">isnumber(@alpha)</span>) {</span>
+  <span class="hljs-class">.box-shadow</span>(<span class="hljs-at_rule">@style,<span class="hljs-preprocessor"> rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-preprocessor"> 0</span>,<span class="hljs-preprocessor"> 0</span>, @alpha));</span>
+}
+<span class="hljs-class">.box</span> {
+  <span class="hljs-attribute">color</span><span class="hljs-value">: saturate(@base, <span class="hljs-number">5</span>%);</span>
+  <span class="hljs-attribute">border-color</span><span class="hljs-value">: lighten(@base, <span class="hljs-number">30</span>%);</span>
+  <span class="hljs-tag">div</span> { <span class="hljs-class">.box-shadow</span>(0 0 5px, 30%) }
+}
+</code></pre>
+<p>ç¼–è¯‘ç»“æœ</p>
+<pre><code class="lang-css"><span class="hljs-class">.box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fe33ac</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fdcdea</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.box</span> <span class="hljs-tag">div</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-box-shadow</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span> <span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.3</span>)</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span> <span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.3</span>)</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+</div>
+<div class="docs-section">
+<div class="page-header">
+<h1 class="docs-heading">ä½¿ç”¨ Less<span class="anchor-target" id="using-less"></span>
+<a href="#using-less" name="using-less" class="anchor glyphicon glyphicon-link"></a></h1>
+</div>
+<blockquote>
+<p>Less å¯ä»¥é€šè¿‡ npm åœ¨å‘½ä»¤è¡Œä¸Šè¿è¡Œï¼›åœ¨æµè§ˆå™¨ä¸Šä½œä¸ºè„šæœ¬æ–‡ä»¶ä¸‹è½½ï¼›æˆ–è€…é›†æˆåœ¨å¹¿å¤§çš„ç¬¬ä¸‰æ–¹å·¥å…·å†…ã€‚è¯·å‚è€ƒ <a href="usage/index.html" tppabs="http://www.runoob.com/manual/lessguide/usage/index.html">ç”¨æ³•</a>
+ã€‚</p>
+</blockquote>
+<h2 class="docs-heading">å®‰è£…<span class="anchor-target" id="using-less-installation"></span>
+<a href="#using-less-installation" name="using-less-installation" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>åœ¨æœåŠ¡å™¨ç«¯æœ€å®¹æ˜“çš„å®‰è£…æ–¹å¼å°±æ˜¯é€šè¿‡ npm ï¼ˆ<a href="javascript:if(confirm('http://nodejs.org/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://nodejs.org/'" tppabs="http://nodejs.org/">node.js</a> çš„åŒ…ç®¡ç†å™¨ï¼‰ï¼Œæ–¹æ³•å¦‚ä¸‹ï¼š
+</p>
+<pre><code class="lang-bash">$ npm install -g less
+</code></pre>
+<h2 class="docs-heading">å‘½ä»¤è¡Œç”¨æ³•ï¼š<span class="anchor-target" id="using-less-command-line-usage"></span>
+<a href="#using-less-command-line-usage" name="using-less-command-line-usage" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>å®‰è£… Less åï¼Œå°±å¯ä»¥åœ¨å‘½ä»¤è¡Œä¸Šè°ƒç”¨ Less ç¼–è¯‘å™¨äº†ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="lang-bash">$ lessc styles.less
+</code></pre>
+<p>è¿™å°†è¾“å‡ºç¼–è¯‘ä¹‹åçš„ CSS ä»£ç åˆ° <code>stdout</code>ï¼Œä½ å¯ä»¥å°†è¾“å‡ºé‡å®šå‘åˆ°ä¸€ä¸ªæ–‡ä»¶ï¼š</p>
+<pre><code class="lang-bash">$ lessc styles.less &gt; styles.css
+</code></pre>
+<p>è‹¥è¦è¾“å‡ºå‹ç¼©è¿‡çš„ CSSï¼Œåªéœ€æ·»åŠ  <code>-x</code> é€‰é¡¹ã€‚å¦‚æœå¸Œæœ›è·å¾—æ›´å¥½çš„å‹ç¼©æ•ˆæœï¼Œè¿˜å¯ä»¥é€šè¿‡ <code>--clean-css</code> é€‰é¡¹å¯ç”¨ <a href="javascript:if(confirm('https://github.com/GoalSmashers/css-attribute-selectors.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/GoalSmashers/css-attribute-selectors.html'" tppabs="https://github.com/GoalSmashers/clean-css">Clean CSS</a> è¿›è¡Œå‹ç¼©ã€‚
+</p>
+<p>æ‰§è¡Œ lessc ä¸”ä¸å¸¦ä»»ä½•å‚æ•°ï¼Œå°±ä¼šåœ¨å‘½ä»¤è¡Œä¸Šè¾“å‡ºæ‰€æœ‰å¯ç”¨é€‰é¡¹çš„åˆ—è¡¨ã€‚</p>
+<h2 class="docs-heading">ä»£ç ä¸­ä½¿ç”¨<span class="anchor-target" id="using-less-usage-in-code"></span>
+<a href="#using-less-usage-in-code" name="using-less-usage-in-code" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>å¯ä»¥åƒä¸‹é¢è¿™æ ·åœ¨ä»£ç ä¸­è°ƒç”¨ Less ç¼–è¯‘å™¨ï¼ˆNode å¹³å°ï¼‰ã€‚</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> less = <span class="hljs-built_in">require</span>(<span class="hljs-string">'less'</span>);
+
+less.render(<span class="hljs-string">'.class { width: (1 + 1) }'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e, css)</span> </span>{
+  <span class="hljs-built_in">console</span>.log(css);
+});
+</code></pre>
+<p>è¾“å‡ºç»“æœä¸ºï¼š</p>
+<pre><code class="lang-css"><span class="hljs-class">.class</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">2</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>ä½ è¿˜å¯ä»¥æ‰‹åŠ¨è°ƒç”¨åˆ†æå™¨ï¼ˆpaserï¼‰å’Œç¼–è¯‘å™¨ï¼š</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> parser = <span class="hljs-keyword">new</span>(less.Parser);
+
+parser.parse(<span class="hljs-string">'.class { width: (1 + 1) }'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, tree)</span> </span>{
+  <span class="hljs-keyword">if</span> (err) {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">console</span>.error(err)
+  }
+  <span class="hljs-built_in">console</span>.log(tree.toCSS());
+});
+</code></pre>
+<h2 class="docs-heading">é…ç½®<span class="anchor-target" id="using-less-configuration"></span>
+<a href="#using-less-configuration" name="using-less-configuration" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>å¯ä»¥ç»™ç¼–è¯‘å™¨ä¼ é€’å¤šä¸ªå‚æ•°ï¼š</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> parser = <span class="hljs-keyword">new</span>(less.Parser)({
+  paths: [<span class="hljs-string">'.'</span>, <span class="hljs-string">'./lib'</span>], <span class="hljs-comment">// Specify search paths for @import directives</span>
+  filename: <span class="hljs-string">'style.less'</span> <span class="hljs-comment">// Specify a filename, for better error messages</span>
+});
+
+parser.parse(<span class="hljs-string">'.class { width: (1 + 1) }'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e, tree)</span> </span>{
+  tree.toCSS({
+    <span class="hljs-comment">// Minify CSS output</span>
+    compress: <span class="hljs-literal">true</span>
+  });
+});
+</code></pre>
+<h2 class="docs-heading">ç¬¬ä¸‰æ–¹å·¥å…·<span class="anchor-target" id="using-less-third-party-tools"></span>
+<a href="#using-less-third-party-tools" name="using-less-third-party-tools" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>æŸ¥çœ‹ <a href="usage/index.html" tppabs="http://www.runoob.com/manual/lessguide/usage/index.html">ç”¨æ³•</a> éƒ¨åˆ†äº†è§£ç¬¬ä¸‰æ–¹å·¥å…·çš„è¯¦ç»†ä¿¡æ¯ã€‚</p>
+<h1 class="docs-heading">Rhino å‘½ä»¤è¡Œ<span class="anchor-target" id="command-line-with-rhino"></span>
+<a href="#command-line-with-rhino" name="command-line-with-rhino" class="anchor glyphicon glyphicon-link"></a></h1>
+<blockquote>
+<p>æ¯ä¸ª less.js å‘å¸ƒç‰ˆæœ¬åŒæ ·åŒ…å«äº† rhino-compatible ç‰ˆæœ¬ã€‚</p>
+</blockquote>
+<p>å‘½ä»¤è¡Œ rhino ç‰ˆæœ¬éœ€è¦åŒ…å«ä»¥ä¸‹ä¸¤ä¸ªæ–‡ä»¶ï¼š</p>
+<ul>
+<li>less-rhino-<version>.js - ç¼–è¯‘æ‰§è¡Œ,</version></li>
+<li>lessc-rhino-<version>.js - å‘½ä»¤è¡Œæ”¯æŒ</version></li>
+</ul>
+<p>å‘½ä»¤è¡Œæ‰§è¡Œç¼–è¯‘ï¼š</p>
+<pre><code>java -jar js.jar -f less-rhino-&lt;version&gt;.js lessc-rhino-&lt;version&gt;.js styles.less styles.css
+</code></pre><p>ä»¥ä¸Šå°†ç¼–è¯‘ styles.less æ–‡ä»¶å¹¶ä¿å­˜ä¸º styles.css æ–‡ä»¶ã€‚
+è¾“å‡ºæ–‡ä»¶çš„å‚æ•°æ˜¯å¯é€‰çš„ï¼Œå¦‚æœæ²¡æœ‰æŒ‡å®šè¯¥å‚æ•°ï¼Œlesså°†é»˜è®¤è¾“å‡ºåˆ°æ ‡å‡†è¾“å‡ºä¸­ï¼ˆ<code>stdout</code>ï¼‰ã€‚</p>
+<h1 class="docs-heading">å®¢æˆ·ç«¯ç”¨æ³•<span class="anchor-target" id="client-side-usage"></span>
+<a href="#client-side-usage" name="client-side-usage" class="anchor glyphicon glyphicon-link"></a></h1>
+<blockquote>
+<p>åœ¨æµè§ˆå™¨ä¸Šè·‘ less.js éå¸¸æ–¹ä¾¿å¼€å‘ï¼Œä½†æ˜¯ä¸æ¨èç”¨äºç”Ÿäº§ç¯å¢ƒã€‚ </p>
+</blockquote>
+<p>åœ¨å®¢æˆ·ç«¯ä½¿ç”¨ Less.js æ˜¯æœ€å®¹æ˜“çš„æ–¹å¼ï¼Œå¹¶ä¸”åœ¨å¼€å‘é˜¶æ®µå¾ˆæ–¹ä¾¿ï¼Œä½†æ˜¯ï¼Œåœ¨ç”Ÿäº§ç¯å¢ƒä¸­ï¼Œæ€§èƒ½å’Œå¯é æ€§éå¸¸é‡è¦ï¼Œ
+<em>æˆ‘ä»¬å»ºè®®æœ€å¥½ä½¿ç”¨ node.js æˆ–å…¶å®ƒç¬¬ä¸‰æ–¹å·¥å…·è¿›è¡Œé¢„ç¼–è¯‘</em>ã€‚</p>
+<p>é‚£å°±å¼€å§‹å§ï¼Œåœ¨é¡µé¢ä¸­åŠ å…¥ <code>.less</code> æ ·å¼è¡¨çš„é“¾æ¥ï¼Œå¹¶å°† <code>rel</code> å±æ€§è®¾ç½®ä¸º "<code>stylesheet/less</code>"ï¼š</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet/less"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"styles.less"</span> /&gt;</span>
+</code></pre>
+<p>æ¥ä¸‹æ¥ï¼Œä¸‹è½½ <a href="javascript:if(confirm('https://github.com/less/less.js/archive/master.zip  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/archive/master.zip'" tppabs="https://github.com/less/less.js/archive/master.zip">less.js</a> å¹¶é€šè¿‡ <code>&lt;script&gt;&lt;/script&gt;</code> æ ‡ç­¾å°†å…¶å¼•å…¥ï¼Œæ”¾ç½®äºé¡µé¢çš„<code>&lt;head&gt;</code> å…ƒç´ å†…ï¼š</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"less.js"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h3 class="docs-heading">æç¤º<span class="anchor-target" id="client-side-usage-tips"></span>
+<a href="#client-side-usage-tips" name="client-side-usage-tips" class="anchor glyphicon glyphicon-link"></a></h3>
+<ul>
+<li>åŠ¡å¿…ç¡®ä¿åœ¨ less.js ä¹‹å‰åŠ è½½ä½ çš„æ ·å¼è¡¨ã€‚</li>
+<li>å¦‚æœåŠ è½½å¤šä¸ª <code>.less</code> æ ·å¼è¡¨æ–‡ä»¶ï¼Œæ¯ä¸ªæ–‡ä»¶éƒ½ä¼šè¢«å•ç‹¬ç¼–è¯‘ã€‚å› æ­¤ï¼Œä¸€ä¸ªæ–‡ä»¶ä¸­æ‰€å®šä¹‰çš„ä»»ä½•å˜é‡ã€mixin æˆ–å‘½åç©ºé—´éƒ½æ— æ³•åœ¨å…¶å®ƒæ–‡ä»¶ä¸­è®¿é—®
+ã€‚</li>
+</ul>
+<h2 class="docs-heading">æµè§ˆå™¨é€‰é¡¹<span class="anchor-target" id="client-side-usage-browser-options"></span>
+<a href="#client-side-usage-browser-options" name="client-side-usage-browser-options" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>
+åœ¨ <code>&lt;script src=&quot;less.js&quot;&gt;&lt;/script&gt;</code> ä¹‹å‰ å®šä¹‰å…¨å±€çš„ <code>less</code> å¯¹è±¡å°±å¯ä»¥ä¸º <code>Less.js</code> è®¾ç½®å‚æ•°ï¼š</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- set options before less.js script --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  less = {
+    env: <span class="hljs-string">"development"</span>,
+    async: <span class="hljs-literal">false</span>,
+    fileAsync: <span class="hljs-literal">false</span>,
+    poll: <span class="hljs-number">1000</span>,
+    functions: {},
+    dumpLineNumbers: <span class="hljs-string">"comments"</span>,
+    relativeUrls: <span class="hljs-literal">false</span>,
+    rootpath: <span class="hljs-string">":/a.com/"</span>
+  };
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"less.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p>äº†è§£æ›´å¤š <a href="usage/index.htm#using-less-in-the-browser-client-side-options" tppabs="http://www.runoob.com/manual/lessguide/usage/#using-less-in-the-browser-client-side-options">æµè§ˆå™¨é€‰é¡¹</a></p>
+</div>
+<div class="docs-section">
+<div class="page-header">
+<h1 class="docs-heading">è·å– Less.js<span class="anchor-target" id="download-options"></span>
+<a href="#download-options" name="download-options" class="anchor glyphicon glyphicon-link"></a></h1>
+</div>
+<h2 class="docs-heading">æµè§ˆå™¨ä¸‹è½½<span class="anchor-target" id="download-options-browser-downloads"></span>
+<a href="#download-options-browser-downloads" name="download-options-browser-downloads" class="anchor glyphicon glyphicon-link"></a></h2>
+<a class="btn btn-default" href="javascript:if(confirm('https://raw.github.com/less/less.js/master/dist/css-summary.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://raw.github.com/less/less.js/master/dist/css-summary.html'" tppabs="https://raw.github.com/less/less.js/master/dist/less-1.7.3.min.js">ä¸‹è½½ Less.js v1.7.3</a>
+<div class="docs-dl-options">
+<h4 id="-download-source-code-https-github-com-less-less-js-archive-v1-7-3-zip-"><a href="javascript:if(confirm('https://github.com/less/less.js/archive/css3-intro.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/archive/css3-intro.html'" tppabs="https://github.com/less/less.js/archive/v1.7.3.zip">Download source code</a></h4>
+<p>ç›´æ¥ä» GitHub ä¸Šä¸‹è½½æœ€æ–°çš„ Less.js æºç ã€‚</p>
+<h4 id="-clone-or-fork-via-github-https-github-com-less-less-js-git-"><a href="javascript:if(confirm('https://github.com/less/css-image-transparency.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/css-image-transparency.html'" tppabs="https://github.com/less/less.js.git">Clone or fork via GitHub</a></h4>
+<p>é€šè¿‡ GitHub å…‹éš†æˆ– fork æœ¬é¡¹ç›®ï¼</p>
+<h4 id="-install-with-bower-http-bower-io-"><a href="javascript:if(confirm('http://bower.io/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://bower.io/'" tppabs="http://bower.io/">é€šè¿‡ Bower å®‰è£…</a></h4>
+<p>é€šè¿‡ Bower å®‰è£… Less.js é¡¹ç›®ï¼Œå¯ä»¥ä½¿ç”¨ä»¥ä¸‹å‘½ä»¤ï¼š</p>
+<pre><code class="lang-bash">bower install less
+</code></pre>
+</div>
+<div class="cdn-options">
+<h3 class="docs-heading"><a href="javascript:if(confirm('http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/css3-borders.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/css3-borders.html'" tppabs="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js">Less CDN</a><span class="anchor-target" id="download-options--less-cdn-cdnjs-cloudflare-com-ajax-libs-less-js-1-7-3-less-min-js-"></span>
+<a href="#download-options--less-cdn-cdnjs-cloudflare-com-ajax-libs-less-js-1-7-3-less-min-js-" name="download-options--less-cdn-cdnjs-cloudflare-com-ajax-libs-less-js-1-7-3-less-min-js-" class="anchor glyphicon glyphicon-link"></a></h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+</div>
+</div>
+<div class="docs-section">
+<div class="page-header">
+<h1 class="docs-heading">License FAQs<span class="anchor-target" id="license-faqs"></span>
+<a href="#license-faqs" name="license-faqs" class="anchor glyphicon glyphicon-link"></a></h1>
+</div>
+<p class="lead">Less.js åŸºäº Apache 2 è®¸å¯è¯å‘å¸ƒï¼ˆ<a href="javascript:if(confirm('https://github.com/less/less.js/issues/css3-backgrounds.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/issues/css3-backgrounds.html'" tppabs="https://github.com/less/less.js/issues/1029">æˆ‘ä»¬æ‰“ç®—å°†æ¥é‡‡ç”¨åŒè®¸å¯è¯æ–¹å¼</a>ï¼‰ã€‚ç‰ˆæƒæ‰€æœ‰ 2009-2014ï¼ŒAlexis Sellier å’Œ Less æ ¸å¿ƒå°ç»„ï¼ˆè§ä¸Šé¢ï¼‰ã€‚æ€»ç»“å¦‚ä¸‹ï¼š</p>
+<div class="row">
+<div class="col-12 col-lg-6">
+<h4>èµ‹äºˆä½ çš„æƒåŠ›ï¼š</h4>
+<ul>
+<li>ä»»æ„ä¸‹è½½å¹¶ä½¿ç”¨ Less.js çš„å…¨éƒ¨æˆ–éƒ¨åˆ†ä»£ç ï¼Œå¯ä»¥ç”¨äºä¸ªäººã€å…¬å¸å†…éƒ¨æˆ–å•†ä¸šç›®çš„</li>
+<li>å°† Less.js åŒ…å«åˆ°ä½ çš„äº§å“ä¸­</li>
+</ul>
+</div>
+<div class="col-12 col-lg-6">
+<h4>ä¸¥ç¦ï¼š</h4>
+<ul>
+<li>åœ¨æ²¡æœ‰å£°æ˜ç‰ˆæƒå½’å±çš„æƒ…å†µä¸‹ä½¿ç”¨ Less.js ä¸­çš„ä»»ä½•ä»£ç ç‰‡æ®µ</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col-12 col-lg-6">
+<h4>ä½ çš„ä¹‰åŠ¡ï¼š</h4>
+<ul>
+<li>å¦‚æœä½ çš„äº§å“ä¸­åŒ…å« Less.jsï¼Œå¿…é¡»åŒ…å«ä¸€ä»½ Less.js çš„ç‰ˆæƒåè®®</li>
+<li>åœ¨ä½ åŒ…å«äº† Less.js çš„äº§å“ä¸­æ˜ç¡®å£°æ˜ Less.js çš„ç‰ˆæƒå½’ Less æ ¸å¿ƒå°ç»„</li>
+</ul>
+</div>
+<div class="col-12 col-lg-6">
+<h4>ä¸éœ€è¦ï¼š</h4>
+<ul>
+<li>åœ¨ä½ çš„äº§å“ä¸­åŒ…å« Lessã€‚js è‡ªèº«æˆ–ä½ æ‰€ä¿®æ”¹çš„æºç </li>
+<li>æäº¤ä½ å¯¹ Less.js æ‰€åšçš„ä¿®æ”¹åˆ° Less.js é¡¹ç›®ï¼ˆæˆ‘ä»¬è¿˜æ˜¯é¼“åŠ±æäº¤å¯¹ Less.js çš„æ”¹è¿›ï¼‰</li>
+</ul>
+</div>
+</div>
+<p>å®Œæ•´çš„ Less.js ç‰ˆæƒä¿¡æ¯ä½äº <a href="javascript:if(confirm('https://github.com/less/less.js/blob/master/LICENSE  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/blob/master/LICENSE'" tppabs="https://github.com/less/less.js/blob/master/LICENSE">é¡¹ç›®ä»“åº“å†…</a>ï¼Œè¯·å‚è€ƒã€‚</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer" role="contentinfo">
+<div class="container">
+<div class="bs-social">
+<ul class="bs-social-buttons">
+<li>
+<iframe class="github-btn" src="../../../ghbtns.com/css3-gradients.html" tppabs="http://ghbtns.com/github-btn.html?user=less&repo=less.js&type=watch&count=true" width="100" height="20" title="Star on GitHub"></iframe>
+</li>
+<li>
+<iframe class="github-btn" src="../../../ghbtns.com/css3-text-effects.html" tppabs="http://ghbtns.com/github-btn.html?user=less&repo=less.js&type=fork&count=true" width="102" height="20" title="Fork on GitHub"></iframe>
+</li>
+</ul>
+</div>
+<p>Less.js åŠå…¶æ–‡æ¡£ç”± <a href="about/index.htm#team" tppabs="http://www.runoob.com/manual/lessguide/about/#team">Less æ ¸å¿ƒå¼€å‘å°ç»„</a> å¼€å‘ç»´æŠ¤ã€‚</p>
+<p>æ–‡æ¡£æºä»£ç å‘å¸ƒåœ¨ <a href="javascript:if(confirm('https://github.com/less/less-docs/blob/master/css3-fonts.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less-docs/blob/master/css3-fonts.html'" tppabs="https://github.com/less/less-docs/blob/master/LICENSE-MIT" target="_blank">MIT License</a>, æ–‡æ¡£åŸºäº <a href="javascript:if(confirm('http://creativecommons.org/licenses/by/3.0/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://creativecommons.org/licenses/by/3.0/'" tppabs="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> åè®®ã€‚</p>
+<ul class="footer-links">
+<li>ç›®å‰ç‰ˆæœ¬ v1.7.3</li>
+<li class="muted">&middot;</li>
+<li><a href="javascript:if(confirm('https://github.com/less/less.js/css-image-sprites.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/css-image-sprites.html'" tppabs="https://github.com/less/less.js/issues">Less.js é—®ç­”</a></li>
+<li class="muted">&middot;</li>
+<li><a href="javascript:if(confirm('https://github.com/less/less-docs/css-image-gallery.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less-docs/css-image-gallery.html'" tppabs="https://github.com/less/less-docs/issues?&state=open">Less æ–‡æ¡£é—®ç­”</a></li>
+<li class="muted">&middot;</li>
+<li><a href="javascript:if(confirm('https://github.com/less/less.js/blob/master/css-mediatypes.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/blob/master/css-mediatypes.html'" tppabs="https://github.com/less/less.js/blob/master/CHANGELOG.md">ä¿®æ”¹è®°å½•</a></li>
+</ul>
+</div>
+</footer>
+<script src="../../../apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js" tppabs="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../../../apps.bdimg.com/libs/bootstrap/3.0.3/js/css3-transitions.html" tppabs="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="../../../apps.bdimg.com/libs/holder/2.2.0/holder.js" tppabs="http://apps.bdimg.com/libs/holder/2.2.0/holder.js"></script>
+<script src="public/js/application.js" tppabs="http://www.runoob.com/manual/lessguide/public/js/application.js"></script>
+<div style="display:none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "../../../hm.baidu.com/hm.js-3eec0b7da6548cf07db3bc477ea905ee"/*tpa=https://hm.baidu.com/hm.js?3eec0b7da6548cf07db3bc477ea905ee*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+</body>
+</html>

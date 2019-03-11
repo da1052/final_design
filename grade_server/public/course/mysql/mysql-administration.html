@@ -1,0 +1,1132 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="qc:admins" content="465267610762567726375" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MySQL 管理 | 菜鸟教程</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="canonical" href="http://www.runoob.com/mysql/mysql-administration.html" />
+<meta name="keywords" content="MySQL 管理">
+<meta name="description" content="MySQL 管理   启动及关闭 MySQL 服务器 Windows 系统下 在 Windows 系统下，打开命令窗口(cmd)，进入 MySQL 安装目录的 bin 目录。  启动： cd c:/mysql/bin mysqld --console  关闭： cd c:/mysql/bin mysqladmin -uroot shutdown Linux 系统下 首先，我们需要通过以下命令来检查MySQL服务器是否启动：  ps -e..">
+<link rel="shortcut icon" href="../../static.runoob.com/images/favicon.ico" tppabs="http://static.runoob.com/images/favicon.ico" mce_href="//static.runoob.com/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../wp-content/themes/runoob/style.css-v=1.147.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/style.css?v=1.147" type="text/css" media="all" />
+<link rel="stylesheet" href="../../cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" tppabs="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<!--[if gte IE 9]><!-->
+  <script src="../../cdn.staticfile.org/jquery/2.0.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+  <!--<![endif]-->
+<!--[if lt IE 9]>
+     <script src="../../cdn.staticfile.org/jquery/1.9.1/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+     <script src="../../cdn.staticfile.org/html5shiv/r29/html5.min.js" tppabs="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+<link rel="apple-touch-icon" href="//static.runoob.com/images/icon/mobile-icon.png"/>
+<meta name="apple-mobile-web-app-title" content="菜鸟教程">
+</head>
+<body>
+<div class="container logo-search">
+<div class="col search row-search-mobile">
+<form action="index.php-s=.htm" tppabs="http://www.runoob.com/mysql/index.php?s=">
+<input class="placeholder" placeholder="搜索……" name="s" autocomplete="off">
+</form>
+</div>
+<div class="row">
+<div class="col logo">
+<h1><a href="../index.htm" tppabs="http://www.runoob.com/">菜鸟教程 -- 学的不仅是技术，更是梦想！</a></h1>
+</div>
+<div class="col right-list">
+<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style=""> <i class="fa fa-navicon"></i> </button>
+</div>
+<div class="col search search-desktop last">
+<form action="../-s=.htm" tppabs="http://www.runoob.com/?s=" target="_blank">
+<input class="placeholder" id="s" name="s" placeholder="搜索……" autocomplete="off">
+</form>
+</div>
+</div>
+</div>
+<div class="container navigation">
+<div class="row">
+<div class="col nav">
+<ul class="pc-nav">
+<li><a href="../index.htm" tppabs="http://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JavaScript</a></li>
+<li><a href="../jquery/jquery-tutorial.html" tppabs="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery</a></li>
+<li><a href="../bootstrap/bootstrap-tutorial.html" tppabs="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap</a></li>
+<li><a href="../sql/sql-tutorial.html" tppabs="http://www.runoob.com/sql/sql-tutorial.html">SQL</a></li>
+<li><a href="mysql-tutorial.html" tppabs="http://www.runoob.com/mysql/mysql-tutorial.html">MySQL</a></li>
+<li><a href="../php/php-tutorial.html" tppabs="http://www.runoob.com/php/php-tutorial.html">PHP</a></li>
+<li><a href="../python/python-tutorial.html" tppabs="http://www.runoob.com/python/python-tutorial.html">Python2</a></li>
+<li><a href="../python3/python3-tutorial.html" tppabs="http://www.runoob.com/python3/python3-tutorial.html">Python3</a></li>
+<li><a href="../cprogramming/c-tutorial.html" tppabs="http://www.runoob.com/cprogramming/c-tutorial.html">C</a></li>
+<li><a href="../cplusplus/cpp-tutorial.html" tppabs="http://www.runoob.com/cplusplus/cpp-tutorial.html">C++</a></li>
+<li><a href="../csharp/csharp-tutorial.html" tppabs="http://www.runoob.com/csharp/csharp-tutorial.html">C#</a></li>
+<li><a href="../java/java-tutorial.html" tppabs="http://www.runoob.com/java/java-tutorial.html">Java</a></li>
+<li><a href="../browser-history.htm" tppabs="http://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png" tppabs="http://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+</ul>
+<ul class="mobile-nav">
+<li><a href="../index.htm" tppabs="http://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JS</a></li>
+<li><a href="../browser-history.htm" tppabs="http://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png" tppabs="http://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+<a href="javascript:void(0)" class="search-reveal">Search</a>
+</ul>
+</div>
+</div>
+</div>
+<div class="container main">
+<div class="row">
+<div class="col left-column">
+<div class="tab">MySQL 教程 <a data-cate="57" href="javascript:void(0);" title="夜间模式" id="moon"><i class="fa fa-moon-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+<a data-cate="57" style="display:none;" href="javascript:void(0);" title="日间模式" id="sun"><i class="fa fa-sun-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+</div>
+<div class="sidebar-box gallery-list">
+<div class="design" id="leftcolumn">
+<a target="_top" title="MySQL 教程" href="mysql-tutorial.html" tppabs="http://www.runoob.com/mysql/mysql-tutorial.html">
+MySQL 教程 </a>
+<a target="_top" title="MySQL 安装" href="mysql-install.html" tppabs="http://www.runoob.com/mysql/mysql-install.html">
+MySQL 安装 </a>
+<a target="_top" title="MySQL 管理" href="mysql-administration.html" tppabs="http://www.runoob.com/mysql/mysql-administration.html">
+MySQL 管理 </a>
+<a target="_top" title="MySQL PHP 语法" href="mysql-php-syntax.html" tppabs="http://www.runoob.com/mysql/mysql-php-syntax.html">
+MySQL PHP 语法 </a>
+<a target="_top" title="MySQL 连接" href="mysql-connection.html" tppabs="http://www.runoob.com/mysql/mysql-connection.html">
+MySQL 连接 </a>
+<a target="_top" title="MySQL 创建数据库" href="mysql-create-database.html" tppabs="http://www.runoob.com/mysql/mysql-create-database.html">
+MySQL 创建数据库 </a>
+<a target="_top" title="MySQL 删除数据库" href="mysql-drop-database.html" tppabs="http://www.runoob.com/mysql/mysql-drop-database.html">
+MySQL 删除数据库 </a>
+<a target="_top" title="MySQL 选择数据库" href="mysql-select-database.html" tppabs="http://www.runoob.com/mysql/mysql-select-database.html">
+MySQL 选择数据库 </a>
+<a target="_top" title="MySQL 数据类型" href="mysql-data-types.html" tppabs="http://www.runoob.com/mysql/mysql-data-types.html">
+MySQL 数据类型 </a>
+<a target="_top" title="MySQL 创建数据表" href="mysql-create-tables.html" tppabs="http://www.runoob.com/mysql/mysql-create-tables.html">
+MySQL 创建数据表 </a>
+<a target="_top" title="MySQL 删除数据表" href="mysql-drop-tables.html" tppabs="http://www.runoob.com/mysql/mysql-drop-tables.html">
+MySQL 删除数据表 </a>
+<a target="_top" title="MySQL 插入数据" href="mysql-insert-query.html" tppabs="http://www.runoob.com/mysql/mysql-insert-query.html">
+MySQL 插入数据 </a>
+<a target="_top" title="MySQL 查询数据" href="mysql-select-query.html" tppabs="http://www.runoob.com/mysql/mysql-select-query.html">
+MySQL 查询数据 </a>
+<a target="_top" title="MySQL WHERE 子句" href="mysql-where-clause.html" tppabs="http://www.runoob.com/mysql/mysql-where-clause.html">
+MySQL WHERE 子句 </a>
+<a target="_top" title="MySQL UPDATE 查询" href="mysql-update-query.html" tppabs="http://www.runoob.com/mysql/mysql-update-query.html">
+MySQL UPDATE 查询 </a>
+<a target="_top" title="MySQL DELETE 语句" href="mysql-delete-query.html" tppabs="http://www.runoob.com/mysql/mysql-delete-query.html">
+MySQL DELETE 语句 </a>
+<a target="_top" title="MySQL LIKE 子句" href="mysql-like-clause.html" tppabs="http://www.runoob.com/mysql/mysql-like-clause.html">
+MySQL LIKE 子句 </a>
+<a target="_top" title="MySQL UNION 语句" href="mysql-union-operation.html" tppabs="http://www.runoob.com/mysql/mysql-union-operation.html">
+MySQL UNION </a> <a target="_top" title="MySQL 排序" href="mysql-order-by.html" tppabs="http://www.runoob.com/mysql/mysql-order-by.html">
+MySQL 排序 </a>
+<a target="_top" title="MySQL Group by 语句" href="mysql-group-by-statement.html" tppabs="http://www.runoob.com/mysql/mysql-group-by-statement.html"> MySQL 分组 </a> <a target="_top" title="Mysql 连接的使用" href="mysql-join.html" tppabs="http://www.runoob.com/mysql/mysql-join.html">
+Mysql 连接的使用 </a>
+<a target="_top" title="MySQL NULL 值处理" href="mysql-null.html" tppabs="http://www.runoob.com/mysql/mysql-null.html">
+MySQL NULL 值处理 </a>
+<a target="_top" title="MySQL 正则表达式" href="mysql-regexp.html" tppabs="http://www.runoob.com/mysql/mysql-regexp.html">
+MySQL 正则表达式 </a>
+<a target="_top" title="MySQL 事务" href="mysql-transaction.html" tppabs="http://www.runoob.com/mysql/mysql-transaction.html">
+MySQL 事务 </a>
+<a target="_top" title="MySQL ALTER命令" href="mysql-alter.html" tppabs="http://www.runoob.com/mysql/mysql-alter.html">
+MySQL ALTER命令 </a>
+<a target="_top" title="MySQL 索引" href="mysql-index.html" tppabs="http://www.runoob.com/mysql/mysql-index.html">
+MySQL 索引 </a>
+<a target="_top" title="MySQL 临时表" href="mysql-temporary-tables.html" tppabs="http://www.runoob.com/mysql/mysql-temporary-tables.html">
+MySQL 临时表 </a>
+<a target="_top" title="MySQL 复制表" href="mysql-clone-tables.html" tppabs="http://www.runoob.com/mysql/mysql-clone-tables.html">
+MySQL 复制表 </a>
+<a target="_top" title="MySQL 元数据" href="mysql-database-info.html" tppabs="http://www.runoob.com/mysql/mysql-database-info.html">
+MySQL 元数据 </a>
+<a target="_top" title="MySQL 序列使用" href="mysql-using-sequences.html" tppabs="http://www.runoob.com/mysql/mysql-using-sequences.html">
+MySQL 序列使用 </a>
+<a target="_top" title="MySQL 处理重复数据" href="mysql-handling-duplicates.html" tppabs="http://www.runoob.com/mysql/mysql-handling-duplicates.html">
+MySQL 处理重复数据 </a>
+<a target="_top" title="MySQL 及 SQL 注入" href="mysql-sql-injection.html" tppabs="http://www.runoob.com/mysql/mysql-sql-injection.html">
+MySQL 及 SQL 注入 </a>
+<a target="_top" title="MySQL 导出数据" href="mysql-database-export.html" tppabs="http://www.runoob.com/mysql/mysql-database-export.html">
+MySQL 导出数据 </a>
+<a target="_top" title="MySQL 导入数据" href="mysql-database-import.html" tppabs="http://www.runoob.com/mysql/mysql-database-import.html">
+MySQL 导入数据 </a>
+<a target="_top" title="MySQL 函数" href="mysql-functions.html" tppabs="http://www.runoob.com/mysql/mysql-functions.html">
+MySQL 函数 </a>
+</div>
+</div>
+</div> <div class="col middle-column">
+<div class="article">
+<div class="article-heading-ad" style="display: none;">
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="mysql-install.html" tppabs="http://www.runoob.com/mysql/mysql-install.html" rel="prev"> MySQL 安装</a> </div>
+<div class="next-design-link"><a href="mysql-php-syntax.html" tppabs="http://www.runoob.com/mysql/mysql-php-syntax.html" rel="next"> MySQL PHP 语法</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<div class="article-body">
+<div class="article-intro" id="content">
+<h1>MySQL <span class="color_h1">管理</span></h1>
+<hr>
+<h2>
+启动及关闭 MySQL 服务器</h2>
+<h3>Windows 系统下</h3>
+<p>在 Windows 系统下，打开命令窗口(cmd)，进入 MySQL 安装目录的 bin 目录。</p>
+<p>启动：</p>
+<pre>cd c:/mysql/bin
+mysqld --console</pre>
+<p>关闭：</p>
+<pre>cd c:/mysql/bin
+mysqladmin -uroot shutdown</pre>
+<h3>Linux 系统下</h3>
+<p>首先，我们需要通过以下命令来检查MySQL服务器是否启动：</p>
+<pre>
+ps -ef | grep mysqld
+</pre>
+<p>如果MySql已经启动，以上命令将输出mysql进程列表，
+如果mysql未启动，你可以使用以下命令来启动mysql服务器:</p>
+<pre>
+root@host# cd /usr/bin
+./mysqld_safe &amp;
+</pre>
+<p>
+如果你想关闭目前运行的 MySQL 服务器, 你可以执行以下命令:
+</p>
+<pre>
+root@host# cd /usr/bin
+./mysqladmin -u root -p shutdown
+Enter password: ******
+</pre>
+<hr>
+<h2>MySQL 用户设置</h2>
+<p>
+如果你需要添加 MySQL 用户，你只需要在 mysql 数据库中的 user 表添加新用户即可。</p>
+<p>以下为添加用户的的实例，用户名为guest，密码为guest123，并授权用户可进行 SELECT, INSERT 和 UPDATE操作权限：
+</p>
+<pre>
+root@host# mysql -u root -p
+Enter password:*******
+mysql&gt; use mysql;
+Database changed
+
+mysql&gt; INSERT INTO user 
+          (host, user, password, 
+           select_priv, insert_priv, update_priv) 
+           VALUES ('localhost', 'guest', 
+           PASSWORD('guest123'), 'Y', 'Y', 'Y');
+Query OK, 1 row affected (0.20 sec)
+
+mysql&gt; FLUSH PRIVILEGES;
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; SELECT host, user, password FROM user WHERE user = 'guest';
++-----------+---------+------------------+
+| host      | user    | password         |
++-----------+---------+------------------+
+| localhost | guest | 6f8c114b58f2ce9e |
++-----------+---------+------------------+
+1 row in set (0.00 sec)
+</pre>
+<p>
+在添加用户时，请注意使用MySQL提供的 PASSWORD() 函数来对密码进行加密。
+你可以在以上实例看到用户密码加密后为： 6f8c114b58f2ce9e.
+</p>
+<p><strong>
+注意：</strong>在 MySQL5.7 中 user 表的 password 已换成了<strong>authentication_string</strong>。</p>
+<p><strong>
+注意：</strong>password() 加密函数已经在 8.0.11 中移除了，可以使用 MD5() 函数代替。</p>
+<p><strong>
+注意：</strong>在注意需要执行 <strong>FLUSH PRIVILEGES</strong> 语句。
+这个命令执行后会重新载入授权表。
+</p><p>
+如果你不使用该命令，你就无法使用新创建的用户来连接mysql服务器，除非你重启mysql服务器。
+</p>
+<p>你可以在创建用户时，为用户指定权限，在对应的权限列中，在插入语句中设置为 'Y' 即可，用户权限列表如下：</p>
+<ul>
+<li>Select_priv</li>
+<li>Insert_priv</li>
+<li>Update_priv</li>
+<li>Delete_priv</li>
+<li>Create_priv</li>
+<li>Drop_priv</li>
+<li>Reload_priv</li>
+<li>Shutdown_priv</li>
+<li>Process_priv</li>
+<li>File_priv</li>
+<li>Grant_priv</li>
+<li>References_priv</li>
+<li>Index_priv</li>
+<li>Alter_priv</li>
+</ul>
+<p>
+另外一种添加用户的方法为通过SQL的 GRANT 命令，以下命令会给指定数据库TUTORIALS添加用户 zara ，密码为 zara123 。</p>
+<pre>
+root@host# mysql -u root -p
+Enter password:*******
+mysql&gt; use mysql;
+Database changed
+
+mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
+    -&gt; ON TUTORIALS.*
+    -&gt; TO 'zara'@'localhost'
+    -&gt; IDENTIFIED BY 'zara123';
+</pre>
+<p>
+以上命令会在mysql数据库中的user表创建一条用户信息记录。
+</p>
+<p>
+<strong>注意:</strong> MySQL 的SQL语句以分号 (;) 作为结束标识。
+</p>
+<hr>
+<h2>/etc/my.cnf 文件配置</h2>
+<p>一般情况下，你不需要修改该配置文件，该文件默认配置如下：</p>
+<pre>
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+
+[mysql.server]
+user=mysql
+basedir=/var/lib
+
+[safe_mysqld]
+err-log=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+</pre>
+<p>在配置文件中，你可以指定不同的错误日志文件存放的目录，一般你不需要改动这些配置。</p>
+<hr>
+<h2>
+管理MySQL的命令</h2>
+<p>以下列出了使用Mysql数据库过程中常用的命令：</p>
+<ul>
+<li><p><strong>USE <em>数据库名</em></strong> :<br>选择要操作的Mysql数据库，使用该命令后所有Mysql命令都只针对该数据库。</p>
+<pre>
+mysql&gt; use RUNOOB;
+Database changed
+</pre>
+</li>
+<li><p><strong>SHOW DATABASES: </strong><br>列出 MySQL 数据库管理系统的数据库列表。</p>
+<pre>
+mysql&gt; SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| RUNOOB             |
+| cdcol              |
+| mysql              |
+| onethink           |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| wecenter           |
+| wordpress          |
++--------------------+
+10 rows in set (0.02 sec)
+</pre>
+</li>
+<li><p><strong>SHOW TABLES:</strong><br> 显示指定数据库的所有表，使用该命令前需要使用 use 命令来选择要操作的数据库。</p>
+<pre>
+mysql&gt; use RUNOOB;
+Database changed
+mysql&gt; SHOW TABLES;
++------------------+
+| Tables_in_runoob |
++------------------+
+| employee_tbl     |
+| runoob_tbl       |
+| tcount_tbl       |
++------------------+
+3 rows in set (0.00 sec)
+</pre>
+</li>
+<li><p><strong>SHOW COLUMNS FROM <em>数据表</em>:</strong><br> 显示数据表的属性，属性类型，主键信息 ，是否为 NULL，默认值等其他信息。</p>
+<pre>
+mysql&gt; SHOW COLUMNS FROM runoob_tbl;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| runoob_id       | int(11)      | NO   | PRI | NULL    |       |
+| runoob_title    | varchar(255) | YES  |     | NULL    |       |
+| runoob_author   | varchar(255) | YES  |     | NULL    |       |
+| submission_date | date         | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+</pre>
+</li>
+<li><p><strong>SHOW INDEX FROM <em>数据表</em>:</strong><br> 显示数据表的详细索引信息，包括PRIMARY KEY（主键）。</p>
+<pre>
+mysql&gt; SHOW INDEX FROM runoob_tbl;
++------------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table      | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++------------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| runoob_tbl |          0 | PRIMARY  |            1 | runoob_id   | A         |           2 |     NULL | NULL   |      | BTREE      |         |               |
++------------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set (0.00 sec)
+</pre>
+</li>
+<li><p><strong>SHOW TABLE STATUS LIKE [FROM db_name] [LIKE 'pattern'] \G:</strong> <br> 该命令将输出Mysql数据库管理系统的性能及统计信息。</p>
+<pre>
+mysql&gt; SHOW TABLE STATUS  FROM RUNOOB;   # 显示数据库 RUNOOB 中所有表的信息
+
+mysql&gt; SHOW TABLE STATUS from RUNOOB LIKE 'runoob%';     # 表名以runoob开头的表的信息
+mysql&gt; SHOW TABLE STATUS from RUNOOB LIKE 'runoob%'\G;   # 加上 \G，查询结果按列打印
+</pre>
+</li>
+</ul>
+<p>Gif 图演示：</p>
+<p><img src="../wp-content/uploads/2014/03/env-run.html" tppabs="http://www.runoob.com/wp-content/uploads/2014/03/mysql-admin.gif"/></p>
+</div>
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="mysql-install.html" tppabs="http://www.runoob.com/mysql/mysql-install.html" rel="prev"> MySQL 安装</a> </div>
+<div class="next-design-link"><a href="mysql-php-syntax.html" tppabs="http://www.runoob.com/mysql/mysql-php-syntax.html" rel="next"> MySQL PHP 语法</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<style>
+.wrapper {
+  /*text-transform: uppercase; */
+  background: #ececec;
+  color: #555;
+  cursor: help;
+  font-family: "Gill Sans", Impact, sans-serif;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  -webkit-transform: translateZ(0); /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+.wrapper .tooltip {
+  white-space: nowrap;
+  font-size: 14px;
+  text-align: left;
+  background: #96b97d;
+  bottom: 100%;
+  color: #fff;
+  display: block;
+  left: -25px;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 14px;
+  pointer-events: none;
+  position: absolute;
+  
+  -webkit-transform: translateY(10px);
+     -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+       -o-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: all .25s ease-out;
+     -moz-transition: all .25s ease-out;
+      -ms-transition: all .25s ease-out;
+       -o-transition: all .25s ease-out;
+          transition: all .25s ease-out;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+.tooltip a {
+	color:#fff;
+}
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #96b97d 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 20%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+.wrapper .tooltip1 {
+	margin-left: 50px;
+	padding-top: 0px;
+}
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+  display: block;
+}
+
+</style>
+<div class="title" id="comments">
+<h2 class="">
+<div class="altblock">
+<i style="font-size:28px;margin-top: 8px;" class="fa fa-plus-square" aria-hidden="true"></i>
+</div>
+<span class="mw-headline" id="qa_headline">7 篇笔记</span>
+<span class="mw-headline" id="user_add_note" style="float:right;line-height: 62px;padding-right: 14px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 写笔记</span>
+</h2>
+</div>
+<div id="postcomments" style="display:none;">
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="comment-1212"><span class="comt-f">#7</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;oocarain</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;ooc***in@163.com</p></div></div><div class="comt-main" id="div-comment-1212"><p>记录 MySQL 学习过程遇到的问题。
+</p><p>
+系统：win32 位<br>
+MySQL 版本：5.7.17-log
+</p><p>
+MySQL 语法对大小写不敏感，但是大写更容易看出。
+</p><p>
+<strong>一、启动关闭MySQL服务</strong>
+</p><p>
+1【开始菜单】搜索 services.msc 打开 windows【服务管理器】，可以在此开启关闭 MySQL 服务。
+</p><p>
+2 在 cmd 中使用命令：
+</p><pre>
+net start mysql #启动mysql服务
+net stop mysql  #关闭mysql服务
+</pre>
+<p>
+遇到net命令无法识别，如下：
+</p><p>
+这是环境变量没有配置的原因，究竟是哪一个文件的环境变量没有配置呢？
+</p><p>
+是 C:\windows\system32\ 这个路径下的 net.exe 没有配置环境变量
+</p><p>
+现切换到这个路径下试一下可不可以使用 net 命令：
+</p><p>
+在 Powershell 需要使用
+</p><p>
+.\net stop mysql
+</p><p>
+关闭服务。</p><p>
+在 cmd 中可以直接使用
+</p><pre>
+net start mysql
+</pre><p>
+启动服务。
+</p><p>
+将c:\windows\system32添加到系统的Path中后：
+</p><p>
+成功！！！<div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">oocarain</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;oocarain</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;ooc***in@163.com</p></div></span>2年前 (2017-03-06)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-13304"><span class="comt-f">#6</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;一条鱼</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;ili***yun@163.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://blog.csdn.net/u012377333/article/details/env-classpath.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://blog.csdn.net/u012377333/article/details/env-classpath.html'" tppabs="http://blog.csdn.net/u012377333/article/details/50290827">&nbsp;&nbsp;参考地址</a></p></div></div><div class="comt-main" id="div-comment-13304"><p>用 insert 添加用户时，可能会报错:</p><pre>ERROR 1364 (HY000): Field 'ssl_cipher' doesn't have a default value</pre><p>my-default.ini中有一条语句：</p><p>指定了严格模式，为了安全，严格模式禁止通过 insert 这种形式直接修改 mysql 库中的 user 表进行添加新用户</p><p>sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</p><p>将 STRICT_TRANS_TABLES 删掉之后即可使用 insert 添加</p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">一条鱼</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;一条鱼</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;ili***yun@163.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://blog.csdn.net/u012377333/article/details/env-classpath.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://blog.csdn.net/u012377333/article/details/env-classpath.html'" tppabs="http://blog.csdn.net/u012377333/article/details/50290827">&nbsp;&nbsp;参考地址</a></p></div></span>1年前 (2017-06-25)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-19873"><span class="comt-f">#5</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Morrison</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;982***639@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.cnblogs.com/rmbteam/archive/2011/10/20/env-version.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.cnblogs.com/rmbteam/archive/2011/10/20/env-version.html'" tppabs="http://www.cnblogs.com/rmbteam/archive/2011/10/20/2219368.html">&nbsp;&nbsp;参考地址</a></p></div></div><div class="comt-main" id="div-comment-19873"><h2 data-title="MySQL Grant 命令">添加新用户建议 GRANT 命令</h2>
+<p><strong>一、grant 普通数据用户，查询、插入、更新、删除 数据库中所有表数据的权利。</strong></p>
+<pre>grant select on testdb.* to common_user@'%'
+grant insert on testdb.* to common_user@'%'
+grant update on testdb.* to common_user@'%'
+grant delete on testdb.* to common_user@'%'</pre>
+<p>或者，用一条 MySQL 命令来替代：</p>
+<pre>grant select, insert, update, delete on testdb.* to common_user@'%'</pre>
+<p><strong>二、grant 数据库开发人员，创建表、索引、视图、存储过程、函数。。。等权限。</strong></p>
+<p>grant 创建、修改、删除 MySQL 数据表结构权限。</p>
+<pre>grant create on testdb.* to developer@'192.168.0.%';
+grant alter on testdb.* to developer@'192.168.0.%';
+grant drop on testdb.* to developer@'192.168.0.%';</pre>
+<p>grant 操作 MySQL 外键权限。</p>
+<pre>grant references on testdb.* to developer@'192.168.0.%';</pre>
+<p>grant 操作 MySQL 临时表权限。</p>
+<pre>grant create temporary tables on testdb.* to developer@'192.168.0.%';</pre>
+<p>grant 操作 MySQL 索引权限。</p>
+<pre>grant index on testdb.* to developer@'192.168.0.%';</pre>
+<p>grant 操作 MySQL 视图、查看视图源代码 权限。</p>
+<pre>grant create view on testdb.* to developer@'192.168.0.%';
+grant show view on testdb.* to developer@'192.168.0.%';</pre>
+<p>grant 操作 MySQL 存储过程、函数 权限。</p>
+<pre>grant create routine on testdb.* to developer@'192.168.0.%'; -- now, can show procedure status
+grant alter routine on testdb.* to developer@'192.168.0.%'; -- now, you can drop a procedure
+grant execute on testdb.* to developer@'192.168.0.%';</pre>
+<p><strong>三、grant 普通 DBA 管理某个 MySQL 数据库的权限。</strong></p>
+<pre>grant all privileges on testdb to dba@'localhost'</pre>
+<p>其中，关键字 <strong>privileges</strong> 可以省略。</p>
+<p><strong>四、grant 高级 DBA 管理 MySQL 中所有数据库的权限。</strong></p>
+<pre>grant all on *.* to dba@'localhost'</pre>
+<p><strong>五、MySQL grant 权限，分别可以作用在多个层次上。</strong></p>
+<p>1. grant 作用在整个 MySQL 服务器上：</p>
+<pre>grant select on *.* to dba@localhost; -- dba 可以查询 MySQL 中所有数据库中的表。
+grant all on *.* to dba@localhost; -- dba 可以管理 MySQL 中的所有数据库</pre>
+<p>2. grant 作用在单个数据库上：</p>
+<pre>grant select on testdb.* to dba@localhost; -- dba 可以查询 testdb 中的表。</pre>
+<p>3. grant 作用在单个数据表上：</p>
+<pre>grant select, insert, update, delete on testdb.orders to dba@localhost;</pre>
+<p>这里在给一个用户授权多张表时，可以多次执行以上语句。例如：</p>
+<pre>grant select(user_id,username) on smp.users to mo_user@'%' identified by '123345';
+grant select on smp.mo_sms to mo_user@'%' identified by '123345';</pre>
+<p>4. grant 作用在表中的列上：</p>
+<pre>grant select(id, se, rank) on testdb.apache_log to dba@localhost;</pre>
+<p>5. grant 作用在存储过程、函数上：</p>
+<pre>grant execute on procedure testdb.pr_add to 'dba'@'localhost'
+grant execute on function testdb.fn_add to 'dba'@'localhost'</pre>
+<p><strong>六、查看 MySQL 用户权限</strong></p>
+<p>查看当前用户（自己）权限：</p>
+<pre>show grants;</pre>
+<p>查看其他 MySQL 用户权限：</p>
+<pre>show grants for dba@localhost;</pre>
+<p><strong>七、撤销已经赋予给 MySQL 用户权限的权限。</strong></p>
+<p>revoke 跟 grant 的语法差不多，只需要把关键字 to 换成 from 即可：</p>
+<pre>grant all on *.* to dba@localhost;
+revoke all on *.* from dba@localhost;</pre>
+<p><strong>八、MySQL grant、revoke 用户权限注意事项</strong></p>
+<p>1. grant, revoke 用户权限后，该用户只有重新连接 MySQL 数据库，权限才能生效。</p>
+2. 如果想让授权的用户，也可以将这些权限 grant 给其他用户，需要选项<strong> grant option</strong>
+<pre>grant select on testdb.* to dba@localhost with grant option;</pre>
+<p>这个特性一般用不到。实际中，数据库权限最好由 DBA 来统一管理。</p>
+<p>注意：创建完成后需要执行&nbsp;<strong>FLUSH PRIVILEGES</strong>&nbsp;语句。</p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:if(confirm('http://www.runoob.com/note/string-removing-char.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/note/string-removing-char.html'" tppabs="http://www.runoob.com/note/19873">Morrison</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Morrison</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;982***639@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.cnblogs.com/rmbteam/archive/2011/10/20/env-version.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.cnblogs.com/rmbteam/archive/2011/10/20/env-version.html'" tppabs="http://www.cnblogs.com/rmbteam/archive/2011/10/20/2219368.html">&nbsp;&nbsp;参考地址</a></p></div></span>12个月前 (11-05)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28228"><span class="comt-f">#4</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;halo</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;g51***vip.qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://note.youdao.com/string-replace.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://note.youdao.com/string-replace.html'" tppabs="http://note.youdao.com/noteshare?id=5d0b01e89ec94c1913587b47b8403f2c">&nbsp;&nbsp;参考地址</a></p></div></div><div class="comt-main" id="div-comment-28228"><p data-title="MySQL 存储引擎介绍（InnoDB、MyISAM、MEMORY）"><strong>InnoDB 存储引擎</strong></p><blockquote><p>InnoDB 是事务型数据库的首选引擎，支持事务安全表 (ACID)，支持行锁定和外键。MySQL5.5.5 之后，InnoDB 作为默认存储引擎，InnoDB 主要特性有：</p></blockquote><ol><li>InnoDB 给 MySQL 提供了具有提交、回滚和崩溃恢复能力的事务安全(ACID 兼容)存储引擎。InnoDB 锁定在行级并且也在 SELECT 语句中提供一个类似 Oracle 的非锁定读。这些功能增加了多用户部署和性能。在 SQL 查询中，可以自由地将 InnoDB 类型的表与其他 MySQL 的表的类型混合起来，甚至在同一个查询中也可以混合。</li><li>InnoDB 是为处理巨大数据量的最大性能设计。它的 CPU 的效率可能是任何其它基于磁盘的关系数据库引擎所不能匹敌的。</li><li> InnoDB 存储引擎完全与 MySQL 服务器整合，InnoDB 存储引擎为在主内存中缓存数据和索引而维持它自己的缓冲池。InnoDB 将它的表和索引存在一个逻辑表空间中，表空间可以包含数个文件（或原始磁盘分区）。这与 MyISAM 表不同，比如在 MyISAM 表中每个表被存在分离的文件中。InnoDB 表可以是任何尺寸，即使在文件尺寸被艰制为 2GB 的操作系统上。</li><li>InnoDB 支持外键完整性约束（FOREIGN KEY)。 存储表中的数据时，每张表的存储都按主键顺序存放，如果没有显示在表定义时指定主键，InnoDB 会被每一行生成一个 6B 的 ROWID，并以此作为主健。</li><li>InnoDB 被用在众多需要高性能的大型数据库站点上。 InnoDB 不创建目录，使用 InnoDB 时，MySQL 将在 MYSQL 数据目录下创建一个名为 ibdata1 的 10MB 大小的自动扩展数据文件，以及两个名为ib_logfile() 和 ib_logfile1 的 5MB 大小的日志文件。</li></ol><p><strong>MyISAM 存储引擎</strong></p><blockquote><p>MyISAM 基于 ISAM 的存储引擎，并对其进行扩展。它是在 Web、数据存储和其他应用环境下最常用的存储引擎之一。MyISAM 拥有较高的插入、查询速度，但不支持事务。在 MySQL5.5.5 之前的版本中，MyISAM 是默认存储引擎。MyISAM 主要特性有：</p></blockquote><ol><li>大文件（达 63 位文件长度）在支持大文件 系统和操作系统上被支持。</li><li>当把删除、更新及插入操作混合使用的时候，动态尺寸的行产生更少的碎片。这要通过合并相邻被删除的块，以及若下一个块被删除，就扩展到下一块来自动完成。</li><li>每个 MyISAM 表最大索引数是 64，这也可以通过编译来改变。对于键长度超过 250B 的情况，一个超过 1024B 的键将被用上。</li><li>BLOB 和 TEXT 列可以被索引。</li><li>NULL 值被允许在索引的列中。这个值占每个键的 0~1 个字节。</li><li>所有数字键值以高字节优先被存储以允许一个更高的索引压缩。</li><li>每表一个 AUTO_INCREMENT 列的内部处理。MyISAM 为 INSERT 和 UPDATE 操作自动更新这一列。使得 AUTO_INCREMENT 列更快（至少 10%）。在序列顶的值被删除除之后就不能再利用。</li><li>可以把数据文件和索引文件放在不同目录。</li><li>每个字符列可以有不同的字符集。</li><li>有 VARCHAR 的表可以固定或动态记录长度。</li><li>VARCHAR 和 CHAR 列可以多达 64KB</li></ol><blockquote><p>使用 MyISAM 引擎创建数据库，将生产 3 个文件。文件的名字以表的名字开始，扩展名指出文件类型：frm 文件存储表定义，数据文件的扩展名为 .MYD(MYData)，索引文件的扩展名是 .MYI（MYIndex)。</p></blockquote><p><strong>MEMORY 存储引擎</strong></p><blockquote><p>MEMORY 存储引擎将表中的数据存储到内存中，为查询和引用其他表数据提供快速访问。MEMORY 主要特性有：</p></blockquote><ol><li>MEMORY 表的每个表可以多达 32 个索引，每个索引 16 列，以及 500B 的最大键长度。</li><li>MEMORY 存储引擎引擎执行 HASH 和 BTREE 索引。</li><li>可以在一个 MEMORY 表中有非唯一键。</li><li>MEMORY 不支持 BLOB 或 TEXT 列。</li><li>MEMORY 表使用一个固定的记录长度格式。</li><li>MEMORY 支持 AUTO_INCREMENT 列和对包含 NULL 值的列索引。</li><li>MEMORY 表内容被存在内存中，内存是 MEMORY 表和服务器在查询处理时的空闲中创建的内部表共享。</li><li>MEMORY 表在所有客户端之间共享（就像其他任何非 TEMPORARY 表）。</li><li>当不再需要 MEMORY 表的内容时，要释放被 MEMORY 表使用的内存，应该执行 DELETE FROM 或 TRUNCATE TABLE，或者删除整个表（使用 DROP TABLE)。</li></ol><p><strong>存储引擎的选择</strong></p>
+<table class="reference">
+<thead>
+<tr>
+<th>功能</th>
+<th>MyISAM</th>
+<th>Memory</th>
+<th>InnoDB</th>
+<th>Archive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储限制</td>
+<td>265TB</td>
+<td>RAM</td>
+<td>65TB</td>
+<td>Node</td>
+</tr>
+<tr>
+<td>支持事务</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持全文索引</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持数索引</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持哈希索引</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持数据缓存</td>
+<td>No</td>
+<td>N/A</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持外键</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:if(confirm('http://www.runoob.com/note/string-reverse.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/note/string-reverse.html'" tppabs="http://www.runoob.com/note/28228">halo</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;halo</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;g51***vip.qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://note.youdao.com/string-replace.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://note.youdao.com/string-replace.html'" tppabs="http://note.youdao.com/noteshare?id=5d0b01e89ec94c1913587b47b8403f2c">&nbsp;&nbsp;参考地址</a></p></div></span>5个月前 (06-08)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-33458"><span class="comt-f">#3</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;TEST</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;791***590@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://blog.csdn.net/mydriverc2/article/details/string-search.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://blog.csdn.net/mydriverc2/article/details/string-search.html'" tppabs="https://blog.csdn.net/mydriverc2/article/details/43022129">&nbsp;&nbsp;参考地址</a></p></div></div><div class="comt-main" id="div-comment-33458"><p data-title="Field 'ssl_cipher' doesn't have a default value 错误解决" data-commid="13304"><strong>添加用户：</strong></p>
+<pre>insert into mysql.user(Host,User,Password) values("localhost","test",password("1234"));</pre>
+<p>报以下的错误 ERROR 1364 (HY000): Field 'ssl_cipher' doesn't have a default value 错误</p>
+<p><strong>错语原因：</strong></p>
+<p>mysql 用户表的中某些字段不能为空，没有默认值，其实是操作错误，mysql 添加用户是不能这样直接 insert user 表的。</p>
+<p><strong>解决方法：</strong></p>
+<p>正确的添加用户方法：</p>
+<pre>GRANT USAGE ON *.* TO 'user01'@'localhost' IDENTIFIED BY '123456' WITH GRANT OPTION;</pre>
+<p>用户：user01，密码：123456，这样就添加了一个新的用户，不会出以上的错误了。</p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:if(confirm('http://www.runoob.com/note/string-split.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/note/string-split.html'" tppabs="http://www.runoob.com/note/33458">TEST</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;TEST</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;791***590@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://blog.csdn.net/mydriverc2/article/details/string-search.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://blog.csdn.net/mydriverc2/article/details/string-search.html'" tppabs="https://blog.csdn.net/mydriverc2/article/details/43022129">&nbsp;&nbsp;参考地址</a></p></div></span>3个月前 (08-01)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-33855"><span class="comt-f">#2</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;laowang</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;zhu***2823946@outlook.com</p></div></div><div class="comt-main" id="div-comment-33855"><p>MySQL 8.0.11 版本之后创建用户方法如下：</p>
+<pre>CREATE USER 'laowang'@'localhost' IDENTIFIED BY '123456';</pre>
+<p>授予账户权限的方法如下：</p>
+<pre>GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON *.* TO 'laowang'@'localhost';</pre>
+<p>授予所有权限：</p>
+<pre>GRANT ALL PRIVILEGES ON *.* TO 'laowang'@'localhost'；</pre>
+<p>查看用户权限：</p>
+<pre>show grants for 'laowang'@'localhost';</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">laowang</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;laowang</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;zhu***2823946@outlook.com</p></div></span>3个月前 (08-10)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-35177"><span class="comt-f">#1</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;派遣员工</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;619***592@qq.com</p></div></div><div class="comt-main" id="div-comment-35177"><pre>mysql&gt; SHOW TABLE STATUS from RUNOOB LIKE 'runoob%'\G;</pre>
+<p>会出现：</p>
+<pre>ERROR: 
+No query specified</pre>
+<p>去掉分号就可以了，<span class="marked">\G</span> 和分号 <span class="marked">; </span>的作用相似，两者取其一即可。</p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">派遣员工</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;派遣员工</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;619***592@qq.com</p></div></span>1个月前 (09-18)</div></div></li>
+</ol>
+<div class="pagenav">
+</div>
+</div>
+<div id="respond" class="no_webshot">
+<div class="comment-signarea" style="display:none; padding: 20px 20px;">
+<h3 class="text-muted" id="share_code" style="color: #799961;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 点我分享笔记</h3>
+</div>
+<form action="http://www.runoob.com/wp-content/themes/runoob/option/addnote.php" method="post" id="commentform" style="display:none;">
+<div class="comt">
+<div class="comt-title">
+<i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i> <p><a id="cancel-comment-reply-link" href="javascript:;">取消</a></p>
+</div>
+<div class="comt-box">
+<div id="mded"></div>
+<div class="comt-ctrl">
+<div class="comt-tips"><input type='hidden' name='comment_post_ID' value='6212' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+<button type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-pencil" aria-hidden="true"></i> 分享笔记</button>
+</div>
+</div>
+<div class="comt-comterinfo">
+<ul id="comment-author-info">
+<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="text-muted">昵称 (必填)</span></li>
+<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="text-muted">邮箱 (必填)</span></li>
+<li class="form-inline"><label class="hide" for="url">引用地址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="引用地址"><span class="text-muted">引用地址</span></li>
+</ul>
+</div>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+$(function() {
+	//初始化编辑器
+	
+	var editor = new Simditor({
+	  textarea: $('#mded'),
+	  placeholder: '写笔记...',
+	  upload:false,
+	 // upload: {url:'../api/comment_upload_file.php.htm'/*tpa=http://www.runoob.com/api/comment_upload_file.php*/,params: null,fileKey: 'upload_file',connectionCount: 1,leaveConfirm: '文件正在上传，您确定离开?'},
+	  defaultImage: '../images/logo.png'/*tpa=http://www.runoob.com/images/logo.png*/,
+	  codeLanguages: '',
+	  toolbar: [  'bold','code','ul','ol','image' ]
+	});
+	editor.on('selectionchanged', function() {
+		$(".code-popover").hide();
+	});
+
+	// 提交数据
+	$("#share_code").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		
+	});
+	$("#user_add_note").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		$('html, body').animate({
+       	    scrollTop: $("#respond").offset().top
+    	}, 200);
+	});
+
+	// 提交笔记
+	var commentform=$('#commentform');
+	commentform.prepend('<div id="comment-status" style="display:none;" ></div>');
+	var statusdiv=$('#comment-status');
+	
+	commentform.submit(function(e){
+		e.preventDefault();
+		var noteContent = editor.getValue();
+		// console.log(noteContent);
+		noteContent = noteContent.replace(/<pre><code>/g,"<pre>");
+		noteContent = noteContent.replace(/<\/code><\/pre>/g,"</pre>");
+		
+		// 系列化表单数据
+		var comment_parent = 0;
+		var is_user_logged_in = $("#is_user_logged_in").val();
+		var comment_post_ID =  6212;
+		var _wp_unfiltered_html_comment = $("#_wp_unfiltered_html_comment").val();
+		var comment = noteContent;
+		var author = $("#author").val();
+		var url = $("#url").val();
+		var email = $("#email").val();
+		if(isBlank(author) && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">请输入昵称！</p>').show();
+		} else if(isBlank(email)  && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">请输入邮箱！</p>').show();
+		} else {
+			// var formdata=commentform.serialize() + "&comment=" + noteContent ;
+			// 添加状态信息
+			statusdiv.html('<p>Processing...</p>').show();
+			// 获取表单提交地址
+			var formurl=commentform.attr('action');
+			
+			// 异步提交
+			$.ajax({
+					type: 'post',
+					url: formurl,
+					dataType:'json',
+					data: {"comment_parent":comment_parent,"comment_post_ID":comment_post_ID, "_wp_unfiltered_html_comment":_wp_unfiltered_html_comment,"comment":comment,"url":url, "email":email,"author":author},
+					error: function(XMLHttpRequest, textStatus, errorThrown){
+					statusdiv.html('<p class="ajax-error" >数据不完整或表单提交太快了！</p>').show();
+				},
+				success: function(data, textStatus){
+					if(data.errorno=="0") {
+						$("#submit").prop('disabled', true);
+						statusdiv.html('<p class="ajax-success" >笔记已提交审核，感谢分享笔记！</p>').show();
+						alert('笔记已提交审核，感谢分享笔记！');
+					}else{
+						statusdiv.html('<p class="ajax-error" >'+data.msg+'</p>').show();
+					}
+					commentform.find('textarea[name=comment]').val('');
+				}
+			});
+			setTimeout(function(){
+		        $("#submit").prop('disabled', false);
+		    }, 10*1000);
+		}
+		return false;
+
+	});
+	
+});
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
+}
+</script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/css/qa.css-1.42.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/css/qa.css?1.42">
+<link rel="stylesheet" type="text/css" href="../../cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css" tppabs="http://cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css" />
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/module.js" tppabs="http://static.runoob.com/assets/simditor/2.3.6/scripts/module.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys.js" tppabs="http://static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/uploader.js" tppabs="http://static.runoob.com/assets/simditor/2.3.6/scripts/uploader.js"></script>
+<script type="text/javascript" src="../../cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js" tppabs="http://cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js"></script> <div class="sidebar-box ad-box ad-box-large">
+<div id="ad-336280">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5751451760833794" data-ad-slot="1691338467" data-ad-format="auto"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div>
+</div>
+<div class="fivecol last right-column">
+<style>
+.sidebar-tree .double-li {
+	width:300px;
+}
+.sidebar-tree .double-li li {
+    width: 44%;
+    line-height: 1.5em;
+    border-bottom: 1px solid #ccc;
+    float: left;
+    display: inline;
+}
+</style>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here" style="margin: 0 auto;">
+<a href="javascript:void(0);" style="font-size: 16px; color:#64854c;font-weight:bold;"> <i class="fa fa-list" aria-hidden="true"></i> 分类导航</a>
+</div>
+<div class="sidebar-box sidebar-cate">
+<div class="sidebar-tree">
+<ul><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> HTML / CSS</a><ul class="double-li"><li><a title="HTML 教程" href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML 教程</a></li><li><a title="HTML5 教程" href="../html/html5-intro.html" tppabs="http://www.runoob.com/html/html5-intro.html">HTML5 教程</a></li><li><a title="CSS 教程" href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS 教程</a></li><li><a title="CSS3 教程" href="../css3/css3-tutorial.html" tppabs="http://www.runoob.com/css3/css3-tutorial.html">CSS3 教程</a></li><li><a title="Bootstrap3 教程" href="../bootstrap/bootstrap-tutorial.html" tppabs="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap3 教程</a></li><li><a title="Bootstrap4 教程" href="../bootstrap4/bootstrap4-tutorial.html" tppabs="http://www.runoob.com/bootstrap4/bootstrap4-tutorial.html">Bootstrap4 教程</a></li><li><a title="Font Awesome 教程" href="../font-awesome/fontawesome-tutorial.html" tppabs="http://www.runoob.com/font-awesome/fontawesome-tutorial.html">Font Awesome 教程</a></li><li><a title="Foundation 教程" href="../foundation/foundation-tutorial.html" tppabs="http://www.runoob.com/foundation/foundation-tutorial.html">Foundation 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> JavaScript</a><ul class="double-li"><li><a title="JavaScript 教程" href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JavaScript 教程</a></li><li><a title="HTML DOM 教程" href="../htmldom/htmldom-tutorial.html" tppabs="http://www.runoob.com/htmldom/htmldom-tutorial.html">HTML DOM 教程</a></li><li><a title="jQuery 教程" href="../jquery/jquery-tutorial.html" tppabs="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery 教程</a></li><li><a title="AngularJS 教程" href="../angularjs/angularjs-tutorial.html" tppabs="http://www.runoob.com/angularjs/angularjs-tutorial.html">AngularJS 教程</a></li><li><a title="AngularJS2 教程" href="../angularjs2/angularjs2-tutorial.html" tppabs="http://www.runoob.com/angularjs2/angularjs2-tutorial.html">AngularJS2 教程</a></li><li><a title="Vue.js 教程" href="../vue2/vue-tutorial.html" tppabs="http://www.runoob.com/vue2/vue-tutorial.html">Vue.js 教程</a></li><li><a title="React 教程" href="../react/react-tutorial.html" tppabs="http://www.runoob.com/react/react-tutorial.html">React 教程</a></li><li><a title="jQuery UI 教程" href="../jqueryui/jqueryui-tutorial.html" tppabs="http://www.runoob.com/jqueryui/jqueryui-tutorial.html">jQuery UI 教程</a></li><li><a title="jQuery EasyUI 教程" href="../jeasyui/jqueryeasyui-tutorial.html" tppabs="http://www.runoob.com/jeasyui/jqueryeasyui-tutorial.html">jQuery EasyUI 教程</a></li><li><a title="Node.js 教程" href="../nodejs/nodejs-tutorial.html" tppabs="http://www.runoob.com/nodejs/nodejs-tutorial.html">Node.js 教程</a></li><li><a title="AJAX 教程" href="../ajax/ajax-tutorial.html" tppabs="http://www.runoob.com/ajax/ajax-tutorial.html">AJAX 教程</a></li><li><a title="JSON 教程" href="../json/json-tutorial.html" tppabs="http://www.runoob.com/json/json-tutorial.html">JSON 教程</a></li><li><a title="Highcharts 教程" href="../highcharts/highcharts-tutorial.html" tppabs="http://www.runoob.com/highcharts/highcharts-tutorial.html">Highcharts 教程</a></li><li><a title="Google 地图 教程" href="../googleapi/google-maps-basic.html" tppabs="http://www.runoob.com/googleapi/google-maps-basic.html">Google 地图 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 服务端</a><ul class="double-li"><li><a title="PHP 教程" href="../php/php-tutorial.html" tppabs="http://www.runoob.com/php/php-tutorial.html">PHP 教程</a></li><li><a title="Python 教程" href="../python/python-tutorial.html" tppabs="http://www.runoob.com/python/python-tutorial.html">Python 教程</a></li><li><a title="Python3 教程" href="../python3/python3-tutorial.html" tppabs="http://www.runoob.com/python3/python3-tutorial.html">Python3 教程</a></li><li><a title="Django 教程" href="../django/django-tutorial.html" tppabs="http://www.runoob.com/django/django-tutorial.html">Django 教程</a></li><li><a title="Linux 教程" href="../linux/linux-tutorial.html" tppabs="http://www.runoob.com/linux/linux-tutorial.html">Linux 教程</a></li><li><a title="Docker 教程" href="../docker/docker-tutorial.html" tppabs="http://www.runoob.com/docker/docker-tutorial.html">Docker 教程</a></li><li><a title="Ruby 教程" href="../ruby/ruby-tutorial.html" tppabs="http://www.runoob.com/ruby/ruby-tutorial.html">Ruby 教程</a></li><li><a title="Java 教程" href="../java/java-tutorial.html" tppabs="http://www.runoob.com/java/java-tutorial.html">Java 教程</a></li><li><a title="C 教程" href="../cprogramming/c-tutorial.html" tppabs="http://www.runoob.com/c/c-tutorial.html">C 教程</a></li><li><a title="C++ 教程" href="../cplusplus/cpp-tutorial.html" tppabs="http://www.runoob.com/cplusplus/cpp-tutorial.html">C++ 教程</a></li><li><a title="Perl 教程" href="../perl/perl-tutorial.html" tppabs="http://www.runoob.com/perl/perl-tutorial.html">Perl 教程</a></li><li><a title="Servlet 教程" href="../servlet/servlet-tutorial.html" tppabs="http://www.runoob.com/servlet/servlet-tutorial.html">Servlet 教程</a></li><li><a title="JSP 教程" href="../jsp/jsp-tutorial.html" tppabs="http://www.runoob.com/jsp/jsp-tutorial.html">JSP 教程</a></li><li><a title="Lua 教程" href="../lua/lua-tutorial.html" tppabs="http://www.runoob.com/lua/lua-tutorial.html">Lua 教程</a></li><li><a title="Scala 教程" href="../scala/scala-tutorial.html" tppabs="http://www.runoob.com/scala/scala-tutorial.html">Scala 教程</a></li><li><a title="Go 教程" href="../go/go-tutorial.html" tppabs="http://www.runoob.com/go/go-tutorial.html">Go 教程</a></li><li><a title="设计模式" href="../design-pattern/design-pattern-tutorial.html" tppabs="http://www.runoob.com/design-pattern/design-pattern-tutorial.html">设计模式</a></li><li><a title="正则表达式" href="../regexp/regexp-tutorial.html" tppabs="http://www.runoob.com/regexp/regexp-tutorial.html">正则表达式</a></li><li><a title="Maven 教程" href="../maven/maven-tutorial.html" tppabs="http://www.runoob.com/maven/maven-tutorial.html">Maven 教程</a></li><li><a title="NumPy 教程" href="../numpy/numpy-tutorial.html" tppabs="http://www.runoob.com/numpy/numpy-tutorial.html">NumPy 教程</a></li><li><a title="ASP 教程" href="../asp/asp-tutorial.html" tppabs="http://www.runoob.com/asp/asp-tutorial.html">ASP 教程</a></li><li><a title="AppML 教程" href="../appml/appml-tutorial.html" tppabs="http://www.runoob.com/appml/appml-tutorial.html">AppML 教程</a></li><li><a title="VBScript 教程" href="../vbscript/vbscript-tutorial.html" tppabs="http://www.runoob.com/vbscript/vbscript-tutorial.html">VBScript 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 数据库</a><ul class="double-li"><li><a title="SQL 教程" href="../sql/sql-tutorial.html" tppabs="http://www.runoob.com/sql/sql-tutorial.html">SQL 教程</a></li><li><a title="Mysql 教程" href="mysql-tutorial.html" tppabs="http://www.runoob.com/mysql/mysql-tutorial.html">Mysql 教程</a></li><li><a title="SQLite 教程" href="../sqlite/sqlite-tutorial.html" tppabs="http://www.runoob.com/sqlite/sqlite-tutorial.html">SQLite 教程</a></li><li><a title="MongoDB 教程" href="../mongodb/mongodb-tutorial.html" tppabs="http://www.runoob.com/mongodb/mongodb-tutorial.html">MongoDB 教程</a></li><li><a title="Redis 教程" href="../redis/redis-tutorial.html" tppabs="http://www.runoob.com/redis/redis-tutorial.html">Redis 教程</a></li><li><a title="Memcached 教程" href="../Memcached/Memcached-tutorial.html" tppabs="http://www.runoob.com/Memcached/Memcached-tutorial.html">Memcached 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 移动端</a><ul class="double-li"><li><a title="Android 教程" href="../w3cnote/android-tutorial-intro.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-intro.html">Android 教程</a></li><li><a title="Swift 教程" href="../swift/swift-tutorial.html" tppabs="http://www.runoob.com/swift/swift-tutorial.html">Swift 教程</a></li><li><a title="jQuery Mobile 教程" href="../jquerymobile/jquerymobile-tutorial.html" tppabs="http://www.runoob.com/jquerymobile/jquerymobile-tutorial.html">jQuery Mobile 教程</a></li><li><a title="ionic 教程" href="../ionic/ionic-tutorial.html" tppabs="http://www.runoob.com/ionic/ionic-tutorial.html">ionic 教程</a></li><li><a title="Kotlin 教程" href="../kotlin/kotlin-tutorial.html" tppabs="http://www.runoob.com/kotlin/kotlin-tutorial.html">Kotlin 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> XML 教程</a><ul class="double-li"><li><a title="XML 教程" href="../xml/xml-tutorial.html" tppabs="http://www.runoob.com/xml/xml-tutorial.html">XML 教程</a></li><li><a title="DTD 教程" href="../dtd/dtd-tutorial.html" tppabs="http://www.runoob.com/dtd/dtd-tutorial.html">DTD 教程</a></li><li><a title="XML DOM 教程" href="../dom/dom-tutorial.html" tppabs="http://www.runoob.com/dom/dom-tutorial.html">XML DOM 教程</a></li><li><a title="XSLT 教程" href="../xsl/xsl-tutorial.html" tppabs="http://www.runoob.com/xsl/xsl-tutorial.html">XSLT 教程</a></li><li><a title="XPath 教程" href="../xpath/xpath-tutorial.html" tppabs="http://www.runoob.com/xpath/xpath-tutorial.html">XPath 教程</a></li><li><a title="XQuery 教程" href="../xquery/xquery-tutorial.html" tppabs="http://www.runoob.com/xquery/xquery-tutorial.html">XQuery 教程</a></li><li><a title="XLink 教程" href="../xlink/xlink-tutorial.html" tppabs="http://www.runoob.com/xlink/xlink-tutorial.html">XLink 教程</a></li><li><a title="XPointer 教程" href="../xlink/xlink-tutorial.html" tppabs="http://www.runoob.com/xlink/xlink-tutorial.html">XPointer 教程</a></li><li><a title="XML Schema 教程" href="../schema/schema-tutorial.html" tppabs="http://www.runoob.com/schema/schema-tutorial.html">XML Schema 教程</a></li><li><a title="XSL-FO 教程" href="../xslfo/xslfo-tutorial.html" tppabs="http://www.runoob.com/xslfo/xslfo-tutorial.html">XSL-FO 教程</a></li><li><a title="SVG 教程" href="../svg/svg-tutorial.html" tppabs="http://www.runoob.com/svg/svg-tutorial.html">SVG 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> ASP.NET</a><ul class="double-li"><li><a title="ASP.NET 教程" href="../aspnet/aspnet-tutorial.html" tppabs="http://www.runoob.com/aspnet/aspnet-tutorial.html">ASP.NET 教程</a></li><li><a title="C# 教程" href="../csharp/csharp-tutorial.html" tppabs="http://www.runoob.com/csharp/csharp-tutorial.html">C# 教程</a></li><li><a title="Web Pages 教程" href="../aspnet/webpages-intro.html" tppabs="http://www.runoob.com/aspnet/webpages-intro.html">Web Pages 教程</a></li><li><a title="Razor 教程" href="../aspnet/razor-intro.html" tppabs="http://www.runoob.com/aspnet/razor-intro.html">Razor 教程</a></li><li><a title="MVC 教程" href="../aspnet/mvc-intro.html" tppabs="http://www.runoob.com/aspnet/mvc-intro.html">MVC 教程</a></li><li><a title="Web Forms 教程" href="../aspnet/aspnet-intro.html" tppabs="http://www.runoob.com/aspnet/aspnet-intro.html">Web Forms 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> Web Service</a><ul class="double-li"><li><a title="Web Service 教程" href="../webservices/webservices-tutorial.html" tppabs="http://www.runoob.com/webservices/webservices-tutorial.html">Web Service 教程</a></li><li><a title="WSDL 教程" href="../wsdl/wsdl-tutorial.html" tppabs="http://www.runoob.com/wsdl/wsdl-tutorial.html">WSDL 教程</a></li><li><a title="SOAP 教程" href="../soap/soap-tutorial.html" tppabs="http://www.runoob.com/soap/soap-tutorial.html">SOAP 教程</a></li><li><a title="RSS 教程" href="../rss/rss-tutorial.html" tppabs="http://www.runoob.com/rss/rss-tutorial.html">RSS 教程</a></li><li><a title="RDF 教程" href="../rdf/rdf-tutorial.html" tppabs="http://www.runoob.com/rdf/rdf-tutorial.html">RDF 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 开发工具</a><ul class="double-li"><li><a title="Eclipse 教程" href="../eclipse/eclipse-tutorial.html" tppabs="http://www.runoob.com/eclipse/eclipse-tutorial.html">Eclipse 教程</a></li><li><a title="Git 教程" href="../git/git-tutorial.html" tppabs="http://www.runoob.com/git/git-tutorial.html">Git 教程</a></li><li><a title="Svn 教程" href="../svn/svn-tutorial.html" tppabs="http://www.runoob.com/svn/svn-tutorial.html">Svn 教程</a></li><li><a title="Firebug 教程" href="../firebug/firebug-tutorial.html" tppabs="http://www.runoob.com/firebug/firebug-tutorial.html">Firebug 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 网站建设</a><ul class="double-li"><li><a title="HTTP 教程" href="../http/http-tutorial.html" tppabs="http://www.runoob.com/http/http-tutorial.html">HTTP 教程</a></li><li><a title="网站建设指南" href="../web/web-buildingprimer.html" tppabs="http://www.runoob.com/web/web-buildingprimer.html">网站建设指南</a></li><li><a title="浏览器信息" href="../browsers/browser-information.html" tppabs="http://www.runoob.com/browsers/browser-information.html">浏览器信息</a></li><li><a title="网站主机教程" href="../hosting/hosting-tutorial.html" tppabs="http://www.runoob.com/hosting/hosting-tutorial.html">网站主机教程</a></li><li><a title="TCP/IP 教程" href="../tcpip/tcpip-tutorial.html" tppabs="http://www.runoob.com/tcpip/tcpip-tutorial.html">TCP/IP 教程</a></li><li><a title="W3C 教程" href="../w3c/w3c-tutorial.html" tppabs="http://www.runoob.com/w3c/w3c-tutorial.html">W3C 教程</a></li><li><a title="网站品质" href="../quality/quality-tutorial.html" tppabs="http://www.runoob.com/quality/quality-tutorial.html">网站品质</a></li></ul></li></ul> </div>
+</div>
+</div>
+<br>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here">
+<a href="javascript:void(0);">Advertisement</a>
+</div>
+<div class="ad-600160" id="sidebar-right-ads">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div></div>
+</div>
+<script>
+var aid = 6212;
+function coll() {
+	$.post( '../wp-content/themes/runoob/option/user/userinfo.php.htm'/*tpa=http://www.runoob.com/wp-content/themes/runoob/option/user/userinfo.php*/, {aid:aid, action:"collarticle", opt:'add'},function( data ) {
+		if(data.error==0) {
+			$("#content").find("h1:first").find("a").attr("href","javascript:void(0);");
+			$("#content").find("h1:first").find("img").attr("src","../wp-content/themes/runoob/assets/img/coll2.png"/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/coll2.png*/).css({width:32+"px",height:32+"px"});
+		}
+		alert(data.msg);
+	},'json');
+}
+</script>
+<script src="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js-1.0" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js?1.0"></script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css-1.0.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css?1.0" />
+<script type="text/javascript">
+$.feedback({
+    ajaxURL: '../feedback/runoob_feedback.php.htm'/*tpa=http://www.runoob.com/feedback/runoob_feedback.php*/,
+    html2canvasURL: '../wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas.js'/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas.js*/
+});
+</script>
+<button class="feedback-btn feedback-btn-gray">反馈/建议</button>
+<div id="footer" class="mar-t50">
+<div class="runoob-block">
+<div class="runoob cf">
+<dl>
+<dt>
+在线实例
+</dt>
+<dd>
+&middot;<a target="_blank" href="../html/html-examples.html" tppabs="http://www.runoob.com/html/html-examples.html">HTML 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../css/css-examples.html" tppabs="http://www.runoob.com/css/css-examples.html">CSS 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../js/js-examples.html" tppabs="http://www.runoob.com/js/js-examples.html">JavaScript 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../ajax/ajax-examples.html" tppabs="http://www.runoob.com/ajx/ajax-examples.html">Ajax 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../jquery/jquery-examples.html" tppabs="http://www.runoob.com/jquery/jquery-examples.html">jQuery 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../xml/xml-examples.html" tppabs="http://www.runoob.com/xml/xml-examples.html">XML 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../java/java-examples.html" tppabs="http://www.runoob.com/java/java-examples.html">Java 实例</a>
+</dd>
+</dl>
+<dl>
+<dt>
+字符集&工具
+</dt>
+<dd>
+&middot; <a target="_blank" href="../charsets/html-charsets.html" tppabs="http://www.runoob.com/charsets/html-charsets.html">HTML 字符集设置</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-ascii.html" tppabs="http://www.runoob.com/tags/html-ascii.html">HTML ASCII 字符集</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/ref-entities.html" tppabs="http://www.runoob.com/tags/ref-entities.html">HTML ISO-8859-1</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-symbols.html" tppabs="http://www.runoob.com/tags/html-symbols.html">HTML 实体符号</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-colorpicker.html" tppabs="http://www.runoob.com/tags/html-colorpicker.html">HTML 拾色器</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="javascript:if(confirm('http://c.runoob.com/front-end/53  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c.runoob.com/front-end/53'" tppabs="http://c.runoob.com/front-end/53">JSON 格式化工具</a>
+</dd>
+</dl>
+<dl>
+<dt>
+最新更新
+</dt>
+<dd>
+&middot;
+<a href="../w3cnote/csharp-init-variable.html" tppabs="http://www.runoob.com/w3cnote/csharp-init-variable.html" title="关于 C# 中的变量的初始化问题浅谈">关于 C# 中的变...</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/scrapy-detail.html" tppabs="http://www.runoob.com/w3cnote/scrapy-detail.html" title="Scrapy 入门教程">Scrapy 入门教程</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/c-structures-intro.html" tppabs="http://www.runoob.com/w3cnote/c-structures-intro.html" title="C 结构体">C 结构体</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/matplotlib-tutorial.html" tppabs="http://www.runoob.com/w3cnote/matplotlib-tutorial.html" title="Matplotlib 教程">Matplotlib 教程</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-matplotlib.html" tppabs="http://www.runoob.com/numpy/numpy-matplotlib.html" title="NumPy  Matplotlib">NumPy Matplotlib</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-io.html" tppabs="http://www.runoob.com/numpy/numpy-io.html" title="NumPy IO">NumPy IO</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-linear-algebra.html" tppabs="http://www.runoob.com/numpy/numpy-linear-algebra.html" title="NumPy 线性代数">NumPy 线性代数</a>
+</dd>
+</dl>
+<dl>
+<dt>
+站点信息
+</dt>
+<dd>
+&middot;
+<a target="_blank" href="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="external nofollow">意见反馈</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../disclaimer.htm" tppabs="http://www.runoob.com/disclaimer">免责声明</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../aboutus.htm" tppabs="http://www.runoob.com/aboutus">关于我们</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../archives.htm" tppabs="http://www.runoob.com/archives">文章归档</a>
+</dd>
+</dl>
+<div class="search-share">
+<div class="app-download">
+<div>
+<strong>关注微信</strong>
+</div>
+</div>
+<div class="share">
+<img width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode.png" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="w-1000 copyright">
+Copyright &copy; 2013-2018 <strong><a href="../index.htm" tppabs="http://www.runoob.com/" target="_blank">菜鸟教程</a></strong>&nbsp;
+<strong><a href="../index.htm" tppabs="http://www.runoob.com/" target="_blank">runoob.com</a></strong> All Rights Reserved. 备案号：闽ICP备15012807号-1
+</div>
+</div>
+<div class="fixed-btn">
+<a class="go-top" href="javascript:void(0)" title="返回顶部"> <i class="fa fa-angle-up"></i></a>
+<a class="qrcode" href="javascript:void(0)" title="关注我们"><i class="fa fa-qrcode"></i></a>
+<a class="writer" style="display:none" href="javascript:void(0)" title="标记/收藏"><i class="fa fa-star" aria-hidden="true"></i></a>
+<div id="bottom-qrcode" class="modal panel-modal hide fade in">
+<h4>微信关注</h4>
+<div class="panel-body"><img alt="微信关注" width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode.png" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png"></div>
+</div>
+</div>
+<div class="hide_box"></div>
+<div class="shang_box">
+<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="../../static.runoob.com/images/dashang/close.jpg" tppabs="http://static.runoob.com/images/dashang/close.jpg" alt="取消" /></a>
+<div class="shang_tit">
+<p>感谢您的支持，我会继续努力的!</p>
+</div>
+<div class="shang_payimg">
+<img src="../../static.runoob.com/images/dashang/weipayimg.png.jpg" tppabs="http://static.runoob.com/images/dashang/weipayimg.png" alt="扫码支持" title="扫一扫" />
+</div>
+<div class="pay_explain">扫码打赏，你说多少就多少</div>
+<div class="shang_payselect">
+<div class="pay_item  checked" data-id="weipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/wechat.jpg" tppabs="http://static.runoob.com/images/dashang/wechat.jpg" alt="微信" /></span>
+</div>
+<div class="pay_item" data-id="alipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/alipay.jpg" tppabs="http://static.runoob.com/images/dashang/alipay.jpg" alt="支付宝" /></span>
+</div>
+</div>
+<div class="shang_info">
+<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+<p><a href="javascript:if(confirm('http://c.runoob.com/codedemo/5348  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c.runoob.com/codedemo/5348'" tppabs="http://c.runoob.com/codedemo/5348" target="_blank"><span style=" font-size: 14px;color: #000;font-weight: bold;">点我查看本站打赏源码！</span></a></p>
+</div>
+</div>
+<div id="testClick"></div>
+<div style="display:none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "../../hm.baidu.com/hm.js-3eec0b7da6548cf07db3bc477ea905ee"/*tpa=https://hm.baidu.com/hm.js?3eec0b7da6548cf07db3bc477ea905ee*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="../../www.googletagmanager.com/gtag/js-id=UA-84264393-2" tppabs="https://www.googletagmanager.com/gtag/js?id=UA-84264393-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-84264393-2');
+</script>
+</div>
+<script>
+window.jsui={
+    www: 'http://wwww.runoob.com/',
+    uri: '//www.runoob.com/wp-content/themes/runoob'
+};
+</script>
+<style>
+ol,ul{list-style:none}.cd-switcher a{text-decoration:none;outline:0}.cd-switcher a:hover{text-decoration:underline}a:focus{outline:0;-moz-outline:0}.main_nav{width:300px;height:60px;margin:60px auto 10px auto}.main_nav li{float:left;width:60px;margin-right:10px;font-size:16px;padding:.6em 1em;border-radius:3em;background:#2f889a;text-align:center}.main_nav li a{color:#fff}.errtip{background-color:#fceaea;color:#db5353;padding:8px 15px;font-size:14px;border:1px solid #fc9797;border-radius:5px}.cd-user-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(52,54,66,0.9);z-index:3;overflow-y:auto;cursor:pointer;visibility:hidden;opacity:0;-webkit-transition:opacity .3s 0,visibility 0 .3s;-moz-transition:opacity .3s 0,visibility 0 .3s;transition:opacity .3s 0,visibility 0 .3s}.cd-user-modal.is-visible{visibility:visible;opacity:1;-webkit-transition:opacity .3s 0,visibility 0 0;-moz-transition:opacity .3s 0,visibility 0 0;transition:opacity .3s 0,visibility 0 0}.cd-user-modal.is-visible .cd-user-modal-container{-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}.cd-user-modal-container{position:relative;width:90%;max-width:500px;background:#FFF;margin:3em auto 4em;cursor:auto;border-radius:.25em;-webkit-transform:translateY(-30px);-moz-transform:translateY(-30px);-ms-transform:translateY(-30px);-o-transform:translateY(-30px);transform:translateY(-30px);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;transition-property:transform;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;transition-duration:.3s}.cd-user-modal-container .cd-switcher:after{content:"";display:table;clear:both}.cd-user-modal-container .cd-switcher li{width:50%;float:left;text-align:center}.cd-user-modal-container .cd-switcher li:first-child a{border-radius:.25em 0 0 0}.cd-user-modal-container .cd-switcher li:last-child a{border-radius:0 .25em 0 0}.cd-user-modal-container .cd-switcher a{font-size:1.2em;font-weight:bold;display:block;width:100%;height:50px;line-height:50px;background:#e8f1e2;color:#96b880}.cd-user-modal-container .cd-switcher a.selected{background:#FFF;color:#505260}@media only screen and (min-width:600px){.cd-user-modal-container{margin:4em auto}.cd-user-modal-container .cd-switcher a{height:70px;line-height:70px}}.cd-form{padding:1.4em}.cd-form .fieldset{position:relative;margin:1.4em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form label{font-size:16px;font-size:.875rem}.cd-form label.image-replace{display:inline-block;position:absolute;left:15px;top:50%;bottom:auto;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);height:20px;width:20px;overflow:hidden;text-indent:100%;white-space:nowrap;color:transparent;text-shadow:none;background-repeat:no-repeat;background-position:50% 0}.cd-form label.cd-username{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-username.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*/}.cd-form label.cd-email{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-email.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*/}.cd-form label.cd-password{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-password.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*/}.cd-form input{margin:0;padding:0;border-radius:.25em}.cd-form input.full-width{width:80%}.cd-form input.full-width2{width:94%}.cd-form input.has-padding{padding:12px 20px 12px 50px}.cd-form input.has-border{border:1px solid #d2d8d8;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}.cd-form input.has-border:focus{border-color:#98b880;box-shadow:0 0 5px rgba(52,54,66,0.1);outline:0}.cd-form input.has-error{border:1px solid #d76666}.cd-form input[type=password]{padding-right:65px}.cd-form input[type=submit]{padding:16px 0;cursor:pointer;background:#96b97d;color:#FFF;font-weight:bold;border:0;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;font-size:1.2em;font-weight:bold}.no-touch .cd-form input[type=submit]:hover,.no-touch .cd-form input[type=submit]:focus{background:#3599ae;outline:0}@media only screen and (min-width:600px){.cd-form{padding:2em}.cd-form .fieldset{margin:2em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form input.has-padding{padding:16px 20px 16px 50px}.cd-form input[type=submit]{padding:16px 0}}.cd-close-form{display:block;position:absolute;width:40px;height:40px;right:0;top:-40px;background:url("../wp-content/themes/runoob/assets/img/cd-icon-close.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*/ no-repeat center center;text-indent:100%;white-space:nowrap;overflow:hidden}@media only screen and (min-width:1170px){}#cd-login,#cd-signup,#cd-reset-password{display:none}#cd-login.is-selected,#cd-signup.is-selected,#cd-reset-password.is-selected{display:block}
+</style>
+<div class="cd-user-modal">
+<div class="cd-user-modal-container">
+<ul class="cd-switcher">
+<li><a href="javascript:;">用户登录</a></li>
+<li><a href="javascript:;">注册新用户</a></li>
+</ul>
+<div id="cd-login"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-username" for="signin-username">用户名</label>
+<input class="full-width has-padding has-border" id="signin-username" name=username type="text" placeholder="输入用户名">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signin-password">密码</label>
+<input class="full-width has-padding has-border" id="signin-password" name="password" type="password" placeholder="输入密码">
+</p>
+<p class="fieldset">
+<input type="checkbox" id="remember-me" checked>
+<label for="remember-me">记住登录状态</label>
+<a href="../reset-password.htm" tppabs="http://www.runoob.com/reset-password" style="float: right;padding-right: 20px;" target="_blank">忘记密码？</a>
+</p>
+<input type="hidden" name="action" value="signin">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="登 录">
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<div id="cd-signup"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-password" for="verifycode">邀请码</label>
+<input class="full-width has-padding has-border" id="signup-verifycode" name="verifycode" type="text" placeholder="输入邀请码">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-username" for="signup-username">用户名</label>
+<input class="full-width has-padding has-border" id="signup-username" name="name" type="text" placeholder="输入用户名">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-email" for="signup-email">邮箱</label>
+<input class="full-width has-padding has-border" name="email" id="signup-email" type="email" placeholder="输入mail">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password">密码</label>
+<input class="full-width has-padding has-border" id="signup-password" name="password" type="password" placeholder="输入密码">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password2">重复输入密码</label>
+<input class="full-width has-padding has-border" id="signup-password2" name="password2" type="password" placeholder="重复输入密码">
+</p>
+<input type="hidden" name="action" value="signup">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="注册新用户">
+</p>
+<p class="fieldset">
+<a href="../w3cnote/runoob-user-test-intro.html#invite" tppabs="http://www.runoob.com/w3cnote/runoob-user-test-intro.html#invite" target="_blank">如何获取邀请码？</a>
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<a href="javascript:;" class="cd-close-form">关闭</a>
+</div>
+</div>
+<script src="../wp-content/themes/runoob/assets/js/main.js-v=1.189" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/js/main.js?v=1.189"></script>
+<script src="../../static.runoob.com/assets/libs/hl/run_prettify.js" tppabs="http://static.runoob.com/assets/libs/hl/run_prettify.js"></script>
+</body>
+</html>

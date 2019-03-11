@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Less extends CSS with dynamic behavior such as variables, mixins, operations and functions. Less runs on both the server-side (with Node.js and Rhino) or client-side (modern browsers only).
+">
+<meta name="author" content="The Core Less Team">
+<title>
+å…³äº | Less.js
+</title>
+<link href="../../../css/css-navbar.html" tppabs="http://www.runoob.com/manual/lessguide/public/css/index.css" rel="stylesheet">
+<script type="text/javascript">
+  WebFontConfig = {google: {families: ['PT+Sans:400,700,400italic,700italic', 'PT+Mono&subset=latin,cyrillic'] }};
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://apps.bdimg.com/libs/webfont/1.3.0/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+<!--[if lt IE 9]>
+  <script src="http://bad_redirect"></script>
+  <script src="http://bad_redirect"></script>
+<![endif]-->
+<link rel="shortcut icon" href="../public/ico/favicon.ico">
+</head>
+<body class="about">
+<header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+<span class="sr-only">åˆ‡æ¢å¯¼èˆª</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href="index.htm#" tppabs="http://www.runoob.com/manual/lessguide/about/#" class="navbar-brand" alt="Less">
+<img src="../public/img/logo.png" tppabs="http://www.runoob.com/manual/lessguide/public/img/logo.png">
+</a>
+</div>
+<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+<ul class="nav navbar-nav">
+<li>
+<a href="../features/index.htm" tppabs="http://www.runoob.com/manual/lessguide/features/">è¯­è¨€ç‰¹æ€§</a>
+</li>
+<li>
+<a href="../functions/index.htm" tppabs="http://www.runoob.com/manual/lessguide/functions/">å‡½æ•°æ‰‹å†Œ</a>
+</li>
+<li>
+<a href="../usage/index.htm" tppabs="http://www.runoob.com/manual/lessguide/usage/">ç”¨æ³•</a>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a href="index.htm" tppabs="http://www.runoob.com/manual/lessguide/about/">å…³äº</a>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li> <a href="javascript:if(confirm('https://github.com/less/css-tooltip.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/css-tooltip.html'" tppabs="https://github.com/less/less-docs">æ–‡æ¡£èµ„æº</a> </li>
+<li> <a href="javascript:if(confirm('https://github.com/less/less-docs/css-image-gallery.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less-docs/css-image-gallery.html'" tppabs="https://github.com/less/less-docs/issues?&state=open">æ–‡æ¡£é—®ç­”</a> </li>
+<li class="divider"></li>
+<li> <a href="javascript:if(confirm('https://github.com/less/css-image-transparency.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/css-image-transparency.html'" tppabs="https://github.com/less/less.js.git">Less.js èµ„æº</a> </li>
+<li> <a href="javascript:if(confirm('https://github.com/less/less.js/css-image-sprites.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/css-image-sprites.html'" tppabs="https://github.com/less/less.js/issues">Less.js é—®ç­”</a> </li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="docs-header" id="content">
+<div class="container">
+<h1>å…³äº</h1>
+<p>äº†è§£å…³äº Less çš„å†å²ï¼Œæ ¸å¿ƒå›¢é˜Ÿ ï¼Œç¤¾åŒºå’Œèµ„æºã€‚</p>
+</div>
+</div>
+<div class="banner">
+<div class="container">
+less v1.7.3 ç‰ˆæœ¬å·²å‘å¸ƒ
+<strong>
+<a href="javascript:if(confirm('https://github.com/less/less.js/blob/master/css-mediatypes.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/blob/master/css-mediatypes.html'" tppabs="https://github.com/less/less.js/blob/master/CHANGELOG.md">æŸ¥çœ‹æ–°ç‰ˆè¯´æ˜</a>
+</strong>
+</div>
+</div>
+<div class="container docs-container">
+<div class="row">
+<div class="col-md-3">
+<div class="sidebar hidden-print" role="complementary">
+<div id="navigation">
+<ul class="nav sidenav"><li><a href="#history">History</a></li>
+<li><a href="#team">Core team</a></li>
+<li><a href="#community">Community</a></li>
+<li><a href="#ports">Ports of Less.js</a><ul class="nav"><li><a href="#ports-java">Java</a></li>
+<li><a href="#ports--net">.Net</a></li>
+<li><a href="#ports-php">PHP</a></li>
+<li><a href="#ports-python">Python</a></li>
+<li><a href="#ports-ruby">Ruby</a></li></ul></li>
+<li><a href="#translations">Translations</a></li></ul></div>
+</div>
+</div>
+<div class="col-md-9" role="main">
+<div class="panel docs-content">
+<div class="docs-section">
+<div class="page-header">
+<h1 class="docs-heading">History<span class="anchor-target" id="history"></span>
+<a href="#history" name="history" class="anchor glyphicon glyphicon-link"></a></h1>
+</div>
+<p>Less was created in 2009 by <a href="javascript:if(confirm('https://github.com/lang-in.tag  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/lang-in.tag'" tppabs="https://github.com/cloudhead">Alexis Sellier</a>, more commonly known as <a href="javascript:if(confirm('https://twitter.com/lang-in.tag  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://twitter.com/lang-in.tag'" tppabs="https://twitter.com/cloudhead">@cloudhead</a>. Originally written in Ruby, it was then ported to JavaScript.</p>
+<p>In May 2012 Alexis relinquished control and development over to a core team of contributors who now manage, fix and extend the language.</p>
+</div>
+<div class="docs-section">
+<div class="page-header">
+<h1 class="docs-heading">Core team<span class="anchor-target" id="team"></span>
+<a href="#team" name="team" class="anchor glyphicon glyphicon-link"></a></h1>
+</div>
+<p class="lead">Less is maintained by a group of invaluable core contributors, with the massive support and involvement of our community. No one person is in charge and everyone has their own areas and donates the time they can afford. In alphabetical order:</p>
+<div class="list-group less-team">
+<div class="list-group-item">
+<iframe class="github-btn" src="../../../../ghbtns.com/lang-uq.val" tppabs="http://ghbtns.com/github-btn.html?user=cloudhead&type=follow"></iframe>
+<a class="team-member" href="javascript:if(confirm('https://github.com/lang-in.tag  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/lang-in.tag'" tppabs="https://github.com/cloudhead">
+<img src="../../../../www.gravatar.com/avatar/in.tag" tppabs="http://www.gravatar.com/avatar/a8a0061962c41735ca87789720da46c8" alt="@cloudhead">
+<strong>Alexis Sellier</strong> Original Author, Language Design <small>@cloudhead</small>
+</a>
+</div>
+<div class="list-group-item">
+<iframe class="github-btn" src="../../../../ghbtns.com/uq.val" tppabs="http://ghbtns.com/github-btn.html?user=jonschlinkert&type=follow"></iframe>
+<a class="team-member" href="javascript:if(confirm('https://github.com/a  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/a'" tppabs="https://github.com/jonschlinkert">
+<img src="../../../../www.gravatar.com/avatar/!==n.type-e.handleObj.handler.apply(this,arguments)-t},teardown-function(){return b.event.remove(this," tppabs="http://www.gravatar.com/avatar/1bba28be5506009e85fb9dde1dd66535" alt="@jonschlinkert">
+<strong>Jon Schlinkert</strong> Language Design, Documentation, Community <small>@jonschlinkert</small>
+</a>
+</div>
+<div class="list-group-item">
+<iframe class="github-btn" src="../../../../ghbtns.com/)&&b.contains(u,o)&&(o.src-b.ajax({url-o.src,type-" tppabs="http://ghbtns.com/github-btn.html?user=lukeapage&type=follow"></iframe>
+<a class="team-member" href="javascript:if(confirm('https://github.com/===n&&t.text!==e.text?(Ht(t).text=e.text,qt(t)):  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/===n&&t.text!==e.text?(Ht(t).text=e.text,qt(t)):'" tppabs="https://github.com/lukeapage">
+<img src="../../../../www.gravatar.com/avatar/runoob.com" tppabs="http://www.gravatar.com/avatar/a80ab1a8297225d70baffc52adf6aefd" alt="@lukeapage">
+<strong>Luke Page</strong> Development, Language Design, Documentation, Releasing <small>@lukeapage</small>
+</a>
+</div>
+<div class="list-group-item">
+<iframe class="github-btn" src="../../../../ghbtns.com/ico" tppabs="http://ghbtns.com/github-btn.html?user=synchro&type=follow"></iframe>
+<a class="team-member" href="javascript:if(confirm('https://github.com/hm.gif  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/hm.gif'" tppabs="https://github.com/Synchro">
+<img src="../../../../www.gravatar.com/avatar/tongji.baidu.com" tppabs="http://www.gravatar.com/avatar/b4814d6790e91f01c77cac9d25db12b6" alt="@Synchro">
+<strong>Marcus Bointon</strong> Color Functions <small>@Synchro</small>
+</a>
+</div>
+<div class="list-group-item">
+<iframe class="github-btn" src="../../../../ghbtns.com/==a.type-t-v,b()}var f=mt.event,p=h.w,l=t,n=t,e=t,k=t,w=+new Date,m=w,q=0,x=t,r=d(" tppabs="http://ghbtns.com/github-btn.html?user=sommeri&type=follow"></iframe>
+<a class="team-member" href="javascript:if(confirm('https://github.com/x.js?si=  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/x.js?si='" tppabs="https://github.com/sommeri">
+<img src="../../../../www.gravatar.com/avatar/1.2.34" tppabs="http://www.gravatar.com/avatar/52cf28b41537a1255243f6ba9b5baedc" alt="@sommeri">
+<strong>MÃ¡ria JurÄoviÄovÃ¡</strong> Language Design, Java Port <small>@sommeri</small>
+</a>
+</div>
+<div class="list-group-item">
+<iframe class="github-btn" src="../../../../ghbtns.com/)}this.ba-(this.R=t,this.a.et=0,this.a.ep=" tppabs="http://ghbtns.com/github-btn.html?user=matthew-dean&type=follow"></iframe>
+<a class="team-member" href="javascript:if(confirm('https://github.com/gtm.js  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/gtm.js'" tppabs="https://github.com/matthew-dean">
+<img src="../../../../www.gravatar.com/avatar/loader.js" tppabs="http://www.gravatar.com/avatar/09caa4a26a5e57031146b5e06b4d7a8c" alt="@matthew-dean">
+<strong>Matthew Dean</strong> Language Design, Community <small>@matthew-dean</small>
+</a>
+</div>
+<div class="list-group-item">
+<iframe class="github-btn" src="../../../../ghbtns.com/gtag.set" tppabs="http://ghbtns.com/github-btn.html?user=seven-phases-max&type=follow"></iframe>
+<a class="team-member" href="javascript:if(confirm('https://github.com/gtm.sync  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/gtm.sync'" tppabs="https://github.com/seven-phases-max">
+<img src="../../../../www.gravatar.com/avatar/gtm.dom" tppabs="http://www.gravatar.com/avatar/f7c830e90f5d6a740ab908365dcd3849" alt="@seven-phases-max">
+<strong>Max Mikhailov</strong> Development, Documentation, Language Design <small>@seven-phases-max</small>
+</a>
+</div>
+</div>
+<p>Get involved with Less.js development by <a href="javascript:if(confirm('https://github.com/less/less.js/issues/new  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/issues/new'" tppabs="https://github.com/less/less.js/issues/new">opening an issue</a> or submitting a pull request (if it's a feature request, please open an issue first). </p>
+<p>Read our <a href="javascript:if(confirm('https://github.com/less/less.js/blob/master/)&&x.contains(u,a)&&(a.src?x._evalUrl(a.src):x.globalEval(a.textContent.replace(lt,  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/blob/master/)&&x.contains(u,a)&&(a.src?x._evalUrl(a.src):x.globalEval(a.textContent.replace(lt,'" tppabs="https://github.com/less/less.js/blob/master/CONTRIBUTING.md">contributing guidelines</a> and the <a href="../usage/index.htm#developing-less" tppabs="http://www.runoob.com/manual/lessguide/usage/#developing-less">developing section</a> of our usage page.</p>
+</div>
+<div class="docs-section">
+<div class="page-header">
+<h1 class="docs-heading">Community<span class="anchor-target" id="community"></span>
+<a href="#community" name="community" class="anchor glyphicon glyphicon-link"></a></h1>
+</div>
+<p class="lead">Stay up to date on the development of Less.js and reach out to the community with these helpful resources.</p>
+<ul>
+<li>Have a feature request or bug report? <a href="javascript:if(confirm('https://github.com/less/less-docs/css-image-gallery.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less-docs/css-image-gallery.html'" tppabs="https://github.com/less/less-docs/issues?&state=open">Let us know on our GitHub Issues</a>.</li>
+</ul>
+</div>
+<div class="docs-section">
+<div class="page-header">
+<h1 class="docs-heading">Ports of Less.js<span class="anchor-target" id="ports"></span>
+<a href="#ports" name="ports" class="anchor glyphicon glyphicon-link"></a></h1>
+</div>
+<p class="lead">Less has been ported to several other programming languages.</p>
+<h2 class="docs-heading">Java<span class="anchor-target" id="ports-java"></span>
+<a href="#ports-java" name="ports-java" class="anchor glyphicon glyphicon-link"></a></h2>
+<ul>
+<li><a href="javascript:if(confirm('https://github.com/houbie/gtm.load  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/houbie/gtm.load'" tppabs="https://github.com/houbie/lesscss">Lesscss</a> (Runs less.js using Rhino, Nasshorn or node.js engine; 1.7.0 compliant)</li>
+<li><a href="javascript:if(confirm('https://github.com/houbie/aw.ds  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/houbie/aw.ds'" tppabs="https://github.com/houbie/lesscss-gradle-plugin">Lesscss gradle plugin</a> (Gradle plugin based on Lesscss)</li>
+<li><a href="javascript:if(confirm('https://github.com/Asual/)};a.aw&&(!0===b.Af?c(  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/Asual/)};a.aw&&(!0===b.Af?c('" tppabs="https://github.com/Asual/lesscss-engine">Less Engine</a> (Runs less.js in the Rhino JVM-based JavaScript interpreter)</li>
+<li><a href="javascript:if(confirm('https://github.com/marceloverdijk/regclk  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/marceloverdijk/regclk'" tppabs="https://github.com/marceloverdijk/lesscss-java">Less CSS Compiler for Java</a> (Runs less.js in the Rhino JVM-based JavaScript interpreter)</li>
+<li><a href="javascript:if(confirm('https://github.com/SomMeri/,a.Za);a.cb?lb(e+  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/SomMeri/,a.Za);a.cb?lb(e+'" tppabs="https://github.com/SomMeri/less4j">Less4j</a> (Native Java implementation.)</li>
+</ul>
+<h2 class="docs-heading">.Net<span class="anchor-target" id="ports--net"></span>
+<a href="#ports--net" name="ports--net" class="anchor glyphicon glyphicon-link"></a></h2>
+<ul>
+<li><a href="javascript:if(confirm('http://www.dotlesscss.org/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.dotlesscss.org/'" tppabs="http://www.dotlesscss.org/">Less CSS for .Net</a></li>
+</ul>
+<h2 class="docs-heading">PHP<span class="anchor-target" id="ports-php"></span>
+<a href="#ports-php" name="ports-php" class="anchor glyphicon glyphicon-link"></a></h2>
+<ul>
+<li><a href="javascript:if(confirm('http://leafo.net/lessphp/docs/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://leafo.net/lessphp/docs/'" tppabs="http://leafo.net/lessphp/docs/">lessphp</a></li>
+<li><a href="javascript:if(confirm('http://wordpress.org/extend/plugins/bw-less-css/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wordpress.org/extend/plugins/bw-less-css/'" tppabs="http://wordpress.org/extend/plugins/bw-less-css/">BW Less CSS</a> (WordPress Plugin)</li>
+<li><a href="javascript:if(confirm('http://lessphp.gpeasy.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://lessphp.gpeasy.com/'" tppabs="http://lessphp.gpeasy.com/">less.php</a></li>
+</ul>
+<h2 class="docs-heading">Python<span class="anchor-target" id="ports-python"></span>
+<a href="#ports-python" name="ports-python" class="anchor glyphicon glyphicon-link"></a></h2>
+<ul>
+<li><a href="javascript:if(confirm('https://github.com/lesscpy/conversion_async.js  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/lesscpy/conversion_async.js'" tppabs="https://github.com/lesscpy/lesscpy">Python Less Compiler</a></li>
+</ul>
+<h2 class="docs-heading">Ruby<span class="anchor-target" id="ports-ruby"></span>
+<a href="#ports-ruby" name="ports-ruby" class="anchor glyphicon glyphicon-link"></a></h2>
+<ul>
+<li><a href="javascript:if(confirm('https://github.com/cowboyd/ec.js  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/cowboyd/ec.js'" tppabs="https://github.com/cowboyd/less.rb">Less.js In Ruby&#39;s V8 Engine</a></li>
+</ul>
+<p>Know of another port that should be added to this list? Please <a href="javascript:if(confirm('https://github.com/less/less-docs/issues/new  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less-docs/issues/new'" tppabs="https://github.com/less/less-docs/issues/new">let us know</a>.</p>
+</div>
+<div class="docs-section">
+<div class="page-header">
+<h1 class="docs-heading">Translations<span class="anchor-target" id="translations"></span>
+<a href="#translations" name="translations" class="anchor glyphicon glyphicon-link"></a></h1>
+</div>
+<p class="lead">Community members have translated Less.js's documentation into various languages.</p>
+<div class="callout callout-warning">
+<h4>Community submitted.</h4>
+<p>None of the translations are officially supported and <strong>may not always be up to date</strong>.</p>
+</div>
+<ul class="list-bullets">
+<li> <strong>Belarusian: </strong> <a href="javascript:if(confirm('http://www.designcontest.com/show/ads.php  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.designcontest.com/show/ads.php'" tppabs="http://www.designcontest.com/show/lesscss-be"> http://www.designcontest.com/show/lesscss-be </a> </li>
+<li> <strong>Chinese: </strong> <a href="javascript:if(confirm('http://lesscss.net/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://lesscss.net/'" tppabs="http://lesscss.net/"> http://lesscss.net </a> </li>
+<li> <strong>Danish: </strong> <a href="javascript:if(confirm('http://lesscss.dk/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://lesscss.dk/'" tppabs="http://lesscss.dk/"> http://lesscss.dk </a> </li>
+<li> <strong>French: </strong> <a href="javascript:if(confirm('http://luckymarmot.com/gtm.load  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://luckymarmot.com/gtm.load'" tppabs="http://luckymarmot.com/lesscss"> http://luckymarmot.com/lesscss </a> </li>
+<li> <strong>German: </strong> <a href="javascript:if(confirm('http://www.lesscss.de/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.lesscss.de/'" tppabs="http://www.lesscss.de/"> http://www.lesscss.de </a> </li>
+<li> <strong>Indonesian: </strong> <a href="javascript:if(confirm('http://bertzzie.com/post/7/qqinfo.php  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://bertzzie.com/post/7/qqinfo.php'" tppabs="http://bertzzie.com/post/7/dokumentasi-less-bahasa-indonesia"> http://bertzzie.com/post/7/dokumentasi-less-bahasa-indonesia </a> </li>
+<li> <strong>Iranian: </strong> <a href="javascript:if(confirm('http://less-css.ir/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://less-css.ir/'" tppabs="http://less-css.ir/"> http://less-css.ir </a> </li>
+<li> <strong>Japanese: </strong> <a href="javascript:if(confirm('http://less-ja.studiomohawk.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://less-ja.studiomohawk.com/'" tppabs="http://less-ja.studiomohawk.com/"> http://less-ja.studiomohawk.com/ </a> </li>
+<li> <strong>Polish: </strong> <a href="javascript:if(confirm('http://ciembor.github.com/lesscss.org/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://ciembor.github.com/lesscss.org/'" tppabs="http://ciembor.github.com/lesscss.org/"> http://ciembor.github.com/lesscss.org/ </a> </li>
+<li> <strong>Portuguese: </strong> <a href="javascript:if(confirm('http://giovanneafonso.github.io/lesscss.org/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://giovanneafonso.github.io/lesscss.org/'" tppabs="http://giovanneafonso.github.io/lesscss.org/"> http://giovanneafonso.github.io/lesscss.org/ </a> </li>
+<li> <strong>Russian: </strong> <a href="javascript:if(confirm('http://lesscss.ru/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://lesscss.ru/'" tppabs="http://lesscss.ru/"> http://lesscss.ru </a> </li>
+<li> <strong>Spanish: </strong> <a href="javascript:if(confirm('http://amatellanes.github.io/lesscss.org/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://amatellanes.github.io/lesscss.org/'" tppabs="http://amatellanes.github.io/lesscss.org/"> http://amatellanes.github.io/lesscss.org/ </a> </li>
+<li> <strong>Ukrainian: </strong> <a href="javascript:if(confirm('http://komaval.github.com/lesscss.org/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://komaval.github.com/lesscss.org/'" tppabs="http://komaval.github.com/lesscss.org/"> http://komaval.github.com/lesscss.org/ </a> </li>
+<li> <strong>Vietnamese: </strong> <a href="javascript:if(confirm('http://less.eten.vn/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://less.eten.vn/'" tppabs="http://less.eten.vn/"> http://less.eten.vn/ </a> </li>
+<li> <strong>ä¸­æ–‡ (Chinese): </strong> <a href="javascript:if(confirm('http://less.bootcss.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://less.bootcss.com/'" tppabs="http://less.bootcss.com/"> http://less.bootcss.com </a> </li>
+</ul>
+<p>Have another language to add, or perhaps a different or better translation? Let us know by <a href="javascript:if(confirm('https://github.com/less/less.js/issues/new  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/issues/new'" tppabs="https://github.com/less/less.js/issues/new">opening an issue</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer" role="contentinfo">
+<div class="container">
+<div class="bs-social">
+<ul class="bs-social-buttons">
+<li>
+<iframe class="github-btn" src="../../../../ghbtns.com/css3-gradients.html" tppabs="http://ghbtns.com/github-btn.html?user=less&repo=less.js&type=watch&count=true" width="100" height="20" title="Star on GitHub"></iframe>
+</li>
+<li>
+<iframe class="github-btn" src="../../../../ghbtns.com/css3-text-effects.html" tppabs="http://ghbtns.com/github-btn.html?user=less&repo=less.js&type=fork&count=true" width="102" height="20" title="Fork on GitHub"></iframe>
+</li>
+</ul>
+</div>
+<p>Less.js and these docs are maintained by <a href="index.htm#team" tppabs="http://www.runoob.com/manual/lessguide/about/#team">the core less team</a>.</p>
+<p>Documentation source code released under the <a href="javascript:if(confirm('https://github.com/less/less-docs/blob/master/css3-fonts.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less-docs/blob/master/css3-fonts.html'" tppabs="https://github.com/less/less-docs/blob/master/LICENSE-MIT" target="_blank">MIT License</a>, documentation under <a href="javascript:if(confirm('http://creativecommons.org/licenses/by/3.0/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://creativecommons.org/licenses/by/3.0/'" tppabs="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+<ul class="footer-links">
+<li>Currently v1.7.3</li>
+<li class="muted">&middot;</li>
+<li><a href="javascript:if(confirm('https://github.com/less/less.js/css-image-sprites.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/css-image-sprites.html'" tppabs="https://github.com/less/less.js/issues">Less.js Issues</a></li>
+<li class="muted">&middot;</li>
+<li><a href="javascript:if(confirm('https://github.com/less/less-docs/css-image-gallery.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less-docs/css-image-gallery.html'" tppabs="https://github.com/less/less-docs/issues?&state=open">Less Docs Issues</a></li>
+<li class="muted">&middot;</li>
+<li><a href="javascript:if(confirm('https://github.com/less/less.js/blob/master/css-mediatypes.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/less/less.js/blob/master/css-mediatypes.html'" tppabs="https://github.com/less/less.js/blob/master/CHANGELOG.md">Changelog</a></li>
+</ul>
+</div>
+</footer>
+<script src="../../../../apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js" tppabs="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../../../../apps.bdimg.com/libs/bootstrap/3.0.3/js/css3-transitions.html" tppabs="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="../../../../apps.bdimg.com/libs/holder/2.2.0/holder.js" tppabs="http://apps.bdimg.com/libs/holder/2.2.0/holder.js"></script>
+<script src="../public/js/application.js" tppabs="http://www.runoob.com/manual/lessguide/public/js/application.js"></script>
+<div style="display:none;">
+<script src="../../../../s11.cnzz.com/web-www.html" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript"></script>
+</div>
+</body>
+</html>

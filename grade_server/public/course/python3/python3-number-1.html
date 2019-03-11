@@ -1,0 +1,1141 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="qc:admins" content="465267610762567726375" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python3 æ•°å­—(Number) | èœé¸Ÿæ•™ç¨‹</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="canonical" href="http://www.runoob.com/python3/python3-number.html" />
+<meta name="keywords" content="Python3 æ•°å­—(Number)">
+<meta name="description" content="Python3 æ•°å­—(Number) Python æ•°å­—æ•°æ®ç±»å‹ç”¨äºå­˜å‚¨æ•°å€¼ã€‚ æ•°æ®ç±»å‹æ˜¯ä¸å…è®¸æ”¹å˜çš„,è¿™å°±æ„å‘³ç€å¦‚æœæ”¹å˜æ•°å­—æ•°æ®ç±»å‹çš„å€¼ï¼Œå°†é‡æ–°åˆ†é…å†…å­˜ç©ºé—´ã€‚  ä»¥ä¸‹å®ä¾‹åœ¨å˜é‡èµ‹å€¼æ—¶ Number å¯¹è±¡å°†è¢«åˆ›å»ºï¼š  var1 = 1 var2 = 10  æ‚¨ä¹Ÿå¯ä»¥ä½¿ç”¨delè¯­å¥åˆ é™¤ä¸€äº›æ•°å­—å¯¹è±¡çš„å¼•ç”¨ã€‚  delè¯­å¥çš„è¯­æ³•æ˜¯ï¼š  del var1[,var2[,var3[....,varN]]]]  æ‚¨å¯ä»¥é€šè¿‡ä½¿ç”¨delè¯­å¥åˆ é™¤å•ä¸ªæˆ–å¤š..">
+<link rel="shortcut icon" href="../../static.runoob.com/images/favicon-1.ico" tppabs="https://static.runoob.com/images/favicon.ico" mce_href="//static.runoob.com/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../wp-content/themes/runoob/style.css-v=1-1.147.css" tppabs="https://www.runoob.com/wp-content/themes/runoob/style.css?v=1.147" type="text/css" media="all" />
+<link rel="stylesheet" href="../../cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" tppabs="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<!--[if gte IE 9]><!-->
+  <script src="../../cdn.staticfile.org/jquery/2.0.3/jquery.min-1.js" tppabs="https://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+  <!--<![endif]-->
+<!--[if lt IE 9]>
+     <script src="../../cdn.staticfile.org/jquery/1.9.1/jquery.min-1.js" tppabs="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+     <script src="../../cdn.staticfile.org/html5shiv/r29/html5.min-1.js" tppabs="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+<link rel="apple-touch-icon" href="//static.runoob.com/images/icon/mobile-icon.png"/>
+<meta name="apple-mobile-web-app-title" content="èœé¸Ÿæ•™ç¨‹">
+</head>
+<body>
+<div class="container logo-search">
+<div class="col search row-search-mobile">
+<form action="index-1.php-s=.htm" tppabs="https://www.runoob.com/python3/index.php?s=">
+<input class="placeholder" placeholder="æœç´¢â€¦â€¦" name="s" autocomplete="off">
+</form>
+</div>
+<div class="row">
+<div class="col logo">
+<h1><a href="../index-1.htm" tppabs="https://www.runoob.com/">èœé¸Ÿæ•™ç¨‹ -- å­¦çš„ä¸ä»…æ˜¯æŠ€æœ¯ï¼Œæ›´æ˜¯æ¢¦æƒ³ï¼</a></h1>
+</div>
+<div class="col right-list">
+<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style=""> <i class="fa fa-navicon"></i> </button>
+</div>
+<div class="col search search-desktop last">
+<form action="../-s=-1.htm" tppabs="https://www.runoob.com/?s=" target="_blank">
+<input class="placeholder" id="s" name="s" placeholder="æœç´¢â€¦â€¦" autocomplete="off">
+</form>
+</div>
+</div>
+</div>
+<div class="container navigation">
+<div class="row">
+<div class="col nav">
+<ul class="pc-nav">
+<li><a href="../index-1.htm" tppabs="https://www.runoob.com/">é¦–é¡µ</a></li>
+<li><a href="../html/html-tutorial-1.html" tppabs="https://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial-1.html" tppabs="https://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial-1.html" tppabs="https://www.runoob.com/js/js-tutorial.html">JavaScript</a></li>
+<li><a href="../jquery/jquery-tutorial-1.html" tppabs="https://www.runoob.com/jquery/jquery-tutorial.html">jQuery</a></li>
+<li><a href="../bootstrap/bootstrap-tutorial-1.html" tppabs="https://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap</a></li>
+<li><a href="../sql/sql-tutorial-1.html" tppabs="https://www.runoob.com/sql/sql-tutorial.html">SQL</a></li>
+<li><a href="../mysql/mysql-tutorial-1.html" tppabs="https://www.runoob.com/mysql/mysql-tutorial.html">MySQL</a></li>
+<li><a href="../php/php-tutorial-1.html" tppabs="https://www.runoob.com/php/php-tutorial.html">PHP</a></li>
+<li><a href="../python/python-tutorial-1.html" tppabs="https://www.runoob.com/python/python-tutorial.html">Python2</a></li>
+<li><a href="python3-tutorial-1.html" tppabs="https://www.runoob.com/python3/python3-tutorial.html">Python3</a></li>
+<li><a href="../cprogramming/c-tutorial-1.html" tppabs="https://www.runoob.com/cprogramming/c-tutorial.html">C</a></li>
+<li><a href="../cplusplus/cpp-tutorial-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-tutorial.html">C++</a></li>
+<li><a href="../csharp/csharp-tutorial-1.html" tppabs="https://www.runoob.com/csharp/csharp-tutorial.html">C#</a></li>
+<li><a href="../java/java-tutorial-1.html" tppabs="https://www.runoob.com/java/java-tutorial.html">Java</a></li>
+<li><a href="../browser-history-1.htm" tppabs="https://www.runoob.com/browser-history">æœ¬åœ°ä¹¦ç­¾</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">çº¢åŒ… <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24-1.png" tppabs="https://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+</ul>
+<ul class="mobile-nav">
+<li><a href="../index-1.htm" tppabs="https://www.runoob.com/">é¦–é¡µ</a></li>
+<li><a href="../html/html-tutorial-1.html" tppabs="https://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial-1.html" tppabs="https://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial-1.html" tppabs="https://www.runoob.com/js/js-tutorial.html">JS</a></li>
+<li><a href="../browser-history-1.htm" tppabs="https://www.runoob.com/browser-history">æœ¬åœ°ä¹¦ç­¾</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">çº¢åŒ… <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24-1.png" tppabs="https://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+<a href="javascript:void(0)" class="search-reveal">Search</a>
+</ul>
+</div>
+</div>
+</div>
+<div class="container main">
+<div class="row">
+<div class="col left-column">
+<div class="tab">Python 3 æ•™ç¨‹ <a data-cate="124" href="javascript:void(0);" title="å¤œé—´æ¨¡å¼" id="moon"><i class="fa fa-moon-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+<a data-cate="124" style="display:none;" href="javascript:void(0);" title="æ—¥é—´æ¨¡å¼" id="sun"><i class="fa fa-sun-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+</div>
+<div class="sidebar-box gallery-list">
+<div class="design" id="leftcolumn">
+<a target="_top" title="Python3 æ•™ç¨‹" href="python3-tutorial-1.html" tppabs="https://www.runoob.com/python3/python3-tutorial.html">
+Python3 æ•™ç¨‹ </a>
+<a target="_top" title=" Python3 ç¯å¢ƒæ­å»º" href="python3-install-1.html" tppabs="https://www.runoob.com/python3/python3-install.html"> Python3 ç¯å¢ƒæ­å»º</a>
+<a target="_top" title=" Python3 åŸºç¡€è¯­æ³•" href="python3-basic-syntax-1.html" tppabs="https://www.runoob.com/python3/python3-basic-syntax.html"> Python3 åŸºç¡€è¯­æ³• </a>
+<a target="_top" title=" Python3 åŸºæœ¬æ•°æ®ç±»å‹" href="python3-data-type-1.html" tppabs="https://www.runoob.com/python3/python3-data-type.html"> Python3 åŸºæœ¬æ•°æ®ç±»å‹ </a> <a target="_top" title="Python3 è§£é‡Šå™¨" href="python3-interpreter-1.html" tppabs="https://www.runoob.com/python3/python3-interpreter.html">
+Python3 è§£é‡Šå™¨ </a>
+<a target="_top" title="Python3 æ³¨é‡Š" href="python3-comment-1.html" tppabs="https://www.runoob.com/python3/python3-comment.html">
+Python3 æ³¨é‡Š </a>
+<a target="_top" title="Python3 è¿ç®—ç¬¦" href="python3-basic-operators-1.html" tppabs="https://www.runoob.com/python3/python3-basic-operators.html"> Python3 è¿ç®—ç¬¦ </a> <a target="_top" title="Python3 æ•°å­—(Number)" href="python3-number-1.html" tppabs="https://www.runoob.com/python3/python3-number.html">
+Python3 æ•°å­—(Number) </a>
+<a target="_top" title="Python3 å­—ç¬¦ä¸²" href="python3-string-1.html" tppabs="https://www.runoob.com/python3/python3-string.html">
+Python3 å­—ç¬¦ä¸² </a>
+<a target="_top" title="Python3 åˆ—è¡¨" href="python3-list-1.html" tppabs="https://www.runoob.com/python3/python3-list.html">
+Python3 åˆ—è¡¨ </a>
+<a target="_top" title="Python3 å…ƒç»„" href="python3-tuple-1.html" tppabs="https://www.runoob.com/python3/python3-tuple.html"> Python3 å…ƒç»„ </a>
+<a target="_top" title="Python3 å­—å…¸" href="python3-dictionary-1.html" tppabs="https://www.runoob.com/python3/python3-dictionary.html"> Python3 å­—å…¸</a>
+<a target="_top" title="Python3 é›†åˆ" href="python3-set-1.html" tppabs="https://www.runoob.com/python3/python3-set.html"> Python3 é›†åˆ</a> <a target="_top" title="Python3 ç¼–ç¨‹ç¬¬ä¸€æ­¥" href="python3-step1-1.html" tppabs="https://www.runoob.com/python3/python3-step1.html">
+Python3 ç¼–ç¨‹ç¬¬ä¸€æ­¥ </a>
+<a target="_top" title="Python3 æ¡ä»¶æ§åˆ¶" href="python3-conditional-statements-1.html" tppabs="https://www.runoob.com/python3/python3-conditional-statements.html">
+Python3 æ¡ä»¶æ§åˆ¶ </a>
+<a target="_top" title="Python3 å¾ªç¯è¯­å¥" href="python3-loop-1.html" tppabs="https://www.runoob.com/python3/python3-loop.html">
+Python3 å¾ªç¯è¯­å¥ </a>
+<a target="_top" title="Python3 è¿­ä»£å™¨ä¸ç”Ÿæˆå™¨" href="python3-iterator-generator-1.html" tppabs="https://www.runoob.com/python3/python3-iterator-generator.html"> Python3 è¿­ä»£å™¨ä¸ç”Ÿæˆå™¨</a> <a target="_top" title="Python3 å‡½æ•°" href="python3-function-1.html" tppabs="https://www.runoob.com/python3/python3-function.html">
+Python3 å‡½æ•° </a>
+<a target="_top" title="Python3 æ•°æ®ç»“æ„" href="python3-data-structure-1.html" tppabs="https://www.runoob.com/python3/python3-data-structure.html">
+Python3 æ•°æ®ç»“æ„ </a>
+<a target="_top" title="Python3 æ¨¡å—" href="python3-module-1.html" tppabs="https://www.runoob.com/python3/python3-module.html">
+Python3 æ¨¡å— </a>
+<a target="_top" title="Python3 è¾“å…¥å’Œè¾“å‡º" href="python3-inputoutput-1.html" tppabs="https://www.runoob.com/python3/python3-inputoutput.html">
+Python3 è¾“å…¥å’Œè¾“å‡º </a>
+<a target="_top" title="Python3 File" href="python3-file-methods-1.html" tppabs="https://www.runoob.com/python3/python3-file-methods.html"> Python3 File </a>
+<a target="_top" title="Python3 OS" href="python3-os-file-methods-1.html" tppabs="https://www.runoob.com/python3/python3-os-file-methods.html"> Python3 OS </a> <a target="_top" title="Python3 é”™è¯¯å’Œå¼‚å¸¸" href="python3-errors-execptions-1.html" tppabs="https://www.runoob.com/python3/python3-errors-execptions.html">
+Python3 é”™è¯¯å’Œå¼‚å¸¸ </a>
+<a target="_top" title="Python3 é¢å‘å¯¹è±¡" href="python3-class-1.html" tppabs="https://www.runoob.com/python3/python3-class.html">
+Python3 é¢å‘å¯¹è±¡ </a>
+<a target="_top" title="Python3 æ ‡å‡†åº“æ¦‚è§ˆ" href="python3-stdlib-1.html" tppabs="https://www.runoob.com/python3/python3-stdlib.html">
+Python3 æ ‡å‡†åº“æ¦‚è§ˆ </a>
+<a target="_top" title="Python3 å®ä¾‹" href="python3-examples-1.html" tppabs="https://www.runoob.com/python3/python3-examples.html">
+Python3 å®ä¾‹ </a>
+<br><h2 class="left"><span class="left_h2">Python3</span> é«˜çº§æ•™ç¨‹</h2> <a target="_top" title="Python3 æ­£åˆ™è¡¨è¾¾å¼" href="python3-reg-expressions-1.html" tppabs="https://www.runoob.com/python3/python3-reg-expressions.html">
+Python3 æ­£åˆ™è¡¨è¾¾å¼ </a>
+<a target="_top" title="Python3 CGIç¼–ç¨‹" href="python3-cgi-programming-1.html" tppabs="https://www.runoob.com/python3/python3-cgi-programming.html">
+Python3 CGIç¼–ç¨‹ </a>
+<a target="_top" title="Python MySQL - mysql-connector é©±åŠ¨" href="python-mysql-connector-1.html" tppabs="https://www.runoob.com/python3/python-mysql-connector.html">Python3 MySQL(mysql-connector)</a> <a target="_top" title="Python3 MySQL æ•°æ®åº“è¿æ¥ &#8211; PyMySQL é©±åŠ¨" href="python3-mysql-1.html" tppabs="https://www.runoob.com/python3/python3-mysql.html">
+Python3 MySQL(PyMySQL) </a>
+<a target="_top" title="Python3 ç½‘ç»œç¼–ç¨‹" href="python3-socket-1.html" tppabs="https://www.runoob.com/python3/python3-socket.html">
+Python3 ç½‘ç»œç¼–ç¨‹ </a>
+<a target="_top" title="Python3 SMTPå‘é€é‚®ä»¶" href="python3-smtp-1.html" tppabs="https://www.runoob.com/python3/python3-smtp.html">
+Python3 SMTPå‘é€é‚®ä»¶ </a>
+<a target="_top" title="Python3 å¤šçº¿ç¨‹" href="python3-multithreading-1.html" tppabs="https://www.runoob.com/python3/python3-multithreading.html">
+Python3 å¤šçº¿ç¨‹ </a>
+<a target="_top" title="Python3 XMLè§£æ" href="python3-xml-processing-1.html" tppabs="https://www.runoob.com/python3/python3-xml-processing.html">
+Python3 XMLè§£æ </a>
+<a target="_top" title="Python3 JSON æ•°æ®è§£æ" href="python3-json-1.html" tppabs="https://www.runoob.com/python3/python3-json.html">
+Python3 JSON </a>
+<a target="_top" title="Python3 æ—¥æœŸå’Œæ—¶é—´" href="python3-date-time-1.html" tppabs="https://www.runoob.com/python3/python3-date-time.html">
+Python3 æ—¥æœŸå’Œæ—¶é—´ </a>
+<a target="_top" title="Python3 å†…ç½®å‡½æ•°" href="python3-built-in-functions-1.html" tppabs="https://www.runoob.com/python3/python3-built-in-functions.html">
+Python3 å†…ç½®å‡½æ•° </a>
+<a target="_top" title="Python Mongodb" href="python-mongodb-1.html" tppabs="https://www.runoob.com/python3/python-mongodb.html">
+Python Mongodb </a>
+<a target="_top" title="Python uwsgi  å®‰è£…é…ç½®" href="python-uwsgi-1.html" tppabs="https://www.runoob.com/python3/python-uwsgi.html">
+Python uwsgi å®‰è£…é…ç½® </a>
+</div>
+</div>
+</div> <div class="col middle-column">
+<div class="article">
+<div class="article-heading-ad" style="display: none;">
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="python3-comment.html" tppabs="http://www.runoob.com/python3/python3-comment.html" rel="prev"> Python3 æ³¨é‡Š</a> </div>
+<div class="next-design-link"><a href="python3-string.html" tppabs="http://www.runoob.com/python3/python3-string.html" rel="next"> Python3 å­—ç¬¦ä¸²</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<div class="article-body">
+<div class="article-intro" id="content">
+<h1>Python3 æ•°å­—(Number)</h1>
+<p>Python æ•°å­—æ•°æ®ç±»å‹ç”¨äºå­˜å‚¨æ•°å€¼ã€‚</p>
+<p>æ•°æ®ç±»å‹æ˜¯ä¸å…è®¸æ”¹å˜çš„,è¿™å°±æ„å‘³ç€å¦‚æœæ”¹å˜æ•°å­—æ•°æ®ç±»å‹çš„å€¼ï¼Œå°†é‡æ–°åˆ†é…å†…å­˜ç©ºé—´ã€‚</p>
+<p>ä»¥ä¸‹å®ä¾‹åœ¨å˜é‡èµ‹å€¼æ—¶ Number å¯¹è±¡å°†è¢«åˆ›å»ºï¼š</p>
+<pre>
+var1 = 1
+var2 = 10
+</pre>
+<p>æ‚¨ä¹Ÿå¯ä»¥ä½¿ç”¨delè¯­å¥åˆ é™¤ä¸€äº›æ•°å­—å¯¹è±¡çš„å¼•ç”¨ã€‚ </p>
+<p>delè¯­å¥çš„è¯­æ³•æ˜¯ï¼š</p>
+<pre>
+del var1[,var2[,var3[....,varN]]]]
+</pre>
+<p>æ‚¨å¯ä»¥é€šè¿‡ä½¿ç”¨delè¯­å¥åˆ é™¤å•ä¸ªæˆ–å¤šä¸ªå¯¹è±¡çš„å¼•ç”¨ï¼Œä¾‹å¦‚ï¼š</p>
+<pre>
+del var
+del var_a, var_b
+</pre>
+<p>Python æ”¯æŒä¸‰ç§ä¸åŒçš„æ•°å€¼ç±»å‹ï¼š</p>
+<ul>
+<li><strong>æ•´å‹(Int)</strong> - é€šå¸¸è¢«ç§°ä¸ºæ˜¯æ•´å‹æˆ–æ•´æ•°ï¼Œæ˜¯æ­£æˆ–è´Ÿæ•´æ•°ï¼Œä¸å¸¦å°æ•°ç‚¹ã€‚Python3 æ•´å‹æ˜¯æ²¡æœ‰é™åˆ¶å¤§å°çš„ï¼Œå¯ä»¥å½“ä½œ Long ç±»å‹ä½¿ç”¨ï¼Œæ‰€ä»¥ Python3 æ²¡æœ‰ Python2 çš„ Long ç±»å‹ã€‚</li>
+<li><strong>æµ®ç‚¹å‹(float)</strong> - æµ®ç‚¹å‹ç”±æ•´æ•°éƒ¨åˆ†ä¸å°æ•°éƒ¨åˆ†ç»„æˆï¼Œæµ®ç‚¹å‹ä¹Ÿå¯ä»¥ä½¿ç”¨ç§‘å­¦è®¡æ•°æ³•è¡¨ç¤ºï¼ˆ2.5e2 = 2.5 x 10<sup>2</sup> = 250ï¼‰</li>
+<li><strong>å¤æ•°( (complex))</strong> - å¤æ•°ç”±å®æ•°éƒ¨åˆ†å’Œè™šæ•°éƒ¨åˆ†æ„æˆï¼Œå¯ä»¥ç”¨a + bj,æˆ–è€…complex(a,b)è¡¨ç¤ºï¼Œ å¤æ•°çš„å®éƒ¨aå’Œè™šéƒ¨béƒ½æ˜¯æµ®ç‚¹å‹ã€‚</li>
+</ul>
+<p>æˆ‘ä»¬å¯ä»¥ä½¿ç”¨åå…­è¿›åˆ¶å’Œå…«è¿›åˆ¶æ¥ä»£è¡¨æ•´æ•°ï¼š</p>
+<pre>
+&gt;&gt;&gt; number = 0xA0F # åå…­è¿›åˆ¶
+&gt;&gt;&gt; number
+2575
+
+&gt;&gt;&gt; number=0o37 # å…«è¿›åˆ¶
+&gt;&gt;&gt; number
+31
+</pre>
+<table class="reference">
+<tbody><tr><th>int</th><th>float</th><th>complex</th></tr>
+<tr><td>10</td><td>0.0</td><td>3.14j</td></tr>
+<tr><td>100</td><td>15.20</td><td>45.j</td></tr>
+<tr><td>-786</td><td>-21.9</td><td>9.322e-36j</td></tr>
+<tr><td>080</td><td>32.3+e18</td><td>.876j</td></tr>
+<tr><td>-0490</td><td>-90.</td><td>-.6545+0J</td></tr>
+<tr><td>-0x260</td><td>-32.54e100</td><td>3e+26J</td></tr>
+<tr><td>0x69</td><td>70.2-E12</td><td>4.53e-7j</td></tr>
+</tbody></table>
+<ul>
+<li>Pythonæ”¯æŒå¤æ•°ï¼Œå¤æ•°ç”±å®æ•°éƒ¨åˆ†å’Œè™šæ•°éƒ¨åˆ†æ„æˆï¼Œå¯ä»¥ç”¨a + bj,æˆ–è€…complex(a,b)è¡¨ç¤ºï¼Œ
+å¤æ•°çš„å®éƒ¨aå’Œè™šéƒ¨béƒ½æ˜¯æµ®ç‚¹å‹ã€‚
+</li>
+</ul>
+<br><hr>
+<h2>Python æ•°å­—ç±»å‹è½¬æ¢</h2>
+<p>æœ‰æ—¶å€™ï¼Œæˆ‘ä»¬éœ€è¦å¯¹æ•°æ®å†…ç½®çš„ç±»å‹è¿›è¡Œè½¬æ¢ï¼Œæ•°æ®ç±»å‹çš„è½¬æ¢ï¼Œä½ åªéœ€è¦å°†æ•°æ®ç±»å‹ä½œä¸ºå‡½æ•°åå³å¯ã€‚</p>
+<ul class="list">
+<li><p><b>int(x)</b> å°†xè½¬æ¢ä¸ºä¸€ä¸ªæ•´æ•°ã€‚</p></li>
+<li><p><b>float(x)</b> å°†xè½¬æ¢åˆ°ä¸€ä¸ªæµ®ç‚¹æ•°ã€‚</p></li>
+<li><p> <b>complex(x)</b> å°†xè½¬æ¢åˆ°ä¸€ä¸ªå¤æ•°ï¼Œå®æ•°éƒ¨åˆ†ä¸º xï¼Œè™šæ•°éƒ¨åˆ†ä¸º 0ã€‚</p></li>
+<li><p><b>complex(x, y)</b> å°† x å’Œ y è½¬æ¢åˆ°ä¸€ä¸ªå¤æ•°ï¼Œå®æ•°éƒ¨åˆ†ä¸º xï¼Œè™šæ•°éƒ¨åˆ†ä¸º yã€‚x å’Œ y æ˜¯æ•°å­—è¡¨è¾¾å¼ã€‚</p></li>
+</ul>
+<p>ä»¥ä¸‹å®ä¾‹å°†æµ®ç‚¹æ•°å˜é‡ a è½¬æ¢ä¸ºæ•´æ•°ï¼š</p>
+<pre>
+&gt;&gt;&gt; a = 1.0
+&gt;&gt;&gt; int(a)
+1
+</pre>
+<hr>
+<h2>Python æ•°å­—è¿ç®—</h2>
+<p>Python è§£é‡Šå™¨å¯ä»¥ä½œä¸ºä¸€ä¸ªç®€å•çš„è®¡ç®—å™¨ï¼Œæ‚¨å¯ä»¥åœ¨è§£é‡Šå™¨é‡Œè¾“å…¥ä¸€ä¸ªè¡¨è¾¾å¼ï¼Œå®ƒå°†è¾“å‡ºè¡¨è¾¾å¼çš„å€¼ã€‚</p>
+<p>è¡¨è¾¾å¼çš„è¯­æ³•å¾ˆç›´ç™½ï¼š <span class="marked">+</span>, <span class="marked">-</span>, <span class="marked">*</span> å’Œ <span class="marked">/</span>, å’Œå…¶å®ƒè¯­è¨€ï¼ˆå¦‚Pascalæˆ–Cï¼‰é‡Œä¸€æ ·ã€‚ä¾‹å¦‚ï¼š</p>
+<pre>
+&gt;&gt;&gt; 2 + 2
+4
+&gt;&gt;&gt; 50 - 5*6
+20
+&gt;&gt;&gt; (50 - 5*6) / 4
+5.0
+&gt;&gt;&gt; 8 / 5  # æ€»æ˜¯è¿”å›ä¸€ä¸ªæµ®ç‚¹æ•°
+1.6
+</pre>
+<p><strong>æ³¨æ„ï¼š</strong>åœ¨ä¸åŒçš„æœºå™¨ä¸Šæµ®ç‚¹è¿ç®—çš„ç»“æœå¯èƒ½ä¼šä¸ä¸€æ ·ã€‚</p>
+<p>åœ¨æ•´æ•°é™¤æ³•ä¸­ï¼Œé™¤æ³• <span class="marked">/</span> æ€»æ˜¯è¿”å›ä¸€ä¸ªæµ®ç‚¹æ•°ï¼Œå¦‚æœåªæƒ³å¾—åˆ°æ•´æ•°çš„ç»“æœï¼Œä¸¢å¼ƒå¯èƒ½çš„åˆ†æ•°éƒ¨åˆ†ï¼Œå¯ä»¥ä½¿ç”¨è¿ç®—ç¬¦ <span class="marked">//</span> ï¼š</p>
+<pre>
+&gt;&gt;&gt; 17 / 3  # æ•´æ•°é™¤æ³•è¿”å›æµ®ç‚¹å‹
+5.666666666666667
+&gt;&gt;&gt;
+&gt;&gt;&gt; 17 // 3  # æ•´æ•°é™¤æ³•è¿”å›å‘ä¸‹å–æ•´åçš„ç»“æœ
+5
+&gt;&gt;&gt; 17 % 3  # ï¼…æ“ä½œç¬¦è¿”å›é™¤æ³•çš„ä½™æ•°
+2
+&gt;&gt;&gt; 5 * 3 + 2 
+17
+</pre>
+<p><strong>æ³¨æ„ï¼š</strong><span class="marked">//</span> å¾—åˆ°çš„å¹¶ä¸ä¸€å®šæ˜¯æ•´æ•°ç±»å‹çš„æ•°ï¼Œå®ƒä¸åˆ†æ¯åˆ†å­çš„æ•°æ®ç±»å‹æœ‰å…³ç³»ã€‚</p>
+<pre>&gt;&gt;&gt; 7//2
+3
+&gt;&gt;&gt; 7.0//2
+3.0
+&gt;&gt;&gt; 7//2.0
+3.0
+&gt;&gt;&gt; </pre>
+<p>
+ç­‰å· <span class="marked">=</span> ç”¨äºç»™å˜é‡èµ‹å€¼ã€‚èµ‹å€¼ä¹‹åï¼Œé™¤äº†ä¸‹ä¸€ä¸ªæç¤ºç¬¦ï¼Œè§£é‡Šå™¨ä¸ä¼šæ˜¾ç¤ºä»»ä½•ç»“æœã€‚
+</p>
+<pre>
+&gt;&gt;&gt; width = 20
+&gt;&gt;&gt; height = 5*9
+&gt;&gt;&gt; width * height
+900
+</pre>
+<p>Python å¯ä»¥ä½¿ç”¨ <span class="marked">**</span> æ“ä½œæ¥è¿›è¡Œå¹‚è¿ç®—ï¼š</p>
+<pre>
+&gt;&gt;&gt; 5 ** 2  # 5 çš„å¹³æ–¹
+25
+&gt;&gt;&gt; 2 ** 7  # 2çš„7æ¬¡æ–¹
+128
+</pre>
+<p>å˜é‡åœ¨ä½¿ç”¨å‰å¿…é¡»å…ˆ"å®šä¹‰"ï¼ˆå³èµ‹äºˆå˜é‡ä¸€ä¸ªå€¼ï¼‰ï¼Œå¦åˆ™ä¼šå‡ºç°é”™è¯¯ï¼š</p>
+<pre>
+&gt;&gt;&gt; n   # å°è¯•è®¿é—®ä¸€ä¸ªæœªå®šä¹‰çš„å˜é‡
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+NameError: name 'n' is not defined
+</pre>
+<p>ä¸åŒç±»å‹çš„æ•°æ··åˆè¿ç®—æ—¶ä¼šå°†æ•´æ•°è½¬æ¢ä¸ºæµ®ç‚¹æ•°ï¼š</p>
+<pre>
+&gt;&gt;&gt; 3 * 3.75 / 1.5
+7.5
+&gt;&gt;&gt; 7.0 / 2
+3.5
+</pre>
+<p>
+åœ¨äº¤äº’æ¨¡å¼ä¸­ï¼Œæœ€åè¢«è¾“å‡ºçš„è¡¨è¾¾å¼ç»“æœè¢«èµ‹å€¼ç»™å˜é‡ <b>_ </b>ã€‚ä¾‹å¦‚ï¼š
+</p>
+<pre>
+&gt;&gt;&gt; tax = 12.5 / 100
+&gt;&gt;&gt; price = 100.50
+&gt;&gt;&gt; price * tax
+12.5625
+&gt;&gt;&gt; price + _
+113.0625
+&gt;&gt;&gt; round(_, 2)
+113.06
+</pre>
+<p>æ­¤å¤„ï¼Œ <b>_ </b>å˜é‡åº”è¢«ç”¨æˆ·è§†ä¸ºåªè¯»å˜é‡ã€‚
+</p>
+<br><hr>
+<h2>æ•°å­¦å‡½æ•°</h2>
+<table class="reference">
+<tbody><tr>
+<th>å‡½æ•°</th><th>è¿”å›å€¼ ( æè¿° )</th></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/highcharts-3d-charts.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/highcharts-3d-charts.html'" tppabs="https://www.runoob.com/python3/python3-func-number-abs.html">abs(x)</a></td><td>è¿”å›æ•°å­—çš„ç»å¯¹å€¼ï¼Œå¦‚abs(-10) è¿”å› 10</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/Vx4_Psj1.png  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/Vx4_Psj1.png'" tppabs="https://www.runoob.com/python3/python3-func-number-ceil.html">ceil(x) </a></td><td>è¿”å›æ•°å­—çš„ä¸Šå…¥æ•´æ•°ï¼Œå¦‚math.ceil(4.1) è¿”å› 5</td></tr>
+<tr><td><p>cmp(x, y)</p></td>
+<td>å¦‚æœ x &lt; y è¿”å› -1, å¦‚æœ x == y è¿”å› 0, å¦‚æœ x &gt; y è¿”å› 1ã€‚ <strong>Python 3 å·²åºŸå¼ƒ</strong> ã€‚ä½¿ç”¨ <strong> ä½¿ç”¨ (x&gt;y)-(x&lt;y)</strong> æ›¿æ¢ã€‚ </td>
+</tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/googleapi-tutorial.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/googleapi-tutorial.html'" tppabs="https://www.runoob.com/python3/python3-func-number-exp.html">exp(x) </a></td><td>è¿”å›eçš„xæ¬¡å¹‚(e<sup>x</sup>),å¦‚math.exp(1) è¿”å›2.718281828459045</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/google-maps-api-key.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/google-maps-api-key.html'" tppabs="https://www.runoob.com/python3/python3-func-number-fabs.html">fabs(x)</a></td><td>è¿”å›æ•°å­—çš„ç»å¯¹å€¼ï¼Œå¦‚math.fabs(-10) è¿”å›10.0</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/google-maps-overlays.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/google-maps-overlays.html'" tppabs="https://www.runoob.com/python3/python3-func-number-floor.html">floor(x) </a></td><td>è¿”å›æ•°å­—çš„ä¸‹èˆæ•´æ•°ï¼Œå¦‚math.floor(4.9)è¿”å› 4</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/google-maps-events.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/google-maps-events.html'" tppabs="https://www.runoob.com/python3/python3-func-number-log.html">log(x) </a></td><td>å¦‚math.log(math.e)è¿”å›1.0,math.log(100,10)è¿”å›2.0</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/google-maps-controls.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/google-maps-controls.html'" tppabs="https://www.runoob.com/python3/python3-func-number-log10.html">log10(x) </a></td><td>è¿”å›ä»¥10ä¸ºåŸºæ•°çš„xçš„å¯¹æ•°ï¼Œå¦‚math.log10(100)è¿”å› 2.0</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/google-maps-types.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/google-maps-types.html'" tppabs="https://www.runoob.com/python3/python3-func-number-max.html">max(x1, x2,...) </a></td><td>è¿”å›ç»™å®šå‚æ•°çš„æœ€å¤§å€¼ï¼Œå‚æ•°å¯ä»¥ä¸ºåºåˆ—ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/google-maps-ref.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/google-maps-ref.html'" tppabs="https://www.runoob.com/python3/python3-func-number-min.html">min(x1, x2,...) </a></td><td>è¿”å›ç»™å®šå‚æ•°çš„æœ€å°å€¼ï¼Œå‚æ•°å¯ä»¥ä¸ºåºåˆ—ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/ref-map.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/ref-map.html'" tppabs="https://www.runoob.com/python3/python3-func-number-modf.html">modf(x) </a></td><td>è¿”å›xçš„æ•´æ•°éƒ¨åˆ†ä¸å°æ•°éƒ¨åˆ†ï¼Œä¸¤éƒ¨åˆ†çš„æ•°å€¼ç¬¦å·ä¸xç›¸åŒï¼Œæ•´æ•°éƒ¨åˆ†ä»¥æµ®ç‚¹å‹è¡¨ç¤ºã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/try.php?filename=tryhtml_map_first  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/try.php?filename=tryhtml_map_first'" tppabs="https://www.runoob.com/python3/python3-func-number-pow.html">pow(x, y)</a></td><td> x**y è¿ç®—åçš„å€¼ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/try.php?filename=tryhtml_map_async  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/try.php?filename=tryhtml_map_async'" tppabs="https://www.runoob.com/python3/python3-func-number-round.html">round(x [,n])</a></td><td>è¿”å›æµ®ç‚¹æ•°xçš„å››èˆäº”å…¥å€¼ï¼Œå¦‚ç»™å‡ºnå€¼ï¼Œåˆ™ä»£è¡¨èˆå…¥åˆ°å°æ•°ç‚¹åçš„ä½æ•°ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/try.php?filename=tryhtml_map_many  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/try.php?filename=tryhtml_map_many'" tppabs="https://www.runoob.com/python3/python3-func-number-sqrt.html">sqrt(x) </a></td><td>è¿”å›æ•°å­—xçš„å¹³æ–¹æ ¹ã€‚</td></tr>
+</tbody></table>
+<br><hr>
+<h2>éšæœºæ•°å‡½æ•°</h2>
+<p>éšæœºæ•°å¯ä»¥ç”¨äºæ•°å­¦ï¼Œæ¸¸æˆï¼Œå®‰å…¨ç­‰é¢†åŸŸä¸­ï¼Œè¿˜ç»å¸¸è¢«åµŒå…¥åˆ°ç®—æ³•ä¸­ï¼Œç”¨ä»¥æé«˜ç®—æ³•æ•ˆç‡ï¼Œå¹¶æé«˜ç¨‹åºçš„å®‰å…¨æ€§ã€‚</p>
+<p>PythonåŒ…å«ä»¥ä¸‹å¸¸ç”¨éšæœºæ•°å‡½æ•°ï¼š</p>
+<table class="reference">
+<tbody><tr>
+<th>å‡½æ•°</th><th>æè¿°</th></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-intro.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-intro.html'" tppabs="https://www.runoob.com/python3/python3-func-number-choice.html">choice(seq)</a></td><td>ä»åºåˆ—çš„å…ƒç´ ä¸­éšæœºæŒ‘é€‰ä¸€ä¸ªå…ƒç´ ï¼Œæ¯”å¦‚random.choice(range(10))ï¼Œä»0åˆ°9ä¸­éšæœºæŒ‘é€‰ä¸€ä¸ªæ•´æ•°ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-install.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-install.html'" tppabs="https://www.runoob.com/python3/python3-func-number-randrange.html">randrange ([start,] stop [,step]) </a></td><td>ä»æŒ‡å®šèŒƒå›´å†…ï¼ŒæŒ‰æŒ‡å®šåŸºæ•°é€’å¢çš„é›†åˆä¸­è·å–ä¸€ä¸ªéšæœºæ•°ï¼ŒåŸºæ•°ç¼ºçœå€¼ä¸º1</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-syntax.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-syntax.html'" tppabs="https://www.runoob.com/python3/python3-func-number-random.html">random() </a></td><td> éšæœºç”Ÿæˆä¸‹ä¸€ä¸ªå®æ•°ï¼Œå®ƒåœ¨[0,1)èŒƒå›´å†…ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-variables.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-variables.html'" tppabs="https://www.runoob.com/python3/python3-func-number-seed.html">seed([x]) </a></td><td>æ”¹å˜éšæœºæ•°ç”Ÿæˆå™¨çš„ç§å­seedã€‚å¦‚æœä½ ä¸äº†è§£å…¶åŸç†ï¼Œä½ ä¸å¿…ç‰¹åˆ«å»è®¾å®šseedï¼ŒPythonä¼šå¸®ä½ é€‰æ‹©seedã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-echo-print.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-echo-print.html'" tppabs="https://www.runoob.com/python3/python3-func-number-shuffle.html">shuffle(lst) </a></td><td>å°†åºåˆ—çš„æ‰€æœ‰å…ƒç´ éšæœºæ’åº</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-eof-heredoc.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-eof-heredoc.html'" tppabs="https://www.runoob.com/python3/python3-func-number-uniform.html">uniform(x, y)</a></td><td>éšæœºç”Ÿæˆä¸‹ä¸€ä¸ªå®æ•°ï¼Œå®ƒåœ¨[x,y]èŒƒå›´å†…ã€‚</td></tr>
+</tbody></table>
+<br><hr>
+<h2>ä¸‰è§’å‡½æ•°</h2>
+<p>
+PythonåŒ…æ‹¬ä»¥ä¸‹ä¸‰è§’å‡½æ•°ï¼š</p>
+<table class="reference">
+<tbody><tr>
+<th>å‡½æ•°</th><th>æè¿°</th></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-datatypes.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-datatypes.html'" tppabs="https://www.runoob.com/python3/python3-func-number-acos.html">acos(x)</a></td><td>è¿”å›xçš„åä½™å¼¦å¼§åº¦å€¼ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-constants.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-constants.html'" tppabs="https://www.runoob.com/python3/python3-func-number-asin.html">asin(x)</a></td><td>è¿”å›xçš„åæ­£å¼¦å¼§åº¦å€¼ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-string.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-string.html'" tppabs="https://www.runoob.com/python3/python3-func-number-atan.html">atan(x)</a></td><td>è¿”å›xçš„åæ­£åˆ‡å¼§åº¦å€¼ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-operators.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-operators.html'" tppabs="https://www.runoob.com/python3/python3-func-number-atan2.html">atan2(y, x)</a></td><td>è¿”å›ç»™å®šçš„ X åŠ Y åæ ‡å€¼çš„åæ­£åˆ‡å€¼ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-if-else.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-if-else.html'" tppabs="https://www.runoob.com/python3/python3-func-number-cos.html">cos(x)</a></td><td>è¿”å›xçš„å¼§åº¦çš„ä½™å¼¦å€¼ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-switch.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-switch.html'" tppabs="https://www.runoob.com/python3/python3-func-number-hypot.html">hypot(x, y)</a></td><td>è¿”å›æ¬§å‡ é‡Œå¾·èŒƒæ•° sqrt(x*x + y*y)ã€‚ </td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-arrays.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-arrays.html'" tppabs="https://www.runoob.com/python3/python3-func-number-sin.html">sin(x)</a></td><td>è¿”å›çš„xå¼§åº¦çš„æ­£å¼¦å€¼ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-arrays-sort.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-arrays-sort.html'" tppabs="https://www.runoob.com/python3/python3-func-number-tan.html">tan(x)</a></td><td>è¿”å›xå¼§åº¦çš„æ­£åˆ‡å€¼ã€‚</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-superglobals.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-superglobals.html'" tppabs="https://www.runoob.com/python3/python3-func-number-degrees.html">degrees(x)</a></td><td>å°†å¼§åº¦è½¬æ¢ä¸ºè§’åº¦,å¦‚degrees(math.pi/2) ï¼Œ è¿”å›90.0</td></tr>
+<tr><td><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/python3/php-looping.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/python3/php-looping.html'" tppabs="https://www.runoob.com/python3/python3-func-number-radians.html">radians(x)</a></td><td>å°†è§’åº¦è½¬æ¢ä¸ºå¼§åº¦</td></tr>
+</tbody></table>
+<br><hr>
+<h2>æ•°å­¦å¸¸é‡</h2>
+<table class="reference">
+<tbody><tr>
+<th>å¸¸é‡</th><th>æè¿°</th></tr>
+<tr><td>pi</td><td>æ•°å­¦å¸¸é‡ piï¼ˆåœ†å‘¨ç‡ï¼Œä¸€èˆ¬ä»¥Ï€æ¥è¡¨ç¤ºï¼‰</td></tr>
+<tr><td>e</td><td>æ•°å­¦å¸¸é‡ eï¼Œeå³è‡ªç„¶å¸¸æ•°ï¼ˆè‡ªç„¶å¸¸æ•°ï¼‰ã€‚</td></tr>
+</tbody></table>
+</div>
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="python3-comment.html" tppabs="http://www.runoob.com/python3/python3-comment.html" rel="prev"> Python3 æ³¨é‡Š</a> </div>
+<div class="next-design-link"><a href="python3-string.html" tppabs="http://www.runoob.com/python3/python3-string.html" rel="next"> Python3 å­—ç¬¦ä¸²</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<style>
+.wrapper {
+  /*text-transform: uppercase; */
+  background: #ececec;
+  color: #555;
+  cursor: help;
+  font-family: "Gill Sans", Impact, sans-serif;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  -webkit-transform: translateZ(0); /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+.wrapper .tooltip {
+  white-space: nowrap;
+  font-size: 14px;
+  text-align: left;
+  background: #96b97d;
+  bottom: 100%;
+  color: #fff;
+  display: block;
+  left: -25px;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 14px;
+  pointer-events: none;
+  position: absolute;
+  
+  -webkit-transform: translateY(10px);
+     -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+       -o-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: all .25s ease-out;
+     -moz-transition: all .25s ease-out;
+      -ms-transition: all .25s ease-out;
+       -o-transition: all .25s ease-out;
+          transition: all .25s ease-out;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+.tooltip a {
+	color:#fff;
+}
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #96b97d 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 20%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+.wrapper .tooltip1 {
+	margin-left: 50px;
+	padding-top: 0px;
+}
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+  display: block;
+}
+
+</style>
+<div class="title" id="comments">
+<h2 class="">
+<div class="altblock">
+<i style="font-size:28px;margin-top: 8px;" class="fa fa-plus-square" aria-hidden="true"></i>
+</div>
+<span class="mw-headline" id="qa_headline">13 ç¯‡ç¬”è®°</span>
+<span class="mw-headline" id="user_add_note" style="float:right;line-height: 62px;padding-right: 14px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> å†™ç¬”è®°</span>
+</h2>
+</div>
+<div id="postcomments" style="display:none;">
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="comment-17214"><span class="comt-f">#13</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;happy_ing</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;115***0056@qq.com</p></div></div><div class="comt-main" id="div-comment-17214"><p data-title="Python round å››èˆäº”å…¥åˆ†æè®¨è®º" data-commid="22373,23054,23169,28990">æ–‡ä¸­å¯¹äº <span class="marked">_</span> æåˆ°ï¼Œå®ƒä»£è¡¨äº†ä¸Šä¸€æ¬¡çš„è¾“å‡ºç»“æœï¼Œ<strong>"ç”¨æˆ·åº”è¯¥å°†å…¶è§†ä¸ºåªè¯»å˜é‡"</strong>ï¼Œå®é™…æƒ…å†µæ˜¯ä½ ä¹Ÿå¯ä»¥å¯¹äº<span class="marked">_</span> èµ‹å€¼ï¼Œ<span class="marked">_=10</span> æ˜¯æ²¡æœ‰æ¯›ç—…çš„ï¼Œä½†è¿™æ ·çš„ç»“æœä¼šå¯¼è‡´ä½ åœ¨ä¹‹åè°ƒç”¨ <span class="marked">_</span> çš„æ—¶å€™å…¨éƒ¨å˜æˆäº†10ï¼Œé™¤éä½  <span class="marked">del _</span>ã€‚</p>
+<p><strong>å¯¹äºround:</strong></p>
+<pre>&gt;&gt;&gt; round(10.5)
+10
+&gt;&gt;&gt; round(11.5)
+12
+&gt;&gt;&gt;</pre>
+<p><strong>Python æ‰€è°“çš„<strong>å¥‡è¿›å¶å¼ƒ</strong>ï¼Œå› ä¸ºæµ®ç‚¹æ•°çš„è¡¨ç¤ºåœ¨è®¡ç®—æœºä¸­å¹¶ä¸å‡†ç¡®ï¼Œç”¨çš„æ—¶å€™å¯èƒ½è¦æ³¨æ„ä¸€ä¸‹ã€‚</p>
+<p>è¿˜å¯ä»¥å‚è€ƒè¿™ç¯‡æ–‡ç« : <a href="javascript:if(confirm('http://w3cnote/php-looping-for.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://w3cnote/php-looping-for.html'" tppabs="http://w3cnote/python-round-func-note.html" target="_blank" rel="noopener nofollow">Python ä¸­å…³äº round å‡½æ•°çš„å°å‘</a></strong></p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/note/php-functions.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/note/php-functions.html'" tppabs="https://www.runoob.com/note/17214">happy_ing</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;happy_ing</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;115***0056@qq.com</p></div></span>1å¹´å‰ (2017-09-06)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20037"><span class="comt-f">#12</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;æˆ‘æ— æ‰€è°“</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;125***6252@qq.com</p></div></div><div class="comt-main" id="div-comment-20037"><p data-title="python ä¸æ”¯æŒå¤æ•°è½¬æ¢ä¸ºæ•´æ•°æˆ–æµ®ç‚¹æ•°" data-commid="23360">python ä¸æ”¯æŒå¤æ•°è½¬æ¢ä¸ºæ•´æ•°æˆ–æµ®ç‚¹æ•°</p>
+<pre>&gt;&gt;&gt; float(4.5+0j)
+Traceback (most recent call last):
+  File "&lt;pyshell#5&gt;", line 1, in &lt;module&gt;
+    float(4.5+0j)
+TypeError: can't convert complex to float
+
+&gt;&gt;&gt; int(4+0j)
+Traceback (most recent call last):
+  File "&lt;pyshell#6&gt;", line 1, in &lt;module&gt;
+    int(4+0j)
+TypeError: can't convert complex to int
+&gt;&gt;&gt;</pre>
+<div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/note/php-magic-constant.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/note/php-magic-constant.html'" tppabs="https://www.runoob.com/note/20037">æˆ‘æ— æ‰€è°“</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;æˆ‘æ— æ‰€è°“</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;125***6252@qq.com</p></div></span>12ä¸ªæœˆå‰ (11-08)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-20120"><span class="comt-f">#11</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;searchsulin</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;sea***sulin@gmail.com</p></div></div><div class="comt-main" id="div-comment-20120"><p>éšæœºæ•°å‡½æ•°ä¸­ç¼ºå°‘ <strong>randint,sample</strong></p>
+<p><span class="marked">random.randint(x,y)</span>ã€€#éšæœºç”Ÿä¸€ä¸ªæ•´æ•°intç±»å‹ï¼Œå¯ä»¥æŒ‡å®šè¿™ä¸ªæ•´æ•°çš„èŒƒå›´</p>
+<p>å®ä¾‹</p>
+<pre>&gt;&gt;&gt; random.randint(1000,9999)
+8449</pre>
+<p><span class="marked">random.sample(sequence,length)</span> å¯ä»¥ä»æŒ‡å®šçš„åºåˆ—ä¸­ï¼Œéšæœºçš„æˆªå–æŒ‡å®šé•¿åº¦çš„ç‰‡æ–­ï¼Œä¸ä¿®æ”¹åŸåºåˆ—ã€‚</p>
+<p>å®ä¾‹</p>
+<pre>&gt;&gt;&gt; lst = random.sample('abcd1234',4)
+&gt;&gt;&gt; strs = ''.join(lst)
+&gt;&gt;&gt; strs
+'a432'
+&gt;&gt;&gt;</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">searchsulin</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;searchsulin</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;sea***sulin@gmail.com</p></div></span>12ä¸ªæœˆå‰ (11-10)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22373"><span class="comt-f">#10</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;DZ_å°ç™½ç‹å­</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;dz_***obai@163.com</p></div></div><div class="comt-main" id="div-comment-22373"><p>ç”±äºä¸Šé¢å¤§ç¥çš„æå‡ºï¼Œæˆ‘åˆçœ‹äº†ä¸€ä¸‹</p><pre>print(round(10.4)) #10
+print(round(10.5)) #10
+print(round(10.6)) #11
+print()
+print(round(11.4)) #11
+print(round(11.5)) #12
+print(round(11.6)) #12</pre><p>ç”±è¿è¡Œå¾—å‡ºç»“è®ºï¼š</p><ol><li>å½“å°æ•°ç‚¹å·¦è¾¹ä¸ºå¶æ•°ï¼šå°æ•°ç‚¹å³è¾¹X&lt;6ï¼Œèˆ</li><li>å½“å°æ•°ç‚¹å·¦è¾¹ä¸ºå¶æ•°ï¼šå°æ•°ç‚¹å³è¾¹X&gt;=6ï¼Œå…¥</li><li>å½“å°æ•°ç‚¹å·¦è¾¹ä¸ºå¥‡æ•°ï¼šå°æ•°ç‚¹å³è¾¹X&lt;5ï¼Œèˆ</li><li>å½“å°æ•°ç‚¹å·¦è¾¹ä¸ºå¥‡æ•°ï¼šå°æ•°ç‚¹å³è¾¹X&gt;=5ï¼Œå…¥</li></ol><p>æ‰€ä»¥å½“å°æ•°ç‚¹å·¦è¾¹åˆ†åˆ«ä¸ºå¥‡æ•°å’Œå¶æ•°çš„æ—¶å€™ï¼Œå°æ•°ç‚¹å³è¾¹çš„å–èˆä¹Ÿåˆ†åˆ«å¯¹åº”ä¸¤ç§å–èˆæ ‡å‡†</p><p>è¿™æ˜¯ä¸ªå‘å•Šï¼ä¸çŸ¥é“å°æ•°ç‚¹åä¸¤ä½æ˜¯æ€æ ·çš„ï¼Œæœ‰å…´è¶£çš„å°ä¼™ä¼´å¯ä»¥è¯•ä¸€ä¸‹ï¼Œè®°å¾—@æˆ‘ï¼Œè°¢è°¢ï¼</p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">DZ_å°ç™½ç‹å­</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;DZ_å°ç™½ç‹å­</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;dz_***obai@163.com</p></div></span>10ä¸ªæœˆå‰ (12-29)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-23054"><span class="comt-f">#9</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;æ˜¥å¤©çš„è¯—</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;he_***uan@163.com</p></div></div><div class="comt-main" id="div-comment-23054"><p>å…³äºround,æ¥åŠ›åˆ†æï¼Œç»“è®ºå¦‚ä¸‹ï¼š</p>
+<p>å½“ä¸ªä½ä¸ºå¥‡æ•°ï¼Œå°æ•°éƒ¨åˆ†>=0.5å…¥ï¼Œå…¶ä½™ä¸ºèˆ</p>
+<p>å½“ä¸ªä½ä¸ºå¶æ•°ï¼Œå°æ•°éƒ¨åˆ†>0.5å…¥ï¼Œå…¶ä½™ä¸ºèˆã€‚</p>
+<p>äº¤äº’æ¨¡å¼ä¸‹çš„ example:</p>
+<pre>&gt;&gt;&gt; round(10.49)
+10
+&gt;&gt;&gt; round(10.50)
+10
+&gt;&gt;&gt; round(10.51)
+11
+&gt;&gt;&gt; round(11.50)
+12
+&gt;&gt;&gt; round(11.49)
+11
+</pre>
+<div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">æ˜¥å¤©çš„è¯—</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;æ˜¥å¤©çš„è¯—</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;he_***uan@163.com</p></div></span>10ä¸ªæœˆå‰ (01-14)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23169"><span class="comt-f">#8</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;åˆ˜äºšå½¬</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;100***9598@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://baike.baidu.com/item/%E5%A5%87%E8%BF%9B%E5%81%B6%E8%88%8D/php-namespace.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://baike.baidu.com/item/%E5%A5%87%E8%BF%9B%E5%81%B6%E8%88%8D/php-namespace.html'" tppabs="https://baike.baidu.com/item/%E5%A5%87%E8%BF%9B%E5%81%B6%E8%88%8D/2237210">&nbsp;&nbsp;å‚è€ƒåœ°å€</a></p></div></div><div class="comt-main" id="div-comment-23169"><p>â€œ4èˆ6å…¥5çœ‹é½,å¥‡è¿›å¶ä¸è¿›â€æˆ‘è§‰å¾—å¹¶ä¸æ˜¯å› ä¸ºæµ®ç‚¹æ•°åœ¨è®¡ç®—æœºè¡¨ç¤ºçš„é—®é¢˜ã€‚è®¡ç®—æœºæµ®ç‚¹æ•°çš„è¡¨ç¤ºæ˜¯ ieee&nbsp;å®šä¹‰çš„æ ‡å‡†è§„åˆ™ï¼Œå¦‚æœ python&nbsp;ä¸­å­˜åœ¨ï¼Œæ²¡é“ç†å…¶ä»–è¯­è¨€ä¸­ä¸å­˜åœ¨ã€‚äº‹å®ä¸Šæ˜¯å› ä¸ºè¯¥å–èˆæ–¹æ³•æ¯”è¿‡å»çš„ "å››èˆäº”å…¥"&nbsp;æ–¹æ³•åœ¨ç§‘å­¦è®¡ç®—ä¸­æ›´å‡†ç¡®ã€‚è€Œå›½å®¶æ ‡å‡†ä¹Ÿå·²ç»è§„å®šä½¿ç”¨ â€œ4èˆ6å…¥5çœ‹é½,å¥‡è¿›å¶ä¸è¿›â€&nbsp;å–ä»£"å››èˆäº”å…¥".</p><p>ä»ç»Ÿè®¡å­¦çš„è§’åº¦ä¸Šæ¥è®²,å¦‚æœå¤§é‡æ•°æ®æ— è„‘çš„é‡‡ç”¨å››èˆäº”å…¥ä¼šé€ æˆç»Ÿè®¡ç»“æœåå¤§ã€‚è€Œ"å¥‡è¿›å¶èˆ"å¯ä»¥å°†èˆå…¥è¯¯å·®é™åˆ°æœ€ä½ã€‚</p>
+<p>å¥‡è¿›å¶èˆæ˜¯ä¸€ç§æ¯”è¾ƒç²¾ç¡®æ¯”è¾ƒç§‘å­¦çš„è®¡æ•°ä¿ç•™æ³•ï¼Œæ˜¯ä¸€ç§æ•°å­—ä¿®çº¦è§„åˆ™ã€‚</p>
+<p>å…¶å…·ä½“è¦æ±‚å¦‚ä¸‹ï¼ˆä»¥ä¿ç•™ä¸¤ä½å°æ•°ä¸ºä¾‹ï¼‰ï¼š</p>
+<ul><li>
+ï¼ˆ1ï¼‰è¦æ±‚ä¿ç•™ä½æ•°çš„åä¸€ä½å¦‚æœæ˜¯4æˆ–è€…4ä»¥ä¸‹çš„æ•°å­—ï¼Œåˆ™èˆå»ï¼Œ ä¾‹å¦‚ 5.214ä¿ç•™ä¸¤ä½å°æ•°ä¸º5.21ã€‚</li><li>
+ï¼ˆ2ï¼‰å¦‚æœä¿ç•™ä½æ•°çš„åä¸€ä½å¦‚æœæ˜¯6æˆ–è€…6ä»¥ä¸Šçš„æ•°å­—ï¼Œåˆ™è¿›ä¸Šå»ï¼Œ ä¾‹å¦‚5.216ä¿ç•™ä¸¤ä½å°æ•°ä¸º5.22ã€‚</li><li>
+ï¼ˆ3ï¼‰å¦‚æœä¿ç•™ä½æ•°æ˜¯ä¿ç•™æ•´æ•°éƒ¨åˆ†æˆ–ä¿ç•™ä¸€ä½å°æ•°ï¼Œåˆ™è¦æ ¹æ®ä¿ç•™ä½æ¥å†³å®šå¥‡è¿›å¶èˆï¼š
+<pre>
+&gt;&gt;&gt; round(5.215,2)#å®é™…å¹¶æ²¡æœ‰è¿›ä½
+5.21
+&gt;&gt;&gt; round(5.225,2)
+5.22
+&gt;&gt;&gt;
+&gt;&gt;&gt; round(1.5)#æ­¤å¤„è¿›ä½
+2
+&gt;&gt;&gt; round(1.5)==round(2.5)#å¶æ•°èˆå»
+True
+&gt;&gt;&gt; round(1.15,1)
+1.1
+&gt;&gt;&gt; round(1.25,1)
+1.2
+&gt;&gt;&gt; round(1.151,1)
+1.2
+&gt;&gt;&gt; round(1.251,1)
+1.3
+</pre>
+</li><li>
+(4) å¦‚æœä¿ç•™ä½æ•°çš„åä¸€ä½å¦‚æœæ˜¯5ï¼Œä¸”è¯¥ä½æ•°åæœ‰æ•°å­—ã€‚åˆ™è¿›ä¸Šå»ï¼Œä¾‹å¦‚5.2152ä¿ç•™ä¸¤ä½å°æ•°ä¸º5.22ï¼Œ5.2252ä¿ç•™ä¸¤ä½å°æ•°ä¸º5.23ï¼Œ5.22500001ä¿ç•™ä¸¤ä½å°æ•°ä¸º5.23ã€‚</li></ul>
+ä»ç»Ÿè®¡å­¦çš„è§’åº¦ï¼Œâ€œå¥‡è¿›å¶èˆâ€æ¯”â€œå››èˆäº”å…¥â€è¦ç§‘å­¦ï¼Œåœ¨å¤§é‡è¿ç®—æ—¶ï¼Œå®ƒä½¿èˆå…¥åçš„ç»“æœè¯¯å·®çš„å‡å€¼è¶‹äºé›¶ï¼Œè€Œä¸æ˜¯åƒå››èˆäº”å…¥é‚£æ ·é€¢äº”å°±å…¥ï¼Œå¯¼è‡´ç»“æœåå‘å¤§æ•°ï¼Œä½¿å¾—è¯¯å·®äº§ç”Ÿç§¯ç´¯è¿›è€Œäº§ç”Ÿç³»ç»Ÿè¯¯å·®ï¼Œâ€œå¥‡è¿›å¶èˆâ€ä½¿æµ‹é‡ç»“æœå—åˆ°èˆå…¥è¯¯å·®çš„å½±å“é™åˆ°æœ€ä½ã€‚<div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">åˆ˜äºšå½¬</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;åˆ˜äºšå½¬</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;100***9598@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://baike.baidu.com/item/%E5%A5%87%E8%BF%9B%E5%81%B6%E8%88%8D/php-namespace.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://baike.baidu.com/item/%E5%A5%87%E8%BF%9B%E5%81%B6%E8%88%8D/php-namespace.html'" tppabs="https://baike.baidu.com/item/%E5%A5%87%E8%BF%9B%E5%81%B6%E8%88%8D/2237210">&nbsp;&nbsp;å‚è€ƒåœ°å€</a></p></div></span>10ä¸ªæœˆå‰ (01-17)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-23360"><span class="comt-f">#7</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;LL_NUAA</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;261***731@qq.com</p></div></div><div class="comt-main" id="div-comment-23360"><p>é’ˆå¯¹å‰é¢æœ‰äººæåˆ°å¤æ•°ä¸èƒ½å¼ºè½¬ä¸ºintæˆ–è€…floatçš„é—®é¢˜ï¼š</p>
+<p>å…¶å®åœ¨Pythonä¸­ï¼Œå¤æ•°æä¾›äº†2ä¸ªå‡½æ•°ï¼Œä¸€ä¸ªå‡½æ•°æ˜¯realï¼Œè¿”å›å¤æ•°çš„å®æ•°éƒ¨åˆ†ï¼Œå¦ä¸€ä¸ªå‡½æ•°æ˜¯imagï¼Œè¿”å›å¤æ•°çš„è™šæ•°éƒ¨åˆ†ã€‚å› ä¸ºå®æ•°è·Ÿå¤æ•°æ˜¯å·®å¼‚å¾ˆå¤§çš„ç±»å‹ï¼Œæ‰€ä»¥ä¸æ”¯æŒå¼ºåˆ¶è½¬æ¢æ˜¯å¯ä»¥ç†è§£çš„ã€‚å› ä¸ºåœ¨å¼ºåˆ¶è½¬æ¢è¿‡ç¨‹ä¸­ï¼Œè™šæ•°éƒ¨åˆ†åˆ°åº•è¯¥æ€ä¹ˆè½¬æ¢ï¼Œæ˜¯æ²¡æœ‰å®šä¹‰çš„ï¼Œè€Œintå’Œfloatåªæœ‰å®æ•°éƒ¨åˆ†ï¼Œè™šæ•°éƒ¨åˆ†è¯¥å¦‚ä½•å–èˆï¼Ÿ</p>
+<pre>&gt;&gt;&gt; a = 4.1+0.3j
+&gt;&gt;&gt; a
+(4.1+0.3j)
+&gt;&gt;&gt; a.real
+4.1
+&gt;&gt;&gt; a.imag
+0.3</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">LL_NUAA</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;LL_NUAA</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;261***731@qq.com</p></div></span>9ä¸ªæœˆå‰ (01-22)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23513"><span class="comt-f">#6</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;zxiaoj0823</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;zxi***0823@126.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://blog.csdn.net/Artprog/article/details/php-oop.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://blog.csdn.net/Artprog/article/details/php-oop.html'" tppabs="http://blog.csdn.net/Artprog/article/details/52197779">&nbsp;&nbsp;å‚è€ƒåœ°å€</a></p></div></div><div class="comt-main" id="div-comment-23513"><p>Python3ä¸­å·²ç»ä¸èƒ½ä½¿ç”¨cmp()å‡½æ•°äº†ï¼Œè¢«å¦‚ä¸‹äº”ä¸ªå‡½æ•°æ›¿ä»£:</p>
+<pre>import operator       #é¦–å…ˆè¦å¯¼å…¥è¿ç®—ç¬¦æ¨¡å—
+
+operator.gt(1,2)      #æ„æ€æ˜¯greater thanï¼ˆå¤§äºï¼‰
+operator.ge(1,2)      #æ„æ€æ˜¯greater and equalï¼ˆå¤§äºç­‰äºï¼‰
+operator.eq(1,2)      #æ„æ€æ˜¯equalï¼ˆç­‰äºï¼‰
+operator.le(1,2)      #æ„æ€æ˜¯less and equalï¼ˆå°äºç­‰äºï¼‰
+operator.lt(1,2)      #æ„æ€æ˜¯less thanï¼ˆå°äºï¼‰</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">zxiaoj0823</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;zxiaoj0823</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;zxi***0823@126.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://blog.csdn.net/Artprog/article/details/php-oop.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://blog.csdn.net/Artprog/article/details/php-oop.html'" tppabs="http://blog.csdn.net/Artprog/article/details/52197779">&nbsp;&nbsp;å‚è€ƒåœ°å€</a></p></div></span>9ä¸ªæœˆå‰ (01-25)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-24857"><span class="comt-f">#5</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;å®—ä¸ƒä¸ƒ</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;zon***qi0522@foxmail.com</p></div></div><div class="comt-main" id="div-comment-24857"><p data-title="Python fractions æ¨¡å—ä»‹ç»">fractions æ¨¡å—æä¾›äº†åˆ†æ•°ç±»å‹çš„æ”¯æŒã€‚</p>
+æ„é€ å‡½æ•°ï¼š
+<pre>class fractions.Fraction(numerator=0, denominator=1) 
+class fractions.Fraction(int|float|str|Decimal|Fraction)</pre>
+<p>å¯ä»¥åŒæ—¶æä¾›åˆ†å­ï¼ˆnumeratorï¼‰å’Œåˆ†æ¯ï¼ˆdenominatorï¼‰ç»™æ„é€ å‡½æ•°ç”¨äºå®ä¾‹åŒ–Fractionç±»ï¼Œä½†ä¸¤è€…å¿…é¡»åŒæ—¶æ˜¯intç±»å‹æˆ–è€…numbers.Rationalç±»å‹ï¼Œå¦åˆ™ä¼šæŠ›å‡ºç±»å‹é”™è¯¯ã€‚å½“åˆ†æ¯ä¸º0ï¼Œåˆå§‹åŒ–çš„æ—¶å€™ä¼šå¯¼è‡´æŠ›å‡ºå¼‚å¸¸ZeroDivisionErrorã€‚</p>
+<p><strong>åˆ†æ•°ç±»å‹ï¼š</strong></p>
+<pre>from fractions import Fraction
+
+&gt;&gt;&gt; x=Fraction(1,3)
+&gt;&gt;&gt; y=Fraction(4,6)
+&gt;&gt;&gt; x+y
+Fraction(1, 1)
+
+&gt;&gt;&gt; Fraction('.25') 
+Fraction(1, 4)</pre>
+<p><strong>æµ®ç‚¹æ•°ä¸åˆ†æ•°çš„è½¬æ¢ï¼š</strong></p>
+<pre>&gt;&gt;&gt; f=2.5
+&gt;&gt;&gt; z=Fraction(*f.as_integer_ratio())
+&gt;&gt;&gt; z
+Fraction(5, 2)
+&gt;&gt;&gt; x=Fraction(1,3)
+&gt;&gt;&gt; float(x)
+0.3333333333333333
+&gt;&gt;&gt;</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/note/php-forms.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/note/php-forms.html'" tppabs="https://www.runoob.com/note/24857">å®—ä¸ƒä¸ƒ</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;å®—ä¸ƒä¸ƒ</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;zon***qi0522@foxmail.com</p></div></span>8ä¸ªæœˆå‰ (03-11)</div></div></li>
+<li class="comment byuser comment-author-tianqixin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-24861"><span class="comt-f">#4</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;å®—ä¸ƒä¸ƒ</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;zon***qi0522@foxmail.com</p></div></div><div class="comt-main" id="div-comment-24861"><p>å°æ•°å¯¹è±¡:</p>
+<p>decimal æ¨¡å—æä¾›äº†ä¸€ä¸ª Decimal æ•°æ®ç±»å‹ç”¨äºæµ®ç‚¹æ•°è®¡ç®—ï¼Œæ‹¥æœ‰æ›´é«˜çš„ç²¾åº¦ã€‚</p>
+<pre>&gt;&gt;&gt; import decimal
+&gt;&gt;&gt; decimal.getcontext().prec=4              # æŒ‡å®šç²¾åº¦ï¼ˆ4ä½å°æ•°ï¼‰
+&gt;&gt;&gt; decimal.Decimal(1) / decimal.Decimal(7)
+Decimal('0.1429')
+&gt;&gt;&gt; with decimal.localcontext() as ctx:      # å°æ•°ä¸Šä¸‹æ–‡ç®¡ç†å™¨
+...     ctx.prec=2
+...     decimal.Decimal('1.00') / decimal.Decimal('3.00')
+... 
+Decimal('0.33')
+&gt;&gt;&gt;</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">å®—ä¸ƒä¸ƒ</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;å®—ä¸ƒä¸ƒ</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;zon***qi0522@foxmail.com</p></div></span>8ä¸ªæœˆå‰ (03-11)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-25727"><span class="comt-f">#3</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;mqslllduoduo</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;494***660@qq.com</p></div></div><div class="comt-main" id="div-comment-25727"><p data-title="Python æ•´æ•°æ³¨æ„äº‹é¡¹"><strong>å…³äºPythonæ•´æ•°æ¯”è¾ƒçš„ä¸€äº›å‘ï¼š</strong></p>
+Pythonä¸­ä¸€åˆ‡éƒ½æ˜¯å¯¹è±¡ï¼Œå¯¹è±¡æ¯”è¾ƒå¯ä»¥ç”¨ <span class="marked">==</span> æˆ–è€… <span class="marked">is</span>ã€‚
+<p><span class="marked">==</span> æ¯”è¾ƒçš„æ˜¯ä¸¤ä¸ªå¯¹è±¡çš„å†…å®¹æ˜¯å¦ç›¸ç­‰ï¼Œé»˜è®¤ä¼šè°ƒç”¨å¯¹è±¡çš„ <span class="marked">__eq__()</span> æ–¹æ³•ã€‚</p>
+<p><span class="marked">is</span> æ¯”è¾ƒçš„æ˜¯ä¸¤ä¸ªå¯¹è±¡çš„ id æ˜¯å¦ç›¸ç­‰ï¼Œä¹Ÿå°±æ˜¯æ˜¯å¦æ˜¯åŒä¸€ä¸ªå¯¹è±¡ï¼Œæ˜¯å¦æŒ‡å‘åŒä¸€ä¸ªå†…å­˜åœ°å€ã€‚</p>
+<pre>&gt;&gt;&gt; a = 4
+&gt;&gt;&gt; b = 4
+&gt;&gt;&gt; a == b
+True
+&gt;&gt;&gt; a is b
+True
+&gt;&gt;&gt; a = 256
+&gt;&gt;&gt; b = 256
+&gt;&gt;&gt; a == b
+True
+&gt;&gt;&gt; a is b
+True
+&gt;&gt;&gt; a = 257
+&gt;&gt;&gt; b = 257
+&gt;&gt;&gt; a == b
+True
+&gt;&gt;&gt; a is b
+False</pre>
+<p>æˆ‘ä»¬çœ‹åˆ°ï¼Œå‰å‡ ç»„æ¯”è¾ƒæˆ‘ä»¬éƒ½å¯ä»¥ç†è§£æ˜¾ç¤ºçš„ç»“æœï¼Œä½†æ˜¯æœ€åå½“ a/b éƒ½æŒ‡å‘ 257 è¿™ä¸ªæ•´æ•°å¯¹è±¡çš„æ—¶å€™ï¼Œç”¨ is æ¯”è¾ƒä»¥åçš„ç»“æœæ˜¯ Falseã€‚</p>
+<p>è¿™æ˜¯å› ä¸º Python å¤„äºå¯¹æ€§èƒ½çš„è€ƒè™‘ï¼Œå†…éƒ¨ä½œäº†ä¼˜åŒ–ï¼Œå¯¹äºæ•´æ•°å¯¹è±¡ï¼ŒæŠŠä¸€äº›é¢‘ç¹ä½¿ç”¨çš„æ•´æ•°å¯¹è±¡ç¼“å­˜èµ·æ¥ï¼Œä¿å­˜åˆ°ä¸€ä¸ªå« <strong>small_ints</strong> çš„é“¾è¡¨ä¸­ã€‚</p>
+<p>åœ¨ Python æ•´ä¸ªç”Ÿå‘½å‘¨æœŸä¸­ï¼Œä»»ä½•éœ€è¦å¼•ç”¨è¿™äº›æ•´æ•°å¯¹è±¡çš„åœ°æ–¹ï¼Œéƒ½ä¸å†é‡æ–°åˆ›å»ºæ–°çš„æ•´æ•°å¯¹è±¡ï¼ŒèŒƒå›´æ˜¯ <span class="marked">[-5,256]</span>ã€‚</p>
+<p>å†çœ‹ä¸‹é¢è¿™ä¸ªä¾‹å­ ï¼š</p>
+<pre>&gt;&gt;&gt; a = 259
+&gt;&gt;&gt; def foo () :
+...     b = 259
+...     c = 259
+...     print(a is b)
+...     print(b is c)
+...
+&gt;&gt;&gt; foo()
+False
+True</pre>
+<p>è¿™æ˜¯å› ä¸º Python ç¨‹åºéƒ½æ˜¯ç”±ä»£ç å—æ„æˆï¼Œä»£ç å—ä½œä¸ºç¨‹åºçš„ä¸€ä¸ªæœ€å°åŸºæœ¬å•ä½æ¥æ‰§è¡Œã€‚ä¸€ä¸ªæ¨¡å—æ–‡ä»¶/ä¸€ä¸ªå‡½æ•°ä½“/ä¸€ä¸ªç±»/äº¤äº’å¼å‘½ä»¤ä¸­çš„å•è¡Œä»£ç éƒ½å«åšä¸€ä¸ªä»£ç å—ã€‚</p>
+<p>ä¸Šé¢çš„ç¨‹åºä¸­æœ‰ä¸¤éƒ¨åˆ†ä»£ç å—ï¼Œä¸€ä¸ªæ˜¯åç§° a æ‰€åœ¨çš„ä»£ç å—ï¼Œä¸€ä¸ªæ˜¯åç§° b/c æ‰€åœ¨çš„ä»£ç å—ã€‚Python çš„å¦ä¸€ä¸ªä¼˜åŒ–çš„åœ°æ–¹å°±æ˜¯ï¼Œå¦‚æœåœ¨åŒä¸€ä¸ªä»£ç å—ä¸­åˆ›å»ºçš„ä¸¤ä¸ªæ•´æ•°å¯¹è±¡ä¸­ï¼Œå®ƒä»¬çš„å€¼ç›¸ç­‰çš„è¯ï¼Œé‚£ä¹ˆè¿™ä¸¤ä¸ªå¯¹è±¡å¼•ç”¨åŒä¸€ä¸ªæ•´æ•°å¯¹è±¡ã€‚æ‰€ä»¥Pythonå‡ºäºå¯¹æ€§èƒ½çš„è€ƒè™‘ï¼Œä½†å‡¡æ˜¯ä¸å¯å˜çš„å¯¹è±¡ï¼Œåœ¨åŒä¸€ä»£ç å—ä¸­ï¼Œåªæœ‰å€¼ç›¸ç­‰çš„å¯¹è±¡å°±ä¸ä¼šé‡å¤åˆ›å»ºï¼Œè€Œæ˜¯ç›´æ¥å¼•ç”¨å·²ç»å­˜åœ¨çš„å¯¹è±¡ã€‚ä¸ä»…æ•´æ•°å¯¹è±¡ï¼Œå­—ç¬¦ä¸²å¯¹è±¡ä¹Ÿéµå¾ªåŒæ ·çš„åŸåˆ™ã€‚</p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:if(confirm('https://www.runoob.com/note/php-form-validation.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.runoob.com/note/php-form-validation.html'" tppabs="https://www.runoob.com/note/25727">mqslllduoduo</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;mqslllduoduo</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;494***660@qq.com</p></div></span>7ä¸ªæœˆå‰ (03-30)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-27897"><span class="comt-f">#2</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;æ¨å”å„¿</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;231***9699@qq.com</p></div></div><div class="comt-main" id="div-comment-27897"><p>æœ‰æ—¶å€™åœ¨ç¼–å†™ç¨‹åºçš„æ—¶å€™ä¼šç”¨åˆ°è¿›åˆ¶è½¬æ¢ï¼Œé€šå¸¸å­¦æ ¡é‡Œé¢æ•™çš„éƒ½æ˜¯å–ä½™çš„æ–¹æ³•å…¶å®æœ‰æ›´åŠ ç®€ä¾¿çš„æ–¹æ³•ï¼Œè¿™é‡Œç»™å¤§å®¶åˆ†äº«ä¸€ä¸‹ã€‚</p>
+<p>äºŒè¿›åˆ¶&åå…­è¿›åˆ¶è½¬æ¢è¡¨ï¼š</p>
+<pre>
+åå…­è¿›åˆ¶   0     1     2     3     4     5     6     7 
+äºŒè¿›åˆ¶   0000  0001  0010  0011  0100  0101  0110  0111
+åè¿›åˆ¶     0     1     2     3     4     5     6     7
+</pre>
+<pre>
+åå…­è¿›åˆ¶   8     9     A     B     C     D     E     F 
+äºŒè¿›åˆ¶   1000  1001  1010  1011  1100  1101  1110  1111
+åè¿›åˆ¶     8     9     10    11    12    13    14    15
+</pre>
+<p>æŠŠè¿™ä¸ªè¡¨ç‰¢ç‰¢è®°ä½ï¼ç„¶åç”¨ä¸‹é¢çš„æ–¹æ³•è½¬æ¢ï¼Œä¼šæœ‰å¾ˆé«˜çš„æ•ˆç‡ã€‚</p>
+<p>è½¬æ¢æ–¹æ³•ï¼š</p>
+<p>å–å››åˆä¸€æ³•ï¼šä»äºŒè¿›åˆ¶å°æ•°ç‚¹ä¸ºåˆ†éš”ç¬¦ï¼Œå‘å·¦æˆ–å‘å³æ¯å››ä½äºŒè¿›åˆ¶åˆä¸ºä¸€ä½åå…­è¿›åˆ¶ã€‚ä¾‹å­ï¼š</p>
+<pre>1011| 1001 |1011.1001
+  B     9     B .  9</pre>
+<p>é‚£æœ€åçš„ç»“æœå°±æ˜¯: <strong>b9b.9</strong></p>
+<pre>æ³¨æ„ï¼šæ¢ç®—æ—¶ä¸è¶³å››ä½çš„æƒ…å†µï¼Œå¯ä»¥å‘å·¦æˆ–å‘å³è¡¥0ã€‚</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">æ¨å”å„¿</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;æ¨å”å„¿</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;231***9699@qq.com</p></div></span>5ä¸ªæœˆå‰ (05-30)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-28990"><span class="comt-f">#1</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;æ°¸è¿œçš„å…„å¼Ÿ</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;323***2588@qq.com</p></div></div><div class="comt-main" id="div-comment-28990"><p>å…³äºå°æ•°çš„å››èˆäº”å…¥é—®é¢˜ä¸ç”µè„‘çš„äºŒè¿›åˆ¶å’Œåè¿›åˆ¶ä¹‹é—´è½¬æ¢é—®é¢˜ï¼Œè¿™ä¸ä»…æ˜¯å‡ºç°åœ¨å°æ•°ä¸Šï¼Œä¹Ÿå‡ºç°åœ¨ä¸€äº›é™¤æ³•ä¸Šï¼Œä¾‹å¦‚ï¼š</p>
+<p><span class="marked">10/3=3.3333333333333335</span> è€Œä¸æ˜¯çº¦ç­‰äº <strong>3.3333â€¦â€¦</strong>:</p>
+<pre>&gt;&gt;&gt; 10/3
+3.3333333333333335</pre>
+<p>è¿˜æœ‰å°±æ˜¯ <span class="marked">0.1+0.1+0.1-0.3</span> ä¸ä¼šç­‰äº <strong>0</strong>ï¼Œè€Œæ˜¯ç­‰äº <strong>5.551115123125783e-17</strong>:</p>
+<pre>&gt;&gt;&gt; 0.1+0.1+0.1-0.3
+5.551115123125783e-17</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">æ°¸è¿œçš„å…„å¼Ÿ</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;æ°¸è¿œçš„å…„å¼Ÿ</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;323***2588@qq.com</p></div></span>4ä¸ªæœˆå‰ (07-02)</div></div></li>
+</ol>
+<div class="pagenav">
+</div>
+</div>
+<div id="respond" class="no_webshot">
+<div class="comment-signarea" style="display:none; padding: 20px 20px;">
+<h3 class="text-muted" id="share_code" style="color: #799961;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> ç‚¹æˆ‘åˆ†äº«ç¬”è®°</h3>
+</div>
+<form action="https://www.runoob.com/wp-content/themes/runoob/option/addnote.php" method="post" id="commentform" style="display:none;">
+<div class="comt">
+<div class="comt-title">
+<i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i> <p><a id="cancel-comment-reply-link" href="javascript:;">å–æ¶ˆ</a></p>
+</div>
+<div class="comt-box">
+<div id="mded"></div>
+<div class="comt-ctrl">
+<div class="comt-tips"><input type='hidden' name='comment_post_ID' value='7283' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+<button type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-pencil" aria-hidden="true"></i> åˆ†äº«ç¬”è®°</button>
+</div>
+</div>
+<div class="comt-comterinfo">
+<ul id="comment-author-info">
+<li class="form-inline"><label class="hide" for="author">æ˜µç§°</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="æ˜µç§°"><span class="text-muted">æ˜µç§° (å¿…å¡«)</span></li>
+<li class="form-inline"><label class="hide" for="email">é‚®ç®±</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="é‚®ç®±"><span class="text-muted">é‚®ç®± (å¿…å¡«)</span></li>
+<li class="form-inline"><label class="hide" for="url">å¼•ç”¨åœ°å€</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="å¼•ç”¨åœ°å€"><span class="text-muted">å¼•ç”¨åœ°å€</span></li>
+</ul>
+</div>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+$(function() {
+	//åˆå§‹åŒ–ç¼–è¾‘å™¨
+	
+	var editor = new Simditor({
+	  textarea: $('#mded'),
+	  placeholder: 'å†™ç¬”è®°...',
+	  upload:false,
+	 // upload: {url:'../api/comment_upload_file-1.php.htm'/*tpa=https://www.runoob.com/api/comment_upload_file.php*/,params: null,fileKey: 'upload_file',connectionCount: 1,leaveConfirm: 'æ–‡ä»¶æ­£åœ¨ä¸Šä¼ ï¼Œæ‚¨ç¡®å®šç¦»å¼€?'},
+	  defaultImage: '../images/logo.png'/*tpa=http://www.runoob.com/images/logo.png*/,
+	  codeLanguages: '',
+	  toolbar: [  'bold','code','ul','ol','image' ]
+	});
+	editor.on('selectionchanged', function() {
+		$(".code-popover").hide();
+	});
+
+	// æäº¤æ•°æ®
+	$("#share_code").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		
+	});
+	$("#user_add_note").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		$('html, body').animate({
+       	    scrollTop: $("#respond").offset().top
+    	}, 200);
+	});
+
+	// æäº¤ç¬”è®°
+	var commentform=$('#commentform');
+	commentform.prepend('<div id="comment-status" style="display:none;" ></div>');
+	var statusdiv=$('#comment-status');
+	
+	commentform.submit(function(e){
+		e.preventDefault();
+		var noteContent = editor.getValue();
+		// console.log(noteContent);
+		noteContent = noteContent.replace(/<pre><code>/g,"<pre>");
+		noteContent = noteContent.replace(/<\/code><\/pre>/g,"</pre>");
+		
+		// ç³»åˆ—åŒ–è¡¨å•æ•°æ®
+		var comment_parent = 0;
+		var is_user_logged_in = $("#is_user_logged_in").val();
+		var comment_post_ID =  7283;
+		var _wp_unfiltered_html_comment = $("#_wp_unfiltered_html_comment").val();
+		var comment = noteContent;
+		var author = $("#author").val();
+		var url = $("#url").val();
+		var email = $("#email").val();
+		if(isBlank(author) && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">è¯·è¾“å…¥æ˜µç§°ï¼</p>').show();
+		} else if(isBlank(email)  && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">è¯·è¾“å…¥é‚®ç®±ï¼</p>').show();
+		} else {
+			// var formdata=commentform.serialize() + "&comment=" + noteContent ;
+			// æ·»åŠ çŠ¶æ€ä¿¡æ¯
+			statusdiv.html('<p>Processing...</p>').show();
+			// è·å–è¡¨å•æäº¤åœ°å€
+			var formurl=commentform.attr('action');
+			
+			// å¼‚æ­¥æäº¤
+			$.ajax({
+					type: 'post',
+					url: formurl,
+					dataType:'json',
+					data: {"comment_parent":comment_parent,"comment_post_ID":comment_post_ID, "_wp_unfiltered_html_comment":_wp_unfiltered_html_comment,"comment":comment,"url":url, "email":email,"author":author},
+					error: function(XMLHttpRequest, textStatus, errorThrown){
+					statusdiv.html('<p class="ajax-error" >æ•°æ®ä¸å®Œæ•´æˆ–è¡¨å•æäº¤å¤ªå¿«äº†ï¼</p>').show();
+				},
+				success: function(data, textStatus){
+					if(data.errorno=="0") {
+						$("#submit").prop('disabled', true);
+						statusdiv.html('<p class="ajax-success" >ç¬”è®°å·²æäº¤å®¡æ ¸ï¼Œæ„Ÿè°¢åˆ†äº«ç¬”è®°ï¼</p>').show();
+						alert('ç¬”è®°å·²æäº¤å®¡æ ¸ï¼Œæ„Ÿè°¢åˆ†äº«ç¬”è®°ï¼');
+					}else{
+						statusdiv.html('<p class="ajax-error" >'+data.msg+'</p>').show();
+					}
+					commentform.find('textarea[name=comment]').val('');
+				}
+			});
+			setTimeout(function(){
+		        $("#submit").prop('disabled', false);
+		    }, 10*1000);
+		}
+		return false;
+
+	});
+	
+});
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
+}
+</script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/css/qa.css-1-1.42.css" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/css/qa.css?1.42">
+<link rel="stylesheet" type="text/css" href="../../cdn.staticfile.org/simditor/2.3.6/styles/simditor.min-1.css" tppabs="https://cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css" />
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/module-1.js" tppabs="https://static.runoob.com/assets/simditor/2.3.6/scripts/module.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys-1.js" tppabs="https://static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/uploader-1.js" tppabs="https://static.runoob.com/assets/simditor/2.3.6/scripts/uploader.js"></script>
+<script type="text/javascript" src="../../cdn.staticfile.org/simditor/2.3.6/lib/simditor.min-1.js" tppabs="https://cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js"></script> <div class="sidebar-box ad-box ad-box-large">
+<div id="ad-336280">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle-1.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5751451760833794" data-ad-slot="1691338467" data-ad-format="auto"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div>
+</div>
+<div class="fivecol last right-column">
+<style>
+.sidebar-tree .double-li {
+	width:300px;
+}
+.sidebar-tree .double-li li {
+    width: 44%;
+    line-height: 1.5em;
+    border-bottom: 1px solid #ccc;
+    float: left;
+    display: inline;
+}
+</style>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here" style="margin: 0 auto;">
+<a href="javascript:void(0);" style="font-size: 16px; color:#64854c;font-weight:bold;"> <i class="fa fa-list" aria-hidden="true"></i> åˆ†ç±»å¯¼èˆª</a>
+</div>
+<div class="sidebar-box sidebar-cate">
+<div class="sidebar-tree">
+<ul><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> HTML / CSS</a><ul class="double-li"><li><a title="HTML æ•™ç¨‹" href="../html/html-tutorial-1.html" tppabs="https://www.runoob.com/html/html-tutorial.html">HTML æ•™ç¨‹</a></li><li><a title="HTML5 æ•™ç¨‹" href="../html/html5-intro-1.html" tppabs="https://www.runoob.com/html/html5-intro.html">HTML5 æ•™ç¨‹</a></li><li><a title="CSS æ•™ç¨‹" href="../css/css-tutorial-1.html" tppabs="https://www.runoob.com/css/css-tutorial.html">CSS æ•™ç¨‹</a></li><li><a title="CSS3 æ•™ç¨‹" href="../css3/css3-tutorial-1.html" tppabs="https://www.runoob.com/css3/css3-tutorial.html">CSS3 æ•™ç¨‹</a></li><li><a title="Bootstrap3 æ•™ç¨‹" href="../bootstrap/bootstrap-tutorial-1.html" tppabs="https://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap3 æ•™ç¨‹</a></li><li><a title="Bootstrap4 æ•™ç¨‹" href="../bootstrap4/bootstrap4-tutorial-1.html" tppabs="https://www.runoob.com/bootstrap4/bootstrap4-tutorial.html">Bootstrap4 æ•™ç¨‹</a></li><li><a title="Font Awesome æ•™ç¨‹" href="../font-awesome/fontawesome-tutorial-1.html" tppabs="https://www.runoob.com/font-awesome/fontawesome-tutorial.html">Font Awesome æ•™ç¨‹</a></li><li><a title="Foundation æ•™ç¨‹" href="../foundation/foundation-tutorial-1.html" tppabs="https://www.runoob.com/foundation/foundation-tutorial.html">Foundation æ•™ç¨‹</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> JavaScript</a><ul class="double-li"><li><a title="JavaScript æ•™ç¨‹" href="../js/js-tutorial-1.html" tppabs="https://www.runoob.com/js/js-tutorial.html">JavaScript æ•™ç¨‹</a></li><li><a title="HTML DOM æ•™ç¨‹" href="../htmldom/htmldom-tutorial-1.html" tppabs="https://www.runoob.com/htmldom/htmldom-tutorial.html">HTML DOM æ•™ç¨‹</a></li><li><a title="jQuery æ•™ç¨‹" href="../jquery/jquery-tutorial-1.html" tppabs="https://www.runoob.com/jquery/jquery-tutorial.html">jQuery æ•™ç¨‹</a></li><li><a title="AngularJS æ•™ç¨‹" href="../angularjs/angularjs-tutorial-1.html" tppabs="https://www.runoob.com/angularjs/angularjs-tutorial.html">AngularJS æ•™ç¨‹</a></li><li><a title="AngularJS2 æ•™ç¨‹" href="../angularjs2/angularjs2-tutorial-1.html" tppabs="https://www.runoob.com/angularjs2/angularjs2-tutorial.html">AngularJS2 æ•™ç¨‹</a></li><li><a title="Vue.js æ•™ç¨‹" href="../vue2/vue-tutorial-1.html" tppabs="https://www.runoob.com/vue2/vue-tutorial.html">Vue.js æ•™ç¨‹</a></li><li><a title="React æ•™ç¨‹" href="../react/react-tutorial-1.html" tppabs="https://www.runoob.com/react/react-tutorial.html">React æ•™ç¨‹</a></li><li><a title="jQuery UI æ•™ç¨‹" href="../jqueryui/jqueryui-tutorial-1.html" tppabs="https://www.runoob.com/jqueryui/jqueryui-tutorial.html">jQuery UI æ•™ç¨‹</a></li><li><a title="jQuery EasyUI æ•™ç¨‹" href="../jeasyui/jqueryeasyui-tutorial-1.html" tppabs="https://www.runoob.com/jeasyui/jqueryeasyui-tutorial.html">jQuery EasyUI æ•™ç¨‹</a></li><li><a title="Node.js æ•™ç¨‹" href="../nodejs/nodejs-tutorial-1.html" tppabs="https://www.runoob.com/nodejs/nodejs-tutorial.html">Node.js æ•™ç¨‹</a></li><li><a title="AJAX æ•™ç¨‹" href="../ajax/ajax-tutorial-1.html" tppabs="https://www.runoob.com/ajax/ajax-tutorial.html">AJAX æ•™ç¨‹</a></li><li><a title="JSON æ•™ç¨‹" href="../json/json-tutorial-1.html" tppabs="https://www.runoob.com/json/json-tutorial.html">JSON æ•™ç¨‹</a></li><li><a title="Highcharts æ•™ç¨‹" href="../highcharts/highcharts-tutorial-1.html" tppabs="https://www.runoob.com/highcharts/highcharts-tutorial.html">Highcharts æ•™ç¨‹</a></li><li><a title="Google åœ°å›¾ æ•™ç¨‹" href="../googleapi/google-maps-basic-1.html" tppabs="https://www.runoob.com/googleapi/google-maps-basic.html">Google åœ°å›¾ æ•™ç¨‹</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> æœåŠ¡ç«¯</a><ul class="double-li"><li><a title="PHP æ•™ç¨‹" href="../php/php-tutorial-1.html" tppabs="https://www.runoob.com/php/php-tutorial.html">PHP æ•™ç¨‹</a></li><li><a title="Python æ•™ç¨‹" href="../python/python-tutorial-1.html" tppabs="https://www.runoob.com/python/python-tutorial.html">Python æ•™ç¨‹</a></li><li><a title="Python3 æ•™ç¨‹" href="python3-tutorial-1.html" tppabs="https://www.runoob.com/python3/python3-tutorial.html">Python3 æ•™ç¨‹</a></li><li><a title="Django æ•™ç¨‹" href="../django/django-tutorial-1.html" tppabs="https://www.runoob.com/django/django-tutorial.html">Django æ•™ç¨‹</a></li><li><a title="Linux æ•™ç¨‹" href="../linux/linux-tutorial-1.html" tppabs="https://www.runoob.com/linux/linux-tutorial.html">Linux æ•™ç¨‹</a></li><li><a title="Docker æ•™ç¨‹" href="../docker/docker-tutorial-1.html" tppabs="https://www.runoob.com/docker/docker-tutorial.html">Docker æ•™ç¨‹</a></li><li><a title="Ruby æ•™ç¨‹" href="../ruby/ruby-tutorial-1.html" tppabs="https://www.runoob.com/ruby/ruby-tutorial.html">Ruby æ•™ç¨‹</a></li><li><a title="Java æ•™ç¨‹" href="../java/java-tutorial-1.html" tppabs="https://www.runoob.com/java/java-tutorial.html">Java æ•™ç¨‹</a></li><li><a title="C æ•™ç¨‹" href="../cprogramming/c-tutorial.html" tppabs="https://www.runoob.com/c/c-tutorial.html">C æ•™ç¨‹</a></li><li><a title="C++ æ•™ç¨‹" href="../cplusplus/cpp-tutorial-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-tutorial.html">C++ æ•™ç¨‹</a></li><li><a title="Perl æ•™ç¨‹" href="../perl/perl-tutorial-1.html" tppabs="https://www.runoob.com/perl/perl-tutorial.html">Perl æ•™ç¨‹</a></li><li><a title="Servlet æ•™ç¨‹" href="../servlet/servlet-tutorial-1.html" tppabs="https://www.runoob.com/servlet/servlet-tutorial.html">Servlet æ•™ç¨‹</a></li><li><a title="JSP æ•™ç¨‹" href="../jsp/jsp-tutorial-1.html" tppabs="https://www.runoob.com/jsp/jsp-tutorial.html">JSP æ•™ç¨‹</a></li><li><a title="Lua æ•™ç¨‹" href="../lua/lua-tutorial-1.html" tppabs="https://www.runoob.com/lua/lua-tutorial.html">Lua æ•™ç¨‹</a></li><li><a title="Scala æ•™ç¨‹" href="../scala/scala-tutorial-1.html" tppabs="https://www.runoob.com/scala/scala-tutorial.html">Scala æ•™ç¨‹</a></li><li><a title="Go æ•™ç¨‹" href="../go/go-tutorial-1.html" tppabs="https://www.runoob.com/go/go-tutorial.html">Go æ•™ç¨‹</a></li><li><a title="è®¾è®¡æ¨¡å¼" href="../design-pattern/design-pattern-tutorial-1.html" tppabs="https://www.runoob.com/design-pattern/design-pattern-tutorial.html">è®¾è®¡æ¨¡å¼</a></li><li><a title="æ­£åˆ™è¡¨è¾¾å¼" href="../regexp/regexp-tutorial-1.html" tppabs="https://www.runoob.com/regexp/regexp-tutorial.html">æ­£åˆ™è¡¨è¾¾å¼</a></li><li><a title="Maven æ•™ç¨‹" href="../maven/maven-tutorial-1.html" tppabs="https://www.runoob.com/maven/maven-tutorial.html">Maven æ•™ç¨‹</a></li><li><a title="NumPy æ•™ç¨‹" href="../numpy/numpy-tutorial-1.html" tppabs="https://www.runoob.com/numpy/numpy-tutorial.html">NumPy æ•™ç¨‹</a></li><li><a title="ASP æ•™ç¨‹" href="../asp/asp-tutorial-1.html" tppabs="https://www.runoob.com/asp/asp-tutorial.html">ASP æ•™ç¨‹</a></li><li><a title="AppML æ•™ç¨‹" href="../appml/appml-tutorial-1.html" tppabs="https://www.runoob.com/appml/appml-tutorial.html">AppML æ•™ç¨‹</a></li><li><a title="VBScript æ•™ç¨‹" href="../vbscript/vbscript-tutorial-1.html" tppabs="https://www.runoob.com/vbscript/vbscript-tutorial.html">VBScript æ•™ç¨‹</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> æ•°æ®åº“</a><ul class="double-li"><li><a title="SQL æ•™ç¨‹" href="../sql/sql-tutorial-1.html" tppabs="https://www.runoob.com/sql/sql-tutorial.html">SQL æ•™ç¨‹</a></li><li><a title="Mysql æ•™ç¨‹" href="../mysql/mysql-tutorial-1.html" tppabs="https://www.runoob.com/mysql/mysql-tutorial.html">Mysql æ•™ç¨‹</a></li><li><a title="SQLite æ•™ç¨‹" href="../sqlite/sqlite-tutorial-1.html" tppabs="https://www.runoob.com/sqlite/sqlite-tutorial.html">SQLite æ•™ç¨‹</a></li><li><a title="MongoDB æ•™ç¨‹" href="../mongodb/mongodb-tutorial-1.html" tppabs="https://www.runoob.com/mongodb/mongodb-tutorial.html">MongoDB æ•™ç¨‹</a></li><li><a title="Redis æ•™ç¨‹" href="../redis/redis-tutorial-1.html" tppabs="https://www.runoob.com/redis/redis-tutorial.html">Redis æ•™ç¨‹</a></li><li><a title="Memcached æ•™ç¨‹" href="../Memcached/Memcached-tutorial-2.html" tppabs="https://www.runoob.com/Memcached/Memcached-tutorial.html">Memcached æ•™ç¨‹</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> ç§»åŠ¨ç«¯</a><ul class="double-li"><li><a title="Android æ•™ç¨‹" href="../w3cnote/android-tutorial-intro-1.html" tppabs="https://www.runoob.com/w3cnote/android-tutorial-intro.html">Android æ•™ç¨‹</a></li><li><a title="Swift æ•™ç¨‹" href="../swift/swift-tutorial-1.html" tppabs="https://www.runoob.com/swift/swift-tutorial.html">Swift æ•™ç¨‹</a></li><li><a title="jQuery Mobile æ•™ç¨‹" href="../jquerymobile/jquerymobile-tutorial-1.html" tppabs="https://www.runoob.com/jquerymobile/jquerymobile-tutorial.html">jQuery Mobile æ•™ç¨‹</a></li><li><a title="ionic æ•™ç¨‹" href="../ionic/ionic-tutorial-1.html" tppabs="https://www.runoob.com/ionic/ionic-tutorial.html">ionic æ•™ç¨‹</a></li><li><a title="Kotlin æ•™ç¨‹" href="../kotlin/kotlin-tutorial-1.html" tppabs="https://www.runoob.com/kotlin/kotlin-tutorial.html">Kotlin æ•™ç¨‹</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> XML æ•™ç¨‹</a><ul class="double-li"><li><a title="XML æ•™ç¨‹" href="../xml/xml-tutorial-1.html" tppabs="https://www.runoob.com/xml/xml-tutorial.html">XML æ•™ç¨‹</a></li><li><a title="DTD æ•™ç¨‹" href="../dtd/dtd-tutorial-1.html" tppabs="https://www.runoob.com/dtd/dtd-tutorial.html">DTD æ•™ç¨‹</a></li><li><a title="XML DOM æ•™ç¨‹" href="../dom/dom-tutorial-1.html" tppabs="https://www.runoob.com/dom/dom-tutorial.html">XML DOM æ•™ç¨‹</a></li><li><a title="XSLT æ•™ç¨‹" href="../xsl/xsl-tutorial-1.html" tppabs="https://www.runoob.com/xsl/xsl-tutorial.html">XSLT æ•™ç¨‹</a></li><li><a title="XPath æ•™ç¨‹" href="../xpath/xpath-tutorial-1.html" tppabs="https://www.runoob.com/xpath/xpath-tutorial.html">XPath æ•™ç¨‹</a></li><li><a title="XQuery æ•™ç¨‹" href="../xquery/xquery-tutorial-1.html" tppabs="https://www.runoob.com/xquery/xquery-tutorial.html">XQuery æ•™ç¨‹</a></li><li><a title="XLink æ•™ç¨‹" href="../xlink/xlink-tutorial-1.html" tppabs="https://www.runoob.com/xlink/xlink-tutorial.html">XLink æ•™ç¨‹</a></li><li><a title="XPointer æ•™ç¨‹" href="../xlink/xlink-tutorial-1.html" tppabs="https://www.runoob.com/xlink/xlink-tutorial.html">XPointer æ•™ç¨‹</a></li><li><a title="XML Schema æ•™ç¨‹" href="../schema/schema-tutorial-1.html" tppabs="https://www.runoob.com/schema/schema-tutorial.html">XML Schema æ•™ç¨‹</a></li><li><a title="XSL-FO æ•™ç¨‹" href="../xslfo/xslfo-tutorial-1.html" tppabs="https://www.runoob.com/xslfo/xslfo-tutorial.html">XSL-FO æ•™ç¨‹</a></li><li><a title="SVG æ•™ç¨‹" href="../svg/svg-tutorial-1.html" tppabs="https://www.runoob.com/svg/svg-tutorial.html">SVG æ•™ç¨‹</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> ASP.NET</a><ul class="double-li"><li><a title="ASP.NET æ•™ç¨‹" href="../aspnet/aspnet-tutorial-1.html" tppabs="https://www.runoob.com/aspnet/aspnet-tutorial.html">ASP.NET æ•™ç¨‹</a></li><li><a title="C# æ•™ç¨‹" href="../csharp/csharp-tutorial-1.html" tppabs="https://www.runoob.com/csharp/csharp-tutorial.html">C# æ•™ç¨‹</a></li><li><a title="Web Pages æ•™ç¨‹" href="../aspnet/webpages-intro-1.html" tppabs="https://www.runoob.com/aspnet/webpages-intro.html">Web Pages æ•™ç¨‹</a></li><li><a title="Razor æ•™ç¨‹" href="../aspnet/razor-intro-1.html" tppabs="https://www.runoob.com/aspnet/razor-intro.html">Razor æ•™ç¨‹</a></li><li><a title="MVC æ•™ç¨‹" href="../aspnet/mvc-intro-1.html" tppabs="https://www.runoob.com/aspnet/mvc-intro.html">MVC æ•™ç¨‹</a></li><li><a title="Web Forms æ•™ç¨‹" href="../aspnet/aspnet-intro-1.html" tppabs="https://www.runoob.com/aspnet/aspnet-intro.html">Web Forms æ•™ç¨‹</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> Web Service</a><ul class="double-li"><li><a title="Web Service æ•™ç¨‹" href="../webservices/webservices-tutorial-1.html" tppabs="https://www.runoob.com/webservices/webservices-tutorial.html">Web Service æ•™ç¨‹</a></li><li><a title="WSDL æ•™ç¨‹" href="../wsdl/wsdl-tutorial-1.html" tppabs="https://www.runoob.com/wsdl/wsdl-tutorial.html">WSDL æ•™ç¨‹</a></li><li><a title="SOAP æ•™ç¨‹" href="../soap/soap-tutorial-1.html" tppabs="https://www.runoob.com/soap/soap-tutorial.html">SOAP æ•™ç¨‹</a></li><li><a title="RSS æ•™ç¨‹" href="../rss/rss-tutorial-1.html" tppabs="https://www.runoob.com/rss/rss-tutorial.html">RSS æ•™ç¨‹</a></li><li><a title="RDF æ•™ç¨‹" href="../rdf/rdf-tutorial-1.html" tppabs="https://www.runoob.com/rdf/rdf-tutorial.html">RDF æ•™ç¨‹</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> å¼€å‘å·¥å…·</a><ul class="double-li"><li><a title="Eclipse æ•™ç¨‹" href="../eclipse/eclipse-tutorial-1.html" tppabs="https://www.runoob.com/eclipse/eclipse-tutorial.html">Eclipse æ•™ç¨‹</a></li><li><a title="Git æ•™ç¨‹" href="../git/git-tutorial-1.html" tppabs="https://www.runoob.com/git/git-tutorial.html">Git æ•™ç¨‹</a></li><li><a title="Svn æ•™ç¨‹" href="../svn/svn-tutorial-1.html" tppabs="https://www.runoob.com/svn/svn-tutorial.html">Svn æ•™ç¨‹</a></li><li><a title="Firebug æ•™ç¨‹" href="../firebug/firebug-tutorial-1.html" tppabs="https://www.runoob.com/firebug/firebug-tutorial.html">Firebug æ•™ç¨‹</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> ç½‘ç«™å»ºè®¾</a><ul class="double-li"><li><a title="HTTP æ•™ç¨‹" href="../http/http-tutorial-1.html" tppabs="https://www.runoob.com/http/http-tutorial.html">HTTP æ•™ç¨‹</a></li><li><a title="ç½‘ç«™å»ºè®¾æŒ‡å—" href="../web/web-buildingprimer-1.html" tppabs="https://www.runoob.com/web/web-buildingprimer.html">ç½‘ç«™å»ºè®¾æŒ‡å—</a></li><li><a title="æµè§ˆå™¨ä¿¡æ¯" href="../browsers/browser-information-1.html" tppabs="https://www.runoob.com/browsers/browser-information.html">æµè§ˆå™¨ä¿¡æ¯</a></li><li><a title="ç½‘ç«™ä¸»æœºæ•™ç¨‹" href="../hosting/hosting-tutorial-1.html" tppabs="https://www.runoob.com/hosting/hosting-tutorial.html">ç½‘ç«™ä¸»æœºæ•™ç¨‹</a></li><li><a title="TCP/IP æ•™ç¨‹" href="../tcpip/tcpip-tutorial-1.html" tppabs="https://www.runoob.com/tcpip/tcpip-tutorial.html">TCP/IP æ•™ç¨‹</a></li><li><a title="W3C æ•™ç¨‹" href="../w3c/w3c-tutorial-1.html" tppabs="https://www.runoob.com/w3c/w3c-tutorial.html">W3C æ•™ç¨‹</a></li><li><a title="ç½‘ç«™å“è´¨" href="../quality/quality-tutorial-1.html" tppabs="https://www.runoob.com/quality/quality-tutorial.html">ç½‘ç«™å“è´¨</a></li></ul></li></ul> </div>
+</div>
+</div>
+<br>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here">
+<a href="javascript:void(0);">Advertisement</a>
+</div>
+<div class="ad-600160" id="sidebar-right-ads">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle-1.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div></div>
+</div>
+<script>
+var aid = 7283;
+function coll() {
+	$.post( '../wp-content/themes/runoob/option/user/userinfo-1.php.htm'/*tpa=https://www.runoob.com/wp-content/themes/runoob/option/user/userinfo.php*/, {aid:aid, action:"collarticle", opt:'add'},function( data ) {
+		if(data.error==0) {
+			$("#content").find("h1:first").find("a").attr("href","javascript:void(0);");
+			$("#content").find("h1:first").find("img").attr("src","../wp-content/themes/runoob/assets/img/coll2.png"/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/coll2.png*/).css({width:32+"px",height:32+"px"});
+		}
+		alert(data.msg);
+	},'json');
+}
+</script>
+<script src="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js-1-1.0" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js?1.0"></script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css-1-1.0.css" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css?1.0" />
+<script type="text/javascript">
+$.feedback({
+    ajaxURL: '../feedback/runoob_feedback-1.php.htm'/*tpa=https://www.runoob.com/feedback/runoob_feedback.php*/,
+    html2canvasURL: '../wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas-1.js'/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas.js*/
+});
+</script>
+<button class="feedback-btn feedback-btn-gray">åé¦ˆ/å»ºè®®</button>
+<div id="footer" class="mar-t50">
+<div class="runoob-block">
+<div class="runoob cf">
+<dl>
+<dt>
+åœ¨çº¿å®ä¾‹
+</dt>
+<dd>
+&middot;<a target="_blank" href="../html/html-examples-1.html" tppabs="https://www.runoob.com/html/html-examples.html">HTML å®ä¾‹</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../css/css-examples-1.html" tppabs="https://www.runoob.com/css/css-examples.html">CSS å®ä¾‹</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../js/js-examples-1.html" tppabs="https://www.runoob.com/js/js-examples.html">JavaScript å®ä¾‹</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../ajax/ajax-examples.html" tppabs="https://www.runoob.com/ajx/ajax-examples.html">Ajax å®ä¾‹</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../jquery/jquery-examples-1.html" tppabs="https://www.runoob.com/jquery/jquery-examples.html">jQuery å®ä¾‹</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../xml/xml-examples-1.html" tppabs="https://www.runoob.com/xml/xml-examples.html">XML å®ä¾‹</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../java/java-examples-1.html" tppabs="https://www.runoob.com/java/java-examples.html">Java å®ä¾‹</a>
+</dd>
+</dl>
+<dl>
+<dt>
+å­—ç¬¦é›†&å·¥å…·
+</dt>
+<dd>
+&middot; <a target="_blank" href="../charsets/html-charsets-1.html" tppabs="https://www.runoob.com/charsets/html-charsets.html">HTML å­—ç¬¦é›†è®¾ç½®</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-ascii-1.html" tppabs="https://www.runoob.com/tags/html-ascii.html">HTML ASCII å­—ç¬¦é›†</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/ref-entities-1.html" tppabs="https://www.runoob.com/tags/ref-entities.html">HTML ISO-8859-1</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-symbols-1.html" tppabs="https://www.runoob.com/tags/html-symbols.html">HTML å®ä½“ç¬¦å·</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-colorpicker-1.html" tppabs="https://www.runoob.com/tags/html-colorpicker.html">HTML æ‹¾è‰²å™¨</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="javascript:if(confirm('https://c.runoob.com/front-end/53  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://c.runoob.com/front-end/53'" tppabs="https://c.runoob.com/front-end/53">JSON æ ¼å¼åŒ–å·¥å…·</a>
+</dd>
+</dl>
+<dl>
+<dt>
+æœ€æ–°æ›´æ–°
+</dt>
+<dd>
+&middot;
+<a href="../w3cnote/csharp-init-variable.html" tppabs="http://www.runoob.com/w3cnote/csharp-init-variable.html" title="å…³äº C# ä¸­çš„å˜é‡çš„åˆå§‹åŒ–é—®é¢˜æµ…è°ˆ">å…³äº C# ä¸­çš„å˜...</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/scrapy-detail.html" tppabs="http://www.runoob.com/w3cnote/scrapy-detail.html" title="Scrapy å…¥é—¨æ•™ç¨‹">Scrapy å…¥é—¨æ•™ç¨‹</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/c-structures-intro.html" tppabs="http://www.runoob.com/w3cnote/c-structures-intro.html" title="C ç»“æ„ä½“">C ç»“æ„ä½“</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/matplotlib-tutorial.html" tppabs="http://www.runoob.com/w3cnote/matplotlib-tutorial.html" title="Matplotlib æ•™ç¨‹">Matplotlib æ•™ç¨‹</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-matplotlib.html" tppabs="http://www.runoob.com/numpy/numpy-matplotlib.html" title="NumPy  Matplotlib">NumPy Matplotlib</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-io.html" tppabs="http://www.runoob.com/numpy/numpy-io.html" title="NumPy IO">NumPy IO</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-linear-algebra.html" tppabs="http://www.runoob.com/numpy/numpy-linear-algebra.html" title="NumPy çº¿æ€§ä»£æ•°">NumPy çº¿æ€§ä»£æ•°</a>
+</dd>
+</dl>
+<dl>
+<dt>
+ç«™ç‚¹ä¿¡æ¯
+</dt>
+<dd>
+&middot;
+<a target="_blank" href="javascript:if(confirm('https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="external nofollow">æ„è§åé¦ˆ</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../disclaimer-1.htm" tppabs="https://www.runoob.com/disclaimer">å…è´£å£°æ˜</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../aboutus-1.htm" tppabs="https://www.runoob.com/aboutus">å…³äºæˆ‘ä»¬</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../archives-1.htm" tppabs="https://www.runoob.com/archives">æ–‡ç« å½’æ¡£</a>
+</dd>
+</dl>
+<div class="search-share">
+<div class="app-download">
+<div>
+<strong>å…³æ³¨å¾®ä¿¡</strong>
+</div>
+</div>
+<div class="share">
+<img width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode-1.png" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="w-1000 copyright">
+Copyright &copy; 2013-2018 <strong><a href="../index-1.htm" tppabs="https://www.runoob.com/" target="_blank">èœé¸Ÿæ•™ç¨‹</a></strong>&nbsp;
+<strong><a href="../index-1.htm" tppabs="https://www.runoob.com/" target="_blank">runoob.com</a></strong> All Rights Reserved. å¤‡æ¡ˆå·ï¼šé—½ICPå¤‡15012807å·-1
+</div>
+</div>
+<div class="fixed-btn">
+<a class="go-top" href="javascript:void(0)" title="è¿”å›é¡¶éƒ¨"> <i class="fa fa-angle-up"></i></a>
+<a class="qrcode" href="javascript:void(0)" title="å…³æ³¨æˆ‘ä»¬"><i class="fa fa-qrcode"></i></a>
+<a class="writer" style="display:none" href="javascript:void(0)" title="æ ‡è®°/æ”¶è—"><i class="fa fa-star" aria-hidden="true"></i></a>
+<div id="bottom-qrcode" class="modal panel-modal hide fade in">
+<h4>å¾®ä¿¡å…³æ³¨</h4>
+<div class="panel-body"><img alt="å¾®ä¿¡å…³æ³¨" width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode-1.png" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png"></div>
+</div>
+</div>
+<div class="hide_box"></div>
+<div class="shang_box">
+<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="å…³é—­"><img src="../../static.runoob.com/images/dashang/close-1.jpg" tppabs="https://static.runoob.com/images/dashang/close.jpg" alt="å–æ¶ˆ" /></a>
+<div class="shang_tit">
+<p>æ„Ÿè°¢æ‚¨çš„æ”¯æŒï¼Œæˆ‘ä¼šç»§ç»­åŠªåŠ›çš„!</p>
+</div>
+<div class="shang_payimg">
+<img src="../../static.runoob.com/images/dashang/weipayimg-1.png.jpg" tppabs="https://static.runoob.com/images/dashang/weipayimg.png" alt="æ‰«ç æ”¯æŒ" title="æ‰«ä¸€æ‰«" />
+</div>
+<div class="pay_explain">æ‰«ç æ‰“èµï¼Œä½ è¯´å¤šå°‘å°±å¤šå°‘</div>
+<div class="shang_payselect">
+<div class="pay_item  checked" data-id="weipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/wechat-1.jpg" tppabs="https://static.runoob.com/images/dashang/wechat.jpg" alt="å¾®ä¿¡" /></span>
+</div>
+<div class="pay_item" data-id="alipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/alipay-1.jpg" tppabs="https://static.runoob.com/images/dashang/alipay.jpg" alt="æ”¯ä»˜å®" /></span>
+</div>
+</div>
+<div class="shang_info">
+<p>æ‰“å¼€<span id="shang_pay_txt">æ”¯ä»˜å®</span>æ‰«ä¸€æ‰«ï¼Œå³å¯è¿›è¡Œæ‰«ç æ‰“èµå“¦</p>
+<p><a href="javascript:if(confirm('https://c.runoob.com/codedemo/5348  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://c.runoob.com/codedemo/5348'" tppabs="https://c.runoob.com/codedemo/5348" target="_blank"><span style=" font-size: 14px;color: #000;font-weight: bold;">ç‚¹æˆ‘æŸ¥çœ‹æœ¬ç«™æ‰“èµæºç ï¼</span></a></p>
+</div>
+</div>
+<div id="testClick"></div>
+<div style="display:none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "../../hm.baidu.com/hm.js-3eec0b7da6548cf07db3bc477ea905ee"/*tpa=https://hm.baidu.com/hm.js?3eec0b7da6548cf07db3bc477ea905ee*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="../../www.googletagmanager.com/gtag/js-id=UA-84264393-2" tppabs="https://www.googletagmanager.com/gtag/js?id=UA-84264393-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-84264393-2');
+</script>
+</div>
+<script>
+window.jsui={
+    www: 'https://wwww.runoob.com/',
+    uri: '//www.runoob.com/wp-content/themes/runoob'
+};
+</script>
+<style>
+ol,ul{list-style:none}.cd-switcher a{text-decoration:none;outline:0}.cd-switcher a:hover{text-decoration:underline}a:focus{outline:0;-moz-outline:0}.main_nav{width:300px;height:60px;margin:60px auto 10px auto}.main_nav li{float:left;width:60px;margin-right:10px;font-size:16px;padding:.6em 1em;border-radius:3em;background:#2f889a;text-align:center}.main_nav li a{color:#fff}.errtip{background-color:#fceaea;color:#db5353;padding:8px 15px;font-size:14px;border:1px solid #fc9797;border-radius:5px}.cd-user-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(52,54,66,0.9);z-index:3;overflow-y:auto;cursor:pointer;visibility:hidden;opacity:0;-webkit-transition:opacity .3s 0,visibility 0 .3s;-moz-transition:opacity .3s 0,visibility 0 .3s;transition:opacity .3s 0,visibility 0 .3s}.cd-user-modal.is-visible{visibility:visible;opacity:1;-webkit-transition:opacity .3s 0,visibility 0 0;-moz-transition:opacity .3s 0,visibility 0 0;transition:opacity .3s 0,visibility 0 0}.cd-user-modal.is-visible .cd-user-modal-container{-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}.cd-user-modal-container{position:relative;width:90%;max-width:500px;background:#FFF;margin:3em auto 4em;cursor:auto;border-radius:.25em;-webkit-transform:translateY(-30px);-moz-transform:translateY(-30px);-ms-transform:translateY(-30px);-o-transform:translateY(-30px);transform:translateY(-30px);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;transition-property:transform;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;transition-duration:.3s}.cd-user-modal-container .cd-switcher:after{content:"";display:table;clear:both}.cd-user-modal-container .cd-switcher li{width:50%;float:left;text-align:center}.cd-user-modal-container .cd-switcher li:first-child a{border-radius:.25em 0 0 0}.cd-user-modal-container .cd-switcher li:last-child a{border-radius:0 .25em 0 0}.cd-user-modal-container .cd-switcher a{font-size:1.2em;font-weight:bold;display:block;width:100%;height:50px;line-height:50px;background:#e8f1e2;color:#96b880}.cd-user-modal-container .cd-switcher a.selected{background:#FFF;color:#505260}@media only screen and (min-width:600px){.cd-user-modal-container{margin:4em auto}.cd-user-modal-container .cd-switcher a{height:70px;line-height:70px}}.cd-form{padding:1.4em}.cd-form .fieldset{position:relative;margin:1.4em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form label{font-size:16px;font-size:.875rem}.cd-form label.image-replace{display:inline-block;position:absolute;left:15px;top:50%;bottom:auto;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);height:20px;width:20px;overflow:hidden;text-indent:100%;white-space:nowrap;color:transparent;text-shadow:none;background-repeat:no-repeat;background-position:50% 0}.cd-form label.cd-username{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-username-1.svg")/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*/}.cd-form label.cd-email{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-email-1.svg")/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*/}.cd-form label.cd-password{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-password-1.svg")/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*/}.cd-form input{margin:0;padding:0;border-radius:.25em}.cd-form input.full-width{width:80%}.cd-form input.full-width2{width:94%}.cd-form input.has-padding{padding:12px 20px 12px 50px}.cd-form input.has-border{border:1px solid #d2d8d8;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}.cd-form input.has-border:focus{border-color:#98b880;box-shadow:0 0 5px rgba(52,54,66,0.1);outline:0}.cd-form input.has-error{border:1px solid #d76666}.cd-form input[type=password]{padding-right:65px}.cd-form input[type=submit]{padding:16px 0;cursor:pointer;background:#96b97d;color:#FFF;font-weight:bold;border:0;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;font-size:1.2em;font-weight:bold}.no-touch .cd-form input[type=submit]:hover,.no-touch .cd-form input[type=submit]:focus{background:#3599ae;outline:0}@media only screen and (min-width:600px){.cd-form{padding:2em}.cd-form .fieldset{margin:2em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form input.has-padding{padding:16px 20px 16px 50px}.cd-form input[type=submit]{padding:16px 0}}.cd-close-form{display:block;position:absolute;width:40px;height:40px;right:0;top:-40px;background:url("../wp-content/themes/runoob/assets/img/cd-icon-close-1.svg")/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*/ no-repeat center center;text-indent:100%;white-space:nowrap;overflow:hidden}@media only screen and (min-width:1170px){}#cd-login,#cd-signup,#cd-reset-password{display:none}#cd-login.is-selected,#cd-signup.is-selected,#cd-reset-password.is-selected{display:block}
+</style>
+<div class="cd-user-modal">
+<div class="cd-user-modal-container">
+<ul class="cd-switcher">
+<li><a href="javascript:;">ç”¨æˆ·ç™»å½•</a></li>
+<li><a href="javascript:;">æ³¨å†Œæ–°ç”¨æˆ·</a></li>
+</ul>
+<div id="cd-login"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-username" for="signin-username">ç”¨æˆ·å</label>
+<input class="full-width has-padding has-border" id="signin-username" name=username type="text" placeholder="è¾“å…¥ç”¨æˆ·å">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signin-password">å¯†ç </label>
+<input class="full-width has-padding has-border" id="signin-password" name="password" type="password" placeholder="è¾“å…¥å¯†ç ">
+</p>
+<p class="fieldset">
+<input type="checkbox" id="remember-me" checked>
+<label for="remember-me">è®°ä½ç™»å½•çŠ¶æ€</label>
+<a href="../reset-password-1.htm" tppabs="https://www.runoob.com/reset-password" style="float: right;padding-right: 20px;" target="_blank">å¿˜è®°å¯†ç ï¼Ÿ</a>
+</p>
+<input type="hidden" name="action" value="signin">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="ç™» å½•">
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<div id="cd-signup"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-password" for="verifycode">é‚€è¯·ç </label>
+<input class="full-width has-padding has-border" id="signup-verifycode" name="verifycode" type="text" placeholder="è¾“å…¥é‚€è¯·ç ">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-username" for="signup-username">ç”¨æˆ·å</label>
+<input class="full-width has-padding has-border" id="signup-username" name="name" type="text" placeholder="è¾“å…¥ç”¨æˆ·å">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-email" for="signup-email">é‚®ç®±</label>
+<input class="full-width has-padding has-border" name="email" id="signup-email" type="email" placeholder="è¾“å…¥mail">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password">å¯†ç </label>
+<input class="full-width has-padding has-border" id="signup-password" name="password" type="password" placeholder="è¾“å…¥å¯†ç ">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password2">é‡å¤è¾“å…¥å¯†ç </label>
+<input class="full-width has-padding has-border" id="signup-password2" name="password2" type="password" placeholder="é‡å¤è¾“å…¥å¯†ç ">
+</p>
+<input type="hidden" name="action" value="signup">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="æ³¨å†Œæ–°ç”¨æˆ·">
+</p>
+<p class="fieldset">
+<a href="../w3cnote/runoob-user-test-intro-1.html#invite" tppabs="https://www.runoob.com/w3cnote/runoob-user-test-intro.html#invite" target="_blank">å¦‚ä½•è·å–é‚€è¯·ç ï¼Ÿ</a>
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<a href="javascript:;" class="cd-close-form">å…³é—­</a>
+</div>
+</div>
+<script src="../wp-content/themes/runoob/assets/js/main.js-v=1-1.189" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/js/main.js?v=1.189"></script>
+<script src="../../static.runoob.com/assets/libs/hl/run_prettify-1.js" tppabs="https://static.runoob.com/assets/libs/hl/run_prettify.js"></script>
+</body>
+</html>

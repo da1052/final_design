@@ -1,0 +1,12 @@
+<div class="content" id="articleContent">
+                                    <div class="ad-wrap">
+                                    </div>
+                                    <p>npm 团队近日发布了 2018 JavaScript 现状报告。报告主要分为三部分，第一部分讲述了 2018 年 npm 的现状，第二部分对 2018
+                                        年前端工具（框架）的走势进行了展示，第三部分则是对 2019 的预测。</p>
+                                    <p>我们重点来看前端框架的数据。报告显示，React 继续占主导地位，超过 60％ 的受访者使用&nbsp;React ，不过增长速度相比之前已有所放缓。</p>
+                                    <p>Angular 的走势相对缓慢且平稳，而且预计未来也很难出现爆发性增长。</p>
+                                    <p>Vue&nbsp;则一直保持着稳定的增长率，它在保持可扩展性的同时更容易上手。npm 团队表示，React 今年增长速度较慢可以解释为有更多的新用户选择了 Vue
+                                        而不是 React 。</p>
+                                    <p><img alt="" height="535" data-cke-saved-src="https://oscimg.oschina.net/oscnet/bb05eb495efc4e04b07f73f6e47b190f2b8.jpg" src="01/bb05eb495efc4e04b07f73f6e47b190f2b8.jpg" width="600" class="zoom-in-cursor"></p>
+                                    <p>完整报告请查阅：<a data-cke-saved-href="https://img04.en25.com/Web/NPMInc/%7B82407d56-74c7-4fde-a3b7-59a2df23544f%7D_This_Year_In_JavaScript__2019_Predictions_Copy.pdf" href="https://img04.en25.com/Web/NPMInc/%7B82407d56-74c7-4fde-a3b7-59a2df23544f%7D_This_Year_In_JavaScript__2019_Predictions_Copy.pdf" target="_blank">This Year In JavaScript</a></p>
+                                </div>

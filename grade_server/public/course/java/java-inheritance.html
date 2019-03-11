@@ -1,0 +1,1364 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="qc:admins" content="465267610762567726375" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Java 继承 | 菜鸟教程</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="canonical" href="http://www.runoob.com/java/java-inheritance.html" />
+<meta name="keywords" content="Java 继承">
+<meta name="description" content="Java 继承  继承的概念 继承是java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。  继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。  生活中的继承：    兔子和羊属于食草动物类，狮子和豹属于食肉动物类。 食草动物和食肉动物又是属于动物类。 所以继承需要符合的关系是：is-a，父类更通用，子类更具体。 虽然食草动物和食肉动物都是属于动..">
+<link rel="shortcut icon" href="../../static.runoob.com/images/favicon.ico" tppabs="http://static.runoob.com/images/favicon.ico" mce_href="//static.runoob.com/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../wp-content/themes/runoob/style.css-v=1.147.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/style.css?v=1.147" type="text/css" media="all" />
+<link rel="stylesheet" href="../../cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" tppabs="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<!--[if gte IE 9]><!-->
+  <script src="../../cdn.staticfile.org/jquery/2.0.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+  <!--<![endif]-->
+<!--[if lt IE 9]>
+     <script src="../../cdn.staticfile.org/jquery/1.9.1/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+     <script src="../../cdn.staticfile.org/html5shiv/r29/html5.min.js" tppabs="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+<link rel="apple-touch-icon" href="//static.runoob.com/images/icon/mobile-icon.png"/>
+<meta name="apple-mobile-web-app-title" content="菜鸟教程">
+</head>
+<body>
+<div class="container logo-search">
+<div class="col search row-search-mobile">
+<form action="index.php-s=.htm" tppabs="http://www.runoob.com/java/index.php?s=">
+<input class="placeholder" placeholder="搜索……" name="s" autocomplete="off">
+</form>
+</div>
+<div class="row">
+<div class="col logo">
+<h1><a href="../index.htm" tppabs="http://www.runoob.com/">菜鸟教程 -- 学的不仅是技术，更是梦想！</a></h1>
+</div>
+<div class="col right-list">
+<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style=""> <i class="fa fa-navicon"></i> </button>
+</div>
+<div class="col search search-desktop last">
+<form action="../-s=.htm" tppabs="http://www.runoob.com/?s=" target="_blank">
+<input class="placeholder" id="s" name="s" placeholder="搜索……" autocomplete="off">
+</form>
+</div>
+</div>
+</div>
+<div class="container navigation">
+<div class="row">
+<div class="col nav">
+<ul class="pc-nav">
+<li><a href="../index.htm" tppabs="http://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JavaScript</a></li>
+<li><a href="../jquery/jquery-tutorial.html" tppabs="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery</a></li>
+<li><a href="../bootstrap/bootstrap-tutorial.html" tppabs="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap</a></li>
+<li><a href="../sql/sql-tutorial.html" tppabs="http://www.runoob.com/sql/sql-tutorial.html">SQL</a></li>
+<li><a href="../mysql/mysql-tutorial.html" tppabs="http://www.runoob.com/mysql/mysql-tutorial.html">MySQL</a></li>
+<li><a href="../php/php-tutorial.html" tppabs="http://www.runoob.com/php/php-tutorial.html">PHP</a></li>
+<li><a href="../python/python-tutorial.html" tppabs="http://www.runoob.com/python/python-tutorial.html">Python2</a></li>
+<li><a href="../python3/python3-tutorial.html" tppabs="http://www.runoob.com/python3/python3-tutorial.html">Python3</a></li>
+<li><a href="../cprogramming/c-tutorial.html" tppabs="http://www.runoob.com/cprogramming/c-tutorial.html">C</a></li>
+<li><a href="../cplusplus/cpp-tutorial.html" tppabs="http://www.runoob.com/cplusplus/cpp-tutorial.html">C++</a></li>
+<li><a href="../csharp/csharp-tutorial.html" tppabs="http://www.runoob.com/csharp/csharp-tutorial.html">C#</a></li>
+<li><a href="java-tutorial.html" tppabs="http://www.runoob.com/java/java-tutorial.html">Java</a></li>
+<li><a href="../browser-history.htm" tppabs="http://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png" tppabs="http://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+</ul>
+<ul class="mobile-nav">
+<li><a href="../index.htm" tppabs="http://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JS</a></li>
+<li><a href="../browser-history.htm" tppabs="http://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png" tppabs="http://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+<a href="javascript:void(0)" class="search-reveal">Search</a>
+</ul>
+</div>
+</div>
+</div>
+<div class="container main">
+<div class="row">
+<div class="col left-column">
+<div class="tab">Java 教程 <a data-cate="53" href="javascript:void(0);" title="夜间模式" id="moon"><i class="fa fa-moon-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+<a data-cate="53" style="display:none;" href="javascript:void(0);" title="日间模式" id="sun"><i class="fa fa-sun-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+</div>
+<div class="sidebar-box gallery-list">
+<div class="design" id="leftcolumn">
+<a target="_top" title="Java 教程" href="java-tutorial.html" tppabs="http://www.runoob.com/java/java-tutorial.html">
+Java 教程 </a>
+<a target="_top" title="Java 简介" href="java-intro.html" tppabs="http://www.runoob.com/java/java-intro.html">
+Java 简介 </a>
+<a target="_top" title="Java 开发环境配置" href="java-environment-setup.html" tppabs="http://www.runoob.com/java/java-environment-setup.html">
+Java 开发环境配置 </a>
+<a target="_top" title="Java 基础语法" href="java-basic-syntax.html" tppabs="http://www.runoob.com/java/java-basic-syntax.html">
+Java 基础语法 </a>
+<a target="_top" title="Java 对象和类" href="java-object-classes.html" tppabs="http://www.runoob.com/java/java-object-classes.html">
+Java 对象和类 </a>
+<a target="_top" title="Java 基本数据类型" href="java-basic-datatypes.html" tppabs="http://www.runoob.com/java/java-basic-datatypes.html">
+Java 基本数据类型 </a>
+<a target="_top" title="Java 变量类型" href="java-variable-types.html" tppabs="http://www.runoob.com/java/java-variable-types.html">
+Java 变量类型 </a>
+<a target="_top" title="Java 修饰符" href="java-modifier-types.html" tppabs="http://www.runoob.com/java/java-modifier-types.html">
+Java 修饰符 </a>
+<a target="_top" title="Java 运算符" href="java-operators.html" tppabs="http://www.runoob.com/java/java-operators.html">
+Java 运算符 </a>
+<a target="_top" title="Java 循环结构 &#8211; for, while 及 do&#8230;while" href="java-loop.html" tppabs="http://www.runoob.com/java/java-loop.html">
+Java 循环结构 </a>
+<a target="_top" title="Java 条件语句 &#8211; if&#8230;else" href="java-if-else-switch.html" tppabs="http://www.runoob.com/java/java-if-else-switch.html">
+Java 条件语句 </a>
+<a target="_top" title="Java switch case 语句" href="java-switch-case.html" tppabs="http://www.runoob.com/java/java-switch-case.html">Java switch case</a> <a target="_top" title="Java Number &#038; Math 类" href="java-number.html" tppabs="http://www.runoob.com/java/java-number.html">
+Java Number & Math 类 </a>
+<a target="_top" title="Java Character 类" href="java-character.html" tppabs="http://www.runoob.com/java/java-character.html">
+Java Character 类 </a>
+<a target="_top" title="Java String 类" href="java-string.html" tppabs="http://www.runoob.com/java/java-string.html">
+Java String 类 </a>
+<a target="_top" title="Java StringBuffer 和 StringBuilder 类" href="java-stringbuffer.html" tppabs="http://www.runoob.com/java/java-stringbuffer.html">
+Java StringBuffer </a>
+<a target="_top" title="Java 数组" href="java-array.html" tppabs="http://www.runoob.com/java/java-array.html">
+Java 数组 </a>
+<a target="_top" title="Java 日期时间" href="java-date-time.html" tppabs="http://www.runoob.com/java/java-date-time.html">
+Java 日期时间 </a>
+<a target="_top" title="Java 正则表达式" href="java-regular-expressions.html" tppabs="http://www.runoob.com/java/java-regular-expressions.html">
+Java 正则表达式 </a>
+<a target="_top" title="Java 方法" href="java-methods.html" tppabs="http://www.runoob.com/java/java-methods.html">
+Java 方法 </a>
+<a target="_top" title="Java 流(Stream)、文件(File)和IO" href="java-files-io.html" tppabs="http://www.runoob.com/java/java-files-io.html">
+Java Stream、File、IO </a>
+<a target="_top" title="Java Scanner 类" href="java-scanner-class..html" tppabs="http://www.runoob.com/java/java-scanner-class..html"> Java Scanner 类 </a> <a target="_top" title="Java 异常处理" href="java-exceptions.html" tppabs="http://www.runoob.com/java/java-exceptions.html">
+Java 异常处理 </a>
+<br><h2 class="left">Java <span class="left_h2">面向对象</span></h2> <a target="_top" title="Java 继承" href="java-inheritance.html" tppabs="http://www.runoob.com/java/java-inheritance.html">
+Java 继承 </a>
+<a target="_top" title="Java 重写(Override)与重载(Overload)" href="java-override-overload.html" tppabs="http://www.runoob.com/java/java-override-overload.html">
+Java Override/Overload </a>
+<a target="_top" title="Java 多态" href="java-polymorphism.html" tppabs="http://www.runoob.com/java/java-polymorphism.html">
+Java 多态 </a>
+<a target="_top" title="Java 抽象类" href="java-abstraction.html" tppabs="http://www.runoob.com/java/java-abstraction.html">
+Java 抽象类 </a>
+<a target="_top" title="Java 封装" href="java-encapsulation.html" tppabs="http://www.runoob.com/java/java-encapsulation.html">
+Java 封装 </a>
+<a target="_top" title="Java 接口" href="java-interfaces.html" tppabs="http://www.runoob.com/java/java-interfaces.html">
+Java 接口 </a>
+<a target="_top" title="Java 包(package)" href="java-package.html" tppabs="http://www.runoob.com/java/java-package.html">
+Java 包(package) </a>
+<br><h2 class="left">Java <span class="left_h2">高级教程</span></h2> <a target="_top" title="Java 数据结构" href="java-data-structures.html" tppabs="http://www.runoob.com/java/java-data-structures.html">
+Java 数据结构 </a>
+<a target="_top" title="Java 集合框架" href="java-collections.html" tppabs="http://www.runoob.com/java/java-collections.html">
+Java 集合框架 </a>
+<a target="_top" title="Java 泛型" href="java-generics.html" tppabs="http://www.runoob.com/java/java-generics.html">
+Java 泛型 </a>
+<a target="_top" title="Java 序列化" href="java-serialization.html" tppabs="http://www.runoob.com/java/java-serialization.html">
+Java 序列化 </a>
+<a target="_top" title="Java 网络编程" href="java-networking.html" tppabs="http://www.runoob.com/java/java-networking.html">
+Java 网络编程 </a>
+<a target="_top" title="Java 发送邮件" href="java-sending-email.html" tppabs="http://www.runoob.com/java/java-sending-email.html">
+Java 发送邮件 </a>
+<a target="_top" title="Java 多线程编程" href="java-multithreading.html" tppabs="http://www.runoob.com/java/java-multithreading.html">
+Java 多线程编程 </a>
+<a target="_top" title="Java Applet 基础" href="java-applet-basics.html" tppabs="http://www.runoob.com/java/java-applet-basics.html">
+Java Applet 基础 </a>
+<a target="_top" title="Java 文档注释" href="java-documentation.html" tppabs="http://www.runoob.com/java/java-documentation.html">
+Java 文档注释 </a>
+<a target="_top" title="Java 实例" href="java-examples.html" tppabs="http://www.runoob.com/java/java-examples.html">
+Java 实例 </a>
+<a target="_top" title="Java 8  新特性" href="java8-new-features.html" tppabs="http://www.runoob.com/java/java8-new-features.html">
+Java 8 新特性 </a>
+<a target="_top" title="Java MySQL 连接" href="java-mysql-connect.html" tppabs="http://www.runoob.com/java/java-mysql-connect.html">
+Java MySQL 连接 </a>
+<a target="_top" title="Java 9 新特性" href="java9-new-features.html" tppabs="http://www.runoob.com/java/java9-new-features.html">
+Java 9 新特性 </a>
+</div>
+</div>
+</div> <div class="col middle-column">
+<div class="article">
+<div class="article-heading-ad" style="display: none;">
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="javascript:if(confirm('http://www.runoob.com/java/android-tutorial-xfermode-porterduff.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/java/android-tutorial-xfermode-porterduff.html'" tppabs="http://www.runoob.com/java/java-filewriter.html" rel="prev"> Java FileWriter类</a> </div>
+<div class="next-design-link"><a href="java-override-overload.html" tppabs="http://www.runoob.com/java/java-override-overload.html" rel="next"> Java 重写(Override)与重载(Overload)</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<div class="article-body">
+<div class="article-intro" id="content">
+<h1>Java 继承</h1>
+<hr>
+<h2>继承的概念</h2><p>
+继承是java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。</p>
+<p>
+继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。
+</p>
+<h3>生活中的继承：
+</h3>
+<p><img src="../wp-content/uploads/2013/12/android-tutorial-shadowlayer.html" tppabs="https://www.runoob.com/wp-content/uploads/2013/12/14B0951E-FC75-47A3-B611-4E1883887339.jpg"></p>
+<p>兔子和羊属于食草动物类，狮子和豹属于食肉动物类。</p><p>
+食草动物和食肉动物又是属于动物类。</p><p>
+所以继承需要符合的关系是：is-a，父类更通用，子类更具体。</p><p>
+虽然食草动物和食肉动物都是属于动物，但是两者的属性和行为上有差别，所以子类会具有父类的一般特性也会具有自身的特性。</p>
+<h3>类的继承格式</h3>
+<p>在 Java 中通过 extends 关键字可以申明一个类是从另外一个类继承而来的，一般形式如下：</p>
+<div class="example">
+<h2 class="example">类的继承格式</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">class</span><span class="hl-code"> 父类 </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">class</span><span class="hl-code"> 子类 </span><span class="hl-reserved">extends</span><span class="hl-code"> 父类 </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<h3>为什么需要继承
+</h3><p>
+接下来我们通过实例来说明这个需求。</p>
+<p>
+开发动物类，其中动物分别为企鹅以及老鼠，要求如下：</p>
+<ul><li>
+企鹅：属性（姓名，id），方法（吃，睡，自我介绍）</li><li>
+老鼠：属性（姓名，id），方法（吃，睡，自我介绍）</li></ul>
+<div class="example">
+<h2 class="example">企鹅类：</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Penguin</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">name</span><span class="hl-code">;
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code">;
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-identifier">Penguin</span><span class="hl-brackets">(</span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">myName</span><span class="hl-code">, </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">myid</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">name</span><span class="hl-code"> = </span><span class="hl-identifier">myName</span><span class="hl-code">;
+</span><span class="hl-identifier">id</span><span class="hl-code"> = </span><span class="hl-identifier">myid</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-identifier">name</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string">正在吃</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">sleep</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-identifier">name</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string">正在睡</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">introduction</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">大家好！我是</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">id</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">号</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">name</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">.</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<div class="example">
+<h2 class="example">老鼠类：</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Mouse</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">name</span><span class="hl-code">;
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code">;
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-identifier">Mouse</span><span class="hl-brackets">(</span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">myName</span><span class="hl-code">, </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">myid</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">name</span><span class="hl-code"> = </span><span class="hl-identifier">myName</span><span class="hl-code">;
+</span><span class="hl-identifier">id</span><span class="hl-code"> = </span><span class="hl-identifier">myid</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-identifier">name</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string">正在吃</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">sleep</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-identifier">name</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string">正在睡</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">introduction</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">大家好！我是</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">id</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">号</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">name</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">.</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<p>从这两段代码可以看出来，代码存在重复了，导致后果就是代码量大且臃肿，而且维护性不高(维护性主要是后期需要修改的时候，就需要修改很多的代码，容易出错)，所以要从根本上解决这两段代码的问题，就需要继承，将两段代码中相同的部分提取出来组成 一个父类：</p>
+<div class="example">
+<h2 class="example">公共父类：</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">name</span><span class="hl-code">;
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code">;
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-brackets">(</span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">myName</span><span class="hl-code">, </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">myid</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">name</span><span class="hl-code"> = </span><span class="hl-identifier">myName</span><span class="hl-code">;
+</span><span class="hl-identifier">id</span><span class="hl-code"> = </span><span class="hl-identifier">myid</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-identifier">name</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string">正在吃</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">sleep</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-identifier">name</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string">正在睡</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">introduction</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">大家好！我是</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">id</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">号</span><span class="hl-quotes">&quot;</span><span class="hl-code"> + </span><span class="hl-identifier">name</span><span class="hl-code"> + </span><span class="hl-quotes">&quot;</span><span class="hl-string">.</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<p>这个Animal类就可以作为一个父类，然后企鹅类和老鼠类继承这个类之后，就具有父类当中的属性和方法，子类就不会存在重复的代码，维护性也提高，代码也更加简洁，提高代码的复用性（复用性主要是可以多次使用，不用再多次写同样的代码）
+继承之后的代码：</p>
+<div class="example">
+<h2 class="example">企鹅类：</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Penguin</span><span class="hl-code"> </span><span class="hl-reserved">extends</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-identifier">Penguin</span><span class="hl-brackets">(</span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">myName</span><span class="hl-code">, </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">myid</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">super</span><span class="hl-brackets">(</span><span class="hl-identifier">myName</span><span class="hl-code">, </span><span class="hl-identifier">myid</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<div class="example">
+<h2 class="example">老鼠类：</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Mouse</span><span class="hl-code"> </span><span class="hl-reserved">extends</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-identifier">Mouse</span><span class="hl-brackets">(</span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">myName</span><span class="hl-code">, </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">myid</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">super</span><span class="hl-brackets">(</span><span class="hl-identifier">myName</span><span class="hl-code">, </span><span class="hl-identifier">myid</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<h3>继承类型
+</h3>
+<p>需要注意的是 Java 不支持多继承，但支持多重继承。</p>
+<p><img src="../wp-content/uploads/2013/12/android-tutorial-typeface.html" tppabs="http://www.runoob.com/wp-content/uploads/2013/12/types_of_inheritance.png"></p>
+<hr>
+<h2>继承的特性</h2><ul><li><p>
+子类拥有父类非private的属性，方法。</p></li><li><p>
+子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。</p></li><li><p>
+子类可以用自己的方式实现父类的方法。</p></li><li><p>
+Java的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如A类继承B类，B类继承C类，所以按照关系就是C类是B类的父类，B类是A类的父类，这是java继承区别于C++继承的一个特性。</p></li><li><p>
+提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。</p></li></ul>
+<hr>
+<h2>继承关键字
+</h2>
+<p>继承可以使用 extends 和 implements 这两个关键字来实现继承，而且所有的类都是继承于 java.lang.Object，当一个类没有继承的两个关键字，则默认继承object（这个类在 <strong>java.lang</strong> 包中，所以不需要 <strong>import</strong>）祖先类。</p>
+<h3>extends关键字</h3>
+<p>在 Java 中，类的继承是单一继承，也就是说，一个子类只能拥有一个父类，所以 extends 只能继承一个类。</p>
+<div class="example">
+<h2 class="example">extends 关键字</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">name</span><span class="hl-code">;
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code">;
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-brackets">(</span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">myName</span><span class="hl-code">, </span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">myid</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-comment">//</span><span class="hl-comment">初始化属性值</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code"> </span><span class="hl-comment">//</span><span class="hl-comment">吃东西方法的具体实现 } </span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">sleep</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code"> </span><span class="hl-comment">//</span><span class="hl-comment">睡觉方法的具体实现 } </span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Penguin</span><span class="hl-code"> </span><span class="hl-reserved">extends</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<h3>implements关键字</h3>
+<p>使用 implements 关键字可以变相的使java具有多继承的特性，使用范围为类继承接口的情况，可以同时继承多个接口（接口跟接口之间采用逗号分隔）。</p>
+<div class="example">
+<h2 class="example">implements 关键字</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">interface</span><span class="hl-code"> </span><span class="hl-identifier">A</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">sleep</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">interface</span><span class="hl-code"> </span><span class="hl-identifier">B</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">show</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">C</span><span class="hl-code"> </span><span class="hl-reserved">implements</span><span class="hl-code"> </span><span class="hl-identifier">A</span><span class="hl-code">,</span><span class="hl-identifier">B</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<h3>super 与 this 关键字</h3>
+<p>super关键字：我们可以通过super关键字来实现对父类成员的访问，用来引用当前对象的父类。</p>
+<p>this关键字：指向自己的引用。</p>
+<div class="example">
+<h2 class="example">实例</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">animal : eat</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Dog</span><span class="hl-code"> </span><span class="hl-reserved">extends</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">dog : eat</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">eatTest</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">; </span><span class="hl-comment">//</span><span class="hl-comment"> this 调用自己的方法</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-reserved">super</span><span class="hl-code">.</span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">; </span><span class="hl-comment">//</span><span class="hl-comment"> super 调用父类方法</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">Test</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">static</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">main</span><span class="hl-brackets">(</span><span class="hl-identifier">String</span><span class="hl-brackets">[</span><span class="hl-brackets">]</span><span class="hl-code"> </span><span class="hl-identifier">args</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">Animal</span><span class="hl-code"> </span><span class="hl-identifier">a</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">Animal</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">a</span><span class="hl-code">.</span><span class="hl-identifier">eat</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">Dog</span><span class="hl-code"> </span><span class="hl-identifier">d</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">Dog</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">d</span><span class="hl-code">.</span><span class="hl-identifier">eatTest</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<p>输出结果为：</p>
+<pre>
+animal : eat
+dog : eat
+animal : eat
+</pre>
+<h3>
+final关键字</h3>
+<p>
+final 关键字声明类可以把类定义为不能继承的，即最终类；或者用于修饰方法，该方法不能被子类重写：</p>
+<ul>
+<li><p>
+声明类：</p><pre>final class 类名 {//类体}</pre></li><li>
+<p>声明方法：</p><pre>修饰符(public/private/default/protected) final 返回值类型 方法名(){//方法体}</pre>
+</li></ul>
+<p>
+<strong>注</strong>:实例变量也可以被定义为 final，被定义为 final 的变量不能被修改。被声明为 final 类的方法自动地声明为 final，但是实例变量并不是 final</p>
+<hr>
+<h2>构造器</h2>
+<p>子类是不继承父类的构造器（构造方法或者构造函数）的，它只是调用（隐式或显式）。如果父类的构造器带有参数，则必须在子类的构造器中显式地通过 <span class="marked">super</span> 关键字调用父类的构造器并配以适当的参数列表。</p><p>如果父类构造器没有参数，则在子类的构造器中不需要使用 <span class="marked">super</span> 关键字调用父类构造器，系统会自动调用父类的无参构造器。
+</p>
+<div class="example">
+<h2 class="example">实例</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">SuperClass</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">n</span><span class="hl-code">;
+</span><span class="hl-identifier">SuperClass</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">SuperClass()</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-identifier">SuperClass</span><span class="hl-brackets">(</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">n</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">SuperClass(int n)</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">n</span><span class="hl-code"> = </span><span class="hl-identifier">n</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">SubClass</span><span class="hl-code"> </span><span class="hl-reserved">extends</span><span class="hl-code"> </span><span class="hl-identifier">SuperClass</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">private</span><span class="hl-code"> </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">n</span><span class="hl-code">;
+</span><span class="hl-identifier">SubClass</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">super</span><span class="hl-brackets">(</span><span class="hl-number">300</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">SubClass</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-identifier">SubClass</span><span class="hl-brackets">(</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">n</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">System</span><span class="hl-code">.</span><span class="hl-identifier">out</span><span class="hl-code">.</span><span class="hl-identifier">println</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">SubClass(int n):</span><span class="hl-quotes">&quot;</span><span class="hl-code">+</span><span class="hl-identifier">n</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">n</span><span class="hl-code"> = </span><span class="hl-identifier">n</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-reserved">class</span><span class="hl-code"> </span><span class="hl-identifier">TestSuperSub</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-reserved">public</span><span class="hl-code"> </span><span class="hl-types">static</span><span class="hl-code"> </span><span class="hl-types">void</span><span class="hl-code"> </span><span class="hl-identifier">main</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">String</span><span class="hl-code"> </span><span class="hl-identifier">args</span><span class="hl-brackets">[</span><span class="hl-brackets">]</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">SubClass</span><span class="hl-code"> </span><span class="hl-identifier">sc</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">SubClass</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">SubClass</span><span class="hl-code"> </span><span class="hl-identifier">sc2</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">SubClass</span><span class="hl-brackets">(</span><span class="hl-number">200</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<p>输出结果为：</p>
+<pre>
+SuperClass(int n)
+SubClass
+SuperClass()
+SubClass(int n):200
+</pre>
+</div>
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="javascript:if(confirm('http://www.runoob.com/java/android-tutorial-xfermode-porterduff.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/java/android-tutorial-xfermode-porterduff.html'" tppabs="http://www.runoob.com/java/java-filewriter.html" rel="prev"> Java FileWriter类</a> </div>
+<div class="next-design-link"><a href="java-override-overload.html" tppabs="http://www.runoob.com/java/java-override-overload.html" rel="next"> Java 重写(Override)与重载(Overload)</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<style>
+.wrapper {
+  /*text-transform: uppercase; */
+  background: #ececec;
+  color: #555;
+  cursor: help;
+  font-family: "Gill Sans", Impact, sans-serif;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  -webkit-transform: translateZ(0); /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+.wrapper .tooltip {
+  white-space: nowrap;
+  font-size: 14px;
+  text-align: left;
+  background: #96b97d;
+  bottom: 100%;
+  color: #fff;
+  display: block;
+  left: -25px;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 14px;
+  pointer-events: none;
+  position: absolute;
+  
+  -webkit-transform: translateY(10px);
+     -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+       -o-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: all .25s ease-out;
+     -moz-transition: all .25s ease-out;
+      -ms-transition: all .25s ease-out;
+       -o-transition: all .25s ease-out;
+          transition: all .25s ease-out;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+.tooltip a {
+	color:#fff;
+}
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #96b97d 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 20%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+.wrapper .tooltip1 {
+	margin-left: 50px;
+	padding-top: 0px;
+}
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+  display: block;
+}
+
+</style>
+<div class="title" id="comments">
+<h2 class="">
+<div class="altblock">
+<i style="font-size:28px;margin-top: 8px;" class="fa fa-plus-square" aria-hidden="true"></i>
+</div>
+<span class="mw-headline" id="qa_headline">8 篇笔记</span>
+<span class="mw-headline" id="user_add_note" style="float:right;line-height: 62px;padding-right: 14px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 写笔记</span>
+</h2>
+</div>
+<div id="postcomments" style="display:none;">
+<ol class="commentlist">
+<li class="comment byuser comment-author-tianqixin bypostauthor even thread-even depth-1" id="comment-695"><span class="comt-f">#8</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;tianqixin</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;429***967@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="../index.htm" tppabs="http://www.runoob.com/">&nbsp;&nbsp;参考地址</a></p></div></div><div class="comt-main" id="div-comment-695"><p>java 中若要在子类调用父类的方法，需使用关键字super。</p>
+<h2>实例</h2>
+<pre>
+class Animal{
+    void go(){
+        System.out.println("animal go");
+    }
+}
+
+class Dog extends Animal{
+    void go(){
+        //调用父类方法
+        super.go();
+    }
+}
+
+//驱动函数
+public static void  main(String[] args){
+    Dog dog=new Dog();
+    dog.go();
+}
+</pre>
+<p>输出结果：</p>
+<pre>animal go</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">tianqixin</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;tianqixin</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;429***967@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="../index.htm" tppabs="http://www.runoob.com/">&nbsp;&nbsp;参考地址</a></p></div></span>2年前 (2016-12-31)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-11094"><span class="comt-f">#7</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;我是小菜鸟</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;824***448@qq.com</p></div></div><div class="comt-main" id="div-comment-11094"><h2>面向对象编程——继承和多态</h2>
+<p>//---引用我课堂老师的讲义（詹老师）</p>
+<p><b>1、为什么使用继承</b></p>
+<p>从已有的类派生出新的类，称为继承。
+</p><p>
+在不同的类中也可能会有共同的特征和动作，可以把这些共同的特征和动作放在一个类中，让其它类共享。
+</p><p>
+因此可以定义一个通用类，然后将其扩展为其它多个特定类，这些特定类继承通用类中的特征和动作。
+</p><p>
+继承是 Java 中实现软件重用的重要手段，避免重复，易于维护，易于理解。
+</p><p><b>2、父类和子类</b></p>
+如果类 B 从类 A 派生，或者说类 B 扩展自类 A，或者说类 B 继承类 A，
+</b></p>
+则称类 A 为"父类"，也称为超类、基类；
+</p><p>称类 B 为"子类"，也称为次类、扩展类、派生类。
+</p><p>子类从它的父类中继承可访问的数据域和方法，也可以添加新的数据域和新的方法。
+</p><p>定义继承的语法：</p><pre>
+修饰符 class 子类名 extends 父类名
+</pre><p>
+例如：Shape 类是父类，其子类可以有 Circle 类、Rectangle 类、Triangle 类，等等。</p><p>
+继承的注意点：</p><ul><li>
+子类不是父类的子集，子类一般比父类包含更多的数据域和方法。
+</li><li>父类中的 private 数据域在子类中是不可见的，因此在子类中不能直接使用它们。
+</li><li>继承是为"是一个"的关系建模的，父类和其子类间必须存在"是一个"的关系，否则不能用继承。<br>
+但也并不是所有"是一个"的关系都应该用继承。例如，正方形是一个矩形，但不能让 Square 类来继承 Rectangle 类，因为正方形不能从矩形扩展得到任何东西。正确的继承关系是 Square 类继承 Shape 类</li><li>Java 只允许单一继承（即一个子类只能有一个直接父类），C++ 可以多继承（即一个子类有多个直接父类）。</li></ul>
+<p><b>3、super 关键字</b></p>
+<p>super 表示使用它的类的父类。super 可用于：</p>
+<ul><li>调用父类的构造方法；
+</li><li>调用父类的方法（子类覆盖了父类的方法时）；
+</li><li>访问父类的数据域（可以这样用但没有必要这样用）。
+</ul><p>
+调用父类的构造方法语法：</p>
+<pre>
+super();  
+
+或   
+
+super(参数列表);
+</pre><p>
+注意：super 语句必须是子类构造方法的第一条语句。不能在子类中使用父类构造方法名来调用父类构造方法。 父类的构造方法不被子类继承。调用父类的构造方法的唯一途径是使用 super 关键字，如果子类中没显式调用，则编译器自动将 super(); 作为子类构造方法的第一条语句。这会形成一个构造方法链。
+</p><p>静态方法中不能使用 super 关键字。</p><p>
+调用父类的方法语法：
+</p><pre>super.方法名(参数列表);
+</pre><p>如果是继承的方法，是没有必要使用 super 来调用，直接即可调用。但如果子类覆盖或重写了父类的方法，则只有使用 super 才能在子类中调用父类中的被重写的方法。
+</p><p><b>4、this 关键字</b></p>
+this 关键字表示当前对象。可用于：</p><ul>
+<li>调用当前类的构造方法，并且必须是方法的第一条语句。如：this(); 调用默认构造方法。this(参数); 调用带参构造方法。</li>
+<li>限定当前对象的数据域变量。一般用于方法内的局部变量与对象的数据域变量同名的情况。如 this.num = num。this.num 表示当前对象的数据域变量 num，而 num 表示方法中的局部变量。</li></ul><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">我是小菜鸟</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;我是小菜鸟</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;824***448@qq.com</p></div></span>2年前 (2017-04-17)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-18664"><span class="comt-f">#6</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Mr.先生</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;yu5***26@163.com</p></div></div><div class="comt-main" id="div-comment-18664"><p><strong>final 的作用随着所修饰的类型而不同</strong></p>
+<p>1、final 修饰类中的属性或者变量</p>
+<p>无论属性是基本类型还是引用类型，final 所起的作用都是变量里面存放的"值"不能变。</p>
+<p>这个值，对于基本类型来说，变量里面放的就是实实在在的值，如 1，"abc" 等。</p>
+<p>而引用类型变量里面放的是个地址，所以用 final 修饰引用类型变量指的是它里面的地址不能变，并不是说这个地址所指向的对象或数组的内容不可以变，这个一定要注意。</p>
+<p>例如：类中有一个属性是 <strong>final Person p=new Person("name");</strong> 那么你不能对 p 进行重新赋值，但是可以改变 p 里面属性的值 <strong>p.setName('newName');</strong></p>
+<p>final 修饰属性，声明变量时可以不赋值，而且一旦赋值就不能被修改了。对 final 属性可以在三个地方赋值：声明时、初始化块中、构造方法中，总之一定要赋值。 </p>
+<p>2、final修饰类中的方法</p>
+<p>作用：可以被继承，但继承后不能被重写。</p>
+<p>3、final修饰类</p>
+<p>作用：类不可以被继承。</p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">Mr.先生</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Mr.先生</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;yu5***26@163.com</p></div></span>1年前 (2017-10-11)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22711"><span class="comt-f">#5</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;WaterHole</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;710***626@qq.com</p></div></div><div class="comt-main" id="div-comment-22711">
+<p>java文件被编译成class文件时，在子类的所有构造函数中的第一行（第一个语句）会默认自动添加 super() 语句，在执行子类的构造函数前，总是会先执行父类中的构造函数。</p>
+<p><strong>在编写代码要注意：</strong></p>
+<ul><li>
+1.如果父类中不含 默认构造函数（就是 类名() ），那么子类中的super()语句就会执行失败，系统就会报错。一般 默认构造函数 编译时会自动添加，但如果类中已经有一个构造函数时，就不会添加。
+</li><li>
+2.执行父类构造函数的语句只能放在函数内语句的首句，不然会报错。
+</li></ul>
+<p>在继承关系中，在调用函数（方法）或者类中的成员变量时，JVM（JAVA虚拟机）会先检测当前的类（也就是子类）是否含有该函数或者成员变量，如果有，就执行子类中的，如果没有才会执行父类中的。如下：</p>
+<pre>public class Start
+{
+    public static void main(String[] args)
+    {
+        Cat cat=new Cat("Jack","黑色");
+        cat.eat();
+        cat.run();
+        cat.sleep();
+    }
+
+}
+
+class Animal 
+{
+    String name;
+    
+    public Animal(){}//必须要写这个构造函数，不然Cat类的代码会出错
+    
+    public Animal(String name)
+    {
+        this.name=name;
+    }
+    
+    void eat()
+    {
+        System.out.println(name+"正在吃");
+    }
+    
+    void run()
+    {
+        System.out.println(name+"正在奔跑");
+    }
+    
+    void sleep()
+    {
+        System.out.println(name+"正在睡觉");
+    }
+}
+
+class Cat extends Animal
+{
+    String color;
+    public Cat(String name,String color)
+    {
+        this.name=name;
+        this.color=color;
+    }
+    void eat()
+    {
+        System.out.println(color+"的"+name+"正在吃鱼");
+        }
+}</pre>
+<p>运行结果如下：</p>
+<pre>黑色的Jack正在吃鱼
+Jack正在奔跑
+Jack正在睡觉</pre>
+<p>当子类出现与父类一样的函数时，这个被称为 <strong>重写</strong> 也叫 <strong>覆盖</strong></p>
+<p>Object类是所有类的直接父类或间接父类，也就是说是所有类的根父类，这个可以运用于参数的传递</p>
+<p>如下：</p>
+<pre>public class Start
+{
+    public static void main(String[] args)
+    {
+        A a=new A();
+        B b=new B();
+        C c=new C();
+        D d=new D();
+        speak(a);
+        speak(b);
+        speak(c);
+        speak(d);
+    }
+// instanceof 关键字是用于比较类与类是否相同，相同返回true，不同返回false
+//当你不清楚你需要的参数是什么类型的，可以用Object来代替，Object可以代替任何类
+    static void speak(Object obj)
+    {
+        if(obj instanceof A)//意思是：如果参数是 A 类，那么就执行一下语句
+        {
+            A aobj=(A)obj;//这里是向下转换，需要强制转换
+            aobj.axx();
+        }
+        else if(obj instanceof B)
+        {
+            B bobj=(B)obj;
+            bobj.bxx();
+        }
+        else if(obj instanceof C)
+        {
+            C cobj=(C)obj;
+            cobj.cxx();
+        }
+    }
+}
+//这里举了四个类，他们的函数都不同，但都是 Object 类的子类
+class A
+{
+    void axx()
+    {
+        System.out.println("Good morning!");
+        System.out.println("This is A");
+    }
+}
+
+class B
+{
+    void bxx()
+    {
+        System.out.println("Holle!");
+        System.out.println("This is B");        
+    }
+}
+
+class C
+{
+    void cxx()
+    {
+        System.out.println("Look!");
+        System.out.println("This is C");        
+    }
+}
+
+class D
+{
+    void dxx()
+    {
+        System.out.println("Oh!Bad!");
+        System.out.println("This is D");        
+    }
+}</pre>
+<p>运行结果：</p>
+<pre>Good morning!
+This is A
+Holle!
+This is B
+Look!
+This is C</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">WaterHole</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;WaterHole</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;710***626@qq.com</p></div></span>10个月前 (01-06)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-28034"><span class="comt-f">#4</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;wyk123</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;101***6246@qq.com</p></div></div><div class="comt-main" id="div-comment-28034"><ul><li>子类的所有构造方法内部， 第一行会（隐式）自动先调用父类的无参构造函数super()；</li><li>如果子类构造方法第一行显式调用了父类构造方法，系统就不再调用无参的super()了。</li></ul>
+<p>实例：</p>
+<pre>class Base {
+&nbsp;&nbsp;&nbsp;&nbsp;public Base() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Base--默认构造方法");
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public Base(int c){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Base--有参构造方法--" + c);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+public class Derived extends Base {
+&nbsp;&nbsp;&nbsp;&nbsp;public Derived() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// super(); //系统会自动隐式先调用父类的无参构造函数 super(); //必须是第一行，否则不能编译 
+&nbsp;&nbsp;&nbsp;&nbsp;    System.out.println("Derived--默认构造方法");
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public Derived(int c) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// super(); //系统会自动隐式先调用父类的无参构造函数 super(); //必须是第一行，否则不能编译
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Derived--有参构造方法" + c);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public Derived(int a, int b) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(a); //如果子类构造方法第一行显式调用了父类构造方法，系统就不再调用无参的super()了。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Derived--有参构造方法--" + b);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("============子类无参============");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Derived no = new Derived();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("============子类有参============");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Derived have = new Derived(33);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("============子类有参============");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Derived have2 = new Derived(33, 55);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre>
+<p>运行结果如下：</p>
+<pre>============子类无参============
+Base--默认构造方法
+Derived--默认构造方法
+============子类有参============
+Base--默认构造方法
+Derived--有参构造方法33
+============子类有参============
+Base--有参构造方法--33
+Derived--有参构造方法--55</pre>
+<p><strong>注意：</strong>如果父类没有无参构造函数，创建子类时，不能编译，除非在构造函数代码体中的第一行显式调用父类有参构造函数。</p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">wyk123</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;wyk123</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;101***6246@qq.com</p></div></span>5个月前 (06-02)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28829"><span class="comt-f">#3</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;芳小酱</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;fan***u.ling@foxmail.com</p></div></div><div class="comt-main" id="div-comment-28829"><p data-title="Java 继承 - 子类不能直接继承父类中的 private 属性和方法">子类不能直接继承父类中的 private 属性和方法。</p>
+<pre>/**建立一个公共动物父类*/
+public class Animal {
+&nbsp;&nbsp;&nbsp;&nbsp;private String name;
+&nbsp;&nbsp;&nbsp;&nbsp;private int id;
+&nbsp;&nbsp;&nbsp;&nbsp;/*由于name和id都是私有的，所以子类不能直接继承，
+&nbsp;&nbsp;&nbsp;&nbsp;需要通过有参构造函数进行继承*/
+&nbsp;&nbsp;&nbsp;&nbsp;public Animal(String myname,int myid) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = myname;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id = myid;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;public void eat() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(name+"正在吃");
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;public void sleep() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(name+"正在睡");
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;public void introduction() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("大家好！我是"  +id+"号"+name +".");
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+}</pre>
+<p>子类 <strong>Penguin</strong> 需要通过关键字 <strong>super</strong> 进行声明</p>
+<pre>
+public class Penguin extends Animal {
+&nbsp;&nbsp;&nbsp;&nbsp;public Penguin(String myname,int myid) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(myname,myid); // 声明继承父类中的两个属性
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre>
+<p>具体通过有参构造函数进行继承。</p>
+<pre>public class PenguinQQ {
+&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// TODO Auto-generated method stub
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Penguin QQ = new Penguin("小冰",10086);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//调用一个有参构造方法
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QQ.eat();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QQ.sleep();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QQ.introduction();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre>
+<p>运行结果:</p>
+<pre>小冰正在吃
+小冰正在睡
+大家好！我是10086号小冰.</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:if(confirm('http://www.runoob.com/note/android-tutorial-canvas-api1.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/note/android-tutorial-canvas-api1.html'" tppabs="http://www.runoob.com/note/28829">芳小酱</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;芳小酱</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;fan***u.ling@foxmail.com</p></div></span>4个月前 (06-27)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-33446"><span class="comt-f">#2</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;nanjidifang</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;322***1300@qq.com</p></div></div><div class="comt-main" id="div-comment-33446"><p>Java 转型问题其实并不复杂，只要记住一句话：父类引用指向子类对象。</p>
+<p>什么叫父类引用指向子类对象，且听我慢慢道来。</p>
+<p>从 2 个名词开始说起<strong>：向上转型(upcasting)</strong> 、<strong>向下转型(downcasting)</strong>。</p>
+<p>举个例子：有2个类，Father 是父类，Son 类继承自 Father。</p>
+<pre>Father f1 = new Son();   // 这就叫 upcasting （向上转型)
+// 现在 f1 引用指向一个Son对象
+
+Son s1 = (Son)f1;   // 这就叫 downcasting (向下转型)
+// 现在f1 还是指向 Son对象</pre>
+<p><strong>第2个例子：</strong></p>
+<pre>Father f2 = new Father();
+Son s2 = (Son)f2;       // 出错，子类引用不能指向父类对象</pre>
+<p>你或许会问，第1个例子中：Son s1 = (Son)f1; 问什是正确的呢。</p>
+<p>很简单因为 f1 指向一个子类对象，<span class="marked">Father f1 = new Son();</span> 子类 s1 引用当然可以指向子类对象了。 </p>
+<p>而 f2 被传给了一个 Father 对象，<span class="marked">Father f2 = new Father();</span> 子类 s1 引用不能指向父类对象。</p>
+<p><strong>总结：</strong></p>
+<p>1、父类引用指向子类对象，而子类引用不能指向父类对象。</p>
+<p>2、把子类对象直接赋给父类引用叫upcasting向上转型，向上转型不用强制转换吗，如：</p>
+<pre>Father f1 = new Son();</pre>
+<p>3、把指向子类对象的父类引用赋给子类引用叫向下转型(downcasting)，要强制转换，如：</p>
+<p>f1 就是一个指向子类对象的父类引用。把f1赋给子类引用 s1 即 <strong>Son s1 = (Son)f1;</strong></p>
+<p>其中 f1 前面的(Son)必须加上，进行强制转换。</p>
+<blockquote><p>更多内容请查看：<a href="javascript:if(confirm('http://www.runoob.com/w3cnote/android-tutorial-canvas-api2.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/w3cnote/android-tutorial-canvas-api2.html'" tppabs="http://www.runoob.com/w3cnote/java-transformation-problem.html" target="_blank" rel="noopener nofollow">Java 转型问题</a></p></blockquote>
+<div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">nanjidifang</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;nanjidifang</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;322***1300@qq.com</p></div></span>3个月前 (08-01)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-35862"><span class="comt-f">#1</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;ToToXie</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;wdt***@163.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://www.icourse163.org/learn/android-tutorial-canvas-api3.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.icourse163.org/learn/android-tutorial-canvas-api3.html#/learn/content?type=detail&id=1004061164&sm=1'" tppabs="https://www.icourse163.org/learn/ZJU-1001542001?tid=1002776001#/learn/content?type=detail&id=1004061164&sm=1">&nbsp;&nbsp;参考地址</a></p></div></div><div class="comt-main" id="div-comment-35862"><p>对理解继承来说，最重要的事情是，知道哪些东西被继承了，或者说，子类从父类那里得到了什么。答案是：所有的东西，所有的父类的成员，包括变量和方法，都成为了子类的成员，除了构造方法。构造方法是父类所独有的，因为它们的名字就是类的名字，所以父类的构造方法在子类中不存在。除此之外，子类继承得到了父类所有的成员。</p>
+<p>但是得到不等于可以随便使用。每个成员有不同的访问属性，子类继承得到了父类所有的成员，但是不同的访问属性使得子类在使用这些成员时有所不同：有些父类的成员直接成为子类的对外的界面，有些则被深深地隐藏起来，即使子类自己也不能直接访问。下表列出了不同访问属性的父类成员在子类中的访问属性：</p>
+<table class="reference"><tbody><tr><td>父类成员访问属性</td><td>在父类中的含义</td>
+<td>在子类中的含义</td></tr>
+<tr><td>public</td><td>对所有人开放</td><td>对所有人开放</td></tr><tr><td>protected</td><td>只有包内其它类、自己和子类可以访问</td><td>只有包内其它类、自己和子类可以访问</td></tr><tr><td>缺省</td><td>只有包内其它类可以访问</td><td>如果子类与父类在同一个包内：只有包内其它类可以访问，否则：相当于private，不能访问</td></tr><tr><td>private</td><td>只有自己可以访问</td><td>不能访问</td></tr></tbody></table>
+<p>public的成员直接成为子类的public的成员，protected的成员也直接成为子类的protected的成员。Java的protected的意思是包内和子类可访问，所以它比缺省的访问属性要宽一些。而对于父类的缺省的未定义访问属性的成员来说，他们是在父类所在的包内可见，如果子类不属于父类的包，那么在子类里面，这些缺省属性的成员和private的成员是一样的：不可见。父类的private的成员在子类里仍然是存在的，只是子类中不能直接访问。我们不可以在子类中重新定义继承得到的成员的访问属性。如果我们试图重新定义一个在父类中已经存在的成员变量，那么我们是在定义一个与父类的成员变量完全无关的变量，在子类中我们可以访问这个定义在子类中的变量，在父类的方法中访问父类的那个。尽管它们同名但是互不影响。</p>
+<p>在构造一个子类的对象时，父类的构造方法也是会被调用的，而且父类的构造方法在子类的构造方法之前被调用。在程序运行过程中，子类对象的一部分空间存放的是父类对象。因为子类从父类得到继承，在子类对象初始化过程中可能会使用到父类的成员。所以父类的空间正是要先被初始化的，然后子类的空间才得到初始化。在这个过程中，如果父类的构造方法需要参数，如何传递参数就很重要了。
+</p>
+<div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">ToToXie</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;ToToXie</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;wdt***@163.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://www.icourse163.org/learn/android-tutorial-canvas-api3.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.icourse163.org/learn/android-tutorial-canvas-api3.html#/learn/content?type=detail&id=1004061164&sm=1'" tppabs="https://www.icourse163.org/learn/ZJU-1001542001?tid=1002776001#/learn/content?type=detail&id=1004061164&sm=1">&nbsp;&nbsp;参考地址</a></p></div></span>2周前 (10-13)</div></div></li>
+</ol>
+<div class="pagenav">
+</div>
+</div>
+<div id="respond" class="no_webshot">
+<div class="comment-signarea" style="display:none; padding: 20px 20px;">
+<h3 class="text-muted" id="share_code" style="color: #799961;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 点我分享笔记</h3>
+</div>
+<form action="http://www.runoob.com/wp-content/themes/runoob/option/addnote.php" method="post" id="commentform" style="display:none;">
+<div class="comt">
+<div class="comt-title">
+<i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i> <p><a id="cancel-comment-reply-link" href="javascript:;">取消</a></p>
+</div>
+<div class="comt-box">
+<div id="mded"></div>
+<div class="comt-ctrl">
+<div class="comt-tips"><input type='hidden' name='comment_post_ID' value='5025' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+<button type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-pencil" aria-hidden="true"></i> 分享笔记</button>
+</div>
+</div>
+<div class="comt-comterinfo">
+<ul id="comment-author-info">
+<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="text-muted">昵称 (必填)</span></li>
+<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="text-muted">邮箱 (必填)</span></li>
+<li class="form-inline"><label class="hide" for="url">引用地址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="引用地址"><span class="text-muted">引用地址</span></li>
+</ul>
+</div>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+$(function() {
+	//初始化编辑器
+	
+	var editor = new Simditor({
+	  textarea: $('#mded'),
+	  placeholder: '写笔记...',
+	  upload:false,
+	 // upload: {url:'../api/comment_upload_file.php.htm'/*tpa=http://www.runoob.com/api/comment_upload_file.php*/,params: null,fileKey: 'upload_file',connectionCount: 1,leaveConfirm: '文件正在上传，您确定离开?'},
+	  defaultImage: '../images/logo.png'/*tpa=http://www.runoob.com/images/logo.png*/,
+	  codeLanguages: '',
+	  toolbar: [  'bold','code','ul','ol','image' ]
+	});
+	editor.on('selectionchanged', function() {
+		$(".code-popover").hide();
+	});
+
+	// 提交数据
+	$("#share_code").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		
+	});
+	$("#user_add_note").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		$('html, body').animate({
+       	    scrollTop: $("#respond").offset().top
+    	}, 200);
+	});
+
+	// 提交笔记
+	var commentform=$('#commentform');
+	commentform.prepend('<div id="comment-status" style="display:none;" ></div>');
+	var statusdiv=$('#comment-status');
+	
+	commentform.submit(function(e){
+		e.preventDefault();
+		var noteContent = editor.getValue();
+		// console.log(noteContent);
+		noteContent = noteContent.replace(/<pre><code>/g,"<pre>");
+		noteContent = noteContent.replace(/<\/code><\/pre>/g,"</pre>");
+		
+		// 系列化表单数据
+		var comment_parent = 0;
+		var is_user_logged_in = $("#is_user_logged_in").val();
+		var comment_post_ID =  5025;
+		var _wp_unfiltered_html_comment = $("#_wp_unfiltered_html_comment").val();
+		var comment = noteContent;
+		var author = $("#author").val();
+		var url = $("#url").val();
+		var email = $("#email").val();
+		if(isBlank(author) && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">请输入昵称！</p>').show();
+		} else if(isBlank(email)  && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">请输入邮箱！</p>').show();
+		} else {
+			// var formdata=commentform.serialize() + "&comment=" + noteContent ;
+			// 添加状态信息
+			statusdiv.html('<p>Processing...</p>').show();
+			// 获取表单提交地址
+			var formurl=commentform.attr('action');
+			
+			// 异步提交
+			$.ajax({
+					type: 'post',
+					url: formurl,
+					dataType:'json',
+					data: {"comment_parent":comment_parent,"comment_post_ID":comment_post_ID, "_wp_unfiltered_html_comment":_wp_unfiltered_html_comment,"comment":comment,"url":url, "email":email,"author":author},
+					error: function(XMLHttpRequest, textStatus, errorThrown){
+					statusdiv.html('<p class="ajax-error" >数据不完整或表单提交太快了！</p>').show();
+				},
+				success: function(data, textStatus){
+					if(data.errorno=="0") {
+						$("#submit").prop('disabled', true);
+						statusdiv.html('<p class="ajax-success" >笔记已提交审核，感谢分享笔记！</p>').show();
+						alert('笔记已提交审核，感谢分享笔记！');
+					}else{
+						statusdiv.html('<p class="ajax-error" >'+data.msg+'</p>').show();
+					}
+					commentform.find('textarea[name=comment]').val('');
+				}
+			});
+			setTimeout(function(){
+		        $("#submit").prop('disabled', false);
+		    }, 10*1000);
+		}
+		return false;
+
+	});
+	
+});
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
+}
+</script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/css/qa.css-1.42.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/css/qa.css?1.42">
+<link rel="stylesheet" type="text/css" href="../../cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css" tppabs="http://cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css" />
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/module.js" tppabs="http://static.runoob.com/assets/simditor/2.3.6/scripts/module.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys.js" tppabs="http://static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/uploader.js" tppabs="http://static.runoob.com/assets/simditor/2.3.6/scripts/uploader.js"></script>
+<script type="text/javascript" src="../../cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js" tppabs="http://cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js"></script> <div class="sidebar-box ad-box ad-box-large">
+<div id="ad-336280">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5751451760833794" data-ad-slot="1691338467" data-ad-format="auto"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div>
+</div>
+<div class="fivecol last right-column">
+<style>
+.sidebar-tree .double-li {
+	width:300px;
+}
+.sidebar-tree .double-li li {
+    width: 44%;
+    line-height: 1.5em;
+    border-bottom: 1px solid #ccc;
+    float: left;
+    display: inline;
+}
+</style>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here" style="margin: 0 auto;">
+<a href="javascript:void(0);" style="font-size: 16px; color:#64854c;font-weight:bold;"> <i class="fa fa-list" aria-hidden="true"></i> 分类导航</a>
+</div>
+<div class="sidebar-box sidebar-cate">
+<div class="sidebar-tree">
+<ul><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> HTML / CSS</a><ul class="double-li"><li><a title="HTML 教程" href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML 教程</a></li><li><a title="HTML5 教程" href="../html/html5-intro.html" tppabs="http://www.runoob.com/html/html5-intro.html">HTML5 教程</a></li><li><a title="CSS 教程" href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS 教程</a></li><li><a title="CSS3 教程" href="../css3/css3-tutorial.html" tppabs="http://www.runoob.com/css3/css3-tutorial.html">CSS3 教程</a></li><li><a title="Bootstrap3 教程" href="../bootstrap/bootstrap-tutorial.html" tppabs="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap3 教程</a></li><li><a title="Bootstrap4 教程" href="../bootstrap4/bootstrap4-tutorial.html" tppabs="http://www.runoob.com/bootstrap4/bootstrap4-tutorial.html">Bootstrap4 教程</a></li><li><a title="Font Awesome 教程" href="../font-awesome/fontawesome-tutorial.html" tppabs="http://www.runoob.com/font-awesome/fontawesome-tutorial.html">Font Awesome 教程</a></li><li><a title="Foundation 教程" href="../foundation/foundation-tutorial.html" tppabs="http://www.runoob.com/foundation/foundation-tutorial.html">Foundation 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> JavaScript</a><ul class="double-li"><li><a title="JavaScript 教程" href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JavaScript 教程</a></li><li><a title="HTML DOM 教程" href="../htmldom/htmldom-tutorial.html" tppabs="http://www.runoob.com/htmldom/htmldom-tutorial.html">HTML DOM 教程</a></li><li><a title="jQuery 教程" href="../jquery/jquery-tutorial.html" tppabs="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery 教程</a></li><li><a title="AngularJS 教程" href="../angularjs/angularjs-tutorial.html" tppabs="http://www.runoob.com/angularjs/angularjs-tutorial.html">AngularJS 教程</a></li><li><a title="AngularJS2 教程" href="../angularjs2/angularjs2-tutorial.html" tppabs="http://www.runoob.com/angularjs2/angularjs2-tutorial.html">AngularJS2 教程</a></li><li><a title="Vue.js 教程" href="../vue2/vue-tutorial.html" tppabs="http://www.runoob.com/vue2/vue-tutorial.html">Vue.js 教程</a></li><li><a title="React 教程" href="../react/react-tutorial.html" tppabs="http://www.runoob.com/react/react-tutorial.html">React 教程</a></li><li><a title="jQuery UI 教程" href="../jqueryui/jqueryui-tutorial.html" tppabs="http://www.runoob.com/jqueryui/jqueryui-tutorial.html">jQuery UI 教程</a></li><li><a title="jQuery EasyUI 教程" href="../jeasyui/jqueryeasyui-tutorial.html" tppabs="http://www.runoob.com/jeasyui/jqueryeasyui-tutorial.html">jQuery EasyUI 教程</a></li><li><a title="Node.js 教程" href="../nodejs/nodejs-tutorial.html" tppabs="http://www.runoob.com/nodejs/nodejs-tutorial.html">Node.js 教程</a></li><li><a title="AJAX 教程" href="../ajax/ajax-tutorial.html" tppabs="http://www.runoob.com/ajax/ajax-tutorial.html">AJAX 教程</a></li><li><a title="JSON 教程" href="../json/json-tutorial.html" tppabs="http://www.runoob.com/json/json-tutorial.html">JSON 教程</a></li><li><a title="Highcharts 教程" href="../highcharts/highcharts-tutorial.html" tppabs="http://www.runoob.com/highcharts/highcharts-tutorial.html">Highcharts 教程</a></li><li><a title="Google 地图 教程" href="../googleapi/google-maps-basic.html" tppabs="http://www.runoob.com/googleapi/google-maps-basic.html">Google 地图 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 服务端</a><ul class="double-li"><li><a title="PHP 教程" href="../php/php-tutorial.html" tppabs="http://www.runoob.com/php/php-tutorial.html">PHP 教程</a></li><li><a title="Python 教程" href="../python/python-tutorial.html" tppabs="http://www.runoob.com/python/python-tutorial.html">Python 教程</a></li><li><a title="Python3 教程" href="../python3/python3-tutorial.html" tppabs="http://www.runoob.com/python3/python3-tutorial.html">Python3 教程</a></li><li><a title="Django 教程" href="../django/django-tutorial.html" tppabs="http://www.runoob.com/django/django-tutorial.html">Django 教程</a></li><li><a title="Linux 教程" href="../linux/linux-tutorial.html" tppabs="http://www.runoob.com/linux/linux-tutorial.html">Linux 教程</a></li><li><a title="Docker 教程" href="../docker/docker-tutorial.html" tppabs="http://www.runoob.com/docker/docker-tutorial.html">Docker 教程</a></li><li><a title="Ruby 教程" href="../ruby/ruby-tutorial.html" tppabs="http://www.runoob.com/ruby/ruby-tutorial.html">Ruby 教程</a></li><li><a title="Java 教程" href="java-tutorial.html" tppabs="http://www.runoob.com/java/java-tutorial.html">Java 教程</a></li><li><a title="C 教程" href="../cprogramming/c-tutorial.html" tppabs="http://www.runoob.com/c/c-tutorial.html">C 教程</a></li><li><a title="C++ 教程" href="../cplusplus/cpp-tutorial.html" tppabs="http://www.runoob.com/cplusplus/cpp-tutorial.html">C++ 教程</a></li><li><a title="Perl 教程" href="../perl/perl-tutorial.html" tppabs="http://www.runoob.com/perl/perl-tutorial.html">Perl 教程</a></li><li><a title="Servlet 教程" href="../servlet/servlet-tutorial.html" tppabs="http://www.runoob.com/servlet/servlet-tutorial.html">Servlet 教程</a></li><li><a title="JSP 教程" href="../jsp/jsp-tutorial.html" tppabs="http://www.runoob.com/jsp/jsp-tutorial.html">JSP 教程</a></li><li><a title="Lua 教程" href="../lua/lua-tutorial.html" tppabs="http://www.runoob.com/lua/lua-tutorial.html">Lua 教程</a></li><li><a title="Scala 教程" href="../scala/scala-tutorial.html" tppabs="http://www.runoob.com/scala/scala-tutorial.html">Scala 教程</a></li><li><a title="Go 教程" href="../go/go-tutorial.html" tppabs="http://www.runoob.com/go/go-tutorial.html">Go 教程</a></li><li><a title="设计模式" href="../design-pattern/design-pattern-tutorial.html" tppabs="http://www.runoob.com/design-pattern/design-pattern-tutorial.html">设计模式</a></li><li><a title="正则表达式" href="../regexp/regexp-tutorial.html" tppabs="http://www.runoob.com/regexp/regexp-tutorial.html">正则表达式</a></li><li><a title="Maven 教程" href="../maven/maven-tutorial.html" tppabs="http://www.runoob.com/maven/maven-tutorial.html">Maven 教程</a></li><li><a title="NumPy 教程" href="../numpy/numpy-tutorial.html" tppabs="http://www.runoob.com/numpy/numpy-tutorial.html">NumPy 教程</a></li><li><a title="ASP 教程" href="../asp/asp-tutorial.html" tppabs="http://www.runoob.com/asp/asp-tutorial.html">ASP 教程</a></li><li><a title="AppML 教程" href="../appml/appml-tutorial.html" tppabs="http://www.runoob.com/appml/appml-tutorial.html">AppML 教程</a></li><li><a title="VBScript 教程" href="../vbscript/vbscript-tutorial.html" tppabs="http://www.runoob.com/vbscript/vbscript-tutorial.html">VBScript 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 数据库</a><ul class="double-li"><li><a title="SQL 教程" href="../sql/sql-tutorial.html" tppabs="http://www.runoob.com/sql/sql-tutorial.html">SQL 教程</a></li><li><a title="Mysql 教程" href="../mysql/mysql-tutorial.html" tppabs="http://www.runoob.com/mysql/mysql-tutorial.html">Mysql 教程</a></li><li><a title="SQLite 教程" href="../sqlite/sqlite-tutorial.html" tppabs="http://www.runoob.com/sqlite/sqlite-tutorial.html">SQLite 教程</a></li><li><a title="MongoDB 教程" href="../mongodb/mongodb-tutorial.html" tppabs="http://www.runoob.com/mongodb/mongodb-tutorial.html">MongoDB 教程</a></li><li><a title="Redis 教程" href="../redis/redis-tutorial.html" tppabs="http://www.runoob.com/redis/redis-tutorial.html">Redis 教程</a></li><li><a title="Memcached 教程" href="../Memcached/Memcached-tutorial.html" tppabs="http://www.runoob.com/Memcached/Memcached-tutorial.html">Memcached 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 移动端</a><ul class="double-li"><li><a title="Android 教程" href="../w3cnote/android-tutorial-intro.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-intro.html">Android 教程</a></li><li><a title="Swift 教程" href="../swift/swift-tutorial.html" tppabs="http://www.runoob.com/swift/swift-tutorial.html">Swift 教程</a></li><li><a title="jQuery Mobile 教程" href="../jquerymobile/jquerymobile-tutorial.html" tppabs="http://www.runoob.com/jquerymobile/jquerymobile-tutorial.html">jQuery Mobile 教程</a></li><li><a title="ionic 教程" href="../ionic/ionic-tutorial.html" tppabs="http://www.runoob.com/ionic/ionic-tutorial.html">ionic 教程</a></li><li><a title="Kotlin 教程" href="../kotlin/kotlin-tutorial.html" tppabs="http://www.runoob.com/kotlin/kotlin-tutorial.html">Kotlin 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> XML 教程</a><ul class="double-li"><li><a title="XML 教程" href="../xml/xml-tutorial.html" tppabs="http://www.runoob.com/xml/xml-tutorial.html">XML 教程</a></li><li><a title="DTD 教程" href="../dtd/dtd-tutorial.html" tppabs="http://www.runoob.com/dtd/dtd-tutorial.html">DTD 教程</a></li><li><a title="XML DOM 教程" href="../dom/dom-tutorial.html" tppabs="http://www.runoob.com/dom/dom-tutorial.html">XML DOM 教程</a></li><li><a title="XSLT 教程" href="../xsl/xsl-tutorial.html" tppabs="http://www.runoob.com/xsl/xsl-tutorial.html">XSLT 教程</a></li><li><a title="XPath 教程" href="../xpath/xpath-tutorial.html" tppabs="http://www.runoob.com/xpath/xpath-tutorial.html">XPath 教程</a></li><li><a title="XQuery 教程" href="../xquery/xquery-tutorial.html" tppabs="http://www.runoob.com/xquery/xquery-tutorial.html">XQuery 教程</a></li><li><a title="XLink 教程" href="../xlink/xlink-tutorial.html" tppabs="http://www.runoob.com/xlink/xlink-tutorial.html">XLink 教程</a></li><li><a title="XPointer 教程" href="../xlink/xlink-tutorial.html" tppabs="http://www.runoob.com/xlink/xlink-tutorial.html">XPointer 教程</a></li><li><a title="XML Schema 教程" href="../schema/schema-tutorial.html" tppabs="http://www.runoob.com/schema/schema-tutorial.html">XML Schema 教程</a></li><li><a title="XSL-FO 教程" href="../xslfo/xslfo-tutorial.html" tppabs="http://www.runoob.com/xslfo/xslfo-tutorial.html">XSL-FO 教程</a></li><li><a title="SVG 教程" href="../svg/svg-tutorial.html" tppabs="http://www.runoob.com/svg/svg-tutorial.html">SVG 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> ASP.NET</a><ul class="double-li"><li><a title="ASP.NET 教程" href="../aspnet/aspnet-tutorial.html" tppabs="http://www.runoob.com/aspnet/aspnet-tutorial.html">ASP.NET 教程</a></li><li><a title="C# 教程" href="../csharp/csharp-tutorial.html" tppabs="http://www.runoob.com/csharp/csharp-tutorial.html">C# 教程</a></li><li><a title="Web Pages 教程" href="../aspnet/webpages-intro.html" tppabs="http://www.runoob.com/aspnet/webpages-intro.html">Web Pages 教程</a></li><li><a title="Razor 教程" href="../aspnet/razor-intro.html" tppabs="http://www.runoob.com/aspnet/razor-intro.html">Razor 教程</a></li><li><a title="MVC 教程" href="../aspnet/mvc-intro.html" tppabs="http://www.runoob.com/aspnet/mvc-intro.html">MVC 教程</a></li><li><a title="Web Forms 教程" href="../aspnet/aspnet-intro.html" tppabs="http://www.runoob.com/aspnet/aspnet-intro.html">Web Forms 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> Web Service</a><ul class="double-li"><li><a title="Web Service 教程" href="../webservices/webservices-tutorial.html" tppabs="http://www.runoob.com/webservices/webservices-tutorial.html">Web Service 教程</a></li><li><a title="WSDL 教程" href="../wsdl/wsdl-tutorial.html" tppabs="http://www.runoob.com/wsdl/wsdl-tutorial.html">WSDL 教程</a></li><li><a title="SOAP 教程" href="../soap/soap-tutorial.html" tppabs="http://www.runoob.com/soap/soap-tutorial.html">SOAP 教程</a></li><li><a title="RSS 教程" href="../rss/rss-tutorial.html" tppabs="http://www.runoob.com/rss/rss-tutorial.html">RSS 教程</a></li><li><a title="RDF 教程" href="../rdf/rdf-tutorial.html" tppabs="http://www.runoob.com/rdf/rdf-tutorial.html">RDF 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 开发工具</a><ul class="double-li"><li><a title="Eclipse 教程" href="../eclipse/eclipse-tutorial.html" tppabs="http://www.runoob.com/eclipse/eclipse-tutorial.html">Eclipse 教程</a></li><li><a title="Git 教程" href="../git/git-tutorial.html" tppabs="http://www.runoob.com/git/git-tutorial.html">Git 教程</a></li><li><a title="Svn 教程" href="../svn/svn-tutorial.html" tppabs="http://www.runoob.com/svn/svn-tutorial.html">Svn 教程</a></li><li><a title="Firebug 教程" href="../firebug/firebug-tutorial.html" tppabs="http://www.runoob.com/firebug/firebug-tutorial.html">Firebug 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 网站建设</a><ul class="double-li"><li><a title="HTTP 教程" href="../http/http-tutorial.html" tppabs="http://www.runoob.com/http/http-tutorial.html">HTTP 教程</a></li><li><a title="网站建设指南" href="../web/web-buildingprimer.html" tppabs="http://www.runoob.com/web/web-buildingprimer.html">网站建设指南</a></li><li><a title="浏览器信息" href="../browsers/browser-information.html" tppabs="http://www.runoob.com/browsers/browser-information.html">浏览器信息</a></li><li><a title="网站主机教程" href="../hosting/hosting-tutorial.html" tppabs="http://www.runoob.com/hosting/hosting-tutorial.html">网站主机教程</a></li><li><a title="TCP/IP 教程" href="../tcpip/tcpip-tutorial.html" tppabs="http://www.runoob.com/tcpip/tcpip-tutorial.html">TCP/IP 教程</a></li><li><a title="W3C 教程" href="../w3c/w3c-tutorial.html" tppabs="http://www.runoob.com/w3c/w3c-tutorial.html">W3C 教程</a></li><li><a title="网站品质" href="../quality/quality-tutorial.html" tppabs="http://www.runoob.com/quality/quality-tutorial.html">网站品质</a></li></ul></li></ul> </div>
+</div>
+</div>
+<br>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here">
+<a href="javascript:void(0);">Advertisement</a>
+</div>
+<div class="ad-600160" id="sidebar-right-ads">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div></div>
+</div>
+<script>
+var aid = 5025;
+function coll() {
+	$.post( '../wp-content/themes/runoob/option/user/userinfo.php.htm'/*tpa=http://www.runoob.com/wp-content/themes/runoob/option/user/userinfo.php*/, {aid:aid, action:"collarticle", opt:'add'},function( data ) {
+		if(data.error==0) {
+			$("#content").find("h1:first").find("a").attr("href","javascript:void(0);");
+			$("#content").find("h1:first").find("img").attr("src","../wp-content/themes/runoob/assets/img/coll2.png"/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/coll2.png*/).css({width:32+"px",height:32+"px"});
+		}
+		alert(data.msg);
+	},'json');
+}
+</script>
+<script src="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js-1.0" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js?1.0"></script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css-1.0.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css?1.0" />
+<script type="text/javascript">
+$.feedback({
+    ajaxURL: '../feedback/runoob_feedback.php.htm'/*tpa=http://www.runoob.com/feedback/runoob_feedback.php*/,
+    html2canvasURL: '../wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas.js'/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas.js*/
+});
+</script>
+<button class="feedback-btn feedback-btn-gray">反馈/建议</button>
+<div id="footer" class="mar-t50">
+<div class="runoob-block">
+<div class="runoob cf">
+<dl>
+<dt>
+在线实例
+</dt>
+<dd>
+&middot;<a target="_blank" href="../html/html-examples.html" tppabs="http://www.runoob.com/html/html-examples.html">HTML 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../css/css-examples.html" tppabs="http://www.runoob.com/css/css-examples.html">CSS 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../js/js-examples.html" tppabs="http://www.runoob.com/js/js-examples.html">JavaScript 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../ajax/ajax-examples.html" tppabs="http://www.runoob.com/ajx/ajax-examples.html">Ajax 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../jquery/jquery-examples.html" tppabs="http://www.runoob.com/jquery/jquery-examples.html">jQuery 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../xml/xml-examples.html" tppabs="http://www.runoob.com/xml/xml-examples.html">XML 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="java-examples.html" tppabs="http://www.runoob.com/java/java-examples.html">Java 实例</a>
+</dd>
+</dl>
+<dl>
+<dt>
+字符集&工具
+</dt>
+<dd>
+&middot; <a target="_blank" href="../charsets/html-charsets.html" tppabs="http://www.runoob.com/charsets/html-charsets.html">HTML 字符集设置</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-ascii.html" tppabs="http://www.runoob.com/tags/html-ascii.html">HTML ASCII 字符集</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/ref-entities.html" tppabs="http://www.runoob.com/tags/ref-entities.html">HTML ISO-8859-1</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-symbols.html" tppabs="http://www.runoob.com/tags/html-symbols.html">HTML 实体符号</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-colorpicker.html" tppabs="http://www.runoob.com/tags/html-colorpicker.html">HTML 拾色器</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="javascript:if(confirm('http://c.runoob.com/front-end/53  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c.runoob.com/front-end/53'" tppabs="http://c.runoob.com/front-end/53">JSON 格式化工具</a>
+</dd>
+</dl>
+<dl>
+<dt>
+最新更新
+</dt>
+<dd>
+&middot;
+<a href="../w3cnote/csharp-init-variable.html" tppabs="http://www.runoob.com/w3cnote/csharp-init-variable.html" title="关于 C# 中的变量的初始化问题浅谈">关于 C# 中的变...</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/scrapy-detail.html" tppabs="http://www.runoob.com/w3cnote/scrapy-detail.html" title="Scrapy 入门教程">Scrapy 入门教程</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/c-structures-intro.html" tppabs="http://www.runoob.com/w3cnote/c-structures-intro.html" title="C 结构体">C 结构体</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/matplotlib-tutorial.html" tppabs="http://www.runoob.com/w3cnote/matplotlib-tutorial.html" title="Matplotlib 教程">Matplotlib 教程</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-matplotlib.html" tppabs="http://www.runoob.com/numpy/numpy-matplotlib.html" title="NumPy  Matplotlib">NumPy Matplotlib</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-io.html" tppabs="http://www.runoob.com/numpy/numpy-io.html" title="NumPy IO">NumPy IO</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-linear-algebra.html" tppabs="http://www.runoob.com/numpy/numpy-linear-algebra.html" title="NumPy 线性代数">NumPy 线性代数</a>
+</dd>
+</dl>
+<dl>
+<dt>
+站点信息
+</dt>
+<dd>
+&middot;
+<a target="_blank" href="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="external nofollow">意见反馈</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../disclaimer.htm" tppabs="http://www.runoob.com/disclaimer">免责声明</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../aboutus.htm" tppabs="http://www.runoob.com/aboutus">关于我们</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../archives.htm" tppabs="http://www.runoob.com/archives">文章归档</a>
+</dd>
+</dl>
+<div class="search-share">
+<div class="app-download">
+<div>
+<strong>关注微信</strong>
+</div>
+</div>
+<div class="share">
+<img width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode.png" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="w-1000 copyright">
+Copyright &copy; 2013-2018 <strong><a href="../index.htm" tppabs="http://www.runoob.com/" target="_blank">菜鸟教程</a></strong>&nbsp;
+<strong><a href="../index.htm" tppabs="http://www.runoob.com/" target="_blank">runoob.com</a></strong> All Rights Reserved. 备案号：闽ICP备15012807号-1
+</div>
+</div>
+<div class="fixed-btn">
+<a class="go-top" href="javascript:void(0)" title="返回顶部"> <i class="fa fa-angle-up"></i></a>
+<a class="qrcode" href="javascript:void(0)" title="关注我们"><i class="fa fa-qrcode"></i></a>
+<a class="writer" style="display:none" href="javascript:void(0)" title="标记/收藏"><i class="fa fa-star" aria-hidden="true"></i></a>
+<div id="bottom-qrcode" class="modal panel-modal hide fade in">
+<h4>微信关注</h4>
+<div class="panel-body"><img alt="微信关注" width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode.png" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png"></div>
+</div>
+</div>
+<div class="hide_box"></div>
+<div class="shang_box">
+<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="../../static.runoob.com/images/dashang/close.jpg" tppabs="http://static.runoob.com/images/dashang/close.jpg" alt="取消" /></a>
+<div class="shang_tit">
+<p>感谢您的支持，我会继续努力的!</p>
+</div>
+<div class="shang_payimg">
+<img src="../../static.runoob.com/images/dashang/weipayimg.png.jpg" tppabs="http://static.runoob.com/images/dashang/weipayimg.png" alt="扫码支持" title="扫一扫" />
+</div>
+<div class="pay_explain">扫码打赏，你说多少就多少</div>
+<div class="shang_payselect">
+<div class="pay_item  checked" data-id="weipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/wechat.jpg" tppabs="http://static.runoob.com/images/dashang/wechat.jpg" alt="微信" /></span>
+</div>
+<div class="pay_item" data-id="alipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/alipay.jpg" tppabs="http://static.runoob.com/images/dashang/alipay.jpg" alt="支付宝" /></span>
+</div>
+</div>
+<div class="shang_info">
+<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+<p><a href="javascript:if(confirm('http://c.runoob.com/codedemo/5348  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c.runoob.com/codedemo/5348'" tppabs="http://c.runoob.com/codedemo/5348" target="_blank"><span style=" font-size: 14px;color: #000;font-weight: bold;">点我查看本站打赏源码！</span></a></p>
+</div>
+</div>
+<div id="testClick"></div>
+<div style="display:none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "../../hm.baidu.com/hm.js-3eec0b7da6548cf07db3bc477ea905ee"/*tpa=https://hm.baidu.com/hm.js?3eec0b7da6548cf07db3bc477ea905ee*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="../../www.googletagmanager.com/gtag/js-id=UA-84264393-2" tppabs="https://www.googletagmanager.com/gtag/js?id=UA-84264393-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-84264393-2');
+</script>
+</div>
+<script>
+window.jsui={
+    www: 'http://wwww.runoob.com/',
+    uri: '//www.runoob.com/wp-content/themes/runoob'
+};
+</script>
+<style>
+ol,ul{list-style:none}.cd-switcher a{text-decoration:none;outline:0}.cd-switcher a:hover{text-decoration:underline}a:focus{outline:0;-moz-outline:0}.main_nav{width:300px;height:60px;margin:60px auto 10px auto}.main_nav li{float:left;width:60px;margin-right:10px;font-size:16px;padding:.6em 1em;border-radius:3em;background:#2f889a;text-align:center}.main_nav li a{color:#fff}.errtip{background-color:#fceaea;color:#db5353;padding:8px 15px;font-size:14px;border:1px solid #fc9797;border-radius:5px}.cd-user-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(52,54,66,0.9);z-index:3;overflow-y:auto;cursor:pointer;visibility:hidden;opacity:0;-webkit-transition:opacity .3s 0,visibility 0 .3s;-moz-transition:opacity .3s 0,visibility 0 .3s;transition:opacity .3s 0,visibility 0 .3s}.cd-user-modal.is-visible{visibility:visible;opacity:1;-webkit-transition:opacity .3s 0,visibility 0 0;-moz-transition:opacity .3s 0,visibility 0 0;transition:opacity .3s 0,visibility 0 0}.cd-user-modal.is-visible .cd-user-modal-container{-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}.cd-user-modal-container{position:relative;width:90%;max-width:500px;background:#FFF;margin:3em auto 4em;cursor:auto;border-radius:.25em;-webkit-transform:translateY(-30px);-moz-transform:translateY(-30px);-ms-transform:translateY(-30px);-o-transform:translateY(-30px);transform:translateY(-30px);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;transition-property:transform;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;transition-duration:.3s}.cd-user-modal-container .cd-switcher:after{content:"";display:table;clear:both}.cd-user-modal-container .cd-switcher li{width:50%;float:left;text-align:center}.cd-user-modal-container .cd-switcher li:first-child a{border-radius:.25em 0 0 0}.cd-user-modal-container .cd-switcher li:last-child a{border-radius:0 .25em 0 0}.cd-user-modal-container .cd-switcher a{font-size:1.2em;font-weight:bold;display:block;width:100%;height:50px;line-height:50px;background:#e8f1e2;color:#96b880}.cd-user-modal-container .cd-switcher a.selected{background:#FFF;color:#505260}@media only screen and (min-width:600px){.cd-user-modal-container{margin:4em auto}.cd-user-modal-container .cd-switcher a{height:70px;line-height:70px}}.cd-form{padding:1.4em}.cd-form .fieldset{position:relative;margin:1.4em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form label{font-size:16px;font-size:.875rem}.cd-form label.image-replace{display:inline-block;position:absolute;left:15px;top:50%;bottom:auto;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);height:20px;width:20px;overflow:hidden;text-indent:100%;white-space:nowrap;color:transparent;text-shadow:none;background-repeat:no-repeat;background-position:50% 0}.cd-form label.cd-username{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-username.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*/}.cd-form label.cd-email{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-email.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*/}.cd-form label.cd-password{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-password.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*/}.cd-form input{margin:0;padding:0;border-radius:.25em}.cd-form input.full-width{width:80%}.cd-form input.full-width2{width:94%}.cd-form input.has-padding{padding:12px 20px 12px 50px}.cd-form input.has-border{border:1px solid #d2d8d8;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}.cd-form input.has-border:focus{border-color:#98b880;box-shadow:0 0 5px rgba(52,54,66,0.1);outline:0}.cd-form input.has-error{border:1px solid #d76666}.cd-form input[type=password]{padding-right:65px}.cd-form input[type=submit]{padding:16px 0;cursor:pointer;background:#96b97d;color:#FFF;font-weight:bold;border:0;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;font-size:1.2em;font-weight:bold}.no-touch .cd-form input[type=submit]:hover,.no-touch .cd-form input[type=submit]:focus{background:#3599ae;outline:0}@media only screen and (min-width:600px){.cd-form{padding:2em}.cd-form .fieldset{margin:2em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form input.has-padding{padding:16px 20px 16px 50px}.cd-form input[type=submit]{padding:16px 0}}.cd-close-form{display:block;position:absolute;width:40px;height:40px;right:0;top:-40px;background:url("../wp-content/themes/runoob/assets/img/cd-icon-close.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*/ no-repeat center center;text-indent:100%;white-space:nowrap;overflow:hidden}@media only screen and (min-width:1170px){}#cd-login,#cd-signup,#cd-reset-password{display:none}#cd-login.is-selected,#cd-signup.is-selected,#cd-reset-password.is-selected{display:block}
+</style>
+<div class="cd-user-modal">
+<div class="cd-user-modal-container">
+<ul class="cd-switcher">
+<li><a href="javascript:;">用户登录</a></li>
+<li><a href="javascript:;">注册新用户</a></li>
+</ul>
+<div id="cd-login"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-username" for="signin-username">用户名</label>
+<input class="full-width has-padding has-border" id="signin-username" name=username type="text" placeholder="输入用户名">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signin-password">密码</label>
+<input class="full-width has-padding has-border" id="signin-password" name="password" type="password" placeholder="输入密码">
+</p>
+<p class="fieldset">
+<input type="checkbox" id="remember-me" checked>
+<label for="remember-me">记住登录状态</label>
+<a href="../reset-password.htm" tppabs="http://www.runoob.com/reset-password" style="float: right;padding-right: 20px;" target="_blank">忘记密码？</a>
+</p>
+<input type="hidden" name="action" value="signin">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="登 录">
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<div id="cd-signup"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-password" for="verifycode">邀请码</label>
+<input class="full-width has-padding has-border" id="signup-verifycode" name="verifycode" type="text" placeholder="输入邀请码">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-username" for="signup-username">用户名</label>
+<input class="full-width has-padding has-border" id="signup-username" name="name" type="text" placeholder="输入用户名">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-email" for="signup-email">邮箱</label>
+<input class="full-width has-padding has-border" name="email" id="signup-email" type="email" placeholder="输入mail">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password">密码</label>
+<input class="full-width has-padding has-border" id="signup-password" name="password" type="password" placeholder="输入密码">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password2">重复输入密码</label>
+<input class="full-width has-padding has-border" id="signup-password2" name="password2" type="password" placeholder="重复输入密码">
+</p>
+<input type="hidden" name="action" value="signup">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="注册新用户">
+</p>
+<p class="fieldset">
+<a href="../w3cnote/runoob-user-test-intro.html#invite" tppabs="http://www.runoob.com/w3cnote/runoob-user-test-intro.html#invite" target="_blank">如何获取邀请码？</a>
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<a href="javascript:;" class="cd-close-form">关闭</a>
+</div>
+</div>
+<script src="../wp-content/themes/runoob/assets/js/main.js-v=1.189" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/js/main.js?v=1.189"></script>
+<script src="../../static.runoob.com/assets/libs/hl/run_prettify.js" tppabs="http://static.runoob.com/assets/libs/hl/run_prettify.js"></script>
+</body>
+</html>

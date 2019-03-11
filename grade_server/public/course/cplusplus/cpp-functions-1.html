@@ -1,0 +1,1083 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="qc:admins" content="465267610762567726375" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>C++ 函数 | 菜鸟教程</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="canonical" href="http://www.runoob.com/cplusplus/cpp-functions.html" />
+<meta name="keywords" content="C++ 函数">
+<meta name="description" content="C++ 函数   函数是一组一起执行一个任务的语句。每个 C++ 程序都至少有一个函数，即主函数 main() ，所有简单的程序都可以定义其他额外的函数。 您可以把代码划分到不同的函数中。如何划分代码到不同的函数中是由您来决定的，但在逻辑上，划分通常是根据每个函数执行一个特定的任务来进行的。 函数声明告诉编译器函数的名称、返回类型和参数。函数定义提供了函数的实际主体。 C++ 标准库提供了大量的程序可以调用的内置函数。例如，函数 str..">
+<link rel="shortcut icon" href="../../static.runoob.com/images/favicon-1.ico" tppabs="https://static.runoob.com/images/favicon.ico" mce_href="//static.runoob.com/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../wp-content/themes/runoob/style.css-v=1-1.147.css" tppabs="https://www.runoob.com/wp-content/themes/runoob/style.css?v=1.147" type="text/css" media="all" />
+<link rel="stylesheet" href="../../cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" tppabs="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<!--[if gte IE 9]><!-->
+  <script src="../../cdn.staticfile.org/jquery/2.0.3/jquery.min-1.js" tppabs="https://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+  <!--<![endif]-->
+<!--[if lt IE 9]>
+     <script src="../../cdn.staticfile.org/jquery/1.9.1/jquery.min-1.js" tppabs="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+     <script src="../../cdn.staticfile.org/html5shiv/r29/html5.min-1.js" tppabs="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+<link rel="apple-touch-icon" href="//static.runoob.com/images/icon/mobile-icon.png"/>
+<meta name="apple-mobile-web-app-title" content="菜鸟教程">
+</head>
+<body>
+<div class="container logo-search">
+<div class="col search row-search-mobile">
+<form action="index-1.php-s=.htm" tppabs="https://www.runoob.com/cplusplus/index.php?s=">
+<input class="placeholder" placeholder="搜索……" name="s" autocomplete="off">
+</form>
+</div>
+<div class="row">
+<div class="col logo">
+<h1><a href="../index-1.htm" tppabs="https://www.runoob.com/">菜鸟教程 -- 学的不仅是技术，更是梦想！</a></h1>
+</div>
+<div class="col right-list">
+<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style=""> <i class="fa fa-navicon"></i> </button>
+</div>
+<div class="col search search-desktop last">
+<form action="../-s=-1.htm" tppabs="https://www.runoob.com/?s=" target="_blank">
+<input class="placeholder" id="s" name="s" placeholder="搜索……" autocomplete="off">
+</form>
+</div>
+</div>
+</div>
+<div class="container navigation">
+<div class="row">
+<div class="col nav">
+<ul class="pc-nav">
+<li><a href="../index-1.htm" tppabs="https://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial-1.html" tppabs="https://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial-1.html" tppabs="https://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial-1.html" tppabs="https://www.runoob.com/js/js-tutorial.html">JavaScript</a></li>
+<li><a href="../jquery/jquery-tutorial-1.html" tppabs="https://www.runoob.com/jquery/jquery-tutorial.html">jQuery</a></li>
+<li><a href="../bootstrap/bootstrap-tutorial-1.html" tppabs="https://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap</a></li>
+<li><a href="../sql/sql-tutorial-1.html" tppabs="https://www.runoob.com/sql/sql-tutorial.html">SQL</a></li>
+<li><a href="../mysql/mysql-tutorial-1.html" tppabs="https://www.runoob.com/mysql/mysql-tutorial.html">MySQL</a></li>
+<li><a href="../php/php-tutorial-1.html" tppabs="https://www.runoob.com/php/php-tutorial.html">PHP</a></li>
+<li><a href="../python/python-tutorial-1.html" tppabs="https://www.runoob.com/python/python-tutorial.html">Python2</a></li>
+<li><a href="../python3/python3-tutorial-1.html" tppabs="https://www.runoob.com/python3/python3-tutorial.html">Python3</a></li>
+<li><a href="../cprogramming/c-tutorial-1.html" tppabs="https://www.runoob.com/cprogramming/c-tutorial.html">C</a></li>
+<li><a href="cpp-tutorial-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-tutorial.html">C++</a></li>
+<li><a href="../csharp/csharp-tutorial-1.html" tppabs="https://www.runoob.com/csharp/csharp-tutorial.html">C#</a></li>
+<li><a href="../java/java-tutorial-1.html" tppabs="https://www.runoob.com/java/java-tutorial.html">Java</a></li>
+<li><a href="../browser-history-1.htm" tppabs="https://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24-1.png" tppabs="https://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+</ul>
+<ul class="mobile-nav">
+<li><a href="../index-1.htm" tppabs="https://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial-1.html" tppabs="https://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial-1.html" tppabs="https://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial-1.html" tppabs="https://www.runoob.com/js/js-tutorial.html">JS</a></li>
+<li><a href="../browser-history-1.htm" tppabs="https://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24-1.png" tppabs="https://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+<a href="javascript:void(0)" class="search-reveal">Search</a>
+</ul>
+</div>
+</div>
+</div>
+<div class="container main">
+<div class="row">
+<div class="col left-column">
+<div class="tab">C++ 教程 <a data-cate="166" href="javascript:void(0);" title="夜间模式" id="moon"><i class="fa fa-moon-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+<a data-cate="166" style="display:none;" href="javascript:void(0);" title="日间模式" id="sun"><i class="fa fa-sun-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+</div>
+<div class="sidebar-box gallery-list">
+<div class="design" id="leftcolumn">
+<a target="_top" title="C++ 教程" href="cpp-tutorial-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-tutorial.html">
+C++ 教程 </a>
+<a target="_top" title="C++ 简介" href="cpp-intro-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-intro.html">
+C++ 简介 </a>
+<a target="_top" title="C++ 环境设置" href="cpp-environment-setup-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-environment-setup.html">
+C++ 环境设置 </a>
+<a target="_top" title="C++ 基本语法" href="cpp-basic-syntax-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-basic-syntax.html">
+C++ 基本语法 </a>
+<a target="_top" title="C++ 注释" href="cpp-comments-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-comments.html">
+C++ 注释 </a>
+<a target="_top" title="C++ 数据类型" href="cpp-data-types-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-data-types.html">
+C++ 数据类型 </a>
+<a target="_top" title="C++ 变量类型" href="cpp-variable-types-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-variable-types.html">
+C++ 变量类型 </a>
+<a target="_top" title="C++ 变量作用域" href="cpp-variable-scope-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-variable-scope.html">
+C++ 变量作用域 </a>
+<a target="_top" title="C++ 常量" href="cpp-constants-literals-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-constants-literals.html">
+C++ 常量 </a>
+<a target="_top" title="C++ 修饰符类型" href="cpp-modifier-types-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-modifier-types.html">
+C++ 修饰符类型 </a>
+<a target="_top" title="C++ 存储类" href="cpp-storage-classes-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-storage-classes.html">
+C++ 存储类 </a>
+<a target="_top" title="C++ 运算符" href="cpp-operators-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-operators.html">
+C++ 运算符 </a>
+<a target="_top" title="C++ 循环" href="cpp-loops-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-loops.html">
+C++ 循环 </a>
+<a target="_top" title="C++ 判断" href="cpp-decision-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-decision.html">
+C++ 判断 </a>
+<a target="_top" title="C++ 函数" href="cpp-functions-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-functions.html">
+C++ 函数 </a>
+<a target="_top" title="C++ 数字" href="cpp-numbers-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-numbers.html">
+C++ 数字 </a>
+<a target="_top" title="C++ 数组" href="cpp-arrays-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-arrays.html">
+C++ 数组 </a>
+<a target="_top" title="C++ 字符串" href="cpp-strings-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-strings.html">
+C++ 字符串 </a>
+<a target="_top" title="C++ 指针" href="cpp-pointers-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-pointers.html">
+C++ 指针 </a>
+<a target="_top" title="C++ 引用" href="cpp-references-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-references.html">
+C++ 引用 </a>
+<a target="_top" title="C++ 日期 &#038; 时间" href="cpp-date-time-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-date-time.html">
+C++ 日期 & 时间 </a>
+<a target="_top" title="C++ 基本的输入输出" href="cpp-basic-input-output-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-basic-input-output.html">
+C++ 基本的输入输出 </a>
+<a target="_top" title="C++ 数据结构" href="cpp-data-structures-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-data-structures.html">
+C++ 数据结构 </a>
+<br><h2 class="left"><span class="left_h2">C++</span> 面向对象</h2> <a target="_top" title="C++ 类 &#038; 对象" href="cpp-classes-objects-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-classes-objects.html">
+C++ 类 & 对象 </a>
+<a target="_top" title="C++ 继承" href="cpp-inheritance-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-inheritance.html">
+C++ 继承 </a>
+<a target="_top" title="C++ 重载运算符和重载函数" href="cpp-overloading-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-overloading.html">
+C++ 重载运算符和重载函数 </a>
+<a target="_top" title="C++ 多态" href="cpp-polymorphism-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-polymorphism.html">
+C++ 多态 </a>
+<a target="_top" title="C++ 数据抽象" href="cpp-data-abstraction-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-data-abstraction.html">
+C++ 数据抽象 </a>
+<a target="_top" title="C++ 数据封装" href="cpp-data-encapsulation-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-data-encapsulation.html">
+C++ 数据封装 </a>
+<a target="_top" title="C++ 接口（抽象类）" href="cpp-interfaces-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-interfaces.html">
+C++ 接口（抽象类） </a>
+<br><h2 class="left"><span class="left_h2">C++</span> 高级教程</h2> <a target="_top" title="C++ 文件和流" href="cpp-files-streams-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-files-streams.html">
+C++ 文件和流 </a>
+<a target="_top" title="C++ 异常处理" href="cpp-exceptions-handling-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-exceptions-handling.html">
+C++ 异常处理 </a>
+<a target="_top" title="C++ 动态内存" href="cpp-dynamic-memory-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-dynamic-memory.html">
+C++ 动态内存 </a>
+<a target="_top" title="C++ 命名空间" href="cpp-namespaces-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-namespaces.html">
+C++ 命名空间 </a>
+<a target="_top" title="C++ 模板" href="cpp-templates-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-templates.html">
+C++ 模板 </a>
+<a target="_top" title="C++ 预处理器" href="cpp-preprocessor-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-preprocessor.html">
+C++ 预处理器 </a>
+<a target="_top" title="C++ 信号处理" href="cpp-signal-handling-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-signal-handling.html">
+C++ 信号处理 </a>
+<a target="_top" title="C++ 多线程" href="cpp-multithreading-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-multithreading.html">
+C++ 多线程 </a>
+<a target="_top" title="C++ Web 编程" href="cpp-web-programming-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-web-programming.html">
+C++ Web 编程 </a>
+<br><h2 class="left"><span class="left_h2">C++</span> 资源库</h2> <a target="_top" title="C++ STL 教程" href="cpp-stl-tutorial-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-stl-tutorial.html">
+C++ STL 教程 </a>
+<a target="_top" title="C++ 标准库" href="cpp-standard-library-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-standard-library.html">
+C++ 标准库 </a>
+<a target="_top" title="C++ 有用的资源" href="cpp-useful-resources-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-useful-resources.html">
+C++ 有用的资源 </a>
+</div>
+</div>
+</div> <div class="col middle-column">
+<div class="article">
+<div class="article-heading-ad" style="display: none;">
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="cpp-decision.html" tppabs="http://www.runoob.com/cplusplus/cpp-decision.html" rel="prev"> C++ 判断</a> </div>
+<div class="next-design-link"><a href="cpp-numbers.html" tppabs="http://www.runoob.com/cplusplus/cpp-numbers.html" rel="next"> C++ 数字</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<div class="article-body">
+<div class="article-intro" id="content">
+<h1>C++ <span class="color_h1">函数</span></h1>
+<div class="tutintro">
+<p>函数是一组一起执行一个任务的语句。每个 C++ 程序都至少有一个函数，即主函数 <b>main()</b> ，所有简单的程序都可以定义其他额外的函数。</p>
+<p>您可以把代码划分到不同的函数中。如何划分代码到不同的函数中是由您来决定的，但在逻辑上，划分通常是根据每个函数执行一个特定的任务来进行的。</p>
+<p>函数<b>声明</b>告诉编译器函数的名称、返回类型和参数。函数<b>定义</b>提供了函数的实际主体。</p>
+<p>C++ 标准库提供了大量的程序可以调用的内置函数。例如，函数 <b>strcat()</b> 用来连接两个字符串，函数 <b>memcpy()</b> 用来复制内存到另一个位置。</p>
+<p>函数还有很多叫法，比如方法、子例程或程序，等等。</p>
+</div>
+<h2 class="tutheader">定义函数</h2>
+<p>C++ 中的函数定义的一般形式如下：</p>
+<div class="example">
+<div class="example_code">
+<div class="hl-main"><span class="hl-identifier">return_type</span><span class="hl-code"> </span><span class="hl-identifier">function_name</span><span class="hl-brackets">(</span><span class="hl-code"> </span><span class="hl-identifier">parameter</span><span class="hl-code"> </span><span class="hl-identifier">list</span><span class="hl-code"> </span><span class="hl-brackets">)</span><span class="hl-code">
+</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-identifier">body</span><span class="hl-code"> </span><span class="hl-identifier">of</span><span class="hl-code"> </span><span class="hl-identifier">the</span><span class="hl-code"> </span><span class="hl-identifier">function</span><span class="hl-code">
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<p>在 C++ 中，函数由一个函数头和一个函数主体组成。下面列出一个函数的所有组成部分：</p>
+<ul class="list">
+<li><b>返回类型：</b>一个函数可以返回一个值。<b>return_type</b> 是函数返回的值的数据类型。有些函数执行所需的操作而不返回值，在这种情况下，return_type 是关键字 <b>void</b>。</li>
+<li><b>函数名称：</b>这是函数的实际名称。函数名和参数列表一起构成了函数签名。</li>
+<li><b>参数：</b>参数就像是占位符。当函数被调用时，您向参数传递一个值，这个值被称为实际参数。参数列表包括函数参数的类型、顺序、数量。参数是可选的，也就是说，函数可能不包含参数。</li>
+<li><b>函数主体：</b>函数主体包含一组定义函数执行任务的语句。</li>
+</ul>
+<h2 class="tutheader">实例</h2>
+<p>以下是 <b>max()</b> 函数的源代码。该函数有两个参数 num1 和 num2，会返回这两个数中较大的那个数：</p>
+<div class="example">
+<div class="example_code">
+<div class="hl-main"><span class="hl-comment">// 函数返回两个数中较大的那个数</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">max</span><span class="hl-brackets">(</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">num1</span><span class="hl-code">, </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">num2</span><span class="hl-brackets">)</span><span class="hl-code">
+</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-comment">// 局部变量声明</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">result</span><span class="hl-code">;
+</span><span class="hl-reserved">if</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">num1</span><span class="hl-code"> &gt; </span><span class="hl-identifier">num2</span><span class="hl-brackets">)</span><span class="hl-code">
+</span><span class="hl-identifier">result</span><span class="hl-code"> = </span><span class="hl-identifier">num1</span><span class="hl-code">;
+</span><span class="hl-reserved">else</span><span class="hl-code">
+</span><span class="hl-identifier">result</span><span class="hl-code"> = </span><span class="hl-identifier">num2</span><span class="hl-code">;
+</span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-identifier">result</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<h2 class="tutheader">函数声明</h2>
+<p>函数<b>声明</b>会告诉编译器函数名称及如何调用函数。函数的实际主体可以单独定义。</p>
+<p>函数声明包括以下几个部分：</p>
+<pre>
+return_type function_name( parameter list );
+</pre>
+<p>针对上面定义的函数 max()，以下是函数声明：</p>
+<pre>
+int max(int num1, int num2);
+</pre>
+<p>在函数声明中，参数的名称并不重要，只有参数的类型是必需的，因此下面也是有效的声明：</p>
+<pre>
+int max(int, int);
+</pre>
+<p>当您在一个源文件中定义函数且在另一个文件中调用函数时，函数声明是必需的。在这种情况下，您应该在调用函数的文件顶部声明函数。</p>
+<h2 class="tutheader">调用函数</h2>
+<p>创建 C++ 函数时，会定义函数做什么，然后通过调用函数来完成已定义的任务。</p>
+<p>当程序调用函数时，程序控制权会转移给被调用的函数。被调用的函数执行已定义的任务，当函数的返回语句被执行时，或到达函数的结束括号时，会把程序控制权交还给主程序。</p>
+<p>调用函数时，传递所需参数，如果函数返回一个值，则可以存储返回值。例如：</p>
+<div class="example">
+<h2 class="example">实例</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-prepro">#include</span><span class="hl-prepro"> </span><span class="hl-quotes">&lt;</span><span class="hl-string">iostream</span><span class="hl-quotes">&gt;</span><span class="hl-prepro"></span><span class="hl-code">
+</span><span class="hl-reserved">using</span><span class="hl-code"> </span><span class="hl-types">namespace</span><span class="hl-code"> </span><span class="hl-identifier">std</span><span class="hl-code">;
+</span><span class="hl-comment">// 函数声明</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">max</span><span class="hl-brackets">(</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">num1</span><span class="hl-code">, </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">num2</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">main</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">
+</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-comment">// 局部变量声明</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">a</span><span class="hl-code"> = </span><span class="hl-number">100</span><span class="hl-code">;
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">b</span><span class="hl-code"> = </span><span class="hl-number">200</span><span class="hl-code">;
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">ret</span><span class="hl-code">;
+</span><span class="hl-comment">// 调用函数来获取最大值</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-identifier">ret</span><span class="hl-code"> = </span><span class="hl-identifier">max</span><span class="hl-brackets">(</span><span class="hl-identifier">a</span><span class="hl-code">, </span><span class="hl-identifier">b</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">cout</span><span class="hl-code"> &lt;&lt; </span><span class="hl-quotes">&quot;</span><span class="hl-string">Max value is : </span><span class="hl-quotes">&quot;</span><span class="hl-code"> &lt;&lt; </span><span class="hl-identifier">ret</span><span class="hl-code"> &lt;&lt; </span><span class="hl-identifier">endl</span><span class="hl-code">;
+</span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-number">0</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-comment">// 函数返回两个数中较大的那个数</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">max</span><span class="hl-brackets">(</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">num1</span><span class="hl-code">, </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">num2</span><span class="hl-brackets">)</span><span class="hl-code">
+</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-comment">// 局部变量声明</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">result</span><span class="hl-code">;
+</span><span class="hl-reserved">if</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">num1</span><span class="hl-code"> &gt; </span><span class="hl-identifier">num2</span><span class="hl-brackets">)</span><span class="hl-code">
+</span><span class="hl-identifier">result</span><span class="hl-code"> = </span><span class="hl-identifier">num1</span><span class="hl-code">;
+</span><span class="hl-reserved">else</span><span class="hl-code">
+</span><span class="hl-identifier">result</span><span class="hl-code"> = </span><span class="hl-identifier">num2</span><span class="hl-code">;
+</span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-identifier">result</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<p>把 max() 函数和 main() 函数放一块，编译源代码。当运行最后的可执行文件时，会产生下列结果：</p>
+<pre>
+Max value is : 200
+</pre>
+<h2 class="tutheader">函数参数</h2>
+<p>如果函数要使用参数，则必须声明接受参数值的变量。这些变量称为函数的<b>形式参数</b>。</p>
+<p>形式参数就像函数内的其他局部变量，在进入函数时被创建，退出函数时被销毁。</p>
+<p>当调用函数时，有两种向函数传递参数的方式：</p>
+<table class="reference notranslate">
+<tr><th width="30%">调用类型</th><th>描述</th></tr>
+<tr><td> <a href="javascript:if(confirm('https://www.runoob.com/cplusplus/ionic-ion-checkbox.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='https://www.runoob.com/cplusplus/ionic-ion-checkbox.html'" tppabs="https://www.runoob.com/cplusplus/cpp-function-call-by-value.html" title="C++ 中传值方式调用函数">传值调用</a></td><td>该方法把参数的实际值复制给函数的形式参数。在这种情况下，修改函数内的形式参数对实际参数没有影响。</td> </tr>
+<tr><td> <a href="javascript:if(confirm('https://www.runoob.com/cplusplus/ionic-ion-radio.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='https://www.runoob.com/cplusplus/ionic-ion-radio.html'" tppabs="https://www.runoob.com/cplusplus/cpp-function-call-by-pointer.html" title="C++ 中指针方式调用函数">指针调用</a></td><td>该方法把参数的地址复制给形式参数。在函数内，该地址用于访问调用中要用到的实际参数。这意味着，修改形式参数会影响实际参数。</td> </tr>
+<tr><td> <a href="javascript:if(confirm('https://www.runoob.com/cplusplus/ionic-ion-toggle.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='https://www.runoob.com/cplusplus/ionic-ion-toggle.html'" tppabs="https://www.runoob.com/cplusplus/cpp-function-call-by-reference.html" title="C++ 中引用方式调用函数">引用调用</a></td><td>该方法把参数的引用复制给形式参数。在函数内，该引用用于访问调用中要用到的实际参数。这意味着，修改形式参数会影响实际参数。</td> </tr>
+</table>
+<p>默认情况下，C++ 使用<b>传值调用</b>来传递参数。一般来说，这意味着函数内的代码不能改变用于调用函数的参数。之前提到的实例，调用 max() 函数时，使用了相同的方法。</p>
+<h2 class="tutheader">参数的默认值</h2>
+<p>当您定义一个函数，您可以为参数列表中后边的每一个参数指定默认值。当调用函数时，如果实际参数的值留空，则使用这个默认值。</p>
+<p>这是通过在函数定义中使用赋值运算符来为参数赋值的。调用函数时，如果未传递参数的值，则会使用默认值，如果指定了值，则会忽略默认值，使用传递的值。请看下面的实例：</p>
+<div class="example">
+<h2 class="example">实例</h2>
+<div class="example_code">
+<div class="hl-main"><span class="hl-prepro">#include</span><span class="hl-prepro"> </span><span class="hl-quotes">&lt;</span><span class="hl-string">iostream</span><span class="hl-quotes">&gt;</span><span class="hl-prepro"></span><span class="hl-code">
+</span><span class="hl-reserved">using</span><span class="hl-code"> </span><span class="hl-types">namespace</span><span class="hl-code"> </span><span class="hl-identifier">std</span><span class="hl-code">;
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">sum</span><span class="hl-brackets">(</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">a</span><span class="hl-code">, </span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">b</span><span class="hl-code">=</span><span class="hl-number">20</span><span class="hl-brackets">)</span><span class="hl-code">
+</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">result</span><span class="hl-code">;
+</span><span class="hl-identifier">result</span><span class="hl-code"> = </span><span class="hl-identifier">a</span><span class="hl-code"> + </span><span class="hl-identifier">b</span><span class="hl-code">;
+</span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">result</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">main</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">
+</span><span class="hl-brackets">{</span><span class="hl-code">
+</span><span class="hl-comment">// 局部变量声明</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">a</span><span class="hl-code"> = </span><span class="hl-number">100</span><span class="hl-code">;
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">b</span><span class="hl-code"> = </span><span class="hl-number">200</span><span class="hl-code">;
+</span><span class="hl-types">int</span><span class="hl-code"> </span><span class="hl-identifier">result</span><span class="hl-code">;
+</span><span class="hl-comment">// 调用函数来添加值</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-identifier">result</span><span class="hl-code"> = </span><span class="hl-identifier">sum</span><span class="hl-brackets">(</span><span class="hl-identifier">a</span><span class="hl-code">, </span><span class="hl-identifier">b</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">cout</span><span class="hl-code"> &lt;&lt; </span><span class="hl-quotes">&quot;</span><span class="hl-string">Total value is :</span><span class="hl-quotes">&quot;</span><span class="hl-code"> &lt;&lt; </span><span class="hl-identifier">result</span><span class="hl-code"> &lt;&lt; </span><span class="hl-identifier">endl</span><span class="hl-code">;
+</span><span class="hl-comment">// 再次调用函数</span><span class="hl-comment"></span><span class="hl-code">
+</span><span class="hl-identifier">result</span><span class="hl-code"> = </span><span class="hl-identifier">sum</span><span class="hl-brackets">(</span><span class="hl-identifier">a</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">cout</span><span class="hl-code"> &lt;&lt; </span><span class="hl-quotes">&quot;</span><span class="hl-string">Total value is :</span><span class="hl-quotes">&quot;</span><span class="hl-code"> &lt;&lt; </span><span class="hl-identifier">result</span><span class="hl-code"> &lt;&lt; </span><span class="hl-identifier">endl</span><span class="hl-code">;
+</span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-number">0</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span></div>
+</div>
+</div>
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre>
+Total value is :300
+Total value is :120
+</pre>
+<hr>
+<h2>Lambda 函数与表达式</h2>
+<p>C++11 提供了对匿名函数的支持,称为 Lambda 函数(也叫 Lambda 表达式)。 </p>
+<p>Lambda 表达式把函数看作对象。Lambda 表达式可以像对象一样使用，比如可以将它们赋给变量和作为参数传递，还可以像函数一样对其求值。</p>
+<p>Lambda 表达式本质上与函数声明非常类似。Lambda 表达式具体形式如下:</p>
+<pre>
+[capture](parameters)-&gt;return-type{body}
+</pre>
+<p>
+例如：</p>
+<pre>[](int x, int y){ return x &lt; y ; }</pre>
+<p>如果没有返回值可以表示为：</p>
+<pre>
+[capture](parameters){body}
+</pre>
+<p>
+例如：</p>
+<pre>[]{ ++global_x; } </pre>
+<p>在一个更为复杂的例子中，返回类型可以被明确的指定如下：</p>
+<pre>
+[](int x, int y) -&gt; int { int z = x + y; return z + x; }
+</pre>
+<p>本例中，一个临时的参数 z 被创建用来存储中间结果。如同一般的函数，z 的值不会保留到下一次该不具名函数再次被调用时。</p><p>
+如果 lambda 函数没有传回值（例如 void），其返回类型可被完全忽略。</p><p>
+在Lambda表达式内可以访问当前作用域的变量，这是Lambda表达式的闭包（Closure）行为。 与JavaScript闭包不同，C++变量传递有传值和传引用的区别。可以通过前面的[]来指定：</p>
+<pre>
+[]      // 沒有定义任何变量。使用未定义变量会引发错误。
+[x, &amp;y] // x以传值方式传入（默认），y以引用方式传入。
+[&amp;]     // 任何被使用到的外部变量都隐式地以引用方式加以引用。
+[=]     // 任何被使用到的外部变量都隐式地以传值方式加以引用。
+[&amp;, x]  // x显式地以传值方式加以引用。其余变量以引用方式加以引用。
+[=, &amp;z] // z显式地以引用方式加以引用。其余变量以传值方式加以引用。
+</pre>
+<p>另外有一点需要注意。对于[=]或[&]的形式，lambda 表达式可以直接使用 this 指针。但是，对于[]的形式，如果要使用 this 指针，必须显式传入：</p>
+<pre>
+[this]() { this-&gt;someFunc(); }();
+</pre>
+</div>
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="cpp-decision.html" tppabs="http://www.runoob.com/cplusplus/cpp-decision.html" rel="prev"> C++ 判断</a> </div>
+<div class="next-design-link"><a href="cpp-numbers.html" tppabs="http://www.runoob.com/cplusplus/cpp-numbers.html" rel="next"> C++ 数字</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<style>
+.wrapper {
+  /*text-transform: uppercase; */
+  background: #ececec;
+  color: #555;
+  cursor: help;
+  font-family: "Gill Sans", Impact, sans-serif;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  -webkit-transform: translateZ(0); /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+.wrapper .tooltip {
+  white-space: nowrap;
+  font-size: 14px;
+  text-align: left;
+  background: #96b97d;
+  bottom: 100%;
+  color: #fff;
+  display: block;
+  left: -25px;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 14px;
+  pointer-events: none;
+  position: absolute;
+  
+  -webkit-transform: translateY(10px);
+     -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+       -o-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: all .25s ease-out;
+     -moz-transition: all .25s ease-out;
+      -ms-transition: all .25s ease-out;
+       -o-transition: all .25s ease-out;
+          transition: all .25s ease-out;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+.tooltip a {
+	color:#fff;
+}
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #96b97d 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 20%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+.wrapper .tooltip1 {
+	margin-left: 50px;
+	padding-top: 0px;
+}
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+  display: block;
+}
+
+</style>
+<div class="title" id="comments">
+<h2 class="">
+<div class="altblock">
+<i style="font-size:28px;margin-top: 8px;" class="fa fa-plus-square" aria-hidden="true"></i>
+</div>
+<span class="mw-headline" id="qa_headline">6 篇笔记</span>
+<span class="mw-headline" id="user_add_note" style="float:right;line-height: 62px;padding-right: 14px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 写笔记</span>
+</h2>
+</div>
+<div id="postcomments" style="display:none;">
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="comment-15301"><span class="comt-f">#6</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;lqd052</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;172***2008@qq.com</p></div></div><div class="comt-main" id="div-comment-15301"><p><strong>Lambda 函数与表达式</strong></p>
+<p>Lambda函数的语法定义如下： </p>
+<pre>[capture](parameters) mutable -&gt;return-type{statement}</pre>
+<p><strong>其中：</strong></p>
+<ul><li>
+<strong>[capture]</strong>：捕捉列表。捕捉列表总是出现在 lambda 表达式的开始处。事实上，[] 是 lambda 引出符。编译器根据该引出符判断接下来的代码是否是 lambda 函数。捕捉列表能够捕捉上下文中的变量供 lambda 函数使用。</li><li>
+(parameters)：参数列表。与普通函数的参数列表一致。如果不需要参数传递，则可以连同括号 () 一起省略。</li><li>
+<strong>mutable</strong>：mutable 修饰符。默认情况下，lambda 函数总是一个 const 函数，mutable 可以取消其常量性。在使用该修饰符时，参数列表不可省略（即使参数为空）。</li><li>
+<strong>->return_type</strong>：返回类型。用追踪返回类型形式声明函数的返回类型。出于方便，不需要返回值的时候也可以连同符号 -> 一起省略。此外，在返回类型明确的情况下，也可以省略该部分，让编译器对返回类型进行推导。</li><li>
+<strong>{statement}</strong>：函数体。内容与普通函数一样，不过除了可以使用参数之外，还可以使用所有捕获的变量。</li></ul>
+<p>
+在 lambda 函数的定义式中，参数列表和返回类型都是可选部分，而捕捉列表和函数体都可能为空，C++ 中最简单的 lambda 函数只需要声明为：
+</p><pre>
+[]{};</pre>
+<div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">lqd052</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;lqd052</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;172***2008@qq.com</p></div></span>1年前 (2017-07-24)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-17245"><span class="comt-f">#5</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Tmacww</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;825***602@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://blog.csdn.net/fjzpdkf/article/details/ionic-gesture-event.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://blog.csdn.net/fjzpdkf/article/details/ionic-gesture-event.html'" tppabs="http://blog.csdn.net/fjzpdkf/article/details/50249287">&nbsp;&nbsp;参考地址</a></p></div></div><div class="comt-main" id="div-comment-17245"><p>两个实际应用到lambda表达式的代码。</p>
+<pre>
+std::vector&lt;int&gt; v = { 1, 2, 3, 4, 5, 6 };
+int even_count = 0;
+for_each(v.begin(), v.end(), [&amp;even_count](int val){
+    if(!(val &amp; 1)){
+        ++ even_count;
+    }
+});
+std::cout &lt;&lt; "The number of even is " &lt;&lt; even_count &lt;&lt; std::endl;
+</pre>
+<pre>
+int count = std::count_if( coll.begin(), coll.end(), [](int x){ return x &gt; 10; });  
+  
+int count = std::count_if( coll.begin(), coll.end(), [](int x){ return x &lt; 10; });  
+  
+int count = std::count_if( coll.begin(), coll.end(), [](int x){ return x &gt; 5 &amp;&amp; x&lt;10; });  
+</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">Tmacww</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Tmacww</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;825***602@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://blog.csdn.net/fjzpdkf/article/details/ionic-gesture-event.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://blog.csdn.net/fjzpdkf/article/details/ionic-gesture-event.html'" tppabs="http://blog.csdn.net/fjzpdkf/article/details/50249287">&nbsp;&nbsp;参考地址</a></p></div></span>1年前 (2017-09-07)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-18871"><span class="comt-f">#4</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;prigioni</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;763***799@qq.com</p></div></div><div class="comt-main" id="div-comment-18871"><p>定义一个可以输出字符串的lambda表达式，表达式一般都是从方括号[]开始，然后结束于花括号{}，花括号里面就像定义函数那样，包含了lamdba表达式体：</p>
+<pre>// 定义简单的lambda表达式
+auto basicLambda = [] { cout &lt;&lt; "Hello, world!" &lt;&lt; endl; };
+
+// 调用
+basicLambda();
+// 输出：Hello, world!</pre>
+<p>如果需要参数，那么就要像函数那样，放在圆括号里面，如果有返回值，返回类型要放在->后面，即拖尾返回类型，当然你也可以忽略返回类型，lambda会帮你自动推断出返回类型：</p>
+<pre>// 指明返回类型
+auto add = [](int a, int b) -&gt; int { return a + b; };
+
+// 自动推断返回类型
+auto multiply = [](int a, int b) { return a * b; };
+int sum = add(2, 5);   // 输出：7
+int product = multiply(2, 5);  // 输出：10</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">prigioni</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;prigioni</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;763***799@qq.com</p></div></span>1年前 (2017-10-15)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22197"><span class="comt-f">#3</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;eric</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;gxy***@163.com</p></div></div><div class="comt-main" id="div-comment-22197"><p>Lambda函数很简洁，但变化较多。</p>
+<p><strong>1、什么也不捕获，或者是故意不用 Lambda 函数外部的变量</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+ 
+int main()
+{
+    int i = 1024;
+    auto func = [] { cout &lt;&lt; i; };
+    func();
+}  // 结果报错，因为未指定默认捕获模式</pre>
+<p>正确的如下：</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+ 
+int main()
+{
+    int i = 1024;
+    auto func = [=]{  // [=] 表明将外部的所有变量拷贝一份到该Lambda函数内部
+        cout &lt;&lt; i;
+    };
+    func();
+}</pre>
+<p><strong>2、引用捕获</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+ 
+int main()
+{
+    int i = 1024;
+    cout &lt;&lt; &amp;i &lt;&lt; endl;
+    auto fun1 = [&amp;]{
+        cout &lt;&lt; &amp;i &lt;&lt; endl;
+    };
+    fun1();
+}</pre>
+<p><strong>3、复制并引用捕获</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+ 
+int main()
+{
+    int i = 1024, j = 2048;
+ 
+    cout &lt;&lt; "i:" &lt;&lt; &amp;i &lt;&lt; endl;
+    cout &lt;&lt; "j:" &lt;&lt; &amp;j &lt;&lt; endl;
+ 
+    auto fun1 = [=, &amp;i]{ // 默认拷贝外部所有变量，但引用变量 i
+        cout &lt;&lt; "i:" &lt;&lt; &amp;i &lt;&lt; endl;
+        cout &lt;&lt; "j:" &lt;&lt; &amp;j &lt;&lt; endl;
+    };
+    fun1();
+}</pre>
+<p><strong>4、指定引用或复制</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+ 
+int main()
+{
+    int i = 1024, j = 2048;
+ 
+    cout &lt;&lt; "outside i value:" &lt;&lt; i &lt;&lt; " addr:" &lt;&lt; &amp;i &lt;&lt; endl;
+ 
+    auto fun1 = [i]{
+        cout &lt;&lt; "inside  i value:" &lt;&lt; i &lt;&lt; " addr:" &lt;&lt; &amp;i &lt;&lt; endl;
+        // cout &lt;&lt; j &lt;&lt; endl; // j 未捕获
+    };
+    fun1();
+}</pre>
+<p><strong>5、捕获this指针</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+ 
+class test
+{
+public:
+    void hello() {
+        cout &lt;&lt; "test hello!n";
+    };
+    void lambda() {
+        auto fun = [this]{ // 捕获了 this 指针
+            this-&gt;hello(); // 这里 this 调用的就是 class test 的对象了
+        };
+        fun();
+    }
+};
+ 
+int main()
+{
+    test t;
+    t.lambda();
+}</pre>
+<div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">eric</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;eric</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;gxy***@163.com</p></div></span>10个月前 (12-27)</div></div></li>
+<li class="comment even thread-even depth-1" id="comment-25720"><span class="comt-f">#2</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;突然的幸福</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;292***0456@qq.com</p></div></div><div class="comt-main" id="div-comment-25720"><ul><li>[]：默认不捕获任何变量；</li><li>[=]：默认以值捕获所有变量；</li><li>[&amp;]：默认以引用捕获所有变量；</li><li>[x]：仅以值捕获x，其它变量不捕获；</li><li>[&amp;x]：仅以引用捕获x，其它变量不捕获；</li><li>[=, &amp;x]：默认以值捕获所有变量，但是x是例外，通过引用捕获；</li><li>[&amp;, x]：默认以引用捕获所有变量，但是x是例外，通过值捕获；</li><li>[this]：通过引用捕获当前对象（其实是复制指针）；</li><li>[*this]：通过传值方式捕获当前对象；</li></ul><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">突然的幸福</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;突然的幸福</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;292***0456@qq.com</p></div></span>7个月前 (03-30)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-25722"><span class="comt-f">#1</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;突然的幸福</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;292***0456@qq.com</p></div></div><div class="comt-main" id="div-comment-25722"><p>lambda表达式无法修改通过复制形式捕捉的变量，因为函数调用运算符的重载方法是const属性的。有时候，你想改动传值方式捕获的值，那么就要使用mutable，例子如下：</p>
+<pre>int main()
+{
+    int x = 10;
+
+    auto add_x = [x](int a) mutable { x *= 2; return a + x; };  // 复制捕捉x
+
+    cout &lt;&lt; add_x(10) &lt;&lt; endl; // 输出 30
+    return 0;
+}</pre><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">突然的幸福</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;突然的幸福</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;292***0456@qq.com</p></div></span>7个月前 (03-30)</div></div></li>
+</ol>
+<div class="pagenav">
+</div>
+</div>
+<div id="respond" class="no_webshot">
+<div class="comment-signarea" style="display:none; padding: 20px 20px;">
+<h3 class="text-muted" id="share_code" style="color: #799961;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 点我分享笔记</h3>
+</div>
+<form action="https://www.runoob.com/wp-content/themes/runoob/option/addnote.php" method="post" id="commentform" style="display:none;">
+<div class="comt">
+<div class="comt-title">
+<i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i> <p><a id="cancel-comment-reply-link" href="javascript:;">取消</a></p>
+</div>
+<div class="comt-box">
+<div id="mded"></div>
+<div class="comt-ctrl">
+<div class="comt-tips"><input type='hidden' name='comment_post_ID' value='11180' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+<button type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-pencil" aria-hidden="true"></i> 分享笔记</button>
+</div>
+</div>
+<div class="comt-comterinfo">
+<ul id="comment-author-info">
+<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="text-muted">昵称 (必填)</span></li>
+<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="text-muted">邮箱 (必填)</span></li>
+<li class="form-inline"><label class="hide" for="url">引用地址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="引用地址"><span class="text-muted">引用地址</span></li>
+</ul>
+</div>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+$(function() {
+	//初始化编辑器
+	
+	var editor = new Simditor({
+	  textarea: $('#mded'),
+	  placeholder: '写笔记...',
+	  upload:false,
+	 // upload: {url:'../api/comment_upload_file-1.php.htm'/*tpa=https://www.runoob.com/api/comment_upload_file.php*/,params: null,fileKey: 'upload_file',connectionCount: 1,leaveConfirm: '文件正在上传，您确定离开?'},
+	  defaultImage: '../images/logo.png'/*tpa=http://www.runoob.com/images/logo.png*/,
+	  codeLanguages: '',
+	  toolbar: [  'bold','code','ul','ol','image' ]
+	});
+	editor.on('selectionchanged', function() {
+		$(".code-popover").hide();
+	});
+
+	// 提交数据
+	$("#share_code").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		
+	});
+	$("#user_add_note").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		$('html, body').animate({
+       	    scrollTop: $("#respond").offset().top
+    	}, 200);
+	});
+
+	// 提交笔记
+	var commentform=$('#commentform');
+	commentform.prepend('<div id="comment-status" style="display:none;" ></div>');
+	var statusdiv=$('#comment-status');
+	
+	commentform.submit(function(e){
+		e.preventDefault();
+		var noteContent = editor.getValue();
+		// console.log(noteContent);
+		noteContent = noteContent.replace(/<pre><code>/g,"<pre>");
+		noteContent = noteContent.replace(/<\/code><\/pre>/g,"</pre>");
+		
+		// 系列化表单数据
+		var comment_parent = 0;
+		var is_user_logged_in = $("#is_user_logged_in").val();
+		var comment_post_ID =  11180;
+		var _wp_unfiltered_html_comment = $("#_wp_unfiltered_html_comment").val();
+		var comment = noteContent;
+		var author = $("#author").val();
+		var url = $("#url").val();
+		var email = $("#email").val();
+		if(isBlank(author) && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">请输入昵称！</p>').show();
+		} else if(isBlank(email)  && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">请输入邮箱！</p>').show();
+		} else {
+			// var formdata=commentform.serialize() + "&comment=" + noteContent ;
+			// 添加状态信息
+			statusdiv.html('<p>Processing...</p>').show();
+			// 获取表单提交地址
+			var formurl=commentform.attr('action');
+			
+			// 异步提交
+			$.ajax({
+					type: 'post',
+					url: formurl,
+					dataType:'json',
+					data: {"comment_parent":comment_parent,"comment_post_ID":comment_post_ID, "_wp_unfiltered_html_comment":_wp_unfiltered_html_comment,"comment":comment,"url":url, "email":email,"author":author},
+					error: function(XMLHttpRequest, textStatus, errorThrown){
+					statusdiv.html('<p class="ajax-error" >数据不完整或表单提交太快了！</p>').show();
+				},
+				success: function(data, textStatus){
+					if(data.errorno=="0") {
+						$("#submit").prop('disabled', true);
+						statusdiv.html('<p class="ajax-success" >笔记已提交审核，感谢分享笔记！</p>').show();
+						alert('笔记已提交审核，感谢分享笔记！');
+					}else{
+						statusdiv.html('<p class="ajax-error" >'+data.msg+'</p>').show();
+					}
+					commentform.find('textarea[name=comment]').val('');
+				}
+			});
+			setTimeout(function(){
+		        $("#submit").prop('disabled', false);
+		    }, 10*1000);
+		}
+		return false;
+
+	});
+	
+});
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
+}
+</script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/css/qa.css-1-1.42.css" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/css/qa.css?1.42">
+<link rel="stylesheet" type="text/css" href="../../cdn.staticfile.org/simditor/2.3.6/styles/simditor.min-1.css" tppabs="https://cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css" />
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/module-1.js" tppabs="https://static.runoob.com/assets/simditor/2.3.6/scripts/module.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys-1.js" tppabs="https://static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/uploader-1.js" tppabs="https://static.runoob.com/assets/simditor/2.3.6/scripts/uploader.js"></script>
+<script type="text/javascript" src="../../cdn.staticfile.org/simditor/2.3.6/lib/simditor.min-1.js" tppabs="https://cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js"></script> <div class="sidebar-box ad-box ad-box-large">
+<div id="ad-336280">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle-1.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5751451760833794" data-ad-slot="1691338467" data-ad-format="auto"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div>
+</div>
+<div class="fivecol last right-column">
+<style>
+.sidebar-tree .double-li {
+	width:300px;
+}
+.sidebar-tree .double-li li {
+    width: 44%;
+    line-height: 1.5em;
+    border-bottom: 1px solid #ccc;
+    float: left;
+    display: inline;
+}
+</style>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here" style="margin: 0 auto;">
+<a href="javascript:void(0);" style="font-size: 16px; color:#64854c;font-weight:bold;"> <i class="fa fa-list" aria-hidden="true"></i> 分类导航</a>
+</div>
+<div class="sidebar-box sidebar-cate">
+<div class="sidebar-tree">
+<ul><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> HTML / CSS</a><ul class="double-li"><li><a title="HTML 教程" href="../html/html-tutorial-1.html" tppabs="https://www.runoob.com/html/html-tutorial.html">HTML 教程</a></li><li><a title="HTML5 教程" href="../html/html5-intro-1.html" tppabs="https://www.runoob.com/html/html5-intro.html">HTML5 教程</a></li><li><a title="CSS 教程" href="../css/css-tutorial-1.html" tppabs="https://www.runoob.com/css/css-tutorial.html">CSS 教程</a></li><li><a title="CSS3 教程" href="../css3/css3-tutorial-1.html" tppabs="https://www.runoob.com/css3/css3-tutorial.html">CSS3 教程</a></li><li><a title="Bootstrap3 教程" href="../bootstrap/bootstrap-tutorial-1.html" tppabs="https://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap3 教程</a></li><li><a title="Bootstrap4 教程" href="../bootstrap4/bootstrap4-tutorial-1.html" tppabs="https://www.runoob.com/bootstrap4/bootstrap4-tutorial.html">Bootstrap4 教程</a></li><li><a title="Font Awesome 教程" href="../font-awesome/fontawesome-tutorial-1.html" tppabs="https://www.runoob.com/font-awesome/fontawesome-tutorial.html">Font Awesome 教程</a></li><li><a title="Foundation 教程" href="../foundation/foundation-tutorial-1.html" tppabs="https://www.runoob.com/foundation/foundation-tutorial.html">Foundation 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> JavaScript</a><ul class="double-li"><li><a title="JavaScript 教程" href="../js/js-tutorial-1.html" tppabs="https://www.runoob.com/js/js-tutorial.html">JavaScript 教程</a></li><li><a title="HTML DOM 教程" href="../htmldom/htmldom-tutorial-1.html" tppabs="https://www.runoob.com/htmldom/htmldom-tutorial.html">HTML DOM 教程</a></li><li><a title="jQuery 教程" href="../jquery/jquery-tutorial-1.html" tppabs="https://www.runoob.com/jquery/jquery-tutorial.html">jQuery 教程</a></li><li><a title="AngularJS 教程" href="../angularjs/angularjs-tutorial-1.html" tppabs="https://www.runoob.com/angularjs/angularjs-tutorial.html">AngularJS 教程</a></li><li><a title="AngularJS2 教程" href="../angularjs2/angularjs2-tutorial-1.html" tppabs="https://www.runoob.com/angularjs2/angularjs2-tutorial.html">AngularJS2 教程</a></li><li><a title="Vue.js 教程" href="../vue2/vue-tutorial-1.html" tppabs="https://www.runoob.com/vue2/vue-tutorial.html">Vue.js 教程</a></li><li><a title="React 教程" href="../react/react-tutorial-1.html" tppabs="https://www.runoob.com/react/react-tutorial.html">React 教程</a></li><li><a title="jQuery UI 教程" href="../jqueryui/jqueryui-tutorial-1.html" tppabs="https://www.runoob.com/jqueryui/jqueryui-tutorial.html">jQuery UI 教程</a></li><li><a title="jQuery EasyUI 教程" href="../jeasyui/jqueryeasyui-tutorial-1.html" tppabs="https://www.runoob.com/jeasyui/jqueryeasyui-tutorial.html">jQuery EasyUI 教程</a></li><li><a title="Node.js 教程" href="../nodejs/nodejs-tutorial-1.html" tppabs="https://www.runoob.com/nodejs/nodejs-tutorial.html">Node.js 教程</a></li><li><a title="AJAX 教程" href="../ajax/ajax-tutorial-1.html" tppabs="https://www.runoob.com/ajax/ajax-tutorial.html">AJAX 教程</a></li><li><a title="JSON 教程" href="../json/json-tutorial-1.html" tppabs="https://www.runoob.com/json/json-tutorial.html">JSON 教程</a></li><li><a title="Highcharts 教程" href="../highcharts/highcharts-tutorial-1.html" tppabs="https://www.runoob.com/highcharts/highcharts-tutorial.html">Highcharts 教程</a></li><li><a title="Google 地图 教程" href="../googleapi/google-maps-basic-1.html" tppabs="https://www.runoob.com/googleapi/google-maps-basic.html">Google 地图 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 服务端</a><ul class="double-li"><li><a title="PHP 教程" href="../php/php-tutorial-1.html" tppabs="https://www.runoob.com/php/php-tutorial.html">PHP 教程</a></li><li><a title="Python 教程" href="../python/python-tutorial-1.html" tppabs="https://www.runoob.com/python/python-tutorial.html">Python 教程</a></li><li><a title="Python3 教程" href="../python3/python3-tutorial-1.html" tppabs="https://www.runoob.com/python3/python3-tutorial.html">Python3 教程</a></li><li><a title="Django 教程" href="../django/django-tutorial-1.html" tppabs="https://www.runoob.com/django/django-tutorial.html">Django 教程</a></li><li><a title="Linux 教程" href="../linux/linux-tutorial-1.html" tppabs="https://www.runoob.com/linux/linux-tutorial.html">Linux 教程</a></li><li><a title="Docker 教程" href="../docker/docker-tutorial-1.html" tppabs="https://www.runoob.com/docker/docker-tutorial.html">Docker 教程</a></li><li><a title="Ruby 教程" href="../ruby/ruby-tutorial-1.html" tppabs="https://www.runoob.com/ruby/ruby-tutorial.html">Ruby 教程</a></li><li><a title="Java 教程" href="../java/java-tutorial-1.html" tppabs="https://www.runoob.com/java/java-tutorial.html">Java 教程</a></li><li><a title="C 教程" href="../cprogramming/c-tutorial.html" tppabs="https://www.runoob.com/c/c-tutorial.html">C 教程</a></li><li><a title="C++ 教程" href="cpp-tutorial-1.html" tppabs="https://www.runoob.com/cplusplus/cpp-tutorial.html">C++ 教程</a></li><li><a title="Perl 教程" href="../perl/perl-tutorial-1.html" tppabs="https://www.runoob.com/perl/perl-tutorial.html">Perl 教程</a></li><li><a title="Servlet 教程" href="../servlet/servlet-tutorial-1.html" tppabs="https://www.runoob.com/servlet/servlet-tutorial.html">Servlet 教程</a></li><li><a title="JSP 教程" href="../jsp/jsp-tutorial-1.html" tppabs="https://www.runoob.com/jsp/jsp-tutorial.html">JSP 教程</a></li><li><a title="Lua 教程" href="../lua/lua-tutorial-1.html" tppabs="https://www.runoob.com/lua/lua-tutorial.html">Lua 教程</a></li><li><a title="Scala 教程" href="../scala/scala-tutorial-1.html" tppabs="https://www.runoob.com/scala/scala-tutorial.html">Scala 教程</a></li><li><a title="Go 教程" href="../go/go-tutorial-1.html" tppabs="https://www.runoob.com/go/go-tutorial.html">Go 教程</a></li><li><a title="设计模式" href="../design-pattern/design-pattern-tutorial-1.html" tppabs="https://www.runoob.com/design-pattern/design-pattern-tutorial.html">设计模式</a></li><li><a title="正则表达式" href="../regexp/regexp-tutorial-1.html" tppabs="https://www.runoob.com/regexp/regexp-tutorial.html">正则表达式</a></li><li><a title="Maven 教程" href="../maven/maven-tutorial-1.html" tppabs="https://www.runoob.com/maven/maven-tutorial.html">Maven 教程</a></li><li><a title="NumPy 教程" href="../numpy/numpy-tutorial-1.html" tppabs="https://www.runoob.com/numpy/numpy-tutorial.html">NumPy 教程</a></li><li><a title="ASP 教程" href="../asp/asp-tutorial-1.html" tppabs="https://www.runoob.com/asp/asp-tutorial.html">ASP 教程</a></li><li><a title="AppML 教程" href="../appml/appml-tutorial-1.html" tppabs="https://www.runoob.com/appml/appml-tutorial.html">AppML 教程</a></li><li><a title="VBScript 教程" href="../vbscript/vbscript-tutorial-1.html" tppabs="https://www.runoob.com/vbscript/vbscript-tutorial.html">VBScript 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 数据库</a><ul class="double-li"><li><a title="SQL 教程" href="../sql/sql-tutorial-1.html" tppabs="https://www.runoob.com/sql/sql-tutorial.html">SQL 教程</a></li><li><a title="Mysql 教程" href="../mysql/mysql-tutorial-1.html" tppabs="https://www.runoob.com/mysql/mysql-tutorial.html">Mysql 教程</a></li><li><a title="SQLite 教程" href="../sqlite/sqlite-tutorial-1.html" tppabs="https://www.runoob.com/sqlite/sqlite-tutorial.html">SQLite 教程</a></li><li><a title="MongoDB 教程" href="../mongodb/mongodb-tutorial-1.html" tppabs="https://www.runoob.com/mongodb/mongodb-tutorial.html">MongoDB 教程</a></li><li><a title="Redis 教程" href="../redis/redis-tutorial-1.html" tppabs="https://www.runoob.com/redis/redis-tutorial.html">Redis 教程</a></li><li><a title="Memcached 教程" href="../Memcached/Memcached-tutorial-2.html" tppabs="https://www.runoob.com/Memcached/Memcached-tutorial.html">Memcached 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 移动端</a><ul class="double-li"><li><a title="Android 教程" href="../w3cnote/android-tutorial-intro-1.html" tppabs="https://www.runoob.com/w3cnote/android-tutorial-intro.html">Android 教程</a></li><li><a title="Swift 教程" href="../swift/swift-tutorial-1.html" tppabs="https://www.runoob.com/swift/swift-tutorial.html">Swift 教程</a></li><li><a title="jQuery Mobile 教程" href="../jquerymobile/jquerymobile-tutorial-1.html" tppabs="https://www.runoob.com/jquerymobile/jquerymobile-tutorial.html">jQuery Mobile 教程</a></li><li><a title="ionic 教程" href="../ionic/ionic-tutorial-1.html" tppabs="https://www.runoob.com/ionic/ionic-tutorial.html">ionic 教程</a></li><li><a title="Kotlin 教程" href="../kotlin/kotlin-tutorial-1.html" tppabs="https://www.runoob.com/kotlin/kotlin-tutorial.html">Kotlin 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> XML 教程</a><ul class="double-li"><li><a title="XML 教程" href="../xml/xml-tutorial-1.html" tppabs="https://www.runoob.com/xml/xml-tutorial.html">XML 教程</a></li><li><a title="DTD 教程" href="../dtd/dtd-tutorial-1.html" tppabs="https://www.runoob.com/dtd/dtd-tutorial.html">DTD 教程</a></li><li><a title="XML DOM 教程" href="../dom/dom-tutorial-1.html" tppabs="https://www.runoob.com/dom/dom-tutorial.html">XML DOM 教程</a></li><li><a title="XSLT 教程" href="../xsl/xsl-tutorial-1.html" tppabs="https://www.runoob.com/xsl/xsl-tutorial.html">XSLT 教程</a></li><li><a title="XPath 教程" href="../xpath/xpath-tutorial-1.html" tppabs="https://www.runoob.com/xpath/xpath-tutorial.html">XPath 教程</a></li><li><a title="XQuery 教程" href="../xquery/xquery-tutorial-1.html" tppabs="https://www.runoob.com/xquery/xquery-tutorial.html">XQuery 教程</a></li><li><a title="XLink 教程" href="../xlink/xlink-tutorial-1.html" tppabs="https://www.runoob.com/xlink/xlink-tutorial.html">XLink 教程</a></li><li><a title="XPointer 教程" href="../xlink/xlink-tutorial-1.html" tppabs="https://www.runoob.com/xlink/xlink-tutorial.html">XPointer 教程</a></li><li><a title="XML Schema 教程" href="../schema/schema-tutorial-1.html" tppabs="https://www.runoob.com/schema/schema-tutorial.html">XML Schema 教程</a></li><li><a title="XSL-FO 教程" href="../xslfo/xslfo-tutorial-1.html" tppabs="https://www.runoob.com/xslfo/xslfo-tutorial.html">XSL-FO 教程</a></li><li><a title="SVG 教程" href="../svg/svg-tutorial-1.html" tppabs="https://www.runoob.com/svg/svg-tutorial.html">SVG 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> ASP.NET</a><ul class="double-li"><li><a title="ASP.NET 教程" href="../aspnet/aspnet-tutorial-1.html" tppabs="https://www.runoob.com/aspnet/aspnet-tutorial.html">ASP.NET 教程</a></li><li><a title="C# 教程" href="../csharp/csharp-tutorial-1.html" tppabs="https://www.runoob.com/csharp/csharp-tutorial.html">C# 教程</a></li><li><a title="Web Pages 教程" href="../aspnet/webpages-intro-1.html" tppabs="https://www.runoob.com/aspnet/webpages-intro.html">Web Pages 教程</a></li><li><a title="Razor 教程" href="../aspnet/razor-intro-1.html" tppabs="https://www.runoob.com/aspnet/razor-intro.html">Razor 教程</a></li><li><a title="MVC 教程" href="../aspnet/mvc-intro-1.html" tppabs="https://www.runoob.com/aspnet/mvc-intro.html">MVC 教程</a></li><li><a title="Web Forms 教程" href="../aspnet/aspnet-intro-1.html" tppabs="https://www.runoob.com/aspnet/aspnet-intro.html">Web Forms 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> Web Service</a><ul class="double-li"><li><a title="Web Service 教程" href="../webservices/webservices-tutorial-1.html" tppabs="https://www.runoob.com/webservices/webservices-tutorial.html">Web Service 教程</a></li><li><a title="WSDL 教程" href="../wsdl/wsdl-tutorial-1.html" tppabs="https://www.runoob.com/wsdl/wsdl-tutorial.html">WSDL 教程</a></li><li><a title="SOAP 教程" href="../soap/soap-tutorial-1.html" tppabs="https://www.runoob.com/soap/soap-tutorial.html">SOAP 教程</a></li><li><a title="RSS 教程" href="../rss/rss-tutorial-1.html" tppabs="https://www.runoob.com/rss/rss-tutorial.html">RSS 教程</a></li><li><a title="RDF 教程" href="../rdf/rdf-tutorial-1.html" tppabs="https://www.runoob.com/rdf/rdf-tutorial.html">RDF 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 开发工具</a><ul class="double-li"><li><a title="Eclipse 教程" href="../eclipse/eclipse-tutorial-1.html" tppabs="https://www.runoob.com/eclipse/eclipse-tutorial.html">Eclipse 教程</a></li><li><a title="Git 教程" href="../git/git-tutorial-1.html" tppabs="https://www.runoob.com/git/git-tutorial.html">Git 教程</a></li><li><a title="Svn 教程" href="../svn/svn-tutorial-1.html" tppabs="https://www.runoob.com/svn/svn-tutorial.html">Svn 教程</a></li><li><a title="Firebug 教程" href="../firebug/firebug-tutorial-1.html" tppabs="https://www.runoob.com/firebug/firebug-tutorial.html">Firebug 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 网站建设</a><ul class="double-li"><li><a title="HTTP 教程" href="../http/http-tutorial-1.html" tppabs="https://www.runoob.com/http/http-tutorial.html">HTTP 教程</a></li><li><a title="网站建设指南" href="../web/web-buildingprimer-1.html" tppabs="https://www.runoob.com/web/web-buildingprimer.html">网站建设指南</a></li><li><a title="浏览器信息" href="../browsers/browser-information-1.html" tppabs="https://www.runoob.com/browsers/browser-information.html">浏览器信息</a></li><li><a title="网站主机教程" href="../hosting/hosting-tutorial-1.html" tppabs="https://www.runoob.com/hosting/hosting-tutorial.html">网站主机教程</a></li><li><a title="TCP/IP 教程" href="../tcpip/tcpip-tutorial-1.html" tppabs="https://www.runoob.com/tcpip/tcpip-tutorial.html">TCP/IP 教程</a></li><li><a title="W3C 教程" href="../w3c/w3c-tutorial-1.html" tppabs="https://www.runoob.com/w3c/w3c-tutorial.html">W3C 教程</a></li><li><a title="网站品质" href="../quality/quality-tutorial-1.html" tppabs="https://www.runoob.com/quality/quality-tutorial.html">网站品质</a></li></ul></li></ul> </div>
+</div>
+</div>
+<br>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here">
+<a href="javascript:void(0);">Advertisement</a>
+</div>
+<div class="ad-600160" id="sidebar-right-ads">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle-1.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div></div>
+</div>
+<script>
+var aid = 11180;
+function coll() {
+	$.post( '../wp-content/themes/runoob/option/user/userinfo-1.php.htm'/*tpa=https://www.runoob.com/wp-content/themes/runoob/option/user/userinfo.php*/, {aid:aid, action:"collarticle", opt:'add'},function( data ) {
+		if(data.error==0) {
+			$("#content").find("h1:first").find("a").attr("href","javascript:void(0);");
+			$("#content").find("h1:first").find("img").attr("src","../wp-content/themes/runoob/assets/img/coll2.png"/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/coll2.png*/).css({width:32+"px",height:32+"px"});
+		}
+		alert(data.msg);
+	},'json');
+}
+</script>
+<script src="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js-1-1.0" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js?1.0"></script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css-1-1.0.css" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css?1.0" />
+<script type="text/javascript">
+$.feedback({
+    ajaxURL: '../feedback/runoob_feedback-1.php.htm'/*tpa=https://www.runoob.com/feedback/runoob_feedback.php*/,
+    html2canvasURL: '../wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas-1.js'/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas.js*/
+});
+</script>
+<button class="feedback-btn feedback-btn-gray">反馈/建议</button>
+<div id="footer" class="mar-t50">
+<div class="runoob-block">
+<div class="runoob cf">
+<dl>
+<dt>
+在线实例
+</dt>
+<dd>
+&middot;<a target="_blank" href="../html/html-examples-1.html" tppabs="https://www.runoob.com/html/html-examples.html">HTML 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../css/css-examples-1.html" tppabs="https://www.runoob.com/css/css-examples.html">CSS 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../js/js-examples-1.html" tppabs="https://www.runoob.com/js/js-examples.html">JavaScript 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../ajax/ajax-examples.html" tppabs="https://www.runoob.com/ajx/ajax-examples.html">Ajax 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../jquery/jquery-examples-1.html" tppabs="https://www.runoob.com/jquery/jquery-examples.html">jQuery 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../xml/xml-examples-1.html" tppabs="https://www.runoob.com/xml/xml-examples.html">XML 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../java/java-examples-1.html" tppabs="https://www.runoob.com/java/java-examples.html">Java 实例</a>
+</dd>
+</dl>
+<dl>
+<dt>
+字符集&工具
+</dt>
+<dd>
+&middot; <a target="_blank" href="../charsets/html-charsets-1.html" tppabs="https://www.runoob.com/charsets/html-charsets.html">HTML 字符集设置</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-ascii-1.html" tppabs="https://www.runoob.com/tags/html-ascii.html">HTML ASCII 字符集</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/ref-entities-1.html" tppabs="https://www.runoob.com/tags/ref-entities.html">HTML ISO-8859-1</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-symbols-1.html" tppabs="https://www.runoob.com/tags/html-symbols.html">HTML 实体符号</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-colorpicker-1.html" tppabs="https://www.runoob.com/tags/html-colorpicker.html">HTML 拾色器</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="javascript:if(confirm('https://c.runoob.com/front-end/53  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://c.runoob.com/front-end/53'" tppabs="https://c.runoob.com/front-end/53">JSON 格式化工具</a>
+</dd>
+</dl>
+<dl>
+<dt>
+最新更新
+</dt>
+<dd>
+&middot;
+<a href="../w3cnote/csharp-init-variable.html" tppabs="http://www.runoob.com/w3cnote/csharp-init-variable.html" title="关于 C# 中的变量的初始化问题浅谈">关于 C# 中的变...</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/scrapy-detail.html" tppabs="http://www.runoob.com/w3cnote/scrapy-detail.html" title="Scrapy 入门教程">Scrapy 入门教程</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/c-structures-intro.html" tppabs="http://www.runoob.com/w3cnote/c-structures-intro.html" title="C 结构体">C 结构体</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/matplotlib-tutorial.html" tppabs="http://www.runoob.com/w3cnote/matplotlib-tutorial.html" title="Matplotlib 教程">Matplotlib 教程</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-matplotlib.html" tppabs="http://www.runoob.com/numpy/numpy-matplotlib.html" title="NumPy  Matplotlib">NumPy Matplotlib</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-io.html" tppabs="http://www.runoob.com/numpy/numpy-io.html" title="NumPy IO">NumPy IO</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-linear-algebra.html" tppabs="http://www.runoob.com/numpy/numpy-linear-algebra.html" title="NumPy 线性代数">NumPy 线性代数</a>
+</dd>
+</dl>
+<dl>
+<dt>
+站点信息
+</dt>
+<dd>
+&middot;
+<a target="_blank" href="javascript:if(confirm('https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="external nofollow">意见反馈</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../disclaimer-1.htm" tppabs="https://www.runoob.com/disclaimer">免责声明</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../aboutus-1.htm" tppabs="https://www.runoob.com/aboutus">关于我们</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../archives-1.htm" tppabs="https://www.runoob.com/archives">文章归档</a>
+</dd>
+</dl>
+<div class="search-share">
+<div class="app-download">
+<div>
+<strong>关注微信</strong>
+</div>
+</div>
+<div class="share">
+<img width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode-1.png" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="w-1000 copyright">
+Copyright &copy; 2013-2018 <strong><a href="../index-1.htm" tppabs="https://www.runoob.com/" target="_blank">菜鸟教程</a></strong>&nbsp;
+<strong><a href="../index-1.htm" tppabs="https://www.runoob.com/" target="_blank">runoob.com</a></strong> All Rights Reserved. 备案号：闽ICP备15012807号-1
+</div>
+</div>
+<div class="fixed-btn">
+<a class="go-top" href="javascript:void(0)" title="返回顶部"> <i class="fa fa-angle-up"></i></a>
+<a class="qrcode" href="javascript:void(0)" title="关注我们"><i class="fa fa-qrcode"></i></a>
+<a class="writer" style="display:none" href="javascript:void(0)" title="标记/收藏"><i class="fa fa-star" aria-hidden="true"></i></a>
+<div id="bottom-qrcode" class="modal panel-modal hide fade in">
+<h4>微信关注</h4>
+<div class="panel-body"><img alt="微信关注" width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode-1.png" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png"></div>
+</div>
+</div>
+<div class="hide_box"></div>
+<div class="shang_box">
+<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="../../static.runoob.com/images/dashang/close-1.jpg" tppabs="https://static.runoob.com/images/dashang/close.jpg" alt="取消" /></a>
+<div class="shang_tit">
+<p>感谢您的支持，我会继续努力的!</p>
+</div>
+<div class="shang_payimg">
+<img src="../../static.runoob.com/images/dashang/weipayimg-1.png.jpg" tppabs="https://static.runoob.com/images/dashang/weipayimg.png" alt="扫码支持" title="扫一扫" />
+</div>
+<div class="pay_explain">扫码打赏，你说多少就多少</div>
+<div class="shang_payselect">
+<div class="pay_item  checked" data-id="weipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/wechat-1.jpg" tppabs="https://static.runoob.com/images/dashang/wechat.jpg" alt="微信" /></span>
+</div>
+<div class="pay_item" data-id="alipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/alipay-1.jpg" tppabs="https://static.runoob.com/images/dashang/alipay.jpg" alt="支付宝" /></span>
+</div>
+</div>
+<div class="shang_info">
+<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+<p><a href="javascript:if(confirm('https://c.runoob.com/codedemo/5348  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://c.runoob.com/codedemo/5348'" tppabs="https://c.runoob.com/codedemo/5348" target="_blank"><span style=" font-size: 14px;color: #000;font-weight: bold;">点我查看本站打赏源码！</span></a></p>
+</div>
+</div>
+<div id="testClick"></div>
+<div style="display:none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "../../hm.baidu.com/hm.js-3eec0b7da6548cf07db3bc477ea905ee"/*tpa=https://hm.baidu.com/hm.js?3eec0b7da6548cf07db3bc477ea905ee*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="../../www.googletagmanager.com/gtag/js-id=UA-84264393-2" tppabs="https://www.googletagmanager.com/gtag/js?id=UA-84264393-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-84264393-2');
+</script>
+</div>
+<script>
+window.jsui={
+    www: 'https://wwww.runoob.com/',
+    uri: '//www.runoob.com/wp-content/themes/runoob'
+};
+</script>
+<style>
+ol,ul{list-style:none}.cd-switcher a{text-decoration:none;outline:0}.cd-switcher a:hover{text-decoration:underline}a:focus{outline:0;-moz-outline:0}.main_nav{width:300px;height:60px;margin:60px auto 10px auto}.main_nav li{float:left;width:60px;margin-right:10px;font-size:16px;padding:.6em 1em;border-radius:3em;background:#2f889a;text-align:center}.main_nav li a{color:#fff}.errtip{background-color:#fceaea;color:#db5353;padding:8px 15px;font-size:14px;border:1px solid #fc9797;border-radius:5px}.cd-user-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(52,54,66,0.9);z-index:3;overflow-y:auto;cursor:pointer;visibility:hidden;opacity:0;-webkit-transition:opacity .3s 0,visibility 0 .3s;-moz-transition:opacity .3s 0,visibility 0 .3s;transition:opacity .3s 0,visibility 0 .3s}.cd-user-modal.is-visible{visibility:visible;opacity:1;-webkit-transition:opacity .3s 0,visibility 0 0;-moz-transition:opacity .3s 0,visibility 0 0;transition:opacity .3s 0,visibility 0 0}.cd-user-modal.is-visible .cd-user-modal-container{-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}.cd-user-modal-container{position:relative;width:90%;max-width:500px;background:#FFF;margin:3em auto 4em;cursor:auto;border-radius:.25em;-webkit-transform:translateY(-30px);-moz-transform:translateY(-30px);-ms-transform:translateY(-30px);-o-transform:translateY(-30px);transform:translateY(-30px);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;transition-property:transform;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;transition-duration:.3s}.cd-user-modal-container .cd-switcher:after{content:"";display:table;clear:both}.cd-user-modal-container .cd-switcher li{width:50%;float:left;text-align:center}.cd-user-modal-container .cd-switcher li:first-child a{border-radius:.25em 0 0 0}.cd-user-modal-container .cd-switcher li:last-child a{border-radius:0 .25em 0 0}.cd-user-modal-container .cd-switcher a{font-size:1.2em;font-weight:bold;display:block;width:100%;height:50px;line-height:50px;background:#e8f1e2;color:#96b880}.cd-user-modal-container .cd-switcher a.selected{background:#FFF;color:#505260}@media only screen and (min-width:600px){.cd-user-modal-container{margin:4em auto}.cd-user-modal-container .cd-switcher a{height:70px;line-height:70px}}.cd-form{padding:1.4em}.cd-form .fieldset{position:relative;margin:1.4em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form label{font-size:16px;font-size:.875rem}.cd-form label.image-replace{display:inline-block;position:absolute;left:15px;top:50%;bottom:auto;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);height:20px;width:20px;overflow:hidden;text-indent:100%;white-space:nowrap;color:transparent;text-shadow:none;background-repeat:no-repeat;background-position:50% 0}.cd-form label.cd-username{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-username-1.svg")/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*/}.cd-form label.cd-email{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-email-1.svg")/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*/}.cd-form label.cd-password{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-password-1.svg")/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*/}.cd-form input{margin:0;padding:0;border-radius:.25em}.cd-form input.full-width{width:80%}.cd-form input.full-width2{width:94%}.cd-form input.has-padding{padding:12px 20px 12px 50px}.cd-form input.has-border{border:1px solid #d2d8d8;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}.cd-form input.has-border:focus{border-color:#98b880;box-shadow:0 0 5px rgba(52,54,66,0.1);outline:0}.cd-form input.has-error{border:1px solid #d76666}.cd-form input[type=password]{padding-right:65px}.cd-form input[type=submit]{padding:16px 0;cursor:pointer;background:#96b97d;color:#FFF;font-weight:bold;border:0;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;font-size:1.2em;font-weight:bold}.no-touch .cd-form input[type=submit]:hover,.no-touch .cd-form input[type=submit]:focus{background:#3599ae;outline:0}@media only screen and (min-width:600px){.cd-form{padding:2em}.cd-form .fieldset{margin:2em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form input.has-padding{padding:16px 20px 16px 50px}.cd-form input[type=submit]{padding:16px 0}}.cd-close-form{display:block;position:absolute;width:40px;height:40px;right:0;top:-40px;background:url("../wp-content/themes/runoob/assets/img/cd-icon-close-1.svg")/*tpa=https://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*/ no-repeat center center;text-indent:100%;white-space:nowrap;overflow:hidden}@media only screen and (min-width:1170px){}#cd-login,#cd-signup,#cd-reset-password{display:none}#cd-login.is-selected,#cd-signup.is-selected,#cd-reset-password.is-selected{display:block}
+</style>
+<div class="cd-user-modal">
+<div class="cd-user-modal-container">
+<ul class="cd-switcher">
+<li><a href="javascript:;">用户登录</a></li>
+<li><a href="javascript:;">注册新用户</a></li>
+</ul>
+<div id="cd-login"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-username" for="signin-username">用户名</label>
+<input class="full-width has-padding has-border" id="signin-username" name=username type="text" placeholder="输入用户名">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signin-password">密码</label>
+<input class="full-width has-padding has-border" id="signin-password" name="password" type="password" placeholder="输入密码">
+</p>
+<p class="fieldset">
+<input type="checkbox" id="remember-me" checked>
+<label for="remember-me">记住登录状态</label>
+<a href="../reset-password-1.htm" tppabs="https://www.runoob.com/reset-password" style="float: right;padding-right: 20px;" target="_blank">忘记密码？</a>
+</p>
+<input type="hidden" name="action" value="signin">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="登 录">
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<div id="cd-signup"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-password" for="verifycode">邀请码</label>
+<input class="full-width has-padding has-border" id="signup-verifycode" name="verifycode" type="text" placeholder="输入邀请码">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-username" for="signup-username">用户名</label>
+<input class="full-width has-padding has-border" id="signup-username" name="name" type="text" placeholder="输入用户名">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-email" for="signup-email">邮箱</label>
+<input class="full-width has-padding has-border" name="email" id="signup-email" type="email" placeholder="输入mail">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password">密码</label>
+<input class="full-width has-padding has-border" id="signup-password" name="password" type="password" placeholder="输入密码">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password2">重复输入密码</label>
+<input class="full-width has-padding has-border" id="signup-password2" name="password2" type="password" placeholder="重复输入密码">
+</p>
+<input type="hidden" name="action" value="signup">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="注册新用户">
+</p>
+<p class="fieldset">
+<a href="../w3cnote/runoob-user-test-intro-1.html#invite" tppabs="https://www.runoob.com/w3cnote/runoob-user-test-intro.html#invite" target="_blank">如何获取邀请码？</a>
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<a href="javascript:;" class="cd-close-form">关闭</a>
+</div>
+</div>
+<script src="../wp-content/themes/runoob/assets/js/main.js-v=1-1.189" tppabs="https://www.runoob.com/wp-content/themes/runoob/assets/js/main.js?v=1.189"></script>
+<script src="../../static.runoob.com/assets/libs/hl/run_prettify-1.js" tppabs="https://static.runoob.com/assets/libs/hl/run_prettify.js"></script>
+</body>
+</html>

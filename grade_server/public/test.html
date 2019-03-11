@@ -1,0 +1,115 @@
+<div class="article-body">
+
+    <div class="article-intro" id="content">
+
+        <h1>CSS3 多媒体查询实例</h1>
+
+        <p>本章节我们将为大家演示一些多媒体查询实例。</p>
+
+        <p>开始之前我们先制作一个电子邮箱的链接列表。HTML 代码如下：</p>
+        <div class="example">
+            <h3 class="example">实例 1</h3>
+            <div class="example_code">
+
+                <span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br><span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br><span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br><span class="highLT">&lt;</span><span class="highELE">style</span><span class="highGT">&gt;</span><br>ul {<br>&nbsp;&nbsp;&nbsp;
+                list-style-type: none;<br>}<br><br>ul li a {<br>&nbsp;&nbsp;&nbsp; color:
+                green;<br>&nbsp;&nbsp;&nbsp; text-decoration: none;<br>&nbsp;&nbsp;&nbsp;
+                padding: 3px; <br>&nbsp;&nbsp;&nbsp; display: block;<br>}<br><span class="highLT">&lt;</span><span class="highELE">/style</span><span class="highGT">&gt;</span><br>
+                <span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span><br><span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br><br><span class="highLT">&lt;</span><span class="highELE">ul</span><span class="highGT">&gt;</span><br>&nbsp; <span class="highLT">&lt;</span><span class="highELE">li</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">a</span> <span class="highATT">data-email=</span><span class="highVAL">"johndoe@example.com"</span>
+                <span class="highATT">href=</span><span class="highVAL">"mailto:johndoe@example.com"</span><span class="highGT">&gt;</span>John Doe<span class="highLT">&lt;</span><span class="highELE">/a</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/li</span><span class="highGT">&gt;</span><br>&nbsp; <span class="highLT">&lt;</span><span class="highELE">li</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">a</span>
+                <span class="highATT">data-email=</span><span class="highVAL">"marymoe@example.com"</span> <span class="highATT">href=</span><span class="highVAL">"mailto:marymoe@example.com"</span><span class="highGT">&gt;</span>Mary
+                Moe<span class="highLT">&lt;</span><span class="highELE">/a</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/li</span><span class="highGT">&gt;</span><br>&nbsp; <span class="highLT">&lt;</span><span class="highELE">li</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">a</span> <span class="highATT">data-email=</span><span class="highVAL">"amandapanda@example.com"</span> <span class="highATT">href=</span><span class="highVAL">"mailto:amandapanda@example.com"</span><span class="highGT">&gt;</span>Amanda
+                Panda<span class="highLT">&lt;</span><span class="highELE">/a</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/li</span><span class="highGT">&gt;</span><br><span class="highLT">&lt;</span><span class="highELE">/ul</span><span class="highGT">&gt;</span><br><br><span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br><span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span><br>
+            </div>
+            <br>
+
+        </div>
+        <p>注意  <code>data-email</code> 属性。在 HTML 中我们可以使用带 <code>data-</code> 前缀的属性来存储信息。
+        </p>
+        <hr>
+        <h2>520 到 699px 宽度 - 添加邮箱图标</h2>
+        <p>当浏览器的宽度在 520 到 699px, 邮箱链接前添加邮件图标：</p>
+        <div class="example">
+            <h3 class="example">实例 2</h3>
+            <div class="example_code">
+                <span class="highELE">@media screen and (max-width: 699px) and (min-width: 520px) </span>{<br><span class="highELE">&nbsp;&nbsp;&nbsp;
+	ul li a </span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="highATT">padding-left:</span><span class="highVAL"> 30px;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="highATT">background:</span><span class="highVAL"> url(email-icon.png) left center no-repeat;</span><br>&nbsp;&nbsp;&nbsp;
+                }<br>}<br>
+            </div><br>
+
+
+        </div>
+
+
+
+        <hr>
+        <h2>700 到 1000px - 添加文本前缀信息</h2>
+
+
+        <p>当浏览器的宽度在 700 到 1000px, 会在邮箱链接前添加 "Email: ":</p>
+
+        <div class="example">
+            <h3 class="example">实例 3</h3>
+            <div class="example_code">
+                <span class="highELE">@media screen and (max-width: 1000px) and (min-width: 700px) </span>{<br><span class="highELE">&nbsp;&nbsp;&nbsp;
+	ul li a:before </span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="highATT">content:</span><span class="highVAL"> "Email: ";</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="highATT">font-style:</span><span class="highVAL"> italic;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highATT">color:</span><span class="highVAL"> #666666;</span><br>&nbsp;&nbsp;&nbsp;
+                }<br>}<br>
+            </div><br>
+
+
+        </div>
+
+
+        <hr>
+        <h2>大于 1001px 宽度 - 添加邮件地址</h2>
+
+        <p>当浏览器的宽度大于 1001px 时，会在链接后添加邮件地址接。</p>
+        <p>我们会使用 <code>data-</code> 属性来为每个人名后添加邮件地址：</p>
+
+        <div class="example">
+            <h3 class="example">实例 4</h3>
+            <div class="example_code">
+                <span class="highELE">@media screen and (min-width: 1001px) </span>{<br><span class="highELE">&nbsp;&nbsp;&nbsp; ul li
+	a:after </span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highATT">content:</span><span class="highVAL"> " (" attr(data-email)
+	")";</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highATT">font-size:</span><span class="highVAL"> 12px;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="highATT">font-style:</span><span class="highVAL"> italic;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highATT">color:</span><span class="highVAL">
+	#666666;</span><br>&nbsp;&nbsp;&nbsp; }<br>}<br>
+            </div><br>
+
+
+        </div>
+
+
+        <hr>
+        <h2>大于 1151px 宽度 - 添加图标</h2>
+        <p>当浏览器的宽度大于 1001px 时，会在人名前添加图标。</p>
+        <p>实例中，我们没有编写额外的查询块，我们可以在已有的查询媒体后使用逗号分隔来添加其他媒体查询 (类似 OR 操作符):</p>
+
+        <div class="example">
+            <h3 class="example">实例 5</h3>
+            <div class="example_code">
+	<span class="highELE">@media screen and (max-width: 699px) and (min-width: 520px), (min-width:
+	1151px) </span>{<br><span class="highELE">&nbsp;&nbsp;&nbsp;
+	ul li a </span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="highATT">padding-left:</span><span class="highVAL"> 30px;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="highATT">background:</span><span class="highVAL"> url(email-icon.png) left center no-repeat;</span><br>&nbsp;&nbsp;&nbsp;
+                }<br>}<br>
+            </div><br>
+
+
+        </div>
+
+        <hr>
+        <div class="tryit_ex">
+            <img src="/images/tryitimg.gif" style="height:46px;width:40px" alt="实例">
+            <h2>更多实例</h2>
+        </div>
+        <p><a >在一个网页的侧栏上使用邮件列表链接</a><br>该实例在网页的左侧栏添加了邮件链接列表。</p>			<!-- 其他扩展 -->
+
+    </div>
+
+</div>

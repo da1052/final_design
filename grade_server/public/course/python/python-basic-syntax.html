@@ -1,0 +1,1012 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="qc:admins" content="465267610762567726375" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python 基础语法 | 菜鸟教程</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="canonical" href="http://www.runoob.com/python/python-basic-syntax.html" />
+<meta name="keywords" content="Python 基础语法">
+<meta name="description" content="Python 基础语法  Python 语言与 Perl，C 和 Java 等语言有许多相似之处。但是，也存在一些差异。 在本章中我们将来学习 Python 的基础语法，让你快速学会 Python 编程。   第一个 Python 程序 交互式编程 交互式编程不需要创建脚本文件，是通过 Python 解释器的交互模式进来编写代码。 linux上你只需要在命令行中输入 Python 命令即可启动交互式编程,提示窗口如下：  $ pytho..">
+<link rel="shortcut icon" href="../../static.runoob.com/images/favicon.ico" tppabs="http://static.runoob.com/images/favicon.ico" mce_href="//static.runoob.com/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../wp-content/themes/runoob/style.css-v=1.147.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/style.css?v=1.147" type="text/css" media="all" />
+<link rel="stylesheet" href="../../cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" tppabs="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<!--[if gte IE 9]><!-->
+  <script src="../../cdn.staticfile.org/jquery/2.0.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+  <!--<![endif]-->
+<!--[if lt IE 9]>
+     <script src="../../cdn.staticfile.org/jquery/1.9.1/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+     <script src="../../cdn.staticfile.org/html5shiv/r29/html5.min.js" tppabs="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+<link rel="apple-touch-icon" href="//static.runoob.com/images/icon/mobile-icon.png"/>
+<meta name="apple-mobile-web-app-title" content="菜鸟教程">
+</head>
+<body>
+<div class="container logo-search">
+<div class="col search row-search-mobile">
+<form action="index.php-s=.htm" tppabs="http://www.runoob.com/python/index.php?s=">
+<input class="placeholder" placeholder="搜索……" name="s" autocomplete="off">
+</form>
+</div>
+<div class="row">
+<div class="col logo">
+<h1><a href="../index.htm" tppabs="http://www.runoob.com/">菜鸟教程 -- 学的不仅是技术，更是梦想！</a></h1>
+</div>
+<div class="col right-list">
+<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style=""> <i class="fa fa-navicon"></i> </button>
+</div>
+<div class="col search search-desktop last">
+<form action="../-s=.htm" tppabs="http://www.runoob.com/?s=" target="_blank">
+<input class="placeholder" id="s" name="s" placeholder="搜索……" autocomplete="off">
+</form>
+</div>
+</div>
+</div>
+<div class="container navigation">
+<div class="row">
+<div class="col nav">
+<ul class="pc-nav">
+<li><a href="../index.htm" tppabs="http://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JavaScript</a></li>
+<li><a href="../jquery/jquery-tutorial.html" tppabs="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery</a></li>
+<li><a href="../bootstrap/bootstrap-tutorial.html" tppabs="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap</a></li>
+<li><a href="../sql/sql-tutorial.html" tppabs="http://www.runoob.com/sql/sql-tutorial.html">SQL</a></li>
+<li><a href="../mysql/mysql-tutorial.html" tppabs="http://www.runoob.com/mysql/mysql-tutorial.html">MySQL</a></li>
+<li><a href="../php/php-tutorial.html" tppabs="http://www.runoob.com/php/php-tutorial.html">PHP</a></li>
+<li><a href="python-tutorial.html" tppabs="http://www.runoob.com/python/python-tutorial.html">Python2</a></li>
+<li><a href="../python3/python3-tutorial.html" tppabs="http://www.runoob.com/python3/python3-tutorial.html">Python3</a></li>
+<li><a href="../cprogramming/c-tutorial.html" tppabs="http://www.runoob.com/cprogramming/c-tutorial.html">C</a></li>
+<li><a href="../cplusplus/cpp-tutorial.html" tppabs="http://www.runoob.com/cplusplus/cpp-tutorial.html">C++</a></li>
+<li><a href="../csharp/csharp-tutorial.html" tppabs="http://www.runoob.com/csharp/csharp-tutorial.html">C#</a></li>
+<li><a href="../java/java-tutorial.html" tppabs="http://www.runoob.com/java/java-tutorial.html">Java</a></li>
+<li><a href="../browser-history.htm" tppabs="http://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png" tppabs="http://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+</ul>
+<ul class="mobile-nav">
+<li><a href="../index.htm" tppabs="http://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JS</a></li>
+<li><a href="../browser-history.htm" tppabs="http://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png" tppabs="http://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+<a href="javascript:void(0)" class="search-reveal">Search</a>
+</ul>
+</div>
+</div>
+</div>
+<div class="container main">
+<div class="row">
+<div class="col left-column">
+<div class="tab">Python 基础教程 <a data-cate="48" href="javascript:void(0);" title="夜间模式" id="moon"><i class="fa fa-moon-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+<a data-cate="48" style="display:none;" href="javascript:void(0);" title="日间模式" id="sun"><i class="fa fa-sun-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+</div>
+<div class="sidebar-box gallery-list">
+<div class="design" id="leftcolumn">
+<a target="_top" title="Python 基础教程" href="python-tutorial.html" tppabs="http://www.runoob.com/python/python-tutorial.html">
+Python 基础教程 </a>
+<a target="_top" title="Python 简介" href="python-intro.html" tppabs="http://www.runoob.com/python/python-intro.html">
+Python 简介 </a>
+<a target="_top" title="Python 环境搭建" href="python-install.html" tppabs="http://www.runoob.com/python/python-install.html">
+Python 环境搭建 </a>
+<a target="_top" title="Python 中文编码" href="python-chinese-encoding.html" tppabs="http://www.runoob.com/python/python-chinese-encoding.html"> Python 中文编码 </a> <a target="_top" title="Python 基础语法" href="python-basic-syntax.html" tppabs="http://www.runoob.com/python/python-basic-syntax.html">
+Python 基础语法 </a>
+<a target="_top" title="Python 变量类型" href="python-variable-types.html" tppabs="http://www.runoob.com/python/python-variable-types.html">
+Python 变量类型 </a>
+<a target="_top" title="Python 运算符" href="python-operators.html" tppabs="http://www.runoob.com/python/python-operators.html">
+Python 运算符 </a>
+<a target="_top" title="Python 条件语句" href="python-if-statement.html" tppabs="http://www.runoob.com/python/python-if-statement.html">
+Python 条件语句 </a>
+<a target="_top" title="Python 循环语句" href="python-loops.html" tppabs="http://www.runoob.com/python/python-loops.html">
+Python 循环语句 </a>
+<a target="_top" title="Python While 循环语句" href="python-while-loop.html" tppabs="http://www.runoob.com/python/python-while-loop.html">
+Python While 循环语句 </a>
+<a target="_top" title="Python for 循环语句" href="python-for-loop.html" tppabs="http://www.runoob.com/python/python-for-loop.html">
+Python for 循环语句 </a>
+<a target="_top" title="Python 循环嵌套" href="python-nested-loops.html" tppabs="http://www.runoob.com/python/python-nested-loops.html">
+Python 循环嵌套 </a>
+<a target="_top" title="Python break 语句" href="python-break-statement.html" tppabs="http://www.runoob.com/python/python-break-statement.html">
+Python break 语句 </a>
+<a target="_top" title="Python continue  语句" href="python-continue-statement.html" tppabs="http://www.runoob.com/python/python-continue-statement.html">
+Python continue 语句 </a>
+<a target="_top" title="Python pass 语句" href="python-pass-statement.html" tppabs="http://www.runoob.com/python/python-pass-statement.html">
+Python pass 语句 </a>
+<a target="_top" title="Python Number(数字)" href="python-numbers.html" tppabs="http://www.runoob.com/python/python-numbers.html">
+Python Number(数字) </a>
+<a target="_top" title="Python 字符串" href="python-strings.html" tppabs="http://www.runoob.com/python/python-strings.html">
+Python 字符串 </a>
+<a target="_top" title="Python 列表(List)" href="python-lists.html" tppabs="http://www.runoob.com/python/python-lists.html">
+Python 列表(List) </a>
+<a target="_top" title="Python 元组" href="python-tuples.html" tppabs="http://www.runoob.com/python/python-tuples.html">
+Python 元组 </a>
+<a target="_top" title="Python 字典(Dictionary)" href="python-dictionary.html" tppabs="http://www.runoob.com/python/python-dictionary.html">
+Python 字典(Dictionary) </a>
+<a target="_top" title="Python 日期和时间" href="python-date-time.html" tppabs="http://www.runoob.com/python/python-date-time.html">
+Python 日期和时间 </a>
+<a target="_top" title="Python 函数" href="python-functions.html" tppabs="http://www.runoob.com/python/python-functions.html">
+Python 函数 </a>
+<a target="_top" title="Python 模块" href="python-modules.html" tppabs="http://www.runoob.com/python/python-modules.html">
+Python 模块 </a>
+<a target="_top" title="Python 文件I/O" href="python-files-io.html" tppabs="http://www.runoob.com/python/python-files-io.html">
+Python 文件I/O </a>
+<a target="_top" title="Python File 方法" href="file-methods.html" tppabs="http://www.runoob.com/python/file-methods.html">Python File 方法</a> <a target="_top" title="Python 异常处理" href="python-exceptions.html" tppabs="http://www.runoob.com/python/python-exceptions.html">
+Python 异常处理 </a>
+<a target="_top" title="Python OS 文件/目录方法" href="os-file-methods.html" tppabs="http://www.runoob.com/python/os-file-methods.html">Python OS 文件/目录方法</a>
+<a target="_top" title="Python 内置函数" href="python-built-in-functions.html" tppabs="http://www.runoob.com/python/python-built-in-functions.html">Python 内置函数</a>
+<br><h2 class="left"><span class="left_h2">Python</span> 高级教程</h2> <a target="_top" title="Python 面向对象" href="python-object.html" tppabs="http://www.runoob.com/python/python-object.html">
+Python 面向对象 </a>
+<a target="_top" title="Python 正则表达式" href="python-reg-expressions.html" tppabs="http://www.runoob.com/python/python-reg-expressions.html">
+Python 正则表达式 </a>
+<a target="_top" title="Python CGI编程" href="python-cgi.html" tppabs="http://www.runoob.com/python/python-cgi.html">
+Python CGI编程 </a>
+<a target="_top" title="Python 操作 MySQL 数据库" href="python-mysql.html" tppabs="http://www.runoob.com/python/python-mysql.html">
+Python MySQL </a>
+<a target="_top" title="Python 网络编程" href="python-socket.html" tppabs="http://www.runoob.com/python/python-socket.html"> Python 网络编程 </a> <a target="_top" title="Python SMTP发送邮件" href="python-email.html" tppabs="http://www.runoob.com/python/python-email.html">
+Python SMTP </a>
+<a target="_top" title="Python 多线程" href="python-multithreading.html" tppabs="http://www.runoob.com/python/python-multithreading.html">
+Python 多线程 </a>
+<a target="_top" title="Python XML解析" href="python-xml.html" tppabs="http://www.runoob.com/python/python-xml.html">
+Python XML解析 </a>
+<a target="_top" title="Python GUI 编程(Tkinter)" href="python-gui-tkinter.html" tppabs="http://www.runoob.com/python/python-gui-tkinter.html">
+Python GUI 编程(Tkinter) </a>
+<a target="_top" title="Python2.x与3​​.x版本区别" href="python-2x-3x.html" tppabs="http://www.runoob.com/python/python-2x-3x.html">
+Python2.x与3​​.x版本区别 </a>
+<a target="_top" title="Python IDE" href="python-ide.html" tppabs="http://www.runoob.com/python/python-ide.html">
+Python IDE </a>
+<a target="_top" title="Python JSON" href="python-json.html" tppabs="http://www.runoob.com/python/python-json.html">
+Python JSON </a>
+<a target="_top" title="Python 100例" href="python-100-examples.html" tppabs="http://www.runoob.com/python/python-100-examples.html">
+Python 100例 </a>
+</div>
+</div>
+</div> <div class="col middle-column">
+<div class="article">
+<div class="article-heading-ad" style="display: none;">
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="python-install.html" tppabs="http://www.runoob.com/python/python-install.html" rel="prev"> Python 环境搭建</a> </div>
+<div class="next-design-link"><a href="python-variable-types.html" tppabs="http://www.runoob.com/python/python-variable-types.html" rel="next"> Python 变量类型</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<div class="article-body">
+<div class="article-intro" id="content">
+<h1>Python <span class="color_h1">基础语法</span></h1>
+<p>Python 语言与 Perl，C 和 Java 等语言有许多相似之处。但是，也存在一些差异。</p>
+<p>在本章中我们将来学习 Python 的基础语法，让你快速学会 Python 编程。</p>
+<hr><h2>第一个 Python 程序</h2>
+<h3>交互式编程</h3>
+<p>交互式编程不需要创建脚本文件，是通过 Python 解释器的交互模式进来编写代码。</p><p>
+linux上你只需要在命令行中输入 Python 命令即可启动交互式编程,提示窗口如下：</p>
+<pre>
+$ python
+Python 2.7.6 (default, Sep  9 2014, 15:04:36) 
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; 
+</pre>
+<p>
+Window 上在安装 Python 时已经已经安装了默认的交互式编程客户端，提示窗口如下：</p>
+<p><img src="../wp-content/uploads/2013/11/bootstrap4-jumbotron.html" tppabs="http://www.runoob.com/wp-content/uploads/2013/11/prompt_1.png" /></p>
+<p>在 python 提示符中输入以下文本信息，然后按 Enter 键查看运行效果：</p>
+<pre>
+&gt;&gt;&gt; print "Hello, Python!";
+</pre>
+<p>在 Python 2.7.6 版本中,以上实例输出结果如下：</p>
+<pre>
+Hello, Python!
+</pre>
+<h3>脚本式编程</h3>
+<p>通过脚本参数调用解释器开始执行脚本，直到脚本执行完毕。当脚本执行完成后，解释器不再有效。</p>
+<p>让我们写一个简单的 Python 脚本程序。所有 Python 文件将以 <span class="marked">.py</span> 为扩展名。将以下的源代码拷贝至 test.py 文件中。</p>
+<pre>
+print "Hello, Python!";
+</pre>
+<p>这里，假设你已经设置了 Python 解释器 PATH 变量。使用以下命令运行程序：</p>
+<pre>
+$ python test.py
+</pre>
+<p>输出结果：</p>
+<pre>
+Hello, Python!
+</pre>
+<p>让我们尝试另一种方式来执行 Python 脚本。修改 test.py 文件，如下所示：</p>
+<pre>
+#!/usr/bin/python
+
+print "Hello, Python!";
+</pre>
+<p>这里，假定您的Python解释器在/usr/bin目录中，使用以下命令执行脚本：</p>
+<pre>
+$ chmod +x test.py     # 脚本文件添加可执行权限
+$ ./test.py
+</pre>
+<p>输出结果：</p>
+<pre>
+Hello, Python!
+</pre>
+<hr><h2>Python 标识符</h2>
+<p>在 Python 里，标识符由字母、数字、下划线组成。</p>
+<p>在 Python 中，所有标识符可以包括英文、数字以及下划线(_)，但不能以数字开头。</p>
+<p>Python 中的标识符是区分大小写的。</p>
+<p>以下划线开头的标识符是有特殊意义的。以单下划线开头 <span class="marked">_foo</span> 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 <span class="marked">from xxx import *</span> 而导入；</p>
+<p>以双下划线开头的 <span class="marked">__foo</span> 代表类的私有成员；以双下划线开头和结尾的 <span class="marked">__foo__</span> 代表 Python 里特殊方法专用的标识，如 <span class="marked">__init__()</span> 代表类的构造函数。</p>
+<p>Python 可以同一行显示多条语句，方法是用分号 <span class="marked">;</span> 分开，如：</p>
+<pre>&gt;&gt;&gt; print 'hello';print 'runoob';
+hello
+runoob</pre>
+<hr><h2>Python 保留字符</h2>
+<p>下面的列表显示了在Python中的保留字。这些保留字不能用作常数或变数，或任何其他标识符名称。</p>
+<p>所有 Python 的关键字只包含小写字母。</p>
+<table class="reference">
+<tbody><tr><td>and</td><td>exec</td><td>not</td></tr>
+<tr><td>assert</td><td>finally</td><td>or</td></tr>
+<tr><td>break</td><td>for</td><td>pass</td></tr>
+<tr><td>class</td><td>from</td><td>print</td></tr>
+<tr><td>continue</td><td>global</td><td>raise</td></tr>
+<tr><td>def</td><td>if</td><td>return</td></tr>
+<tr><td>del</td><td>import</td><td>try</td></tr>
+<tr><td>elif</td><td>in</td><td>while</td></tr>
+<tr><td>else</td><td>is</td><td>with </td></tr>
+<tr><td>except</td><td>lambda</td><td>yield</td></tr>
+</tbody></table>
+<hr><h2>行和缩进</h2>
+<p>学习 Python 与其他语言最大的区别就是，Python 的代码块不使用大括号 <span class="marked">{}</span> 来控制类，函数以及其他逻辑判断。python 最具特色的就是用缩进来写模块。</p>
+<p>缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，这个必须严格执行。如下所示：</p>
+<pre>
+if True:
+    print "True"
+else:
+  print "False"
+ </pre>
+<p>以下代码将会执行错误：</p>
+<pre>
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+# 文件名：test.py
+
+if True:
+    print "Answer"
+    print "True"
+else:
+    print "Answer"
+    # 没有严格缩进，在执行时会报错
+  print "False"
+</pre>
+<p> 执行以上代码，会出现如下错误提醒：</p>
+<pre>
+$ python test.py  
+  File "test.py", line 10
+    print "False"
+                ^
+IndentationError: unindent does not match any outer indentation level
+</pre>
+<p><b>IndentationError: unindent does not match any outer indentation level</b>错误表明，你使用的缩进方式不一致，有的是 tab 键缩进，有的是空格缩进，改为一致即可。</p>
+<p>如果是 <b>IndentationError: unexpected indent</b> 错误, 则 python 编译器是在告诉你"<span class="marked">Hi，老兄，你的文件里格式不对了，可能是tab和空格没对齐的问题</span>"，所有 python 对格式要求非常严格。</p>
+<p>因此，在 Python 的代码块中必须使用相同数目的行首缩进空格数。</p>
+<p>建议你在每个缩进层次使用 <strong>单个制表符</strong> 或 <strong>两个空格</strong> 或 <strong>四个空格</strong> , 切记不能混用</p>
+<hr><h2>多行语句</h2>
+<p>Python语句中一般以新行作为语句的结束符。</p>
+<p>但是我们可以使用斜杠（ \）将一行的语句分为多行显示，如下所示：</p>
+<pre>
+total = item_one + \
+        item_two + \
+        item_three
+</pre>
+<p>语句中包含 [], {} 或 () 括号就不需要使用多行连接符。如下实例：</p>
+<pre>
+days = ['Monday', 'Tuesday', 'Wednesday',
+        'Thursday', 'Friday']
+</pre>
+<hr><h2>Python 引号</h2>
+<p>Python 可以使用引号( <strong>'</strong> )、双引号( <strong>"</strong> )、三引号( <strong>'''</strong> 或 <strong>"""</strong> ) 来表示字符串，引号的开始与结束必须的相同类型的。 </p>
+<p>其中三引号可以由多行组成，编写多行文本的快捷语法，常用于文档字符串，在文件的特定地点，被当做注释。</p>
+<pre>
+word = 'word'
+sentence = "这是一个句子。"
+paragraph = """这是一个段落。
+包含了多个语句"""
+</pre>
+<hr><h2>Python注释</h2>
+<p>python中单行注释采用 # 开头。</p>
+<pre>
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+# 文件名：test.py
+
+# 第一个注释
+print "Hello, Python!";  # 第二个注释
+</pre>
+<p>输出结果：</p>
+<pre>
+Hello, Python!
+</pre>
+<p>注释可以在语句或表达式行末：</p>
+<pre>
+name = "Madisetti" # 这是一个注释
+</pre>
+<p>python 中多行注释使用三个单引号(''')或三个双引号(""")。</p>
+<pre>
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+# 文件名：test.py
+
+
+'''
+这是多行注释，使用单引号。
+这是多行注释，使用单引号。
+这是多行注释，使用单引号。
+'''
+
+"""
+这是多行注释，使用双引号。
+这是多行注释，使用双引号。
+这是多行注释，使用双引号。
+"""
+</pre>
+<hr><h2>Python空行</h2>
+<p>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
+<p>空行与代码缩进不同，空行并不是Python语法的一部分。书写时不插入空行，Python解释器运行也不会出错。但是空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。</p><p>记住：空行也是程序代码的一部分。</p>
+<hr><h2>等待用户输入</h2>
+<p>下面的程序执行后就会等待用户输入，按回车键后就会退出：</p>
+<pre>
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+raw_input("按下 enter 键退出，其他任意键显示...\n")
+</pre>
+<p>以上代码中 ，<span class="marked">\n</span> 实现换行。一旦用户按下 enter(回车) 键退出，其它键显示。</p>
+<hr><h2>同一行显示多条语句</h2>
+Python可以在同一行中使用多条语句，语句之间使用分号(;)分割，以下是一个简单的实例：</p>
+<pre>
+#!/usr/bin/python
+
+import sys; x = 'runoob'; sys.stdout.write(x + '\n')
+</pre>
+<p>执行以上代码，输入结果为：</p>
+<pre>
+$ python test.py
+runoob</pre>
+<hr>
+<h2>Print 输出</h2>
+<p>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上逗号 <span class="marked">,</span></p>
+<pre>
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+x="a"
+y="b"
+# 换行输出
+print x
+print y
+
+print '---------'
+# 不换行输出
+print x,
+print y,
+
+# 不换行输出
+print x,y
+</pre>
+<p>以上实例执行结果为：</p>
+<pre>
+a
+b
+---------
+a b a b
+</pre>
+<hr><h2>多个语句构成代码组</h2>
+<p>缩进相同的一组语句构成一个代码块，我们称之代码组。</p>
+<p>像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。</p>
+<p>我们将首行及后面的代码组称为一个子句(clause)。</p>
+<p>如下实例：</p>
+<pre>
+if expression : 
+   suite 
+elif expression :  
+   suite  
+else :  
+   suite 
+</pre>
+<hr><h2>命令行参数</h2>
+<p>很多程序可以执行一些操作来查看一些基本信息，Python 可以使用 <span class="marked">-h</span> 参数查看各参数帮助信息：</p>
+<pre>
+$ python -h 
+usage: python [option] ... [-c cmd | -m mod | file | -] [arg] ... 
+Options and arguments (and corresponding environment variables): 
+-c cmd : program passed in as string (terminates option list) 
+-d     : debug output from parser (also PYTHONDEBUG=x) 
+-E     : ignore environment variables (such as PYTHONPATH) 
+-h     : print this help message and exit 
+ 
+[ etc. ] 
+</pre>
+<p>我们在使用脚本形式执行 Python 时，可以接收命令行输入的参数，具体使用可以参照 <a href="javascript:if(confirm('http://www.runoob.com/python/bootstrap4-alerts.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/python/bootstrap4-alerts.html'" tppabs="http://www.runoob.com/python/python-command-line-arguments.html" target="_blank">Python 命令行参数</a>。</p>
+</div>
+</div>
+<div class="previous-next-links">
+<div class="previous-design-link"><i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i> <a href="python-install.html" tppabs="http://www.runoob.com/python/python-install.html" rel="prev"> Python 环境搭建</a> </div>
+<div class="next-design-link"><a href="python-variable-types.html" tppabs="http://www.runoob.com/python/python-variable-types.html" rel="next"> Python 变量类型</a> <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i></div>
+</div>
+<style>
+.wrapper {
+  /*text-transform: uppercase; */
+  background: #ececec;
+  color: #555;
+  cursor: help;
+  font-family: "Gill Sans", Impact, sans-serif;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  -webkit-transform: translateZ(0); /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+.wrapper .tooltip {
+  white-space: nowrap;
+  font-size: 14px;
+  text-align: left;
+  background: #96b97d;
+  bottom: 100%;
+  color: #fff;
+  display: block;
+  left: -25px;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 14px;
+  pointer-events: none;
+  position: absolute;
+  
+  -webkit-transform: translateY(10px);
+     -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+       -o-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: all .25s ease-out;
+     -moz-transition: all .25s ease-out;
+      -ms-transition: all .25s ease-out;
+       -o-transition: all .25s ease-out;
+          transition: all .25s ease-out;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+.tooltip a {
+	color:#fff;
+}
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #96b97d 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 20%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+.wrapper .tooltip1 {
+	margin-left: 50px;
+	padding-top: 0px;
+}
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+  display: block;
+}
+
+</style>
+<div class="title" id="comments">
+<h2 class="">
+<div class="altblock">
+<i style="font-size:28px;margin-top: 8px;" class="fa fa-plus-square" aria-hidden="true"></i>
+</div>
+<span class="mw-headline" id="qa_headline">3 篇笔记</span>
+<span class="mw-headline" id="user_add_note" style="float:right;line-height: 62px;padding-right: 14px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 写笔记</span>
+</h2>
+</div>
+<div id="postcomments" style="display:none;">
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="comment-15811"><span class="comt-f">#3</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;younger</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;129***3390@qq.com</p></div></div><div class="comt-main" id="div-comment-15811"><p>执行脚本传入参数，使用sys模块，编辑 test.py 如下</p>
+<pre>#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+import sys
+
+print sys.argv</pre>
+<p>sys.argv 用来获取命令行参数</p>
+<p>运行命令,执行结果：</p>
+<pre>./test.py hello
+['./test.py', 'hello']</pre>
+<p><span class="marked">sys.argv[0] </span>代表文件本身路径，所带参数从 <span class="marked">sys.argv[1]</span> 开始。</p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">younger</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;younger</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;129***3390@qq.com</p></div></span>1年前 (2017-08-03)</div></div></li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16524"><span class="comt-f">#2</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;qing</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;282***728@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.cnblogs.com/SophiaTang/archive/2011/09/21/bootstrap4-buttons.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.cnblogs.com/SophiaTang/archive/2011/09/21/bootstrap4-buttons.html'" tppabs="http://www.cnblogs.com/SophiaTang/archive/2011/09/21/2183091.html">&nbsp;&nbsp;参考地址</a></p></div></div><div class="comt-main" id="div-comment-16524"><p>脚本语言的第一行，目的就是指出，你想要你的这个文件中的代码用什么可执行程序去运行它，就这么简单。</p>
+<p><span class="marked">#!/usr/bin/python</span> : 是告诉操作系统执行这个脚本的时候，调用 /usr/bin 下的 python 解释器；</p>
+<p><span class="marked">#!/usr/bin/env python</span>(推荐）: 这种用法是为了防止操作系统用户没有将 python 装在默认的 /usr/bin 路径里。当系统看到这一行的时候，首先会到 env 设置里查找 python 的安装路径，再调用对应路径下的解释器程序完成操作。</p>
+<p><strong>#!/usr/bin/python</strong> 相当于写死了python路径;</p>
+<p><strong>#!/usr/bin/env python</strong> 会去环境设置寻找 python 目录,<strong>推荐这种写法</strong></p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:;">qing</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;qing</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;282***728@qq.com</p><p><i class="fa fa-external-link" aria-hidden="true"></i> <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.cnblogs.com/SophiaTang/archive/2011/09/21/bootstrap4-buttons.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.cnblogs.com/SophiaTang/archive/2011/09/21/bootstrap4-buttons.html'" tppabs="http://www.cnblogs.com/SophiaTang/archive/2011/09/21/2183091.html">&nbsp;&nbsp;参考地址</a></p></div></span>1年前 (2017-08-18)</div></div></li>
+<li class="comment byuser comment-author-tianqixin bypostauthor even thread-even depth-1" id="comment-28667"><span class="comt-f">#1</span><div class="comt-avatar wrapper"><i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i><div class="tooltip"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;TRER</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;234***9fs9@qq.com</p></div></div><div class="comt-main" id="div-comment-28667"><p data-title="一张图学会 Pyhton">网络上看到的一张 Python 基础语法图：</p>
+<p><a href="javascript:if(confirm('http://www.runoob.com/wp-content/uploads/2013/11/bootstrap4-button-groups.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/wp-content/uploads/2013/11/bootstrap4-button-groups.html'" tppabs="http://www.runoob.com/wp-content/uploads/2013/11/20150529155203684.png" target="_blank" rel="noopener nofollow"><img src="../wp-content/uploads/2013/11/bootstrap4-button-groups.html" tppabs="http://www.runoob.com/wp-content/uploads/2013/11/20150529155203684.png"></a></p><div class="comt-meta wrapper"><span class="comt-author"><a target="_blank" href="javascript:if(confirm('http://www.runoob.com/note/bootstrap4-badges.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.runoob.com/note/bootstrap4-badges.html'" tppabs="http://www.runoob.com/note/28667">TRER</a><div class="tooltip tooltip1"><p><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;TRER</p><p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;234***9fs9@qq.com</p></div></span>4个月前 (06-23)</div></div></li>
+</ol>
+<div class="pagenav">
+</div>
+</div>
+<div id="respond" class="no_webshot">
+<div class="comment-signarea" style="display:none; padding: 20px 20px;">
+<h3 class="text-muted" id="share_code" style="color: #799961;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 点我分享笔记</h3>
+</div>
+<form action="http://www.runoob.com/wp-content/themes/runoob/option/addnote.php" method="post" id="commentform" style="display:none;">
+<div class="comt">
+<div class="comt-title">
+<i style="font-size:36px;" class="fa fa-user-circle" aria-hidden="true"></i> <p><a id="cancel-comment-reply-link" href="javascript:;">取消</a></p>
+</div>
+<div class="comt-box">
+<div id="mded"></div>
+<div class="comt-ctrl">
+<div class="comt-tips"><input type='hidden' name='comment_post_ID' value='4012' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+<button type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-pencil" aria-hidden="true"></i> 分享笔记</button>
+</div>
+</div>
+<div class="comt-comterinfo">
+<ul id="comment-author-info">
+<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="text-muted">昵称 (必填)</span></li>
+<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="text-muted">邮箱 (必填)</span></li>
+<li class="form-inline"><label class="hide" for="url">引用地址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="引用地址"><span class="text-muted">引用地址</span></li>
+</ul>
+</div>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+$(function() {
+	//初始化编辑器
+	
+	var editor = new Simditor({
+	  textarea: $('#mded'),
+	  placeholder: '写笔记...',
+	  upload:false,
+	 // upload: {url:'../api/comment_upload_file.php.htm'/*tpa=http://www.runoob.com/api/comment_upload_file.php*/,params: null,fileKey: 'upload_file',connectionCount: 1,leaveConfirm: '文件正在上传，您确定离开?'},
+	  defaultImage: '../images/logo.png'/*tpa=http://www.runoob.com/images/logo.png*/,
+	  codeLanguages: '',
+	  toolbar: [  'bold','code','ul','ol','image' ]
+	});
+	editor.on('selectionchanged', function() {
+		$(".code-popover").hide();
+	});
+
+	// 提交数据
+	$("#share_code").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		
+	});
+	$("#user_add_note").click(function() {
+		$(".comment-signarea").hide();
+		$("#commentform").show();
+		$('html, body').animate({
+       	    scrollTop: $("#respond").offset().top
+    	}, 200);
+	});
+
+	// 提交笔记
+	var commentform=$('#commentform');
+	commentform.prepend('<div id="comment-status" style="display:none;" ></div>');
+	var statusdiv=$('#comment-status');
+	
+	commentform.submit(function(e){
+		e.preventDefault();
+		var noteContent = editor.getValue();
+		// console.log(noteContent);
+		noteContent = noteContent.replace(/<pre><code>/g,"<pre>");
+		noteContent = noteContent.replace(/<\/code><\/pre>/g,"</pre>");
+		
+		// 系列化表单数据
+		var comment_parent = 0;
+		var is_user_logged_in = $("#is_user_logged_in").val();
+		var comment_post_ID =  4012;
+		var _wp_unfiltered_html_comment = $("#_wp_unfiltered_html_comment").val();
+		var comment = noteContent;
+		var author = $("#author").val();
+		var url = $("#url").val();
+		var email = $("#email").val();
+		if(isBlank(author) && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">请输入昵称！</p>').show();
+		} else if(isBlank(email)  && is_user_logged_in==0) {
+			statusdiv.html('<p  class="ajax-error">请输入邮箱！</p>').show();
+		} else {
+			// var formdata=commentform.serialize() + "&comment=" + noteContent ;
+			// 添加状态信息
+			statusdiv.html('<p>Processing...</p>').show();
+			// 获取表单提交地址
+			var formurl=commentform.attr('action');
+			
+			// 异步提交
+			$.ajax({
+					type: 'post',
+					url: formurl,
+					dataType:'json',
+					data: {"comment_parent":comment_parent,"comment_post_ID":comment_post_ID, "_wp_unfiltered_html_comment":_wp_unfiltered_html_comment,"comment":comment,"url":url, "email":email,"author":author},
+					error: function(XMLHttpRequest, textStatus, errorThrown){
+					statusdiv.html('<p class="ajax-error" >数据不完整或表单提交太快了！</p>').show();
+				},
+				success: function(data, textStatus){
+					if(data.errorno=="0") {
+						$("#submit").prop('disabled', true);
+						statusdiv.html('<p class="ajax-success" >笔记已提交审核，感谢分享笔记！</p>').show();
+						alert('笔记已提交审核，感谢分享笔记！');
+					}else{
+						statusdiv.html('<p class="ajax-error" >'+data.msg+'</p>').show();
+					}
+					commentform.find('textarea[name=comment]').val('');
+				}
+			});
+			setTimeout(function(){
+		        $("#submit").prop('disabled', false);
+		    }, 10*1000);
+		}
+		return false;
+
+	});
+	
+});
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
+}
+</script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/css/qa.css-1.42.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/css/qa.css?1.42">
+<link rel="stylesheet" type="text/css" href="../../cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css" tppabs="http://cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css" />
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/module.js" tppabs="http://static.runoob.com/assets/simditor/2.3.6/scripts/module.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys.js" tppabs="http://static.runoob.com/assets/simditor/2.3.6/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="../../static.runoob.com/assets/simditor/2.3.6/scripts/uploader.js" tppabs="http://static.runoob.com/assets/simditor/2.3.6/scripts/uploader.js"></script>
+<script type="text/javascript" src="../../cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js" tppabs="http://cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js"></script> <div class="sidebar-box ad-box ad-box-large">
+<div id="ad-336280">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5751451760833794" data-ad-slot="1691338467" data-ad-format="auto"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div>
+</div>
+<div class="fivecol last right-column">
+<style>
+.sidebar-tree .double-li {
+	width:300px;
+}
+.sidebar-tree .double-li li {
+    width: 44%;
+    line-height: 1.5em;
+    border-bottom: 1px solid #ccc;
+    float: left;
+    display: inline;
+}
+</style>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here" style="margin: 0 auto;">
+<a href="javascript:void(0);" style="font-size: 16px; color:#64854c;font-weight:bold;"> <i class="fa fa-list" aria-hidden="true"></i> 分类导航</a>
+</div>
+<div class="sidebar-box sidebar-cate">
+<div class="sidebar-tree">
+<ul><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> HTML / CSS</a><ul class="double-li"><li><a title="HTML 教程" href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML 教程</a></li><li><a title="HTML5 教程" href="../html/html5-intro.html" tppabs="http://www.runoob.com/html/html5-intro.html">HTML5 教程</a></li><li><a title="CSS 教程" href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS 教程</a></li><li><a title="CSS3 教程" href="../css3/css3-tutorial.html" tppabs="http://www.runoob.com/css3/css3-tutorial.html">CSS3 教程</a></li><li><a title="Bootstrap3 教程" href="../bootstrap/bootstrap-tutorial.html" tppabs="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap3 教程</a></li><li><a title="Bootstrap4 教程" href="../bootstrap4/bootstrap4-tutorial.html" tppabs="http://www.runoob.com/bootstrap4/bootstrap4-tutorial.html">Bootstrap4 教程</a></li><li><a title="Font Awesome 教程" href="../font-awesome/fontawesome-tutorial.html" tppabs="http://www.runoob.com/font-awesome/fontawesome-tutorial.html">Font Awesome 教程</a></li><li><a title="Foundation 教程" href="../foundation/foundation-tutorial.html" tppabs="http://www.runoob.com/foundation/foundation-tutorial.html">Foundation 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> JavaScript</a><ul class="double-li"><li><a title="JavaScript 教程" href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JavaScript 教程</a></li><li><a title="HTML DOM 教程" href="../htmldom/htmldom-tutorial.html" tppabs="http://www.runoob.com/htmldom/htmldom-tutorial.html">HTML DOM 教程</a></li><li><a title="jQuery 教程" href="../jquery/jquery-tutorial.html" tppabs="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery 教程</a></li><li><a title="AngularJS 教程" href="../angularjs/angularjs-tutorial.html" tppabs="http://www.runoob.com/angularjs/angularjs-tutorial.html">AngularJS 教程</a></li><li><a title="AngularJS2 教程" href="../angularjs2/angularjs2-tutorial.html" tppabs="http://www.runoob.com/angularjs2/angularjs2-tutorial.html">AngularJS2 教程</a></li><li><a title="Vue.js 教程" href="../vue2/vue-tutorial.html" tppabs="http://www.runoob.com/vue2/vue-tutorial.html">Vue.js 教程</a></li><li><a title="React 教程" href="../react/react-tutorial.html" tppabs="http://www.runoob.com/react/react-tutorial.html">React 教程</a></li><li><a title="jQuery UI 教程" href="../jqueryui/jqueryui-tutorial.html" tppabs="http://www.runoob.com/jqueryui/jqueryui-tutorial.html">jQuery UI 教程</a></li><li><a title="jQuery EasyUI 教程" href="../jeasyui/jqueryeasyui-tutorial.html" tppabs="http://www.runoob.com/jeasyui/jqueryeasyui-tutorial.html">jQuery EasyUI 教程</a></li><li><a title="Node.js 教程" href="../nodejs/nodejs-tutorial.html" tppabs="http://www.runoob.com/nodejs/nodejs-tutorial.html">Node.js 教程</a></li><li><a title="AJAX 教程" href="../ajax/ajax-tutorial.html" tppabs="http://www.runoob.com/ajax/ajax-tutorial.html">AJAX 教程</a></li><li><a title="JSON 教程" href="../json/json-tutorial.html" tppabs="http://www.runoob.com/json/json-tutorial.html">JSON 教程</a></li><li><a title="Highcharts 教程" href="../highcharts/highcharts-tutorial.html" tppabs="http://www.runoob.com/highcharts/highcharts-tutorial.html">Highcharts 教程</a></li><li><a title="Google 地图 教程" href="../googleapi/google-maps-basic.html" tppabs="http://www.runoob.com/googleapi/google-maps-basic.html">Google 地图 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 服务端</a><ul class="double-li"><li><a title="PHP 教程" href="../php/php-tutorial.html" tppabs="http://www.runoob.com/php/php-tutorial.html">PHP 教程</a></li><li><a title="Python 教程" href="python-tutorial.html" tppabs="http://www.runoob.com/python/python-tutorial.html">Python 教程</a></li><li><a title="Python3 教程" href="../python3/python3-tutorial.html" tppabs="http://www.runoob.com/python3/python3-tutorial.html">Python3 教程</a></li><li><a title="Django 教程" href="../django/django-tutorial.html" tppabs="http://www.runoob.com/django/django-tutorial.html">Django 教程</a></li><li><a title="Linux 教程" href="../linux/linux-tutorial.html" tppabs="http://www.runoob.com/linux/linux-tutorial.html">Linux 教程</a></li><li><a title="Docker 教程" href="../docker/docker-tutorial.html" tppabs="http://www.runoob.com/docker/docker-tutorial.html">Docker 教程</a></li><li><a title="Ruby 教程" href="../ruby/ruby-tutorial.html" tppabs="http://www.runoob.com/ruby/ruby-tutorial.html">Ruby 教程</a></li><li><a title="Java 教程" href="../java/java-tutorial.html" tppabs="http://www.runoob.com/java/java-tutorial.html">Java 教程</a></li><li><a title="C 教程" href="../cprogramming/c-tutorial.html" tppabs="http://www.runoob.com/c/c-tutorial.html">C 教程</a></li><li><a title="C++ 教程" href="../cplusplus/cpp-tutorial.html" tppabs="http://www.runoob.com/cplusplus/cpp-tutorial.html">C++ 教程</a></li><li><a title="Perl 教程" href="../perl/perl-tutorial.html" tppabs="http://www.runoob.com/perl/perl-tutorial.html">Perl 教程</a></li><li><a title="Servlet 教程" href="../servlet/servlet-tutorial.html" tppabs="http://www.runoob.com/servlet/servlet-tutorial.html">Servlet 教程</a></li><li><a title="JSP 教程" href="../jsp/jsp-tutorial.html" tppabs="http://www.runoob.com/jsp/jsp-tutorial.html">JSP 教程</a></li><li><a title="Lua 教程" href="../lua/lua-tutorial.html" tppabs="http://www.runoob.com/lua/lua-tutorial.html">Lua 教程</a></li><li><a title="Scala 教程" href="../scala/scala-tutorial.html" tppabs="http://www.runoob.com/scala/scala-tutorial.html">Scala 教程</a></li><li><a title="Go 教程" href="../go/go-tutorial.html" tppabs="http://www.runoob.com/go/go-tutorial.html">Go 教程</a></li><li><a title="设计模式" href="../design-pattern/design-pattern-tutorial.html" tppabs="http://www.runoob.com/design-pattern/design-pattern-tutorial.html">设计模式</a></li><li><a title="正则表达式" href="../regexp/regexp-tutorial.html" tppabs="http://www.runoob.com/regexp/regexp-tutorial.html">正则表达式</a></li><li><a title="Maven 教程" href="../maven/maven-tutorial.html" tppabs="http://www.runoob.com/maven/maven-tutorial.html">Maven 教程</a></li><li><a title="NumPy 教程" href="../numpy/numpy-tutorial.html" tppabs="http://www.runoob.com/numpy/numpy-tutorial.html">NumPy 教程</a></li><li><a title="ASP 教程" href="../asp/asp-tutorial.html" tppabs="http://www.runoob.com/asp/asp-tutorial.html">ASP 教程</a></li><li><a title="AppML 教程" href="../appml/appml-tutorial.html" tppabs="http://www.runoob.com/appml/appml-tutorial.html">AppML 教程</a></li><li><a title="VBScript 教程" href="../vbscript/vbscript-tutorial.html" tppabs="http://www.runoob.com/vbscript/vbscript-tutorial.html">VBScript 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 数据库</a><ul class="double-li"><li><a title="SQL 教程" href="../sql/sql-tutorial.html" tppabs="http://www.runoob.com/sql/sql-tutorial.html">SQL 教程</a></li><li><a title="Mysql 教程" href="../mysql/mysql-tutorial.html" tppabs="http://www.runoob.com/mysql/mysql-tutorial.html">Mysql 教程</a></li><li><a title="SQLite 教程" href="../sqlite/sqlite-tutorial.html" tppabs="http://www.runoob.com/sqlite/sqlite-tutorial.html">SQLite 教程</a></li><li><a title="MongoDB 教程" href="../mongodb/mongodb-tutorial.html" tppabs="http://www.runoob.com/mongodb/mongodb-tutorial.html">MongoDB 教程</a></li><li><a title="Redis 教程" href="../redis/redis-tutorial.html" tppabs="http://www.runoob.com/redis/redis-tutorial.html">Redis 教程</a></li><li><a title="Memcached 教程" href="../Memcached/Memcached-tutorial.html" tppabs="http://www.runoob.com/Memcached/Memcached-tutorial.html">Memcached 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 移动端</a><ul class="double-li"><li><a title="Android 教程" href="../w3cnote/android-tutorial-intro.html" tppabs="http://www.runoob.com/w3cnote/android-tutorial-intro.html">Android 教程</a></li><li><a title="Swift 教程" href="../swift/swift-tutorial.html" tppabs="http://www.runoob.com/swift/swift-tutorial.html">Swift 教程</a></li><li><a title="jQuery Mobile 教程" href="../jquerymobile/jquerymobile-tutorial.html" tppabs="http://www.runoob.com/jquerymobile/jquerymobile-tutorial.html">jQuery Mobile 教程</a></li><li><a title="ionic 教程" href="../ionic/ionic-tutorial.html" tppabs="http://www.runoob.com/ionic/ionic-tutorial.html">ionic 教程</a></li><li><a title="Kotlin 教程" href="../kotlin/kotlin-tutorial.html" tppabs="http://www.runoob.com/kotlin/kotlin-tutorial.html">Kotlin 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> XML 教程</a><ul class="double-li"><li><a title="XML 教程" href="../xml/xml-tutorial.html" tppabs="http://www.runoob.com/xml/xml-tutorial.html">XML 教程</a></li><li><a title="DTD 教程" href="../dtd/dtd-tutorial.html" tppabs="http://www.runoob.com/dtd/dtd-tutorial.html">DTD 教程</a></li><li><a title="XML DOM 教程" href="../dom/dom-tutorial.html" tppabs="http://www.runoob.com/dom/dom-tutorial.html">XML DOM 教程</a></li><li><a title="XSLT 教程" href="../xsl/xsl-tutorial.html" tppabs="http://www.runoob.com/xsl/xsl-tutorial.html">XSLT 教程</a></li><li><a title="XPath 教程" href="../xpath/xpath-tutorial.html" tppabs="http://www.runoob.com/xpath/xpath-tutorial.html">XPath 教程</a></li><li><a title="XQuery 教程" href="../xquery/xquery-tutorial.html" tppabs="http://www.runoob.com/xquery/xquery-tutorial.html">XQuery 教程</a></li><li><a title="XLink 教程" href="../xlink/xlink-tutorial.html" tppabs="http://www.runoob.com/xlink/xlink-tutorial.html">XLink 教程</a></li><li><a title="XPointer 教程" href="../xlink/xlink-tutorial.html" tppabs="http://www.runoob.com/xlink/xlink-tutorial.html">XPointer 教程</a></li><li><a title="XML Schema 教程" href="../schema/schema-tutorial.html" tppabs="http://www.runoob.com/schema/schema-tutorial.html">XML Schema 教程</a></li><li><a title="XSL-FO 教程" href="../xslfo/xslfo-tutorial.html" tppabs="http://www.runoob.com/xslfo/xslfo-tutorial.html">XSL-FO 教程</a></li><li><a title="SVG 教程" href="../svg/svg-tutorial.html" tppabs="http://www.runoob.com/svg/svg-tutorial.html">SVG 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> ASP.NET</a><ul class="double-li"><li><a title="ASP.NET 教程" href="../aspnet/aspnet-tutorial.html" tppabs="http://www.runoob.com/aspnet/aspnet-tutorial.html">ASP.NET 教程</a></li><li><a title="C# 教程" href="../csharp/csharp-tutorial.html" tppabs="http://www.runoob.com/csharp/csharp-tutorial.html">C# 教程</a></li><li><a title="Web Pages 教程" href="../aspnet/webpages-intro.html" tppabs="http://www.runoob.com/aspnet/webpages-intro.html">Web Pages 教程</a></li><li><a title="Razor 教程" href="../aspnet/razor-intro.html" tppabs="http://www.runoob.com/aspnet/razor-intro.html">Razor 教程</a></li><li><a title="MVC 教程" href="../aspnet/mvc-intro.html" tppabs="http://www.runoob.com/aspnet/mvc-intro.html">MVC 教程</a></li><li><a title="Web Forms 教程" href="../aspnet/aspnet-intro.html" tppabs="http://www.runoob.com/aspnet/aspnet-intro.html">Web Forms 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> Web Service</a><ul class="double-li"><li><a title="Web Service 教程" href="../webservices/webservices-tutorial.html" tppabs="http://www.runoob.com/webservices/webservices-tutorial.html">Web Service 教程</a></li><li><a title="WSDL 教程" href="../wsdl/wsdl-tutorial.html" tppabs="http://www.runoob.com/wsdl/wsdl-tutorial.html">WSDL 教程</a></li><li><a title="SOAP 教程" href="../soap/soap-tutorial.html" tppabs="http://www.runoob.com/soap/soap-tutorial.html">SOAP 教程</a></li><li><a title="RSS 教程" href="../rss/rss-tutorial.html" tppabs="http://www.runoob.com/rss/rss-tutorial.html">RSS 教程</a></li><li><a title="RDF 教程" href="../rdf/rdf-tutorial.html" tppabs="http://www.runoob.com/rdf/rdf-tutorial.html">RDF 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 开发工具</a><ul class="double-li"><li><a title="Eclipse 教程" href="../eclipse/eclipse-tutorial.html" tppabs="http://www.runoob.com/eclipse/eclipse-tutorial.html">Eclipse 教程</a></li><li><a title="Git 教程" href="../git/git-tutorial.html" tppabs="http://www.runoob.com/git/git-tutorial.html">Git 教程</a></li><li><a title="Svn 教程" href="../svn/svn-tutorial.html" tppabs="http://www.runoob.com/svn/svn-tutorial.html">Svn 教程</a></li><li><a title="Firebug 教程" href="../firebug/firebug-tutorial.html" tppabs="http://www.runoob.com/firebug/firebug-tutorial.html">Firebug 教程</a></li></ul></li><li style="margin: 0;"><a href="javascript:void(0);" class="tit"> 网站建设</a><ul class="double-li"><li><a title="HTTP 教程" href="../http/http-tutorial.html" tppabs="http://www.runoob.com/http/http-tutorial.html">HTTP 教程</a></li><li><a title="网站建设指南" href="../web/web-buildingprimer.html" tppabs="http://www.runoob.com/web/web-buildingprimer.html">网站建设指南</a></li><li><a title="浏览器信息" href="../browsers/browser-information.html" tppabs="http://www.runoob.com/browsers/browser-information.html">浏览器信息</a></li><li><a title="网站主机教程" href="../hosting/hosting-tutorial.html" tppabs="http://www.runoob.com/hosting/hosting-tutorial.html">网站主机教程</a></li><li><a title="TCP/IP 教程" href="../tcpip/tcpip-tutorial.html" tppabs="http://www.runoob.com/tcpip/tcpip-tutorial.html">TCP/IP 教程</a></li><li><a title="W3C 教程" href="../w3c/w3c-tutorial.html" tppabs="http://www.runoob.com/w3c/w3c-tutorial.html">W3C 教程</a></li><li><a title="网站品质" href="../quality/quality-tutorial.html" tppabs="http://www.runoob.com/quality/quality-tutorial.html">网站品质</a></li></ul></li></ul> </div>
+</div>
+</div>
+<br>
+<div class="sidebar-box ad-box ad-box-large">
+<div class="sidebar-box advertise-here">
+<a href="javascript:void(0);">Advertisement</a>
+</div>
+<div class="ad-600160" id="sidebar-right-ads">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins>
+<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+</div>
+</div></div>
+</div>
+<script>
+var aid = 4012;
+function coll() {
+	$.post( '../wp-content/themes/runoob/option/user/userinfo.php.htm'/*tpa=http://www.runoob.com/wp-content/themes/runoob/option/user/userinfo.php*/, {aid:aid, action:"collarticle", opt:'add'},function( data ) {
+		if(data.error==0) {
+			$("#content").find("h1:first").find("a").attr("href","javascript:void(0);");
+			$("#content").find("h1:first").find("img").attr("src","../wp-content/themes/runoob/assets/img/coll2.png"/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/coll2.png*/).css({width:32+"px",height:32+"px"});
+		}
+		alert(data.msg);
+	},'json');
+}
+</script>
+<script src="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js-1.0" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.js?1.0"></script>
+<link rel="stylesheet" href="../wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css-1.0.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/feedback.css?1.0" />
+<script type="text/javascript">
+$.feedback({
+    ajaxURL: '../feedback/runoob_feedback.php.htm'/*tpa=http://www.runoob.com/feedback/runoob_feedback.php*/,
+    html2canvasURL: '../wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas.js'/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/feedback/stable/2.0/html2canvas.js*/
+});
+</script>
+<button class="feedback-btn feedback-btn-gray">反馈/建议</button>
+<div id="footer" class="mar-t50">
+<div class="runoob-block">
+<div class="runoob cf">
+<dl>
+<dt>
+在线实例
+</dt>
+<dd>
+&middot;<a target="_blank" href="../html/html-examples.html" tppabs="http://www.runoob.com/html/html-examples.html">HTML 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../css/css-examples.html" tppabs="http://www.runoob.com/css/css-examples.html">CSS 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../js/js-examples.html" tppabs="http://www.runoob.com/js/js-examples.html">JavaScript 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../ajax/ajax-examples.html" tppabs="http://www.runoob.com/ajx/ajax-examples.html">Ajax 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../jquery/jquery-examples.html" tppabs="http://www.runoob.com/jquery/jquery-examples.html">jQuery 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../xml/xml-examples.html" tppabs="http://www.runoob.com/xml/xml-examples.html">XML 实例</a>
+</dd>
+<dd>
+&middot;<a target="_blank" href="../java/java-examples.html" tppabs="http://www.runoob.com/java/java-examples.html">Java 实例</a>
+</dd>
+</dl>
+<dl>
+<dt>
+字符集&工具
+</dt>
+<dd>
+&middot; <a target="_blank" href="../charsets/html-charsets.html" tppabs="http://www.runoob.com/charsets/html-charsets.html">HTML 字符集设置</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-ascii.html" tppabs="http://www.runoob.com/tags/html-ascii.html">HTML ASCII 字符集</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/ref-entities.html" tppabs="http://www.runoob.com/tags/ref-entities.html">HTML ISO-8859-1</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-symbols.html" tppabs="http://www.runoob.com/tags/html-symbols.html">HTML 实体符号</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="../tags/html-colorpicker.html" tppabs="http://www.runoob.com/tags/html-colorpicker.html">HTML 拾色器</a>
+</dd>
+<dd>
+&middot; <a target="_blank" href="javascript:if(confirm('http://c.runoob.com/front-end/53  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c.runoob.com/front-end/53'" tppabs="http://c.runoob.com/front-end/53">JSON 格式化工具</a>
+</dd>
+</dl>
+<dl>
+<dt>
+最新更新
+</dt>
+<dd>
+&middot;
+<a href="../w3cnote/csharp-init-variable.html" tppabs="http://www.runoob.com/w3cnote/csharp-init-variable.html" title="关于 C# 中的变量的初始化问题浅谈">关于 C# 中的变...</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/scrapy-detail.html" tppabs="http://www.runoob.com/w3cnote/scrapy-detail.html" title="Scrapy 入门教程">Scrapy 入门教程</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/c-structures-intro.html" tppabs="http://www.runoob.com/w3cnote/c-structures-intro.html" title="C 结构体">C 结构体</a>
+</dd>
+<dd>
+&middot;
+<a href="../w3cnote/matplotlib-tutorial.html" tppabs="http://www.runoob.com/w3cnote/matplotlib-tutorial.html" title="Matplotlib 教程">Matplotlib 教程</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-matplotlib.html" tppabs="http://www.runoob.com/numpy/numpy-matplotlib.html" title="NumPy  Matplotlib">NumPy Matplotlib</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-io.html" tppabs="http://www.runoob.com/numpy/numpy-io.html" title="NumPy IO">NumPy IO</a>
+</dd>
+<dd>
+&middot;
+<a href="../numpy/numpy-linear-algebra.html" tppabs="http://www.runoob.com/numpy/numpy-linear-algebra.html" title="NumPy 线性代数">NumPy 线性代数</a>
+</dd>
+</dl>
+<dl>
+<dt>
+站点信息
+</dt>
+<dd>
+&middot;
+<a target="_blank" href="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="external nofollow">意见反馈</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../disclaimer.htm" tppabs="http://www.runoob.com/disclaimer">免责声明</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../aboutus.htm" tppabs="http://www.runoob.com/aboutus">关于我们</a>
+</dd>
+<dd>
+&middot;
+<a target="_blank" href="../archives.htm" tppabs="http://www.runoob.com/archives">文章归档</a>
+</dd>
+</dl>
+<div class="search-share">
+<div class="app-download">
+<div>
+<strong>关注微信</strong>
+</div>
+</div>
+<div class="share">
+<img width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode.png" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="w-1000 copyright">
+Copyright &copy; 2013-2018 <strong><a href="../index.htm" tppabs="http://www.runoob.com/" target="_blank">菜鸟教程</a></strong>&nbsp;
+<strong><a href="../index.htm" tppabs="http://www.runoob.com/" target="_blank">runoob.com</a></strong> All Rights Reserved. 备案号：闽ICP备15012807号-1
+</div>
+</div>
+<div class="fixed-btn">
+<a class="go-top" href="javascript:void(0)" title="返回顶部"> <i class="fa fa-angle-up"></i></a>
+<a class="qrcode" href="javascript:void(0)" title="关注我们"><i class="fa fa-qrcode"></i></a>
+<a class="writer" style="display:none" href="javascript:void(0)" title="标记/收藏"><i class="fa fa-star" aria-hidden="true"></i></a>
+<div id="bottom-qrcode" class="modal panel-modal hide fade in">
+<h4>微信关注</h4>
+<div class="panel-body"><img alt="微信关注" width="128" height="128" src="../wp-content/themes/runoob/assets/images/qrcode.png" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/images/qrcode.png"></div>
+</div>
+</div>
+<div class="hide_box"></div>
+<div class="shang_box">
+<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="../../static.runoob.com/images/dashang/close.jpg" tppabs="http://static.runoob.com/images/dashang/close.jpg" alt="取消" /></a>
+<div class="shang_tit">
+<p>感谢您的支持，我会继续努力的!</p>
+</div>
+<div class="shang_payimg">
+<img src="../../static.runoob.com/images/dashang/weipayimg.png.jpg" tppabs="http://static.runoob.com/images/dashang/weipayimg.png" alt="扫码支持" title="扫一扫" />
+</div>
+<div class="pay_explain">扫码打赏，你说多少就多少</div>
+<div class="shang_payselect">
+<div class="pay_item  checked" data-id="weipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/wechat.jpg" tppabs="http://static.runoob.com/images/dashang/wechat.jpg" alt="微信" /></span>
+</div>
+<div class="pay_item" data-id="alipay">
+<span class="radiobox"></span>
+<span class="pay_logo"><img src="../../static.runoob.com/images/dashang/alipay.jpg" tppabs="http://static.runoob.com/images/dashang/alipay.jpg" alt="支付宝" /></span>
+</div>
+</div>
+<div class="shang_info">
+<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+<p><a href="javascript:if(confirm('http://c.runoob.com/codedemo/5348  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c.runoob.com/codedemo/5348'" tppabs="http://c.runoob.com/codedemo/5348" target="_blank"><span style=" font-size: 14px;color: #000;font-weight: bold;">点我查看本站打赏源码！</span></a></p>
+</div>
+</div>
+<div id="testClick"></div>
+<div style="display:none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "../../hm.baidu.com/hm.js-3eec0b7da6548cf07db3bc477ea905ee"/*tpa=https://hm.baidu.com/hm.js?3eec0b7da6548cf07db3bc477ea905ee*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="../../www.googletagmanager.com/gtag/js-id=UA-84264393-2" tppabs="https://www.googletagmanager.com/gtag/js?id=UA-84264393-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-84264393-2');
+</script>
+</div>
+<script>
+window.jsui={
+    www: 'http://wwww.runoob.com/',
+    uri: '//www.runoob.com/wp-content/themes/runoob'
+};
+</script>
+<style>
+ol,ul{list-style:none}.cd-switcher a{text-decoration:none;outline:0}.cd-switcher a:hover{text-decoration:underline}a:focus{outline:0;-moz-outline:0}.main_nav{width:300px;height:60px;margin:60px auto 10px auto}.main_nav li{float:left;width:60px;margin-right:10px;font-size:16px;padding:.6em 1em;border-radius:3em;background:#2f889a;text-align:center}.main_nav li a{color:#fff}.errtip{background-color:#fceaea;color:#db5353;padding:8px 15px;font-size:14px;border:1px solid #fc9797;border-radius:5px}.cd-user-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(52,54,66,0.9);z-index:3;overflow-y:auto;cursor:pointer;visibility:hidden;opacity:0;-webkit-transition:opacity .3s 0,visibility 0 .3s;-moz-transition:opacity .3s 0,visibility 0 .3s;transition:opacity .3s 0,visibility 0 .3s}.cd-user-modal.is-visible{visibility:visible;opacity:1;-webkit-transition:opacity .3s 0,visibility 0 0;-moz-transition:opacity .3s 0,visibility 0 0;transition:opacity .3s 0,visibility 0 0}.cd-user-modal.is-visible .cd-user-modal-container{-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}.cd-user-modal-container{position:relative;width:90%;max-width:500px;background:#FFF;margin:3em auto 4em;cursor:auto;border-radius:.25em;-webkit-transform:translateY(-30px);-moz-transform:translateY(-30px);-ms-transform:translateY(-30px);-o-transform:translateY(-30px);transform:translateY(-30px);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;transition-property:transform;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;transition-duration:.3s}.cd-user-modal-container .cd-switcher:after{content:"";display:table;clear:both}.cd-user-modal-container .cd-switcher li{width:50%;float:left;text-align:center}.cd-user-modal-container .cd-switcher li:first-child a{border-radius:.25em 0 0 0}.cd-user-modal-container .cd-switcher li:last-child a{border-radius:0 .25em 0 0}.cd-user-modal-container .cd-switcher a{font-size:1.2em;font-weight:bold;display:block;width:100%;height:50px;line-height:50px;background:#e8f1e2;color:#96b880}.cd-user-modal-container .cd-switcher a.selected{background:#FFF;color:#505260}@media only screen and (min-width:600px){.cd-user-modal-container{margin:4em auto}.cd-user-modal-container .cd-switcher a{height:70px;line-height:70px}}.cd-form{padding:1.4em}.cd-form .fieldset{position:relative;margin:1.4em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form label{font-size:16px;font-size:.875rem}.cd-form label.image-replace{display:inline-block;position:absolute;left:15px;top:50%;bottom:auto;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);height:20px;width:20px;overflow:hidden;text-indent:100%;white-space:nowrap;color:transparent;text-shadow:none;background-repeat:no-repeat;background-position:50% 0}.cd-form label.cd-username{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-username.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-username.svg*/}.cd-form label.cd-email{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-email.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-email.svg*/}.cd-form label.cd-password{background-image:url("../wp-content/themes/runoob/assets/img/cd-icon-password.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-password.svg*/}.cd-form input{margin:0;padding:0;border-radius:.25em}.cd-form input.full-width{width:80%}.cd-form input.full-width2{width:94%}.cd-form input.has-padding{padding:12px 20px 12px 50px}.cd-form input.has-border{border:1px solid #d2d8d8;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}.cd-form input.has-border:focus{border-color:#98b880;box-shadow:0 0 5px rgba(52,54,66,0.1);outline:0}.cd-form input.has-error{border:1px solid #d76666}.cd-form input[type=password]{padding-right:65px}.cd-form input[type=submit]{padding:16px 0;cursor:pointer;background:#96b97d;color:#FFF;font-weight:bold;border:0;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;font-size:1.2em;font-weight:bold}.no-touch .cd-form input[type=submit]:hover,.no-touch .cd-form input[type=submit]:focus{background:#3599ae;outline:0}@media only screen and (min-width:600px){.cd-form{padding:2em}.cd-form .fieldset{margin:2em 0}.cd-form .fieldset:first-child{margin-top:0}.cd-form .fieldset:last-child{margin-bottom:0}.cd-form input.has-padding{padding:16px 20px 16px 50px}.cd-form input[type=submit]{padding:16px 0}}.cd-close-form{display:block;position:absolute;width:40px;height:40px;right:0;top:-40px;background:url("../wp-content/themes/runoob/assets/img/cd-icon-close.svg")/*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*//*tpa=http://www.runoob.com/wp-content/themes/runoob/assets/img/cd-icon-close.svg*/ no-repeat center center;text-indent:100%;white-space:nowrap;overflow:hidden}@media only screen and (min-width:1170px){}#cd-login,#cd-signup,#cd-reset-password{display:none}#cd-login.is-selected,#cd-signup.is-selected,#cd-reset-password.is-selected{display:block}
+</style>
+<div class="cd-user-modal">
+<div class="cd-user-modal-container">
+<ul class="cd-switcher">
+<li><a href="javascript:;">用户登录</a></li>
+<li><a href="javascript:;">注册新用户</a></li>
+</ul>
+<div id="cd-login"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-username" for="signin-username">用户名</label>
+<input class="full-width has-padding has-border" id="signin-username" name=username type="text" placeholder="输入用户名">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signin-password">密码</label>
+<input class="full-width has-padding has-border" id="signin-password" name="password" type="password" placeholder="输入密码">
+</p>
+<p class="fieldset">
+<input type="checkbox" id="remember-me" checked>
+<label for="remember-me">记住登录状态</label>
+<a href="../reset-password.htm" tppabs="http://www.runoob.com/reset-password" style="float: right;padding-right: 20px;" target="_blank">忘记密码？</a>
+</p>
+<input type="hidden" name="action" value="signin">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="登 录">
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<div id="cd-signup"> 
+<div class="cd-form">
+<p class="fieldset">
+<label class="image-replace cd-password" for="verifycode">邀请码</label>
+<input class="full-width has-padding has-border" id="signup-verifycode" name="verifycode" type="text" placeholder="输入邀请码">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-username" for="signup-username">用户名</label>
+<input class="full-width has-padding has-border" id="signup-username" name="name" type="text" placeholder="输入用户名">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-email" for="signup-email">邮箱</label>
+<input class="full-width has-padding has-border" name="email" id="signup-email" type="email" placeholder="输入mail">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password">密码</label>
+<input class="full-width has-padding has-border" id="signup-password" name="password" type="password" placeholder="输入密码">
+</p>
+<p class="fieldset">
+<label class="image-replace cd-password" for="signup-password2">重复输入密码</label>
+<input class="full-width has-padding has-border" id="signup-password2" name="password2" type="password" placeholder="重复输入密码">
+</p>
+<input type="hidden" name="action" value="signup">
+<p class="fieldset">
+<input class="full-width2" type="submit" value="注册新用户">
+</p>
+<p class="fieldset">
+<a href="../w3cnote/runoob-user-test-intro.html#invite" tppabs="http://www.runoob.com/w3cnote/runoob-user-test-intro.html#invite" target="_blank">如何获取邀请码？</a>
+</p>
+<div class="err-msg"></div>
+</div>
+</div>
+<a href="javascript:;" class="cd-close-form">关闭</a>
+</div>
+</div>
+<script src="../wp-content/themes/runoob/assets/js/main.js-v=1.189" tppabs="http://www.runoob.com/wp-content/themes/runoob/assets/js/main.js?v=1.189"></script>
+<script src="../../static.runoob.com/assets/libs/hl/run_prettify.js" tppabs="http://static.runoob.com/assets/libs/hl/run_prettify.js"></script>
+</body>
+</html>

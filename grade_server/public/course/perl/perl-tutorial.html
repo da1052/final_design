@@ -1,0 +1,118 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="qc:admins" content="465267610762567726375" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Perl 教程 | 菜鸟教程</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="canonical" href="http://www.runoob.com/perl/perl-tutorial.html" />
+<meta name="keywords" content="Perl 教程">
+<meta name="description" content="Perl 教程    Perl 是 Practical Extraction and Report Language 的缩写，可翻译为 “实用报表提取语言”。  Perl 是高级、通用、直译式、动态的程序语言。   Perl 最初的设计者为拉里·沃尔（Larry Wall），于1987年12月18日发表。  Perl 借用了C、sed、awk、shell脚本以及很多其他编程语言的特性。   Perl 最重要的特性是Perl内部集成了正则..">
+<link rel="shortcut icon" href="../../static.runoob.com/images/favicon.ico" tppabs="http://static.runoob.com/images/favicon.ico" mce_href="//static.runoob.com/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../wp-content/themes/runoob/style.css-v=1.147.css" tppabs="http://www.runoob.com/wp-content/themes/runoob/style.css?v=1.147" type="text/css" media="all" />
+<link rel="stylesheet" href="../../cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" tppabs="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<!--[if gte IE 9]><!-->
+  <script src="../../cdn.staticfile.org/jquery/2.0.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+  <!--<![endif]-->
+<!--[if lt IE 9]>
+     <script src="../../cdn.staticfile.org/jquery/1.9.1/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+     <script src="../../cdn.staticfile.org/html5shiv/r29/html5.min.js" tppabs="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+<link rel="apple-touch-icon" href="//static.runoob.com/images/icon/mobile-icon.png"/>
+<meta name="apple-mobile-web-app-title" content="菜鸟教程">
+</head>
+<body>
+<div class="container logo-search">
+<div class="col search row-search-mobile">
+<form action="index.php-s=.htm" tppabs="http://www.runoob.com/perl/index.php?s=">
+<input class="placeholder" placeholder="搜索……" name="s" autocomplete="off">
+</form>
+</div>
+<div class="row">
+<div class="col logo">
+<h1><a href="../index.htm" tppabs="http://www.runoob.com/">菜鸟教程 -- 学的不仅是技术，更是梦想！</a></h1>
+</div>
+<div class="col right-list">
+<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style=""> <i class="fa fa-navicon"></i> </button>
+</div>
+<div class="col search search-desktop last">
+<form action="../-s=.htm" tppabs="http://www.runoob.com/?s=" target="_blank">
+<input class="placeholder" id="s" name="s" placeholder="搜索……" autocomplete="off">
+</form>
+</div>
+</div>
+</div>
+<div class="container navigation">
+<div class="row">
+<div class="col nav">
+<ul class="pc-nav">
+<li><a href="../index.htm" tppabs="http://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JavaScript</a></li>
+<li><a href="../jquery/jquery-tutorial.html" tppabs="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery</a></li>
+<li><a href="../bootstrap/bootstrap-tutorial.html" tppabs="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap</a></li>
+<li><a href="../sql/sql-tutorial.html" tppabs="http://www.runoob.com/sql/sql-tutorial.html">SQL</a></li>
+<li><a href="../mysql/mysql-tutorial.html" tppabs="http://www.runoob.com/mysql/mysql-tutorial.html">MySQL</a></li>
+<li><a href="../php/php-tutorial.html" tppabs="http://www.runoob.com/php/php-tutorial.html">PHP</a></li>
+<li><a href="../python/python-tutorial.html" tppabs="http://www.runoob.com/python/python-tutorial.html">Python2</a></li>
+<li><a href="../python3/python3-tutorial.html" tppabs="http://www.runoob.com/python3/python3-tutorial.html">Python3</a></li>
+<li><a href="../cprogramming/c-tutorial.html" tppabs="http://www.runoob.com/cprogramming/c-tutorial.html">C</a></li>
+<li><a href="../cplusplus/cpp-tutorial.html" tppabs="http://www.runoob.com/cplusplus/cpp-tutorial.html">C++</a></li>
+<li><a href="../csharp/csharp-tutorial.html" tppabs="http://www.runoob.com/csharp/csharp-tutorial.html">C#</a></li>
+<li><a href="../java/java-tutorial.html" tppabs="http://www.runoob.com/java/java-tutorial.html">Java</a></li>
+<li><a href="../browser-history.htm" tppabs="http://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png" tppabs="http://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+</ul>
+<ul class="mobile-nav">
+<li><a href="../index.htm" tppabs="http://www.runoob.com/">首页</a></li>
+<li><a href="../html/html-tutorial.html" tppabs="http://www.runoob.com/html/html-tutorial.html">HTML</a></li>
+<li><a href="../css/css-tutorial.html" tppabs="http://www.runoob.com/css/css-tutorial.html">CSS</a></li>
+<li><a href="../js/js-tutorial.html" tppabs="http://www.runoob.com/js/js-tutorial.html">JS</a></li>
+<li><a href="../browser-history.htm" tppabs="http://www.runoob.com/browser-history">本地书签</a></li>
+<li><a href="javascript:if(confirm('https://s.click.taobao.com/VCtS1Lw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://s.click.taobao.com/VCtS1Lw'" tppabs="https://s.click.taobao.com/VCtS1Lw" target="_blank" data-id="1111">红包 <img style="height: 12px; width: 24px;" src="../../img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png" tppabs="http://img.alicdn.com/tfs/TB1WzrtiSzqK1RjSZPcXXbTepXa-48-24.png"></a></li>
+<a href="javascript:void(0)" class="search-reveal">Search</a>
+</ul>
+</div>
+</div>
+</div>
+<div class="container main">
+<div class="row">
+<div class="col left-column">
+<div class="tab">Perl 教程 <a data-cate="201" href="javascript:void(0);" title="夜间模式" id="moon"><i class="fa fa-moon-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+<a data-cate="201" style="display:none;" href="javascript:void(0);" title="日间模式" id="sun"><i class="fa fa-sun-o" aria-hidden="true" style="font-size: 1.4em;float: right;margin: 4px 6px 0;"></i></a>
+</div>
+<div class="sidebar-box gallery-list">
+<div class="design" id="leftcolumn">
+<a target="_top" title="Perl 教程" href="perl-tutorial.html" tppabs="http://www.runoob.com/perl/perl-tutorial.html">
+Perl 教程 </a>
+<a target="_top" title="Perl 简介" href="perl-intro.html" tppabs="http://www.runoob.com/perl/perl-intro.html">
+Perl 简介 </a>
+<a target="_top" title="Perl 环境安装" href="perl-environment.html" tppabs="http://www.runoob.com/perl/perl-environment.html">
+Perl 环境安装 </a>
+<a target="_top" title="Perl 基础语法" href="perl-syntax.html" tppabs="http://www.runoob.com/perl/perl-syntax.html">
+Perl 基础语法 </a>
+<a target="_top" title="Perl 数据类型" href="perl-data-types.html" tppabs="http://www.runoob.com/perl/perl-data-types.html">
+Perl 数据类型 </a>
+<a target="_top" title="Perl 变量" href="perl-variables.html" tppabs="http://www.runoob.com/perl/perl-variables.html">
+Perl 变量 </a>
+<a target="_top" title="Perl 标量" href="perl-scalars.html" tppabs="http://www.runoob.com/perl/perl-scalars.html">
+Perl 标量 </a>
+<a target="_top" title="Perl 数组" href="perl-arrays.html" tppabs="http://www.runoob.com/perl/perl-arrays.html">
+Perl 数组 </a>
+<a target="_top" title="Perl 哈希" href="perl-hashes.html" tppabs="http://www.runoob.com/perl/perl-hashes.html">
+Perl 哈希 </a>
+<a target="_top" title="Perl 条件语句" href="perl-conditions.html" tppabs="http://www.runoob.com/perl/perl-conditions.html">
+Perl 条件语句 </a>
+<a target="_top" title="Perl 循环" href="perl-loops.html" tppabs="http://www.runoob.com/perl/perl-loops.html">
+Perl 循环 </a>
+<a target="_top" title="Perl 运算符" href="perl-operators.html" tppabs="http://www.runoob.com/perl/perl-operators.html">
+Perl 运算符 </a>
+<a target="_top" title="Perl 时间日期" href="perl-date-time.html" tppabs="http://www.runoob.com/perl/perl-date-time.html">
+Perl 时间日期 </a>
+<a target="_top" title="Perl 子程序(函数)" href="perl-subroutines.html" tppabs="http://www.runoob.com/perl/perl-subroutines.html">
+Perl 子程序(函数) </a>
+<a target="_top" title="Perl 引用" href="perl-references.html" tppabs="http://www.runoob.com/perl/perl-references.html">
+Perl 引用 </a>
+<a target="_top" title="Perl 格
