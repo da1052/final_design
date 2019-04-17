@@ -120,7 +120,7 @@ export default {
             this.refresh = false;
             this.$dialog.toast({
               mes: "刷新成功！",
-              timeout: 1500
+              timeout: 500
             });
           },
           error => {
