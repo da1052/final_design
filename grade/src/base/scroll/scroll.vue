@@ -87,11 +87,11 @@ export default {
     });
   },
   updated() {
-    this.$nextTick(() => {
-      setTimeout(() => {
+   // this.$nextTick(() => {
+    //  setTimeout(() => {
         this._initScroll();
-      }, 200);
-    });
+    //  }, 200);
+   // });
   },
   methods: {
     _initScroll() {
