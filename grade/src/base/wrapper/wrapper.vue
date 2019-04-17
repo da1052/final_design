@@ -45,8 +45,7 @@
       ])
     },
     props: {
-      data: Array,
-      title: String
+      data: Array
     },
     created() {
       // console.log(this.data)
@@ -83,6 +82,8 @@
         float: left
         position: absolute
         left: .5rem
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        -webkit-tap-highlight-color: transparent
       .title
         font-size: 1rem
         line-height: 2.75rem
@@ -112,6 +113,8 @@
       .time
         font-size: .9rem
         float: right
+      .contents
+        text-align: left
       .contents >>>
         p
           margin-top: 1rem

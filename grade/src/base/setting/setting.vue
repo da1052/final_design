@@ -77,6 +77,8 @@
         float: left
         position: absolute
         left: .5rem
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        -webkit-tap-highlight-color: transparent
 
       .title
         font-size: 1rem
@@ -95,7 +97,7 @@
       padding-left: .5rem
       .content_detail
         overflow: hidden
-        line-height: 2.5rem
+        line-height: 3rem
         border-bottom: 1px solid rgba(102,102,102,0.2)
         .left
           float: left
@@ -103,7 +105,7 @@
         .right
           float: right
           font-size: .7rem
-          height: 2.5rem
+          height: 3rem
           display: flex
           align-items: center
           margin-right: .5rem

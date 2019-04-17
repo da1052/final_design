@@ -20,6 +20,7 @@
             </div>
           </swipeout-item>
         </swipeout>
+        <div v-show="collection_list == ''">暂无收藏</div>
       </scroll>
     </div>
     <router-view :data_course="collection_detail" @back_show="back_show_s()"></router-view>
@@ -136,6 +137,8 @@
         float: left
         position: absolute
         left: .5rem
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        -webkit-tap-highlight-color: transparent
 
       .title
         font-size: 1rem

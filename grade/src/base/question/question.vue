@@ -12,6 +12,7 @@
       <swipeout>
         <swipeout-item class="item" v-for="item in question_list" :key="item.id" >
           <div slot="right-menu">
+            <swipeout-button background-color="#0f9cff" @click.native="update_question(item)">编辑</swipeout-button>
             <swipeout-button background-color="#D23934" @click.native="delete_question(item.id)">删除</swipeout-button>
           </div>
           <div slot="content" class="content" @click="show_question(item)">
@@ -19,6 +20,7 @@
           </div>
         </swipeout-item>
       </swipeout>
+      <div v-show="question_list == ''">暂未发表帖子</div>
     </scroll>
     <router-view :data_inte_detail="data_inte_detail" @back_show="back_show_s()"></router-view>
   </div>
@@ -81,21 +83,12 @@
             })
           }
         });
-        // this.$http.post('/delete_question', {
-        //   id: id
-        // }).then( response => {
-        //   console.log(response);
-        //   this.$http.post('/question', {
-        //     user: this.user
-        //   }).then( response => {
-        //     this.question_list = response.body;
-        //     // console.log(response);
-        //   }, error => {
-        //     console.log(error);
-        //   })
-        // }, err => {
-        //   console.log(err);
-        // })
+      },
+      update_question(value) {
+        this.$router.push({
+          path: '/Deliver',
+          query: {content: value.detail, title: value.title, id: value.id}
+        })
       },
       back_show_s() {
         this.back_show(true);
@@ -143,6 +136,8 @@
         float: left
         position: absolute
         left: .5rem
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        -webkit-tap-highlight-color: transparent
       .title
         font-size: 1rem
         line-height: 2.75rem
@@ -160,6 +155,7 @@
       .item
         height: 3rem
         line-height: 3rem
+        font-size: .9rem
         text-align: left
         text-indent: 1rem
         margin-left: .5rem

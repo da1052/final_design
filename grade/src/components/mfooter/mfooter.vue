@@ -74,10 +74,10 @@
     font-size: 1.3rem
     -webkit-tap-highlight-color:transparent;
   .footer-text
-    font-size: 0.5rem
+    font-size: 0.6rem
 
   .footer
-    position: fixed
+    position: absolute
     /*top: 0*/
     left: 0
     right: 0

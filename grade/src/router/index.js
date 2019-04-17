@@ -18,6 +18,7 @@ import Setting from 'base/setting/setting'
 import Password from 'base/password/password'
 import NewUser from 'base/new_user/new_user'
 import UserImg from 'base/user_img/user_img'
+import Test from 'components/test/test'
 
 Vue.use(Router)
 
@@ -106,6 +107,10 @@ export default new Router({
     {
       path: '/UserImg',
       component: UserImg
+    },
+    {
+      path: '/Test',
+      component: Test
     }
   ]
 })

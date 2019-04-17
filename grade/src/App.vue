@@ -1,26 +1,28 @@
 <template>
   <div id="app">
     <mheader></mheader>
-    <router-view/>
+    <!-- <keep-alive> -->
+      <router-view/>
+    <!-- </keep-alive> -->
     <mfooter></mfooter>
   </div>
 </template>
 
 <script>
-  import Mheader from './components/mheader/mheader'
-  import Mfooter from './components/mfooter/mfooter'
+import Mheader from "./components/mheader/mheader";
+import Mfooter from "./components/mfooter/mfooter";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Mheader,
     Mfooter
   }
-}
+};
 </script>
 
 <style >
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -47,7 +47,7 @@
   .header
     width: 100%
     height: 2.75rem
-    position: fixed
+    position: absolute
     line-height: 2.75rem
     font-size: 1.2rem
     /*position: -webkit-sticky*/

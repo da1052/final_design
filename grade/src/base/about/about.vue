@@ -17,6 +17,7 @@
       4.用户登录后点击用户头像可更改头像<br>
       5.部分页面可能出现无法滚动问题，原因是better-scroll初始化时页面图片加载未完成导致高度计算错误(已解决大部分页面此bug，小部分页面的原因还在查找中)，
       请切换其他页面再返回即可，目前已在修复，见谅!<br>
+      6.App为个人测试所用App，不用于商业用途<br>
       以上
     </div>
   </div>
@@ -56,6 +57,8 @@
         float: left
         position: absolute
         left: .5rem
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        -webkit-tap-highlight-color: transparent
       .title
         font-size: 1rem
         line-height: 2.75rem
@@ -71,5 +74,5 @@
       font-size: .9rem
       text-align: left
       padding: 0 1rem
-      line-height: 1.7rem
+      line-height: 2rem
 </style>

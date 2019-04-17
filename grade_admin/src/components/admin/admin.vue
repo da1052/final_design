@@ -5,7 +5,7 @@
         <el-menu default-active="1-2" @open="get_classify">
           <el-submenu index="1">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="el-icon-news"></i>
               <span>资讯管理</span>
             </template>
             <el-menu-item-group>
@@ -16,7 +16,7 @@
           </el-submenu>
           <el-submenu index="2">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="el-icon-document"></i>
               <span>教程管理</span>
             </template>
             <el-menu-item-group>
@@ -40,7 +40,7 @@
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="el-icon-message"></i>
               <span>问答管理</span>
             </template>
             <el-menu-item-group>
@@ -268,22 +268,26 @@
         "reset": "重置"
       }
     },
+    hiddenModules: [
+      "full-screen",
+      "info"
+    ],
     image: {
-      sizeLimit: 1024 * 1024,
+      sizeLimit: 10*1024 * 1024,
       upload: {
-        url: 'http://127.0.0.1:3000/img',
+        url: '/img',
         headers: {},
         params: {},
-        fieldName: 'file'
+        fieldName: 'img'
       },
       uploadHandler(res) {
         var json = JSON.parse(res);
-        // console.log(json.file[0].path);
+        console.log(json.img[0].path);
         if (!json) {
           console.log(json.error);
         } else {
           // console.log(json);
-          return json.file[0].path;
+          return json.img[0].path;
         }
         // return json;
       }
@@ -1008,6 +1012,7 @@
       width: 100%
       height: 100%
       border: solid 1px #ebebeb
+      text-align: left
 
     .main_text >>>
       p

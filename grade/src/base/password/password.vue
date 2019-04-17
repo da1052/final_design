@@ -154,19 +154,22 @@
         .left
           padding: 0 2rem
         .right
-          height: 2rem
+          height: 2.8rem
           padding: 0 2rem
           background: #ffffff
           input
-            border: none
+            border: 1px solid #999999
+            border-radius: 2px
             width: 100%
             height: 100%
     .btn
       margin: 1.5rem 2rem .5rem
       width: calc(100% - 4rem)
-      line-height: 2rem
+      line-height: 2.5rem
       color: #ffffff
       background: #0f9cff
     .btn_forward
       color: #0f9cff
+      -webkit-tap-highlight-color: rgba(0,0,0,0)
+      -webkit-tap-highlight-color: transparent
 </style>
